@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>bloxd.io 更新ウォッチ</title>
+<style>
+:root{--bg:#f7f7f5;--fg:#1c1c1a;--muted:#6b6b66;--card:#fff;--line:#e3e3de;--ok:#2f7d4f;--chg:#b45309;--err:#b42318}
+@media (prefers-color-scheme:dark){:root{--bg:#161614;--fg:#ecece8;--muted:#9a9a93;--card:#202020;--line:#33332f;--ok:#5bbf86;--chg:#f0a24a;--err:#f2837a}}
+*{box-sizing:border-box}body{margin:0;padding:0 16px 48px;background:var(--bg);color:var(--fg);font:15px/1.6 system-ui,"Hiragino Sans","Yu Gothic UI",sans-serif}
+main{max-width:860px;margin:0 auto}h1{font-size:22px;margin:28px 0 4px}h2{font-size:17px;margin:32px 0 10px}
+.muted{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}.card b{display:block;font-size:12px;color:var(--muted);font-weight:500}.card span{font-size:17px;word-break:break-all}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13px}
+td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:0}
+.tag{font-size:12px;padding:2px 8px;border-radius:99px;border:1px solid var(--line);white-space:nowrap}.ok{color:var(--ok)}.chg{color:var(--chg);border-color:var(--chg)}.err{color:var(--err);border-color:var(--err)}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin:8px 0;padding:8px 12px}summary{cursor:pointer;font-weight:600}
+pre{white-space:pre-wrap;word-break:break-word;font:12.5px/1.55 ui-monospace,Consolas,monospace;margin:10px 0 2px}
+.tablewrap{overflow-x:auto}
+</style></head><body><main>
+<h1>bloxd.io 更新ウォッチ</h1>
+<div class="muted">非公式の個人用モニターです(bloxd.io 運営とは無関係)。約30分おきに自動確認しています。</div>
+<div class="grid">
+<div class="card"><b>最後に記録した確認(日本時間)</b><span>2026/10/25 11:19:05</span></div>
+<div class="card"><b>現在のビルド</b><span>bvxepi / eeaa90ad</span></div>
+<div class="card"><b>検知した更新</b><span>1 回</span></div>
+<div class="card"><b>最後の更新検知</b><span>2026/10/24 3:32:44</span></div>
+</div>
+<h2>変化レポート</h2>
+<details open><summary>2026-10-23 18:32:44 UTC</summary><pre># bloxd.io 更新検知 2026-10-23T18:32:44.166Z
+
+- ビルドID: 9s8fb → bvxepi
+- main hash: a0c909b6 → eeaa90ad
+- main.js サイズ: 4729107 → 4507080
+- CSS: static/css/9s8fb.main.98e179bb.css → static/css/bvxepi.main.0655b0fc.css
+- main.js 文字列: 追加 6450 / 削除 10917(大型更新(±4000超))
+- チャンク: 追加 0 / 削除 179 / ハッシュ変更 0
+
+## 追加された文字列(先頭80件)
+- `${uu}`
+- `${fu}`
+- `meshKind`
+- `meshOpts`
+- `${gu}`
+- `${ru}`
+- `darkstone`
+- `Darkstone`
+- `darkstoneBricks`
+- `Darkstone Bricks`
+- `crackedDarkstoneBricks`
+- `Cracked Darkstone Bricks`
+- `moltenDarkstoneBricks`
+- `Molten Darkstone Bricks`
+- `engravedDarkstone`
+- `Engraved Darkstone`
+- `smoothDarkstone`
+- `Smooth Darkstone`
+- `maverickNeedPlanks`
+- `Whoa, not so fast! Craft 12 Maple Wood Planks [[Maple Wood Planks]] from your logs first, then bridge the gap to me.`
+- `tutorialWorkbenchPlanksHint`
+- `Use the Workbench [[Workbench]] to craft Maple Wood Planks [[Maple Wood Planks]] from your logs`
+- `arrowPutMotorParts`
+- `Put Motor parts in here`
+- `arrowSwapGenerator`
+- `Swap in a Generator`
+- `arrowSwapPress`
+- `Swap in a Press`
+- `Ruin chests in the Wilds hold Salvage for you: 1 to 3 glinting Machine Parts each, once per chest. Cave chests hold more`
+- `Salvage glows in ruin chests. Take it home and put it in a Recycler. Each chest pays you once.`
+- `Salvage glows in ruin chests. Keep it: at Core tier {{tier}} you can build a Recycler that turns it into useful items. E`
+- `Split your coal belt: Generator one side, iron drill the other`
+- `stepSwapBeltForMachine`
+- `Swap the belt at the arrow for your {{item}}`
+- `stepBarsToPress`
+- `Belt Iron Bars into both the Press and a chest`
+- `tutorialButtonOn`
+- `Quest guides on: select to keep just the quest panel`
+- `tutorialButtonHud`
+- `Quest panel only: select to hide it too`
+- `tutorialButtonOff`
+- `Quest guides off: select to turn them back on`
+- `tutorialPickedOn`
+- `Quest guides on: arrows and hints show where to go.`
+- `tutorialPickedHud`
+- `Arrows and hints hidden; your quest panel stays.`
+- `tutorialPickedOff`
+- `Quest guides hidden; open Quests to check your progress.`
+- `Make {{total}} Motors in your Assembler\\nPut the parts below in it, by hand or by belt`
+- `stepBenchNoPower`
+- `Fuel your {{item}}: your Assembler needs power`
+- `),zu=JSON.parse(`
+- `studioEventFlow`
+- `hoverInfo`
+- `includesPlayersFromBeforeTrackingInfo`
+- `These players have no time data for what they did before tracking, which may skew the results and lead to unexpected aut`
+- `addEvent`
+- `Add event`
+- `addAll`
+- `Add all of this type`
+- `A flow can have up to {{maxNodes}} events.`
+- `noEvents`
+- `Send custom events from your game to add them here.`
+- `connectAutomatically`
+- `Connect automatically`
+- `connecting`
+- `Connecting\u2026`
+- `connectFailed`
+- `Couldn\u2019t connect the events. Try again.`
+- `connectOutdated`
+- `The flow changed while connecting. Try again.`
+- `connected`
+- `Replaced the arrows with the order players get the events.`
+- `connectedNone`
+- `No event clearly comes before another yet.`
+- `clearEvents`
+- `Clear events`
+- `clearEventsConfirm`
+- `Clear all events?`
+- `clearEventsConfirmDetail`
+
+## 削除された文字列(先頭80件)
+- `${qq}`
+- `${Wq}`
+- `${nq}`
+- `${dq}`
+- `dropSalvageLeft`
+- `Salvage left today: {{amount}}/{{total}}`
+- `dropSalvageLeftRefill`
+- `Salvage left today: {{amount}}/{{total}} \xb7 refills in {{hours}} h`
+- `dropSalvageNone`
+- `No Salvage left today: it refills in {{hours}} h. Chests still have their own loot.`
+- `Ruin chests in the Wilds hold Salvage for you: 1 to 3 glinting Machine Parts each, once a chest, up to {{total}} chests `
+- `Salvage glows in ruin chests. Take it home and put it in a Recycler. Each chest has some for you once, up to {{total}} c`
+- `Salvage glows in ruin chests. Keep it: at Core tier {{tier}} you can build a Recycler that turns it into useful items. E`
+- `salvageCapped`
+- `That\'s all your Salvage for today: more in {{hours}} h. The chest\'s own loot is still yours.`
+- `salvageAlready`
+- `You\'ve had this chest\'s Salvage. Pick Nearest ruin on your Drop Pad to find a new one.`
+- `Put a Splitter in your coal belt: Generator one side, drill the other`
+- `stepSalvageSpent`
+- `No Salvage left today: Wilds chests give {{item}} again in {{hours}} h`
+- `Belt in a Motor\'s ingredients: a Belt Loader behind a chest works`
+- `),Sq=JSON.parse(`
+- `b=$N1QTSqur_)F+:X50}]ym',qq[rq[1]]=`
+- `+(qq[rq[2]]||`
+- `):lq(qq[rq[2]])}(qq[rq[9]])}function nn(){nn=function(){}}function Mn(qq,nq,Mq){return[{entityName:nq,ranks:qq,style:{co`
+- `,&quot;flq6(ggSmV&amp;b/O]7p{vqp5zxa%i/o6MG&quot;,&quot;rf^~|B~*@z:{d/&quot;,`
+- `uf',`
+- `,']/,'n9`
+- `,&quot;#TE#:[.&quot;,&quot;ECLsx0dxAjK/vU{g&gt;.&quot;,&quot;OArqeW;EH#|*n^l&quot;,&quot;)%xs2rPxr%R&gt;xFrO9s8'&quot;,&quot;wddCPgTKj9(|h/1Y1V%d%s5Zu%Z)BEeg0$3Tx0^eaf&quot;,&quot;v`
+- `ZJ%=u//52wv&amp;&lt;jXGDZz]Wd87iHvqwjvLZC|+e3Yc',`
+- `,'ds,&gt;Q=Yc?z5`
+- `/1'?$)0|j;/r=0Kx;SdP$P0b&gt;'bs%ILhcIuJ)wweWV+j/',`
+- `,&quot;)4}C*9DZ=M1)I6(3BUn?I6P&lt;QBaua$uDbUU4ST9ZJBw&lt;:x&quot;,&quot;:K7&lt;R9/=SIVE#n#L@GedqPs&amp;&quot;,&quot;kN|n?_.&quot;,&quot;Gz[&lt;f==ZXM4w|CA,iAk2Ws&gt;&lt;7ch;P/xf`
+- `Ix1On*x',`
+- `,'WBl[;qi^A*A3B=`
+- `,&quot;D~Su$9vv=a1HW^&amp;^$kNR,6U3/M2qFLWZxe'&lt;sCg3M'uei/&quot;,&quot;qK8C6$hx&quot;,`
+- `W4q?{]p%bkw',`
+- `,'RODd*_3Ed')j8+cDmfzu`
+- `,&quot;Alg'l9gS%%cPLP|^Dv.'&quot;,&quot;$BXn?9PajH&quot;,&quot;Ob4RfB5GS@^t&gt;LbUwCw&gt;7NrajBh4e('4O&amp;&quot;,&quot;['hT@jdcNzyDpUkoqs&lt;Q&lt;QfD'VL?OFn4xW]Qsu5fafZtG`
+- `f[&lt;BK1t+{;/ioSO#vPCA193djJV&amp;',`
+- `,'[sgt9Ui^=E=urVEOdvWHB9e^P9`
+- `CYHBoh|YX','SPpu{qR0`
+- `,&quot;*4Z6o[m&amp;tc&quot;,&quot;8VL6(YiTH)vu;;&gt;:J;Njj!4(RTS]P}&lt;&lt;vlaJVvNZv)&quot;,`
+- `rt',`
+- `,'bA_X[Rw&lt;qCTYb:pYi4{LP`
+- `,&quot;L,36NR~:F5eeBa9mR[h(#EvV&amp;MO#,{nYYYV@4V1H3TT(f&quot;,&quot;X+v6C9A&amp;$IllO2}YE[,z$}STCmzh|[&gt;Yv5o&gt;:~coYTyMdagm&quot;,&quot;=5m&lt;ru$kq4WX:Ab0Y53`
+- `#k%&lt;xUzr68VD]UFG&lt;&lt;2s[ptr9{v&lt;E%9&lt;k~*',`
+- `,'7K^J~w5M&gt;S&lt;q}MxdI[8JcW/6kTQXdDuw/K.|H`
+- `0puTKId24R|ptoY+v%h*','o;kJBM`
+- `M#Od@4A',`
+- `,'U;`
+- `,'*lv`
+- `,&quot;{v96y~RLCMMaHRcj5vR6C()&amp;@is&quot;,&quot;qc9tK_:V*5_jN;I,J0~}&amp;vg)f4odV{}Y5(@6NBj*7a&quot;,&quot;zlBX9JG#42.&quot;,&quot;rS2JnEH4w%3nn'Q95v%Fbbb)H)pE2`
+- `,&quot;^AK6_q4)&gt;5J4NDS&quot;,`
+- `cJfOx^|K|*GIkJnW*J28Dz&amp;XPT/KRn;w&amp;W!))q=',`
+- `,'8Lyj_`
+- `U?Qk&gt;Z6FrE.?FuT.Sv`
+- `,&quot;ZrM(gQAQj^QHuOo&quot;,&quot;C(^x2}=&quot;,&quot;X2]oOz641StHqDwYQ}D&quot;,&quot;H6^Hwhj%ISz4LW?&amp;[I8@^3KZW)hh3OS.&quot;,&quot;GPi6gL=&quot;,&quot;0}@};!_&lt;Xrn{xa|YrvIlF_A`
+- `:~E6DTQHxD',`
+- `,'N[pLMV@lkTn'an|6Sr[hL`
+- `,&quot;_[Wxnbj&lt;K^pqcOfY!lB@kUy:fS{#L;Op~jyEXpG0$IQJR.]TJ0[S&quot;,&quot;Vcf(Y0'JD4nlyn6&lt;Uc;z6B;%Sm4Kf&quot;,&quot;GsNF4uaJ*2!oFz9Y1l@L_LqHcrAzMR6`
+- `/JeM35g431xYS|D',`
+- `,'24u`
+- `,&quot;]mf(Pp&amp;4OC'^pA&quot;,`
+- `03Ik@Bv}rq*3idRGNN(TzUR8Qn',''0_E~`
+- `,&quot;PY.&lt;4MhHq2u|{OX::dV@P[K&amp;92Xz;{&amp;TmrPe80@P?^__@:+:7jne&quot;,&quot;M9WHQ(6&amp;8%Y@yYbNjsf5{z$J^*U@ebNYPsOQvq6rRP%*$A&quot;,&quot;g[#5_WlMXToMKa`
+- `hHsm5x&amp;'LN7i&amp;(zOvVSc5WxA1j=F^xDkk9SExzkWA*5}D(&lt;',`
+- `,'f*2@`
+- `OV;&lt;/%[#''%pqaCFebWdN%E','SV.~&lt;B#0TS`
+- `,&quot;iP;|D[GDCIy(9{o&quot;,&quot;Qd&amp;5$1M&lt;B2X5n'|d'}6EaWSb9Pl5ZRZxx9BXGRS])KC&quot;,&quot;';3;&amp;5o*#OQjuznY]CzlJV]&amp;AOo[/_)&quot;,&quot;%v{LY!Q)GIaztD&quot;,&quot;'*3`
+- `JJ51oxwhNX5f','E(&lt;SmraoU^KJt;j&amp;p[olfq`
+- `4Bm)'I,D8H&gt;+pZbCc&gt;cCKv*Ps:hMV~JRT0J0}&lt;:',`
+- `,'1_bQSE~Dd#+O2GWC/8vT55c6i]y`
+- `g7t/_a_j(T','Xf0Jd52C3bwxkBWaNR}c]]%'^ug;j7WaxF`
+- `1l?+3[@&lt;^',qq[-Rq[44]]=`
+- `+(qq[Rq[1]]||`
+- `$4{&lt;#}];5/7,^',qq[Eq[0]]=`
+- `+(qq[Eq[1]]||`
+- `):kn(qq[Eq[1]])}function eq(){}function Qq(Mq,hq,Wq,Sq={},Uq,zq,kn,oq){if(zq||(zq=function(...Mq){return Mq[Eq[13]]=Eq[2`
+- `!sid%Ntm&gt;eoMH}:YA*[r^BLk0KD1,)(&amp;p@3ajCgvVTqER+?#|zP'UXbS_]Zu2GF',qq[Eq[0]]=`
+
+## チャンク
+- 削除: 7
+- 削除: 8
+- 削除: 9
+- 削除: 10
+- 削除: 11
+- 削除: 12
+- 削除: 13
+- 削除: 14
+- 削除: 15
+- 削除: 16
+- 削除: 17
+- 削除: 18
+- 削除: 19
+- 削除: 20
+- 削除: 21
+- 削除: 22
+- 削除: 23
+- 削除: 24
+- 削除: 25
+- 削除: 26
+- 削除: 27
+- 削除: 28
+- 削除: 29
+- 削除: 30
+- 削除: 31
+- 削除: 32
+- 削除: 33
+- 削除: 34
+- 削除: 35
+- 削除: 36
+- 削除: 37
+- 削除: 38
+- 削除: 39
+- 削除: 40
+- 削除: 41
+- 削除: 42
+- 削除: 43
+- 削除: 44
+- 削除: 45
+- 削除: 46
+- 削除: 47
+- 削除: 48
+- 削除: 49
+- 削除: 50
+- 削除: 51
+- 削除: 52
+- 削除: 53
+- 削除: 54
+- 削除: 55
+- 削除: 56
+- 削除: 57
+- 削除: 58
+- 削除: 59
+- 削除: 60
+- 削除: 61
+- 削除: 62
+- 削除: 63
+- 削除: 64
+- 削除: 65
+- 削除: 66
+- 削除: 67
+- 削除: 68
+- 削除: 69
+- 削除: 70
+- 削除: 71
+- 削除: 72
+- 削除: 73
+- 削除: 74
+- 削除: 75
+- 削除: 76
+- 削除: 77
+- 削除: 78
+- 削除: 79
+- 削除: 80
+- 削除: 81
+- 削除: 82
+- 削除: 83
+- 削除: 84
+- 削除: 85
+- 削除: 86
+- 削除: 87
+- 削除: 88
+- 削除: 89
+- 削除: 90
+- 削除: 91
+- 削除: 92
+- 削除: 93
+- 削除: 94
+- 削除: 95
+- 削除: 96
+- 削除: 97
+- 削除: 98
+- 削除: 99
+- 削除: 100
+- 削除: 101
+- 削除: 102
+- 削除: 103
+- 削除: 104
+- 削除: 105
+- 削除: 106
+- 削除: 107
+- 削除: 108
+- 削除: 109
+- 削除: 110
+- 削除: 111
+- 削除: 112
+- 削除: 113
+- 削除: 114
+- 削除: 115
+- 削除: 116
+- 削除: 117
+- 削除: 118
+- 削除: 119
+- 削除: 120
+- 削除: 121
+- 削除: 122
+- 削除: 123
+- 削除: 124
+- 削除: 125
+- 削除: 126
+- 削除: 127
+- 削除: 128
+- 削除: 129
+- 削除: 130
+- 削除: 131
+- 削除: 132
+- 削除: 133
+- 削除: 134
+- 削除: 135
+- 削除: 136
+- 削除: 137
+- 削除: 138
+- 削除: 139
+- 削除: 140
+- 削除: 141
+- 削除: 142
+- 削除: 143
+- 削除: 144
+- 削除: 145
+- 削除: 146
+- 削除: 147
+- 削除: 148
+- 削除: 149
+- 削除: 150
+- 削除: 151
+- 削除: 152
+- 削除: 153
+- 削除: 154
+- 削除: 155
+- 削除: 156
+- 削除: 157
+- 削除: 158
+- 削除: 159
+- 削除: 160
+- 削除: 161
+- 削除: 162
+- 削除: 163
+- 削除: 164
+- 削除: 165
+- 削除: 166
+- 削除: 167
+- 削除: 168
+- 削除: 169
+- 削除: 170
+- 削除: 171
+- 削除: 172
+- 削除: 173
+- 削除: 174
+- 削除: 175
+- 削除: 176
+- 削除: 177
+- 削除: 178
+- 削除: 179
+- 削除: fa-renderer
+- 削除: icons-brands
+- 削除: icons-duotone
+- 削除: icons-regular
+- 削除: icons-solid
+- 削除: sentry
+
+注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details>
+<h2>確認の履歴(最新200件)</h2>
+<div class="tablewrap"><table><tr><td>2026/10/25 11:19:05</td><td><span class="tag ok">変更なし</span></td><td>bvxepi eeaa90ad</td></tr>
+<tr><td>2026/10/24 9:08:40</td><td><span class="tag ok">変更なし</span></td><td>bvxepi eeaa90ad</td></tr>
+<tr><td>2026/10/24 3:32:44</td><td><span class="tag chg">変化あり</span></td><td>文字列 +6450/-10917、チャンク 追加0・変更0・削除179</td></tr>
+<tr><td>2026/10/23 22:55:04</td><td><span class="tag ok">変更なし</span></td><td>9s8fb a0c909b6</td></tr>
+<tr><td>2026/10/23 7:05:51</td><td><span class="tag">基準</span></td><td>9s8fb a0c909b6</td></tr></table></div>
+<p class="muted">変更なしの記録は1日1回だけ残します(30分おきの確認の結果は、変化があった時と1日1回だけページに反映されます)。</p>
+</main></body></html>
