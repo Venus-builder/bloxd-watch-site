@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>解析レポート: グライダーの新エンチャント</title>
+<style>
+:root{--bg:#eef1fb;--fg:#1a1d33;--muted:#5f6584;--card:#fff;--line:#dfe3f3;--accent:#5b5bf0;--accent2:#00b8d9;--add:#0c8a55;--addbg:#dcf7e9;--chg:#b45f00;--chgbg:#ffefd2;--del:#c42b3a;--delbg:#ffe1e4;--code:#eef0fa;--player:#2f6bff;--playerbg:#e5edff;--maker:#e8590c;--makerbg:#fff0e3}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1224;--fg:#eceefb;--muted:#a1a7cc;--card:#1a1e38;--line:#2c3260;--accent:#8e8eff;--accent2:#4fd8ef;--add:#5fe0a5;--addbg:#12372a;--chg:#ffb454;--chgbg:#40300f;--del:#ff8794;--delbg:#43181f;--code:#252a50;--player:#7fa6ff;--playerbg:#1b2750;--maker:#ff9f5a;--makerbg:#432a14}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.7 system-ui,-apple-system,"Hiragino Sans","Yu Gothic UI","Noto Sans JP",sans-serif}
+.hero{background:linear-gradient(135deg,#5b5bf0 0%,#7a4df0 45%,#00b8d9 100%);color:#fff;padding:34px 16px 70px}
+.hero .in{max-width:780px;margin:0 auto}.hero h1{font-size:26px;margin:0 0 6px;letter-spacing:.01em}.hero p{margin:0;opacity:.9;font-size:13.5px}
+main{max-width:780px;margin:-48px auto 0;padding:0 16px 64px}
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 6px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:0 6px 18px rgba(40,40,120,.10)}.stat b{display:block;font-size:11.5px;color:var(--muted);font-weight:500;margin-bottom:2px}.stat span{font-size:16px;font-weight:700;word-break:break-all}
+.stat:nth-child(1){border-top:4px solid var(--accent)}.stat:nth-child(2){border-top:4px solid var(--accent2)}.stat:nth-child(3){border-top:4px solid #f59f00}.stat:nth-child(4){border-top:4px solid #e64980}
+h2{font-size:19px;margin:34px 0 12px}
+.upd{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 18px 12px;margin:14px 0;box-shadow:0 4px 14px rgba(40,40,120,.07)}
+.upd.latest{border:2px solid var(--accent);box-shadow:0 8px 26px rgba(91,91,240,.22)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:13px}.new{background:linear-gradient(90deg,#e64980,#f76707);color:#fff;font-weight:700;font-size:11.5px;padding:1px 10px;border-radius:99px}
+.build{font:12px ui-monospace,Consolas,monospace;background:var(--code);padding:1px 8px;border-radius:99px}
+.upd h3{font-size:19px;line-height:1.5;margin:8px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}.chip{font-size:12.5px;padding:2px 11px;border-radius:99px;background:var(--code);color:var(--muted);font-weight:600}
+.chip.add{background:var(--addbg);color:var(--add)}.chip.chg{background:var(--chgbg);color:var(--chg)}.chip.del{background:var(--delbg);color:var(--del)}
+.pts{display:grid;gap:10px}.pt{display:flex;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);border-left-width:6px}
+.pt.player{border-left-color:var(--player);background:linear-gradient(90deg,var(--playerbg),transparent 70%)}.pt.maker{border-left-color:var(--maker);background:linear-gradient(90deg,var(--makerbg),transparent 70%)}
+.ico{font-size:28px;line-height:1.1;flex:none}.ptb{min-width:0}.ptt{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.ptt h4{margin:0;font-size:15.5px;line-height:1.5}
+.who{font-size:11.5px;font-weight:700;padding:1px 9px;border-radius:99px;color:#fff;background:var(--player)}.maker .who{background:var(--maker)}
+.pt p{margin:6px 0 0;font-size:14.5px}.pt .note{color:var(--muted);font-size:13px}.cert{display:inline-block;margin-top:6px;font-size:12px;color:var(--muted);background:var(--code);padding:1px 10px;border-radius:99px}
+.rbtn{display:inline-block;margin:12px 0 4px;padding:8px 18px;border-radius:99px;background:linear-gradient(90deg,var(--accent),#7a4df0);color:#fff;text-decoration:none;font-weight:700;font-size:14px}
+.newitems{background:var(--addbg);border-radius:12px;padding:10px 14px;margin:12px 0}.newitems b{font-size:13px;color:var(--add);display:block;margin-bottom:6px}
+.pill{display:inline-block;margin:3px 6px 3px 0;padding:2px 12px;border-radius:99px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600}
+details{padding:8px 0}summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center}
+summary::-webkit-details-marker{display:none}summary::before{content:"▸";color:var(--accent);margin-right:6px;font-size:12px}details[open]>summary::before{content:"▾"}
+summary span{flex:1}summary em{font-style:normal;font-size:12px;color:var(--muted);font-weight:500}
+.en{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}.sec{border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0;background:var(--bg)}
+.diff{list-style:none;margin:8px 0 2px;padding:0}.diff li{display:flex;gap:10px;padding:8px 0;border-top:1px dashed var(--line)}.diff li:first-child{border-top:0}
+.diff i{font-style:normal;font-weight:800;width:1.2em;text-align:center;flex:none}.a i{color:var(--add)}.c i{color:var(--chg)}.d i{color:var(--del)}
+.diff div{min-width:0;flex:1}.diff p{margin:2px 0;font-size:14px;word-break:break-word;white-space:pre-wrap}.diff p.from{color:var(--muted);text-decoration:line-through}
+code{font:11.5px ui-monospace,Consolas,monospace;color:var(--muted);background:var(--code);padding:1px 6px;border-radius:5px}
+.dev{margin-top:8px;font-size:12.5px;border-top:1px solid var(--line)}.dev>summary{font-weight:500;color:var(--muted)}dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:8px 0}dt{color:var(--muted)}dd{margin:0;word-break:break-all}
+pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Consolas,monospace;background:var(--code);padding:10px;border-radius:8px;max-height:420px;overflow:auto}
+.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px}table{width:100%;border-collapse:collapse;font-size:13px}td{padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap}tr:last-child td{border-bottom:0}
+.tag{font-size:12px;padding:1px 9px;border-radius:99px;border:1px solid var(--line);font-weight:600}.tag.ok{color:var(--add);background:var(--addbg);border-color:transparent}.tag.chg{color:var(--chg);background:var(--chgbg);border-color:transparent}.tag.err{color:var(--del);background:var(--delbg);border-color:transparent}
+.muted{color:var(--muted);font-size:12.5px}footer{margin-top:32px}
+
+.rep h2{margin:30px 0 10px}.rep table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
+.rep th{background:var(--code);text-align:left;font-weight:700;padding:8px 12px;font-size:12.5px}.rep td{padding:8px 12px;border-top:1px solid var(--line)}
+.rep .tw{overflow-x:auto;margin:8px 0}.rep p,.rep li{font-size:14.5px}.rep .big{font-size:16px}.warn{background:var(--chgbg);border-left:6px solid var(--chg);border-radius:12px;padding:10px 14px;margin:12px 0}
+.ok2{background:var(--addbg);border-left:6px solid var(--add);border-radius:12px;padding:10px 14px;margin:12px 0}.back{display:inline-block;margin:0 0 10px;color:#fff;opacity:.95;font-size:13px}
+.src{font-size:12px;color:var(--muted)}
+</style></head><body>
+<div class="hero"><div class="in"><a class="back" href="../">← 更新ウォッチに戻る</a><h1>🪂 解析レポート: グライダーの新エンチャント</h1>
+<p>2026年10月26日の更新(ビルド cnty9)で入った、グライダー用のエンチャント3種類の効果を、ゲームのプログラムの式から数字にしました。</p></div></div>
+<main class="rep">
+
+<h2>✅ 結論(いちばん知りたい数字)</h2>
+<div class="ok2 big">
+<b>ロケット花火のクールダウン</b>: レベルごとに <b>約15%ずつ(掛け算で)短くなる</b>。レベル1で −15.0%、レベル2で −27.8%、レベル3で −38.6%。<br>
+<b>ロケット花火のブースト</b>: レベルごとに <b>+15%ずつ強くなる</b>。レベル1で +15%、レベル2で +30%、レベル3で +45%。<br>
+<b>滑空の速度</b>: レベルごとに <b>最高速度に +2</b>。レベル1で +2、レベル2で +4、レベル3で +6。割合にすると、木のグライダー(基準13)でレベル3なら約 +46%、ダイヤ(基準25)でレベル3なら +24%。
+</div>
+
+<h2>📊 レベル別の効果</h2>
+<div class="tw"><table><tr><th></th><th>クールダウン(基準 1秒)</th><th>ブースト(基準の力 50)</th><th>滑空の最高速度ボーナス</th></tr><tr><td>レベル 1</td><td>-15.0%(850.0 ミリ秒)</td><td>+15.0%(押し出す力 57.5)</td><td>+2</td></tr><tr><td>レベル 2</td><td>-27.8%(722.5 ミリ秒)</td><td>+30.0%(押し出す力 65.0)</td><td>+4</td></tr><tr><td>レベル 3</td><td>-38.6%(614.1 ミリ秒)</td><td>+45.0%(押し出す力 72.5)</td><td>+6</td></tr></table></div>
+<p class="src">式の出典: クライアント(main.js)の <code>getFirecrackerCooldownMultiplier</code> = 0.85 の「レベル」乗(下限 0.4)、<code>getFirecrackerBoostMultiplier</code> = 1 + 0.15 × レベル(上限 2)、<code>getGlidingSpeedBonus</code> = 2 × レベル(上限 10)。基準のクールダウンは設定値 <code>gliderFuelCooldown: 1000</code>(ミリ秒)、ブーストの基準の力は <code>50</code> に倍率を掛ける作りです。</p>
+
+<h2>🔎 もう少し詳しく</h2>
+<h3>クールダウン(短くなる割合)</h3>
+<p>レベル L のとき、元の時間に 0.85 を L 回掛けます(15%ずつ減る掛け算)。足し算ではないので、レベルが上がるほど1段あたりの減り方は小さくなります。</p>
+<p>連続で使える回数に直すと、基準の「1秒に1回」に対して、レベル1で約 1.2 倍、レベル2で約 1.4 倍、レベル3で約 1.6 倍(1秒あたり)です。</p>
+<p class="src">レベルごとの「元の時間に対する割合」: 1: 85.0% / 2: 72.2% / 3: 61.4% / 4: 52.2% / 5: 44.4% / 6: 40.0% / 7: 40.0%(下限は 40%。レベル6以上で頭打ち)</p>
+<h3>ブースト(強くなる割合)</h3>
+<p>レベル L のとき、押し出す力が (1 + 0.15 × L) 倍になります。足し算なので、1レベルごとに同じだけ(+15%)増えます。上限は2倍(+100%)で、レベル7で到達します。</p>
+<p class="src">レベルごとの倍率: 1: 115.0% / 2: 130.0% / 3: 145.0% / 4: 160.0% / 5: 175.0% / 6: 190.0% / 7: 200.0% / 8: 200.0%</p>
+<h3>滑空の速度(最高速度ボーナス)</h3>
+<p>レベル L のとき、ボーナスは 2 × L(上限 10。レベル5で頭打ち)です。ゲームの資料(スタジオの説明)によると、グライダーの基準の最高速度は、木 13、鉄 17、金 21、ダイヤ 25 です。ボーナスが、この最高速度にそのまま足されると仮定すると、次のようになります。</p>
+<div class="tw"><table><tr><th>グライダー(基準)</th><th>レベル1</th><th>レベル2</th><th>レベル3</th><th>上限(+10)</th></tr><tr><td>木のハンググライダー(基準 13)</td><td>15(+15.4%)</td><td>17(+30.8%)</td><td>19(+46.2%)</td><td>23(+76.9%)</td></tr><tr><td>鉄のハンググライダー(基準 17)</td><td>19(+11.8%)</td><td>21(+23.5%)</td><td>23(+35.3%)</td><td>27(+58.8%)</td></tr><tr><td>金のハンググライダー(基準 21)</td><td>23(+9.5%)</td><td>25(+19.0%)</td><td>27(+28.6%)</td><td>31(+47.6%)</td></tr><tr><td>ダイヤのハンググライダー(基準 25)</td><td>27(+8.0%)</td><td>29(+16.0%)</td><td>31(+24.0%)</td><td>35(+40.0%)</td></tr></table></div>
+
+<div class="warn"><b>⚠ この速度の表は、推測を含みます。</b>クライアントのコードでは、ボーナス値が計算されて持たれているところまでは見つかりましたが、それを最高速度に足している場所は見つかりませんでした(サーバー側か、別の場所で使われている可能性があります)。「最高速度に足される」「単位が最高速度と同じ」という仮定での計算です。実際の効き方は、遊んで測らないと確かめられません。</div>
+
+<h2>🎲 エンチャントはどうやってつくか</h2>
+<ul>
+<li>エンチャントの対象は、グライダー(木・鉄・金・ダイヤのハンググライダー)です。つく可能性があるのは、この3種類だけです。</li>
+<li>エンチャントの階層(Tier 1〜5)が高いほど、「ランダムに1つ選んでレベルを+1する」回数が増えます。Tier 1 なら1回、Tier 5 なら5回です。</li>
+<li>ランダムにつく場合、1種類のレベルは最大 <b>3</b> までです(3に達した種類は、それ以上は選ばれません)。</li>
+<li>たとえば Tier 5 のグライダーなら、合計5レベルが3種類に振り分けられます。1種類に最大3レベル、残りの2レベルが別の種類、という組み合わせが、1つの効果を最大にした場合です。</li>
+<li>プログラム上の上限(クールダウンのレベル6、ブーストのレベル7、速度のレベル5)は、コマンドや特別な方法で高いレベルをつけたときのための安全装置と見られます。ふつうに遊んでいて届くのは、レベル3までです。</li>
+</ul>
+<p class="src">出典: エンチャントを決める処理(階層ごとの回数 <code>{"Tier 1":1 … "Tier 5":5}</code>、1種類の上限 <code>3</code>)と、グライダーのエンチャント一覧 <code>Glider: ["Firecracker Cooldown","Firecracker Boost","Gliding Speed"]</code>。</p>
+
+<h2>🚀 ロケット花火の使い方(関連する仕様)</h2>
+<ul>
+<li>ブーストは、ハンググライダーを手に持って滑空中に、ロケット花火(Firecracker)を持っていると使えます。1回につき花火を1個消費します(クリエイティブモードでは消費しません)。</li>
+<li>ブーストの向きは、見ている方向(水平方向が中心)です。押し出された勢いは、一定時間(約100ティック)かけて普通の滑空に戻ります。</li>
+<li>クールダウン中は、花火を使えません。画面の真ん中あたりにバーが出ます。</li>
+</ul>
+
+<h2>🧪 今回の更新のその他の解析</h2>
+<ul>
+<li><b>ほかのエンチャントの式は変わっていません。</b>弓、つるはし、斧、鎧などの、既存の式(クイックチャージ、矢の速度、ダメージ計算など)を新旧で比べましたが、数字は同じでした。今回の更新で増えた式は、グライダーの3つだけです。(調べたのは、この式の部分だけで、アイテムの性能値すべてではありません。)</li>
+<li><b>Build a Factory 2 の「Islands」</b>は、画面(コアの中の「Islands」ボタン)のプログラムが入っています。持てる島の数は、サーバーから送られる値(<code>baf2IslandsMax</code>)を使うので、クライアントのコードからは分かりません。</li>
+<li><b>「立て看板(Standing Noticeboard)」</b>は、ブロックとしてプログラムに残っています。辞書(翻訳)から表示名の項目が消えただけです。</li>
+<li><b>動物の鳴き声の音声データ</b>は、本体ファイル(main.js)から消えていましたが、音の名前の一覧(スタジオの資料)には残っています。データの置き場所が変わっただけの可能性が高いです。</li>
+<li><b>公式のお知らせ</b>(ゲーム内のニュース一覧)には、まだこの更新の項目は載っていません。最新の項目は 10月21日の「Skyblock Official Trailer」でした。</li>
+</ul>
+
+<h2>⚠ このレポートの限界</h2>
+<ul>
+<li>ゲームを実際に遊んで測ったものではありません。ゲームのクライアント(ブラウザに配られるプログラム)の式と設定値から計算しています。</li>
+<li>サーバーが、クライアントと違う式で判定している可能性があります(特にクールダウンとブーストは、サーバー側でも確認されるはずですが、そのコードは見られません)。</li>
+<li>入手方法(どの階層のエンチャントで、どう出るか)は、サーバー側の情報なので分かりません。</li>
+<li>新機能なので、今後の更新で数字が変わる可能性があります。変わったときは、更新ウォッチが検知します。</li>
+</ul>
+<p class="muted">非公式の個人用レポートです。bloxd.io 運営とは無関係です。</p>
+</main></body></html>
