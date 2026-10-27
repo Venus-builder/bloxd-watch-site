@@ -54,12 +54,21 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <h2>✨ 更新と、ゲーム内の変化</h2>
 <article class="upd latest">
 <div class="meta"><span class="new">最新</span><time>2026年10月28日 05:11</time><span class="build">v4ng2h → 06sunr</span></div>
-<h3>ビルドが v4ng2h から 06sunr に更新</h3>
+<h3>期間限定ミニゲーム「Trick or Treat」(ハロウィン)が追加。動作が重いときの設定ヒント表示も</h3>
 <div class="chips"><span class="chip add">＋ 新しい文言 16</span></div>
-<div class="pts"><div class="pt player"><div class="ico">📝</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>ゲーム内の文言が変わった場所: ゲーム全般、browserTips</h4></div>
-<p>下の「英語の原文」で、追加・変更・削除された文を見られます。</p>
-<span class="cert">確かさ: 自動判定</span></div></div></div>
+<div class="pts"><div class="pt player"><div class="ico">🎃</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>新ミニゲーム「Trick or Treat」(期間限定)</h4></div>
+<p>ゲーム一覧に、新しいミニゲーム「Trick or Treat」が追加されました。説明文はこうです: おばけの出る街を走り回って、光るジャック・オ・ランタン(かぼちゃ)を集める。ドアをノックしてお菓子をもらい、ライバルにはいたずらを仕掛け、魔女(crone)から逃げる。真夜中の時点で、お菓子をいちばん多く持っている人の勝ち。ゲームには「期間限定(limitedTimeGame)」の印が付いていて、ずっと遊べるものではなさそうです。サムネイル画像(小・大)も用意されています。</p><p class="note">終了日、遊べる人数、ロビーのどこに出るかは、ここからは分かりません。10月末のハロウィンに合わせた企画だと思われますが、これは推測です。ゲームの中身(マップや当たりのルール)はサーバー側にあり、ここでは見られません。</p>
+<span class="cert">確かさ: 名前・説明・期間限定の印は確実 / 期間・人数・細かいルールは不明</span></div></div><div class="pt player"><div class="ico">💻</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>「動作が重い」ときのヒント表示が追加</h4></div>
+<p>次のようなメッセージが追加されました。①「グラフィックスアクセラレーション(ハードウェアアクセラレーション)をオンにすると FPS が上がる」。②「リンクをコピー」して「新しいタブに貼り付けて」開く案内(設定画面は、ゲームのページから直接は開けないため、と思われます)。③「グラフィックドライバーを更新すると FPS が上がる」と、Windows Update を開くボタン。④「Bloxd は Chrome がいちばん快適。FPS が上がり、機能も増える」と、Chrome を入手するボタン。⑤「今後表示しない」ボタン。さらに、描画機能そのものが使えないとき用に、「遊ぶには、グラフィックスアクセラレーションをオンにしてください。すでにオンなら、ブラウザを再起動してください」という案内も入りました。ゲームのプログラム側には、ブラウザの種類(Chrome・Edge・Firefox・Opera・Brave など)、Windows かどうか、グラフィックが「ソフトウェア描画(パソコンのグラボを使わず CPU で描く、遅い状態)」か「仮想マシン」か、ドライバーが入っていないか、を調べる処理が加わっています。</p><p class="note">どの人にどのメッセージが出るかの細かい条件は、コードを読み切れていないので推測です。たとえば「Chrome を勧める表示は、Chrome 以外のブラウザの人に出る」と思われます。</p>
+<span class="cert">確かさ: 表示される文言と判定の部品は確実 / 出る条件と頻度は推測</span></div></div><div class="pt player"><div class="ico">🖥️</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>古めの Intel 内蔵グラフィックス向けの軽量化(試験中?)</h4></div>
+<p>「intel_gen9_lite_v1」という試験用の設定名と、「webGpuIntelGen9」という記録名が新しく入りました。Intel の第9世代(Gen9)の内蔵グラフィックスを使っている人向けに、軽くする設定を試している、という意味に読めます。この種の試験は、一部の人にだけ先に適用して様子を見る(A/Bテスト)ことが多いです。</p><p class="note">名前だけが根拠で、中身(何を軽くするか、誰に適用されるか)は確認できていません。上の「ヒント表示」と関係がある可能性がありますが、これも推測です。</p>
+<span class="cert">確かさ: 推測(名前から)</span></div></div><div class="pt maker"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">作る人</span><h4>内部: 描画の組み直し用の部品が1つ追加 / ビルド全体の入れ替え</h4></div>
+<p>ファイル(チャンク)が1つ増えました。中身は「シーンの描画パイプライン(PBR=光の当たり方を細かく計算する描き方)を作り直す」処理のようです。ほかに、193 個のチャンクすべてのハッシュが変わっていますが、ビルドIDが v4ng2h から 06sunr に変わったためで、中身がすべて変わったわけではありません。文字列の入れ替わり(追加6千件・削除1万件)も、ほとんどは変数名の付け直しと、読みにくくする処理のやり直しによる見かけの差です。</p><p class="note">追加されたチャンクがゲームのどの画面で使われるかは確認していません。上のゲーム内の変化(Trick or Treat とヒント表示)は、辞書とゲーム一覧の定義から確認したものです。</p>
+<span class="cert">確かさ: 推測(関数名から) / ビルドの入れ替えは確実</span></div></div></div>
 
 
 <details class="en"><summary>📖 英語の原文を見る(追加・書き換え・削除された文)</summary><details class="sec"><summary><span>browserTips</span><em>＋14 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>graphicsAcceleration</code><p>Turn on graphics acceleration for more FPS</p></div></li><li class="a"><i>＋</i><div><code>hardwareAcceleration</code><p>Turn on hardware acceleration for more FPS</p></div></li><li class="a"><i>＋</i><div><code>copyLink</code><p>Copy link</p></div></li><li class="a"><i>＋</i><div><code>pasteInNewTab</code><p>Paste it in a new tab</p></div></li><li class="a"><i>＋</i><div><code>copyFailed</code><p>Press {{copyKeys}}, then paste it in a new tab</p></div></li><li class="a"><i>＋</i><div><code>driver</code><p>Update your graphics driver for more FPS</p></div></li><li class="a"><i>＋</i><div><code>openWindowsUpdate</code><p>Open Windows Update</p></div></li><li class="a"><i>＋</i><div><code>chrome</code><p>Bloxd works best in Chrome</p></div></li><li class="a"><i>＋</i><div><code>chromeBenefits</code><p>Get more FPS and better features</p></div></li><li class="a"><i>＋</i><div><code>getChrome</code><p>Get Chrome</p></div></li><li class="a"><i>＋</i><div><code>neverShowAgain</code><p>Never show this again</p></div></li><li class="a"><i>＋</i><div><code>noWebglGraphics</code><p>Turn on graphics acceleration to play</p></div></li><li class="a"><i>＋</i><div><code>noWebglHardware</code><p>Turn on hardware acceleration to play</p></div></li><li class="a"><i>＋</i><div><code>noWebglRestart</code><p>If it's already on, restart your browser</p></div></li></ul></details><details class="sec"><summary><span>ゲーム全般</span><em>＋2 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>trickOrTreat</code><p>Trick or Treat</p></div></li><li class="a"><i>＋</i><div><code>trickOrTreatDescription</code><p>Race around a haunted town grabbing glowing jack o'lanterns. Knock on doors for treats, throw tricks at rivals and run from the crone. Most treats at midnight wins! 🎃</p></div></li></ul></details></details>
