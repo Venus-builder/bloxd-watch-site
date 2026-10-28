@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>便利情報: エンチャントの最適な組み合わせ</title>
+<style>
+:root{--bg:#eef1fb;--fg:#1a1d33;--muted:#5f6584;--card:#fff;--line:#dfe3f3;--accent:#5b5bf0;--accent2:#00b8d9;--add:#0c8a55;--addbg:#dcf7e9;--chg:#b45f00;--chgbg:#ffefd2;--del:#c42b3a;--delbg:#ffe1e4;--code:#eef0fa;--player:#2f6bff;--playerbg:#e5edff;--maker:#e8590c;--makerbg:#fff0e3}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1224;--fg:#eceefb;--muted:#a1a7cc;--card:#1a1e38;--line:#2c3260;--accent:#8e8eff;--accent2:#4fd8ef;--add:#5fe0a5;--addbg:#12372a;--chg:#ffb454;--chgbg:#40300f;--del:#ff8794;--delbg:#43181f;--code:#252a50;--player:#7fa6ff;--playerbg:#1b2750;--maker:#ff9f5a;--makerbg:#432a14}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.7 system-ui,-apple-system,"Hiragino Sans","Yu Gothic UI","Noto Sans JP",sans-serif}
+.hero{background:linear-gradient(135deg,#5b5bf0 0%,#7a4df0 45%,#00b8d9 100%);color:#fff;padding:34px 16px 70px}
+.hero .in{max-width:780px;margin:0 auto}.hero h1{font-size:26px;margin:0 0 6px;letter-spacing:.01em}.hero p{margin:0;opacity:.9;font-size:13.5px}
+main{max-width:780px;margin:-48px auto 0;padding:0 16px 64px}
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 6px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:0 6px 18px rgba(40,40,120,.10)}.stat b{display:block;font-size:11.5px;color:var(--muted);font-weight:500;margin-bottom:2px}.stat span{font-size:16px;font-weight:700;word-break:break-all}
+.stat:nth-child(1){border-top:4px solid var(--accent)}.stat:nth-child(2){border-top:4px solid var(--accent2)}.stat:nth-child(3){border-top:4px solid #f59f00}.stat:nth-child(4){border-top:4px solid #e64980}
+h2{font-size:19px;margin:34px 0 12px}
+.upd{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 18px 12px;margin:14px 0;box-shadow:0 4px 14px rgba(40,40,120,.07)}
+.upd.latest{border:2px solid var(--accent);box-shadow:0 8px 26px rgba(91,91,240,.22)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:13px}.new{background:linear-gradient(90deg,#e64980,#f76707);color:#fff;font-weight:700;font-size:11.5px;padding:1px 10px;border-radius:99px}
+.build{font:12px ui-monospace,Consolas,monospace;background:var(--code);padding:1px 8px;border-radius:99px}
+.upd h3{font-size:19px;line-height:1.5;margin:8px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}.chip{font-size:12.5px;padding:2px 11px;border-radius:99px;background:var(--code);color:var(--muted);font-weight:600}
+.chip.add{background:var(--addbg);color:var(--add)}.chip.chg{background:var(--chgbg);color:var(--chg)}.chip.del{background:var(--delbg);color:var(--del)}
+.pts{display:grid;gap:10px}.pt{display:flex;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);border-left-width:6px}
+.pt.player{border-left-color:var(--player);background:linear-gradient(90deg,var(--playerbg),transparent 70%)}.pt.maker{border-left-color:var(--maker);background:linear-gradient(90deg,var(--makerbg),transparent 70%)}
+.ico{font-size:28px;line-height:1.1;flex:none}.ptb{min-width:0}.ptt{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.ptt h4{margin:0;font-size:15.5px;line-height:1.5}
+.who{font-size:11.5px;font-weight:700;padding:1px 9px;border-radius:99px;color:#fff;background:var(--player)}.maker .who{background:var(--maker)}
+.pt p{margin:6px 0 0;font-size:14.5px}.pt .note{color:var(--muted);font-size:13px}.cert{display:inline-block;margin-top:6px;font-size:12px;color:var(--muted);background:var(--code);padding:1px 10px;border-radius:99px}
+.rbtn{display:inline-block;margin:12px 0 4px;padding:8px 18px;border-radius:99px;background:linear-gradient(90deg,var(--accent),#7a4df0);color:#fff;text-decoration:none;font-weight:700;font-size:14px}
+.newitems{background:var(--addbg);border-radius:12px;padding:10px 14px;margin:12px 0}.newitems b{font-size:13px;color:var(--add);display:block;margin-bottom:6px}
+.pill{display:inline-block;margin:3px 6px 3px 0;padding:2px 12px;border-radius:99px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600}
+details{padding:8px 0}summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center}
+summary::-webkit-details-marker{display:none}summary::before{content:"▸";color:var(--accent);margin-right:6px;font-size:12px}details[open]>summary::before{content:"▾"}
+summary span{flex:1}summary em{font-style:normal;font-size:12px;color:var(--muted);font-weight:500}
+.en{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}.sec{border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0;background:var(--bg)}
+.diff{list-style:none;margin:8px 0 2px;padding:0}.diff li{display:flex;gap:10px;padding:8px 0;border-top:1px dashed var(--line)}.diff li:first-child{border-top:0}
+.diff i{font-style:normal;font-weight:800;width:1.2em;text-align:center;flex:none}.a i{color:var(--add)}.c i{color:var(--chg)}.d i{color:var(--del)}
+.diff div{min-width:0;flex:1}.diff p{margin:2px 0;font-size:14px;word-break:break-word;white-space:pre-wrap}.diff p.from{color:var(--muted);text-decoration:line-through}
+code{font:11.5px ui-monospace,Consolas,monospace;color:var(--muted);background:var(--code);padding:1px 6px;border-radius:5px}
+.dev{margin-top:8px;font-size:12.5px;border-top:1px solid var(--line)}.dev>summary{font-weight:500;color:var(--muted)}dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:8px 0}dt{color:var(--muted)}dd{margin:0;word-break:break-all}
+pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Consolas,monospace;background:var(--code);padding:10px;border-radius:8px;max-height:420px;overflow:auto}
+.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px}table{width:100%;border-collapse:collapse;font-size:13px}td{padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap}tr:last-child td{border-bottom:0}
+.tag{font-size:12px;padding:1px 9px;border-radius:99px;border:1px solid var(--line);font-weight:600}.tag.ok{color:var(--add);background:var(--addbg);border-color:transparent}.tag.chg{color:var(--chg);background:var(--chgbg);border-color:transparent}.tag.err{color:var(--del);background:var(--delbg);border-color:transparent}
+.muted{color:var(--muted);font-size:12.5px}footer{margin-top:32px}
+
+.rep h2{margin:30px 0 10px}.rep h3{margin:18px 0 6px}.rep table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
+.rep th{background:var(--code);text-align:left;font-weight:700;padding:8px 12px;font-size:12.5px}.rep td{padding:8px 12px;border-top:1px solid var(--line);vertical-align:top}
+.rep .tw{overflow-x:auto;margin:8px 0}.rep p,.rep li{font-size:14.5px}.warn{background:var(--chgbg);border-left:6px solid var(--chg);border-radius:12px;padding:10px 14px;margin:12px 0}
+.ok2{background:var(--addbg);border-left:6px solid var(--add);border-radius:12px;padding:10px 14px;margin:12px 0}.back{display:inline-block;margin:0 0 10px;color:#fff;opacity:.95;font-size:13px}
+.src{font-size:12px;color:var(--muted)}
+</style></head><body>
+<div class="hero"><div class="in"><a class="back" href="../">← 更新ウォッチに戻る</a> <a class="back" href="enchant.html">エンチャント早見表 →</a><h1>🏆 便利情報: エンチャントの最適な組み合わせ</h1>
+<p>ゲーム(ビルド 06sunr)のプログラムにある式から、全エンチャントの効果(%)と、道具ごとの「いちばん強い振り分け」を計算しました。</p></div></div>
+<main class="rep">
+
+<h2>⚠️ 先に読んでください</h2>
+<div class="warn">
+ゲームのクライアント(手元で動くプログラム)に式が書かれているエンチャントだけを、数字にしています。<b>Attack Speed、Protection(1レベルあたり)、Health、Health Regen、Knockback Resist、各種 Aura、近接武器の Critical Damage は、数値がサーバー側にあるらしく、コードから読めません。</b>これらは「不明」と書き、でっち上げの数字は載せていません。そのため、「剣の毎秒ダメージが最大になる組み合わせ」は、Attack Speed の強さが分からないので、確実には出せません(下の「剣」を参照)。
+</div>
+
+<h2>📋 全エンチャントの効果(%)</h2>
+<div class="tw"><table><tr><th>エンチャント</th><th>変わるもの</th><th>Lv1</th><th>Lv2</th><th>Lv3</th><th>式・確かさ</th></tr><tr><td><b>Damage</b></td><td>近接武器の1発のダメージ(元40の剣)</td><td>+21.8%</td><td>+33.1%</td><td>+40.8%</td><td class="src">共有式 HM。銃では使用を確認。近接への適用は推測<br><span class="tag chg">一部推測</span></td></tr><tr><td><b>Critical Damage</b></td><td>会心(落下中の一撃)のダメージ</td><td>—</td><td>—</td><td>—</td><td class="src">銃の頭撃ちは +8%×Lv(確実)。近接は式がコードにない<br><span class="tag err">不明</span></td></tr><tr><td><b>Attack Speed</b></td><td>連続で当てられる間隔</td><td>—</td><td>—</td><td>—</td><td class="src">説明文のみ。数値はコードにない(サーバー側)<br><span class="tag err">不明</span></td></tr><tr><td><b>Protection</b></td><td>受けるダメージ</td><td>—</td><td>—</td><td>—</td><td class="src">式は確実(0.4^(B÷3))だが、Lv が B をいくつ増やすか不明<br><span class="tag err">不明</span></td></tr><tr><td><b>Health</b></td><td>最大体力</td><td>—</td><td>—</td><td>—</td><td class="src">数値はコードにない<br><span class="tag err">不明</span></td></tr><tr><td><b>Health Regen</b></td><td>体力の回復</td><td>—</td><td>—</td><td>—</td><td class="src">数値はコードにない<br><span class="tag err">不明</span></td></tr><tr><td><b>Knockback Resist</b></td><td>ノックバックの軽減</td><td>—</td><td>—</td><td>—</td><td class="src">数値はコードにない<br><span class="tag err">不明</span></td></tr><tr><td><b>Stomp Damage</b></td><td>踏みつけダメージ</td><td>+41.4%</td><td>+73.2%</td><td>+100.0%</td><td class="src">√(Lv+1) 倍<br><span class="tag ok">確実</span></td></tr><tr><td><b>Arrow Speed</b></td><td>矢の速さ</td><td>+48.3%</td><td>+84.4%</td><td>+114.5%</td><td class="src">√(1.2×Lv+1) 倍<br><span class="tag ok">確実</span></td></tr><tr><td><b>Arrow Damage</b></td><td>矢のダメージ(元20の例)</td><td>+37.3%</td><td>+56.3%</td><td>+69.8%</td><td class="src">元の値で変わる(元が大きいほど割合は小さい)<br><span class="tag chg">一部推測</span></td></tr><tr><td><b>Quick Charge</b></td><td>弓の装填時間</td><td>−16.7%</td><td>−30.6%</td><td>−42.1%</td><td class="src">1.2^−Lv 倍(下限 ×0.1)<br><span class="tag ok">確実</span></td></tr><tr><td><b>Break Speed</b></td><td>ブロックを壊す時間</td><td>−16.7%</td><td>−30.6%</td><td>−42.1%</td><td class="src">1.2^−Lv 倍(下限 ×0.1)<br><span class="tag ok">確実</span></td></tr><tr><td><b>Momentum</b></td><td>壊す時間(掘り続けて最大のとき)</td><td>−28.6%</td><td>−49.0%</td><td>−63.6%</td><td class="src">1.4^(−Lv×割合) 倍。割合の意味は推測<br><span class="tag chg">一部推測</span></td></tr><tr><td><b>Mining Yield / Farming Yield</b></td><td>追加ドロップ(平均)</td><td>+0.5 個</td><td>+1.0 個</td><td>+1.5 個</td><td class="src">0〜Lv 個を等確率<br><span class="tag ok">確実</span></td></tr><tr><td><b>Mining / Digging / Lumber / Farming Aura</b></td><td>オーラ(範囲の効果)</td><td>—</td><td>—</td><td>—</td><td class="src">数値はコードにない<br><span class="tag err">不明</span></td></tr><tr><td><b>Horizontal Knockback</b></td><td>横のノックバック</td><td>+41.4%</td><td>+73.2%</td><td>+100.0%</td><td class="src">√(Lv+1) 倍<br><span class="tag ok">確実</span></td></tr><tr><td><b>Vertical Knockback</b></td><td>縦のノックバック</td><td>+41.4%</td><td>+73.2%</td><td>+100.0%</td><td class="src">√(Lv+1) 倍<br><span class="tag ok">確実</span></td></tr><tr><td><b>Firecracker Cooldown</b></td><td>花火の待ち時間</td><td>−15.0%</td><td>−27.8%</td><td>−38.6%</td><td class="src">0.85^Lv 倍(下限 ×0.4)<br><span class="tag ok">確実</span></td></tr><tr><td><b>Firecracker Boost</b></td><td>花火の加速</td><td>+15.0%</td><td>+30.0%</td><td>+45.0%</td><td class="src">1+0.15×Lv 倍(上限 ×2)<br><span class="tag ok">確実</span></td></tr><tr><td><b>Gliding Speed</b></td><td>滑空の最高速度(足し算)</td><td>+2</td><td>+4</td><td>+6</td><td class="src">2×Lv を足す(上限+10)。足され方は推測<br><span class="tag chg">一部推測</span></td></tr></table></div>
+<p class="src">「−」は短く・小さくなる、「+」は増える。時間系(装填・掘る・花火の待ち時間)は、マイナスが「良い」方向です。</p>
+
+<h2>⚔️ 剣・槍・短剣など(近接武器)</h2>
+<p>確実に言えるのは、<b>Damage エンチャントで、1発のダメージが Lv3 で約 +40%(元40の剣の場合)</b> になることです(式は銃でも使われている共通のもの。近接武器にも同じ式が使われている、というのは推測です)。</p>
+<div class="tw"><table><tr><th>武器</th><th>元のダメージ</th><th>Damage Lv1</th><th>Lv2</th><th>Lv3</th></tr><tr><td>木の剣</td><td>22</td><td>28.5<br><span class="src">+29.6%</span></td><td>31.8<br><span class="src">+44.6%</span></td><td>34.2<br><span class="src">+55.5%</span></td></tr><tr><td>石の剣</td><td>27</td><td>34.1<br><span class="src">+26.4%</span></td><td>37.8<br><span class="src">+39.8%</span></td><td>40.3<br><span class="src">+49.4%</span></td></tr><tr><td>鉄の剣</td><td>34</td><td>42.0<br><span class="src">+23.5%</span></td><td>46.1<br><span class="src">+35.5%</span></td><td>49.0<br><span class="src">+44.0%</span></td></tr><tr><td>金の剣</td><td>37</td><td>45.4<br><span class="src">+22.6%</span></td><td>49.7<br><span class="src">+34.2%</span></td><td>52.6<br><span class="src">+42.3%</span></td></tr><tr><td>ダイヤの剣</td><td>40</td><td>48.7<br><span class="src">+21.8%</span></td><td>53.2<br><span class="src">+33.1%</span></td><td>56.3<br><span class="src">+40.8%</span></td></tr><tr><td>ナイトソード</td><td>43</td><td>52.1<br><span class="src">+21.2%</span></td><td>56.8<br><span class="src">+32.1%</span></td><td>60.0<br><span class="src">+39.6%</span></td></tr><tr><td>ダイヤの槍</td><td>32</td><td>39.7<br><span class="src">+24.2%</span></td><td>43.7<br><span class="src">+36.6%</span></td><td>46.5<br><span class="src">+45.3%</span></td></tr><tr><td>ダイヤの短剣</td><td>36</td><td>44.2<br><span class="src">+22.9%</span></td><td>48.5<br><span class="src">+34.6%</span></td><td>51.4<br><span class="src">+42.8%</span></td></tr><tr><td>ダイヤのメイス</td><td>20</td><td>26.3<br><span class="src">+31.3%</span></td><td>29.4<br><span class="src">+47.2%</span></td><td>31.7<br><span class="src">+58.7%</span></td></tr><tr><td>ダイヤのムチ</td><td>17</td><td>22.9<br><span class="src">+34.6%</span></td><td>25.9<br><span class="src">+52.1%</span></td><td>28.1<br><span class="src">+65.0%</span></td></tr></table></div>
+<p class="src">元のダメージは、アイテムの定義(damage)。式: j = 0.45×Lv として、(元 + 5√j) × (1 + 0.4×j÷(1+j))。元が大きい武器ほど、割合は小さくなります。</p>
+<h3>毎秒ダメージ(DPS)で考えると</h3>
+<p>武器ごとの「攻撃の間隔」は、短剣だけがコードに書いてあります(0.25秒に1回=毎秒4回)。ほかの武器の間隔は書かれていません。短剣なら、毎秒のダメージはこうなります。</p>
+<div class="tw"><table><tr><th>ダイヤの短剣(元36・毎秒4回)</th><th>1発</th><th>毎秒(理論値)</th></tr><tr><td>Damage Lv0</td><td>36.0</td><td>144.0</td></tr><tr><td>Damage Lv1</td><td>44.2</td><td>177.0</td></tr><tr><td>Damage Lv2</td><td>48.5</td><td>193.9</td></tr><tr><td>Damage Lv3</td><td>51.4</td><td>205.7</td></tr></table></div>
+<div class="warn"><b>結論(確実な範囲):</b> 候補が3つ(Damage / Attack Speed / Critical Damage)のとき、<b>Damage を Lv3 まで上げるのが、1発の強さではいちばん</b>です。ただし、「Attack Speed が1レベルで毎秒の回数を何%増やすか」がコードにないので、Attack Speed や Critical Damage と比べた、毎秒ダメージの最適な組み合わせは、<b>出せません</b>。</div>
+
+<h2>🏹 弓・クロスボウ(毎秒ダメージ)</h2>
+<p>弓の毎秒ダメージは「矢のダメージ ÷ 装填にかかる時間」で近似できます(撃つ間隔が装填時間に比例する、という仮定です)。Arrow Speed は矢の速さと射程が上がるだけなので、ここでは数えません。指標は「エンチャントなしを ×1.00 としたときの倍率」です。</p>
+<div class="tw"><table><tr><th>ティア</th><th>いちばん良い振り分け<br><span class="src">(矢の元ダメージ40の場合)</span></th><th>そのときの指標</th><th>それになる確率</th><th>ランダムな平均</th></tr><tr><td>Tier 1</td><td>Arrow Damage Lv1</td><td><b>×1.27</b></td><td>33%</td><td>×1.16</td></tr><tr><td>Tier 2</td><td>Arrow Damage Lv1 / Quick Charge Lv1</td><td><b>×1.52</b></td><td>22%</td><td>×1.31</td></tr><tr><td>Tier 3</td><td>Arrow Damage Lv1 / Quick Charge Lv2</td><td><b>×1.83</b></td><td>11%</td><td>×1.48</td></tr><tr><td>Tier 4</td><td>Arrow Damage Lv1 / Quick Charge Lv3</td><td><b>×2.19</b></td><td>5.6%</td><td>×1.65</td></tr><tr><td>Tier 5</td><td>Arrow Damage Lv2 / Quick Charge Lv3</td><td><b>×2.43</b></td><td>5.2%</td><td>×1.82</td></tr></table></div>
+<p class="src">元の矢のダメージ(弓の定義)はコードにありません。10 と 40 で計算し直した結果、最良の振り分けは同じでした。「それになる確率」「ランダムな平均」は、ティアごとのくじ引き(候補3つ・各Lv3まで)を全部数えたものです。</p>
+
+<h2>⛏️ ツルハシ(1秒あたりの採掘量)</h2>
+<p>指標は「1秒あたりに手に入るアイテム数」の倍率です。Break Speed と Momentum は壊す時間を短くし、Mining Yield は1回のドロップを平均 +Lv÷2 個増やします。Mining Aura は、この指標には入りません。元のドロップは1個として数えています(Mining Yield が +平均 Lv÷2 個)。Momentum は、掘り続けた割合(最大5秒)で効きが変わるので、2通り出します。</p>
+<h3>ずっと掘り続けて、Momentum が最大のとき</h3>
+<div class="tw"><table><tr><th>ティア</th><th>いちばん良い振り分け<br><span class="src">(Momentum 最大)</span></th><th>そのときの指標</th><th>それになる確率</th><th>ランダムな平均</th></tr><tr><td>Tier 1</td><td>Mining Yield Lv1</td><td><b>×1.50</b></td><td>25%</td><td>×1.27</td></tr><tr><td>Tier 2</td><td>Momentum Lv1 / Mining Yield Lv1</td><td><b>×2.10</b></td><td>13%</td><td>×1.61</td></tr><tr><td>Tier 3</td><td>Momentum Lv2 / Mining Yield Lv1</td><td><b>×2.94</b></td><td>4.7%</td><td>×2.02</td></tr><tr><td>Tier 4</td><td>Momentum Lv3 / Mining Yield Lv1</td><td><b>×4.12</b></td><td>1.7%</td><td>×2.51</td></tr><tr><td>Tier 5</td><td>Momentum Lv3 / Mining Yield Lv2</td><td><b>×5.49</b></td><td>1.2%</td><td>×3.10</td></tr></table></div>
+<h3>掘り始めの直後(Momentum が効かないとき)</h3>
+<div class="tw"><table><tr><th>ティア</th><th>いちばん良い振り分け<br><span class="src">(Momentum なし)</span></th><th>そのときの指標</th><th>それになる確率</th><th>ランダムな平均</th></tr><tr><td>Tier 1</td><td>Mining Yield Lv1</td><td><b>×1.50</b></td><td>25%</td><td>×1.18</td></tr><tr><td>Tier 2</td><td>Mining Yield Lv2</td><td><b>×2.00</b></td><td>6.3%</td><td>×1.37</td></tr><tr><td>Tier 3</td><td>Mining Yield Lv3</td><td><b>×2.50</b></td><td>1.6%</td><td>×1.57</td></tr><tr><td>Tier 4</td><td>Break Speed Lv1 / Mining Yield Lv3</td><td><b>×3.00</b></td><td>1.7%</td><td>×1.79</td></tr><tr><td>Tier 5</td><td>Break Speed Lv2 / Mining Yield Lv3</td><td><b>×3.60</b></td><td>1.2%</td><td>×2.04</td></tr></table></div>
+<p class="src">候補は4つ(Break Speed / Momentum / Mining Yield / Mining Aura)。ムーンストーンのツルハシは、Break Speed と Momentum の2つだけです。クワ(Farming Yield)も、同じ考え方です。</p>
+<h3>シャベル・斧(Yield なし)</h3>
+<div class="tw"><table><tr><th>ティア</th><th>いちばん良い振り分け<br><span class="src">(壊す速さ)</span></th><th>そのときの指標</th><th>それになる確率</th><th>ランダムな平均</th></tr><tr><td>Tier 1</td><td>Momentum Lv1</td><td><b>×1.40</b></td><td>33%</td><td>×1.20</td></tr><tr><td>Tier 2</td><td>Momentum Lv2</td><td><b>×1.96</b></td><td>11%</td><td>×1.44</td></tr><tr><td>Tier 3</td><td>Momentum Lv3</td><td><b>×2.74</b></td><td>3.7%</td><td>×1.73</td></tr><tr><td>Tier 4</td><td>Break Speed Lv1 / Momentum Lv3</td><td><b>×3.29</b></td><td>5.6%</td><td>×2.07</td></tr><tr><td>Tier 5</td><td>Break Speed Lv2 / Momentum Lv3</td><td><b>×3.95</b></td><td>5.2%</td><td>×2.46</td></tr></table></div>
+<p class="src">シャベルの Aura は Digging Aura、斧は Lumber Aura。指標は壊す速さの倍率です。</p>
+
+<h2>🪂 グライダー</h2>
+<h3>花火を連発して加速したいとき(加速の強さ ÷ 待ち時間)</h3>
+<div class="tw"><table><tr><th>ティア</th><th>いちばん良い振り分け<br><span class="src">(加速×使える回数)</span></th><th>そのときの指標</th><th>それになる確率</th><th>ランダムな平均</th></tr><tr><td>Tier 1</td><td>Firecracker Cooldown Lv1</td><td><b>×1.18</b></td><td>33%</td><td>×1.11</td></tr><tr><td>Tier 2</td><td>Firecracker Cooldown Lv2</td><td><b>×1.38</b></td><td>11%</td><td>×1.23</td></tr><tr><td>Tier 3</td><td>Firecracker Cooldown Lv3</td><td><b>×1.63</b></td><td>3.7%</td><td>×1.36</td></tr><tr><td>Tier 4</td><td>Firecracker Cooldown Lv3 / Firecracker Boost Lv1</td><td><b>×1.87</b></td><td>5.6%</td><td>×1.49</td></tr><tr><td>Tier 5</td><td>Firecracker Cooldown Lv3 / Firecracker Boost Lv2</td><td><b>×2.12</b></td><td>5.2%</td><td>×1.64</td></tr></table></div>
+<h3>とにかく滑空の最高速度を上げたいとき</h3>
+<div class="tw"><table><tr><th>ティア</th><th>いちばん良い振り分け<br><span class="src">(最高速度の足し算)</span></th><th>そのときの指標</th><th>それになる確率</th><th>ランダムな平均</th></tr><tr><td>Tier 1</td><td>Gliding Speed Lv1(残りの回数は何に振られてもよい)</td><td><b>+2.0</b></td><td>33%</td><td>+0.7</td></tr><tr><td>Tier 2</td><td>Gliding Speed Lv2(残りの回数は何に振られてもよい)</td><td><b>+4.0</b></td><td>11%</td><td>+1.3</td></tr><tr><td>Tier 3</td><td>Gliding Speed Lv3(残りの回数は何に振られてもよい)</td><td><b>+6.0</b></td><td>3.7%</td><td>+2.0</td></tr><tr><td>Tier 4</td><td>Gliding Speed Lv3(残りの回数は何に振られてもよい)</td><td><b>+6.0</b></td><td>11%</td><td>+2.7</td></tr><tr><td>Tier 5</td><td>Gliding Speed Lv3(残りの回数は何に振られてもよい)</td><td><b>+6.0</b></td><td>21%</td><td>+3.3</td></tr></table></div>
+<p class="src">これは、前回の「グライダーの新エンチャント」の解析と同じ式です。</p>
+
+<h2>🛡️ 防具</h2>
+<p>防具の防御の合計(armourReduction)は、部位ごとにコードにあります。たとえば、ダイヤの一式(ヘルメット 0.13・胸 0.24・レギンス 0.19・ブーツ 0.10)の合計は 0.66 です。ただし、Protection・Health・Health Regen の1レベルあたりの効果はコードにないので、<b>最適な振り分けは出せません</b>。</p>
+
+<h2>🧭 使い方のまとめ</h2>
+<ul>
+<li>ティアが高いほど「くじ引きの回数」が増えるので、狙いのエンチャントを高く伸ばしやすくなります。ただし、どのエンチャントが付くかは運で、狙えません。</li>
+<li>「それになる確率」が低いティアでは、「ランダムな平均」の列の方が、実際の期待値に近いです。</li>
+<li>ここにある数字は、すべて「ゲームのプログラムの式」を計算したものです。実際に遊んで確かめたものではないので、食い違いがあれば教えてください。</li>
+</ul>
+</main></body></html>

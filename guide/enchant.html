@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>便利情報: エンチャント早見表</title>
+<style>
+:root{--bg:#eef1fb;--fg:#1a1d33;--muted:#5f6584;--card:#fff;--line:#dfe3f3;--accent:#5b5bf0;--accent2:#00b8d9;--add:#0c8a55;--addbg:#dcf7e9;--chg:#b45f00;--chgbg:#ffefd2;--del:#c42b3a;--delbg:#ffe1e4;--code:#eef0fa;--player:#2f6bff;--playerbg:#e5edff;--maker:#e8590c;--makerbg:#fff0e3}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1224;--fg:#eceefb;--muted:#a1a7cc;--card:#1a1e38;--line:#2c3260;--accent:#8e8eff;--accent2:#4fd8ef;--add:#5fe0a5;--addbg:#12372a;--chg:#ffb454;--chgbg:#40300f;--del:#ff8794;--delbg:#43181f;--code:#252a50;--player:#7fa6ff;--playerbg:#1b2750;--maker:#ff9f5a;--makerbg:#432a14}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.7 system-ui,-apple-system,"Hiragino Sans","Yu Gothic UI","Noto Sans JP",sans-serif}
+.hero{background:linear-gradient(135deg,#5b5bf0 0%,#7a4df0 45%,#00b8d9 100%);color:#fff;padding:34px 16px 70px}
+.hero .in{max-width:780px;margin:0 auto}.hero h1{font-size:26px;margin:0 0 6px;letter-spacing:.01em}.hero p{margin:0;opacity:.9;font-size:13.5px}
+main{max-width:780px;margin:-48px auto 0;padding:0 16px 64px}
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 6px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:0 6px 18px rgba(40,40,120,.10)}.stat b{display:block;font-size:11.5px;color:var(--muted);font-weight:500;margin-bottom:2px}.stat span{font-size:16px;font-weight:700;word-break:break-all}
+.stat:nth-child(1){border-top:4px solid var(--accent)}.stat:nth-child(2){border-top:4px solid var(--accent2)}.stat:nth-child(3){border-top:4px solid #f59f00}.stat:nth-child(4){border-top:4px solid #e64980}
+h2{font-size:19px;margin:34px 0 12px}
+.upd{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 18px 12px;margin:14px 0;box-shadow:0 4px 14px rgba(40,40,120,.07)}
+.upd.latest{border:2px solid var(--accent);box-shadow:0 8px 26px rgba(91,91,240,.22)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:13px}.new{background:linear-gradient(90deg,#e64980,#f76707);color:#fff;font-weight:700;font-size:11.5px;padding:1px 10px;border-radius:99px}
+.build{font:12px ui-monospace,Consolas,monospace;background:var(--code);padding:1px 8px;border-radius:99px}
+.upd h3{font-size:19px;line-height:1.5;margin:8px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}.chip{font-size:12.5px;padding:2px 11px;border-radius:99px;background:var(--code);color:var(--muted);font-weight:600}
+.chip.add{background:var(--addbg);color:var(--add)}.chip.chg{background:var(--chgbg);color:var(--chg)}.chip.del{background:var(--delbg);color:var(--del)}
+.pts{display:grid;gap:10px}.pt{display:flex;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);border-left-width:6px}
+.pt.player{border-left-color:var(--player);background:linear-gradient(90deg,var(--playerbg),transparent 70%)}.pt.maker{border-left-color:var(--maker);background:linear-gradient(90deg,var(--makerbg),transparent 70%)}
+.ico{font-size:28px;line-height:1.1;flex:none}.ptb{min-width:0}.ptt{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.ptt h4{margin:0;font-size:15.5px;line-height:1.5}
+.who{font-size:11.5px;font-weight:700;padding:1px 9px;border-radius:99px;color:#fff;background:var(--player)}.maker .who{background:var(--maker)}
+.pt p{margin:6px 0 0;font-size:14.5px}.pt .note{color:var(--muted);font-size:13px}.cert{display:inline-block;margin-top:6px;font-size:12px;color:var(--muted);background:var(--code);padding:1px 10px;border-radius:99px}
+.rbtn{display:inline-block;margin:12px 0 4px;padding:8px 18px;border-radius:99px;background:linear-gradient(90deg,var(--accent),#7a4df0);color:#fff;text-decoration:none;font-weight:700;font-size:14px}
+.newitems{background:var(--addbg);border-radius:12px;padding:10px 14px;margin:12px 0}.newitems b{font-size:13px;color:var(--add);display:block;margin-bottom:6px}
+.pill{display:inline-block;margin:3px 6px 3px 0;padding:2px 12px;border-radius:99px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600}
+details{padding:8px 0}summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center}
+summary::-webkit-details-marker{display:none}summary::before{content:"▸";color:var(--accent);margin-right:6px;font-size:12px}details[open]>summary::before{content:"▾"}
+summary span{flex:1}summary em{font-style:normal;font-size:12px;color:var(--muted);font-weight:500}
+.en{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}.sec{border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0;background:var(--bg)}
+.diff{list-style:none;margin:8px 0 2px;padding:0}.diff li{display:flex;gap:10px;padding:8px 0;border-top:1px dashed var(--line)}.diff li:first-child{border-top:0}
+.diff i{font-style:normal;font-weight:800;width:1.2em;text-align:center;flex:none}.a i{color:var(--add)}.c i{color:var(--chg)}.d i{color:var(--del)}
+.diff div{min-width:0;flex:1}.diff p{margin:2px 0;font-size:14px;word-break:break-word;white-space:pre-wrap}.diff p.from{color:var(--muted);text-decoration:line-through}
+code{font:11.5px ui-monospace,Consolas,monospace;color:var(--muted);background:var(--code);padding:1px 6px;border-radius:5px}
+.dev{margin-top:8px;font-size:12.5px;border-top:1px solid var(--line)}.dev>summary{font-weight:500;color:var(--muted)}dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:8px 0}dt{color:var(--muted)}dd{margin:0;word-break:break-all}
+pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Consolas,monospace;background:var(--code);padding:10px;border-radius:8px;max-height:420px;overflow:auto}
+.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px}table{width:100%;border-collapse:collapse;font-size:13px}td{padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap}tr:last-child td{border-bottom:0}
+.tag{font-size:12px;padding:1px 9px;border-radius:99px;border:1px solid var(--line);font-weight:600}.tag.ok{color:var(--add);background:var(--addbg);border-color:transparent}.tag.chg{color:var(--chg);background:var(--chgbg);border-color:transparent}.tag.err{color:var(--del);background:var(--delbg);border-color:transparent}
+.muted{color:var(--muted);font-size:12.5px}footer{margin-top:32px}
+
+.rep h2{margin:30px 0 10px}.rep h3{margin:18px 0 6px}.rep table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
+.rep th{background:var(--code);text-align:left;font-weight:700;padding:8px 12px;font-size:12.5px}.rep td{padding:8px 12px;border-top:1px solid var(--line);vertical-align:top}
+.rep .tw{overflow-x:auto;margin:8px 0}.rep p,.rep li{font-size:14.5px}.warn{background:var(--chgbg);border-left:6px solid var(--chg);border-radius:12px;padding:10px 14px;margin:12px 0}
+.ok2{background:var(--addbg);border-left:6px solid var(--add);border-radius:12px;padding:10px 14px;margin:12px 0}.back{display:inline-block;margin:0 0 10px;color:#fff;opacity:.95;font-size:13px}
+.src{font-size:12px;color:var(--muted)}
+</style></head><body>
+<div class="hero"><div class="in"><a class="back" href="../">← 更新ウォッチに戻る</a> <a class="back" href="enchant-best.html">最適な組み合わせ →</a><h1>✨ 便利情報: エンチャント早見表</h1>
+<p>ゲーム(ビルド 06sunr)のプログラムに書かれている式から、エンチャントの仕組みと効果の数字をまとめました。更新とは別に、いまのゲームの中身を調べたものです。</p></div></div>
+<main class="rep">
+
+<h2>✅ ざっくり要点</h2>
+<div class="ok2">
+<b>エンチャント台</b>は、木・石・鉄・金・ダイヤの5段階。台が良いほど、高いレベルの選択肢が出て、高いティアが出やすくなります。<br>
+<b>ティア(Tier 1〜5)</b>は「何回、効果をくじ引きするか」です。Tier N なら N 回、その道具に付けられるエンチャントの中から1つ選んで、レベルを +1 します。<br>
+1つのエンチャントのレベルは <b>最大 3</b>(3になると、それ以上は選ばれません)。たとえば候補が3種類の道具に Tier 5 が付くと、5回のくじ引きが3種類に分かれ、最大でも「3・2・0」「3・1・1」「2・2・1」のような形になります。
+</div>
+
+<h2>🪄 エンチャント台のレベルと、ティアの出やすさ</h2>
+<p>台には3つの選択肢が並び、それぞれ「必要レベル」が決まります。必要レベルは、下の範囲の中から、毎回ランダムに選ばれます。</p>
+<div class="tw"><table><tr><th></th><th>1番目の選択肢</th><th>2番目</th><th>3番目</th></tr><tr><td>木の台</td><td>1〜2</td><td>3〜4</td><td>5〜6</td></tr><tr><td>石の台</td><td>2〜4</td><td>5〜10</td><td>11〜15</td></tr><tr><td>鉄の台</td><td>5〜10</td><td>11〜20</td><td>21〜30</td></tr><tr><td>金の台</td><td>20〜30</td><td>31〜40</td><td>41〜50</td></tr><tr><td>ダイヤの台</td><td>40〜50</td><td>50〜70</td><td>71〜80</td></tr></table></div>
+<p class="src">出典: チャンク8 の <code>enchantingBounds</code>。「必要レベル」が何のレベル(経験値など)を指すかは、ここでは確認していません。</p>
+<h3>必要レベルごとの、ティアの確率</h3>
+<div class="tw"><table><tr><th>必要レベル</th><th>Tier 1</th><th>Tier 2</th><th>Tier 3</th><th>Tier 4</th><th>Tier 5</th></tr><tr><td>1</td><td>79%</td><td>19%</td><td>1.8%</td><td>0.4%</td><td><0.1%</td></tr><tr><td>5</td><td>70%</td><td>26%</td><td>3.0%</td><td>0.8%</td><td><0.1%</td></tr><tr><td>10</td><td>57%</td><td>36%</td><td>5.2%</td><td>1.6%</td><td><0.1%</td></tr><tr><td>20</td><td>25%</td><td>57%</td><td>13%</td><td>5.0%</td><td>0.1%</td></tr><tr><td>30</td><td>—</td><td>60%</td><td>27%</td><td>12%</td><td>0.5%</td></tr><tr><td>40</td><td>—</td><td>32%</td><td>42%</td><td>25%</td><td>1.6%</td></tr><tr><td>50</td><td>—</td><td>5.6%</td><td>48%</td><td>43%</td><td>3.9%</td></tr><tr><td>60</td><td>—</td><td>—</td><td>31%</td><td>62%</td><td>7.8%</td></tr><tr><td>70</td><td>—</td><td>—</td><td>11%</td><td>76%</td><td>13%</td></tr><tr><td>80</td><td>—</td><td>—</td><td>—</td><td>79%</td><td>21%</td></tr></table></div>
+<p class="src">出典: <code>getDistribution</code> の式をそのまま計算(ゲーム内の台の画面に出る「Tier ごとの確率」と同じ式)。レベルが高いほど、上のティアが出やすくなります。</p>
+
+<h2>🎲 ティアで何が付くか</h2>
+<p>Tier N は「N 回くじ引き」です。1回ごとに、その道具に付けられる候補から、同じ確率で1つを選んで +1。レベルが3になった候補は外れます。下の表は、その結果の確率です。</p>
+<div class="tw"><table><tr><th>候補の数</th><th>ティア</th><th>1種類だけ</th><th>2種類</th><th>3種類</th><th>4種類</th><th>どれかが Lv3</th></tr><tr><td>3種類から</td><td>Tier 1(1回)</td><td>100%</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>3種類から</td><td>Tier 2(2回)</td><td>33%</td><td>67%</td><td>—</td><td>—</td><td>—</td></tr><tr><td>3種類から</td><td>Tier 3(3回)</td><td>11%</td><td>67%</td><td>22%</td><td>—</td><td>11%</td></tr><tr><td>3種類から</td><td>Tier 4(4回)</td><td>—</td><td>56%</td><td>44%</td><td>—</td><td>33%</td></tr><tr><td>3種類から</td><td>Tier 5(5回)</td><td>—</td><td>31%</td><td>69%</td><td>—</td><td>63%</td></tr><tr><td>4種類から</td><td>Tier 1(1回)</td><td>100%</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>4種類から</td><td>Tier 2(2回)</td><td>25%</td><td>75%</td><td>—</td><td>—</td><td>—</td></tr><tr><td>4種類から</td><td>Tier 3(3回)</td><td>6.3%</td><td>56%</td><td>38%</td><td>—</td><td>6.3%</td></tr><tr><td>4種類から</td><td>Tier 4(4回)</td><td>—</td><td>34%</td><td>56%</td><td>9.4%</td><td>20%</td></tr><tr><td>4種類から</td><td>Tier 5(5回)</td><td>—</td><td>14%</td><td>63%</td><td>23%</td><td>41%</td></tr></table></div>
+<p class="src">出典: <code>chooseRandomEnchantmentAttributes</code>(各上限3)。確率は、この手順を全部数え上げて計算したものです。</p>
+
+<h2>🗡️ 道具ごとに付くエンチャント</h2>
+<div class="tw"><table><tr><th>道具</th><th>付く可能性のあるエンチャント</th></tr><tr><td>剣・槍・短剣・メイス・ムチ</td><td>Damage / Attack Speed / Critical Damage</td></tr><tr><td>ナイトソード(Knight Sword)</td><td>Damage / Attack Speed / Critical Damage / Horizontal Knockback</td></tr><tr><td>スティック(Stick)</td><td>Horizontal Knockback / Vertical Knockback / Damage</td></tr><tr><td>ヘルメット・チェストプレート・レギンス・ブーツ・ガントレット</td><td>Protection / Health / Health Regen</td></tr><tr><td>毛皮のチェストプレート(Fur Chestplate)</td><td>Protection / Health / Health Regen / Knockback Resist</td></tr><tr><td>スパイク付きブーツ(Spiked Boots)</td><td>Protection / Health / Health Regen / Stomp Damage</td></tr><tr><td>弓・クロスボウ</td><td>Arrow Speed / Arrow Damage / Quick Charge</td></tr><tr><td>ツルハシ(Pickaxe)</td><td>Break Speed / Momentum / Mining Yield / Mining Aura</td></tr><tr><td>ムーンストーンのツルハシ</td><td>Break Speed / Momentum</td></tr><tr><td>シャベル(Spade)</td><td>Break Speed / Momentum / Digging Aura</td></tr><tr><td>斧(Axe)</td><td>Break Speed / Momentum / Lumber Aura</td></tr><tr><td>クワ(Hoe)</td><td>Break Speed / Momentum / Farming Yield / Farming Aura</td></tr><tr><td>グライダー(Glider)</td><td>Firecracker Cooldown / Firecracker Boost / Gliding Speed</td></tr></table></div>
+<p class="src">出典: <code>EnchantmentsPool</code> の道具名の対応表(名前の最後の単語で判定。たとえば「Diamond Sword」は Sword)。</p>
+
+<h2>📐 エンチャントの効果(レベル別)</h2>
+<div class="tw"><table><tr><th>エンチャント</th><th>変わるもの</th><th>Lv1</th><th>Lv2</th><th>Lv3</th><th>式と確かさ</th></tr><tr><td><b>Quick Charge(弓・クロスボウ)</b></td><td>弓を引く(装填する)時間</td><td>×0.833(−16.7%)</td><td>×0.694(−30.6%)</td><td>×0.579(−42.1%)</td><td class="src">1.2 の −L 乗。下限 0.1。<br><span class="tag ok">確実</span></td></tr><tr><td><b>Arrow Speed(弓・クロスボウ)</b></td><td>矢の飛ぶ速さ</td><td>×1.483(+48.3%)</td><td>×1.844(+84.4%)</td><td>×2.145(+114.5%)</td><td class="src">√(1.2×L+1) 倍。<br><span class="tag ok">確実</span></td></tr><tr><td><b>Arrow Damage(弓・クロスボウ)</b></td><td>矢のダメージ(元が10の例)</td><td>15.8(+57.9%)</td><td>18.8(+87.5%)</td><td>21.0(+109.6%)</td><td class="src">j=L÷2 として、(元+5√j)×(1+0.5×j÷(1+j))。元の値が大きいほど、割合は小さくなる。<br><span class="tag chg">式は確実・元の値は不明</span></td></tr><tr><td><b>Break Speed(つるはし・斧など)</b></td><td>1ブロックを壊す時間</td><td>×0.833(−16.7%)</td><td>×0.694(−30.6%)</td><td>×0.579(−42.1%)</td><td class="src">1.2 の −L 乗。下限 0.1。<br><span class="tag ok">確実</span></td></tr><tr><td><b>Momentum(掘る道具)</b></td><td>掘り続けたときの、壊す時間(最大に達したとき)</td><td>×0.714(−28.6%)</td><td>×0.510(−49.0%)</td><td>×0.364(−63.6%)</td><td class="src">1.4 の −(L×掘り続けた割合)乗。割合が1(5秒掘り続けた)の場合の値。<br><span class="tag chg">式は確実・割合の意味は推測</span></td></tr><tr><td><b>Mining Yield / Farming Yield</b></td><td>1回で増える追加ドロップ数</td><td>0〜1 個(平均 0.5 個)</td><td>0〜2 個(平均 1.0 個)</td><td>0〜3 個(平均 1.5 個)</td><td class="src">0 から L までの整数を同じ確率で1つ選ぶ(L を含む)。<br><span class="tag ok">確実</span></td></tr><tr><td><b>Horizontal Knockback</b></td><td>横方向のノックバック</td><td>×1.414(+41.4%)</td><td>×1.732(+73.2%)</td><td>×2.000(+100.0%)</td><td class="src">√(L+1) 倍。<br><span class="tag ok">確実</span></td></tr><tr><td><b>Vertical Knockback</b></td><td>縦方向のノックバック</td><td>×1.414(+41.4%)</td><td>×1.732(+73.2%)</td><td>×2.000(+100.0%)</td><td class="src">√(L+1) 倍。<br><span class="tag ok">確実</span></td></tr><tr><td><b>Stomp Damage(スパイク付きブーツ)</b></td><td>踏みつけダメージ</td><td>×1.414(+41.4%)</td><td>×1.732(+73.2%)</td><td>×2.000(+100.0%)</td><td class="src">√(L+1) 倍。<br><span class="tag ok">確実</span></td></tr><tr><td><b>Firecracker Cooldown(グライダー)</b></td><td>ロケット花火の待ち時間</td><td>×0.850(−15.0%)</td><td>×0.722(−27.8%)</td><td>×0.614(−38.6%)</td><td class="src">0.85 の L 乗。下限 0.4。<br><span class="tag ok">確実</span></td></tr><tr><td><b>Firecracker Boost(グライダー)</b></td><td>ロケット花火の加速</td><td>×1.15(+15.0%)</td><td>×1.30(+30.0%)</td><td>×1.45(+45.0%)</td><td class="src">1+0.15×L 倍。上限 2。<br><span class="tag ok">確実</span></td></tr><tr><td><b>Gliding Speed(グライダー)</b></td><td>滑空の最高速度に足される値</td><td>+2</td><td>+4</td><td>+6</td><td class="src">2×L を足す。上限 +10。<br><span class="tag chg">式は確実・足され方は推測</span></td></tr></table></div>
+<p class="src">出典: main.js の <code>getQuickChargeMultiplier</code>、<code>getArrowSpeedMultiplier</code>、<code>getArrowDamage</code>、<code>getBreakSpeedMultiplier</code>、<code>getMomentumMultiplier</code>、<code>getExtraYieldAmount</code>、<code>getHorizontalKnockbackMultiplier</code> など。表の「×」は倍率、「−」は短く・小さくなる、の意味です。</p>
+
+<h2>🛡️ 防御のしくみ(Protection など)</h2>
+<p>ダメージを受けるときの式(<code>nM</code>)は、次のようになっています。まず「防御の合計 B」を、防具の防御エンチャントの合計と、ダメージ軽減の効果から足し、弱体化の効果で引いて作ります。そのうえで、受けるダメージは <b>0.4 の (B÷3) 乗</b> 倍になります(B が大きいほど小さくなる)。</p>
+<div class="tw"><table><tr><th>B(防御の合計)</th><th>受けるダメージ</th></tr><tr><td>1</td><td>×0.737(−26.3%)</td></tr><tr><td>2</td><td>×0.543(−45.7%)</td></tr><tr><td>3</td><td>×0.400(−60.0%)</td></tr><tr><td>6</td><td>×0.160(−84.0%)</td></tr><tr><td>9</td><td>×0.064(−93.6%)</td></tr></table></div>
+<div class="warn"><b>未確認:</b> エンチャントの Protection 1レベルが、B をいくつ増やすかは確認できていません(防具のティア・材質にも左右されるかもしれません)。そのため、「Protection Lv3 なら何%減る」とは、まだ書けません。</div>
+
+<h2>❓ まだ数字にできていないもの</h2>
+<ul>
+<li><b>Damage / Attack Speed / Critical Damage</b>(近接武器): 式の候補はコードにありますが、どの値に当てはまるか確認できていません。銃の頭撃ちでは、Critical Damage が1レベルにつきダメージ +8% で使われています(確実)が、近接武器でも同じかは不明です。</li>
+<li><b>Health / Health Regen / Knockback Resist</b>、各種の <b>Aura</b>(オーラ)系: 効果の式を見つけられていません。</li>
+<li>ティアごとの強さの倍率(Tier が1つ上がるごとに約 1.272 倍。Tier 5 で約 2.62 倍)がコードにありますが、何に使われるかは確認できていません。</li>
+<li>サーバー側でだけ使われる値や、ダメージ以外の細かい補正は、ここからは見えません。</li>
+</ul>
+<p class="src">このページは、ゲームのクライアントのプログラム(ビルド 06sunr)を読んで作った非公式のまとめです。実際に遊んで確かめたものではありません。ゲームが更新されて式が変わった場合は、作り直します。</p>
+</main></body></html>
