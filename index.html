@@ -46,7 +46,7 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <p>bloxd.io の更新を自動で見張って、「ゲームの中で何が変わったか」を日本語でまとめます。非公式の個人用ページで、運営とは無関係です。</p></div></div>
 <main>
 <section class="status">
-<div class="stat"><b>最後に記録した確認</b><span>2026/10/28 09:00</span></div>
+<div class="stat"><b>最後に確認した時刻</b><span id="lc">2026/10/28 09:00</span></div>
 <div class="stat"><b>現在のビルド</b><span>06sunr</span></div>
 <div class="stat"><b>検知した更新</b><span>4 回</span></div>
 <div class="stat"><b>最後の更新</b><span>2026/10/28 05:11</span></div>
@@ -1652,5 +1652,11 @@ Put the parts below in it, by hand or by belt</p></div></li><li class="d"><i>－
 <tr><td>2026/10/24 03:32</td><td><span class="tag chg">更新</span></td><td>文字列 +6450/-10917</td></tr>
 <tr><td>2026/10/23 22:55</td><td><span class="tag ok">変更なし</span></td><td>9s8fb</td></tr>
 <tr><td>2026/10/23 07:05</td><td><span class="tag">基準</span></td><td>9s8fb</td></tr></table></div>
-<footer class="muted">確認は約30分〜数時間おきに自動で行われます。「変更なし」は1日1回だけ記録します。ゲーム内の説明は、ゲームのプログラムに入っている文言や画像の名前などから読み取ったもので、実際に遊んで確かめたものではありません。「確かさ」の欄に、どこまで確かかを書いています。</footer>
-</main></body></html>
+<footer class="muted">確認は30分おきに自動で行われ、上の「最後に確認した時刻」に出ます。履歴の表には、変化があった回と、1日1回の「変更なし」だけを残します。ゲーム内の説明は、ゲームのプログラムに入っている文言や画像の名前などから読み取ったもので、実際に遊んで確かめたものではありません。「確かさ」の欄に、どこまで確かかを書いています。</footer>
+</main>
+<script>
+fetch('lastcheck.json?t=' + Date.now(), { cache: 'no-store' }).then(r => r.json()).then(j => {
+  document.getElementById('lc').textContent = new Date(j.at).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo', hour12: false, year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+}).catch(() => {});
+</script>
+</body></html>
