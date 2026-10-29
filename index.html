@@ -54,9 +54,12 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <h2>✨ 更新と、ゲーム内の変化</h2>
 <article class="upd latest">
 <div class="meta"><span class="new">最新</span><time>2026年10月30日 01:30</time><span class="build">ln3rs → 58e8zk</span></div>
-<h3>ビルドが ln3rs から 58e8zk に更新</h3>
+<h3>直前の更新のやり直しビルド(ゲーム内の変化は見つからず)</h3>
 <div class="chips"></div>
-
+<div class="pts"><div class="pt maker"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">作る人</span><h4>内部: ビルドの作り直しのみ(30分後に再度公開)</h4></div>
+<p>前の更新(ln3rs)の30分後に、ビルドIDが 58e8zk に変わりました。ゲーム内で見えるテキスト、ゲーム一覧、通信先には変化がなく、ファイルの追加や削除もありません。194 個のファイルのハッシュが変わっていますが、ビルドIDが変わった影響で、中身がすべて変わったわけではありません。</p><p class="note">細かいプログラムの差は調べていません。見える変化がないので、内部の修正か、公開し直しだと思われますが、これは推測です。</p>
+<span class="cert">確かさ: ゲーム内テキストの変化がないことは確実 / 中身の差は未確認</span></div></div></div>
 
 
 
@@ -441,15 +444,21 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <article class="upd">
 <div class="meta"><time>2026年10月30日 01:00</time><span class="build">12ddlg → ln3rs</span></div>
-<h3>ビルドが 12ddlg から ln3rs に更新</h3>
+<h3>新しい乗り物「Armored Car(装甲車)」が追加。クエスト通知の文言と、制作者向けの上限警告も</h3>
 <div class="chips"><span class="chip add">＋ 新しい文言 6</span><span class="chip del">－ 削除 1</span></div>
-<div class="pts"><div class="pt player"><div class="ico">🧱</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>新しいアイテム・ブロックが 1 個</h4></div>
-<p>Armored Car(日本語の解説はまだありません。「解説を書いて」と頼むと追記します)</p>
-<span class="cert">確かさ: 自動判定</span></div></div><div class="pt player"><div class="ico">📝</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>ゲーム内の文言が変わった場所: スカイブロック、studioAnalyticsLimits</h4></div>
-<p>下の「英語の原文」で、追加・変更・削除された文を見られます。</p>
-<span class="cert">確かさ: 自動判定</span></div></div></div>
+<div class="pts"><div class="pt player"><div class="ico">🚙</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>新しい乗り物アイテム「Armored Car(装甲車)」</h4></div>
+<p>乗り物の一覧に「Armored Car」が追加されました。アイテムとしての定義(持ったときの3Dモデル、アイコン画像)もあります。ゲーム制作者向けの資料には、同じ車タイプのほかの乗り物との数値の比較ができる形で載っていました。装甲車は「重くて、遅めで、曲がりにくく、ぶつかっても跳ねにくい」車です。重さ(mass): 4.5(カート 2.5 / 普通の車 2.75 / オフロード 3 / 金の採掘ドリル 3)。速さ(speedMultiplier): 9(カート 12 / 普通の車 11 / オフロード 10 / 金の採掘ドリル 5)。曲がりやすさ(turnRate): 1.6(カート 3 / 普通の車 2.6 / オフロード 2.2 / ドリル 1.65)。タイヤのグリップ: 6(カート 10 / 普通の車 7.5 / オフロード 5 / ドリル 5)。ジャンプ力: 2.5倍(カート 2.25 / 普通の車 2.625 / オフロード 3 / ドリル 3)。壁にぶつかったときの跳ね返り: 横 0.15(カート 0.6 / 普通の車 0.45 / オフロード 0.3 / ドリル 0)。水に入ったときの速さの割合: 約 0.044(カート 約 0.033 / 普通の車 約 0.037 / オフロード 0.04 / ドリル 0.02)。まとめると、速さは金の採掘ドリルよりは上、オフロードより下で、どっしり安定した車と読めます。</p><p class="note">どうやって手に入れるか(クラフト、ショップ、特定のゲーム限定など)は、ここからは分かりません。数値は「その車がゲーム内でそう動く設定値」で、体感の速さは実際に乗らないと分かりません。ミニゲームやスカイブロックなど、どのモードで使えるかも不明です。</p>
+<span class="cert">確かさ: 名前・画像・性能の数値は確実 / 入手方法と実際の乗り心地は不明</span></div></div><div class="pt player"><div class="ico">📜</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>スカイブロック: クエスト開始の通知文が変更</h4></div>
+<p>「New quest: (クエスト名)」という1行の文言が、「New quest」という見出しだけの文言に変わりました。クエスト名を別の場所に分けて表示する形に変わった、と読めます。</p><p class="note">画面上でどう見えるかは確認していません。</p>
+<span class="cert">確かさ: 文言の変化は確実 / 見た目への影響は推測</span></div></div><div class="pt maker"><div class="ico">📊</div><div class="ptb">
+<div class="ptt"><span class="who">作る人</span><h4>制作者向け: 分析データの1日の上限に近づいたときの警告</h4></div>
+<p>自作ゲームの管理画面に、4つの警告が追加されました。「1日に記録できる、種類の違う分析イベントの上限に近い(または到達した)」と、「1日に記録できる、種類の違う位置データの上限に近い(または到達した)」です。到達すると、世界標準時の真夜中(日本時間の朝 9:00)まで記録されなくなります。</p><p class="note">上限の数字は、ここからは分かりません。遊ぶだけの人には見えません。</p>
+<span class="cert">確かさ: 文言は確実 / 具体的な上限の数は不明</span></div></div><div class="pt maker"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">作る人</span><h4>内部: ビルドの出力形式が変わった</h4></div>
+<p>今回の更新で、ゲームのプログラムの内部の姿が大きく変わりました。内部の変数名の付け方がこれまでと違うものになり(以前は WW・jj、今回は vv・Wv など)、メインのファイルの大きさが約 3.08MB から約 3.26MB へ増えました。ファイルの分け方も変わり、ゲーム本体のファイルの番号が 1 つずれて(8 番が 9 番に)、「babylon-backend」という名前のファイルが追加されました。ゲームの動作に必要な中身(エンチャントの設定など)は、番号が変わっただけで、ちゃんとそのまま入っています。また、ごく一部(約 7KB)に、読みにくくする変換がかかっている部分があります(粒子エフェクトの設定名の変換表など)。</p><p class="note">なぜ形式が変わったのか、読みにくくする変換が今後広がるのかは分かりません。ゲーム内の見た目や遊び方への影響は、この時点では確認できていません。</p>
+<span class="cert">確かさ: 観察した事実は確実 / 理由は不明</span></div></div></div>
 
 <div class="newitems"><b>🆕 新しいアイテム・ブロック</b><div><span class="pill">Armored Car</span></div></div>
 <details class="en"><summary>📖 英語の原文を見る(追加・書き換え・削除された文)</summary><details class="sec"><summary><span>studioAnalyticsLimits</span><em>＋4 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>eventsNear</code><p>This game is close to today's limit on unique analytics events.</p></div></li><li class="a"><i>＋</i><div><code>eventsReached</code><p>This game reached today's limit on unique analytics events, so some events aren't recorded until midnight UTC.</p></div></li><li class="a"><i>＋</i><div><code>positionsNear</code><p>This game is close to today's limit on unique positions.</p></div></li><li class="a"><i>＋</i><div><code>positionsReached</code><p>This game reached today's limit on unique positions, so positions aren't recorded until midnight UTC.</p></div></li></ul></details><details class="sec"><summary><span>アイテム・ブロック</span><em>＋1 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>armoredCar</code><p>Armored Car</p></div></li></ul></details><details class="sec"><summary><span>スカイブロック</span><em>＋1 〜0 －1</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>questStartedTitle</code><p>New quest</p></div></li><li class="d"><i>－</i><div><code>questStartedPrefix</code><p class="from">New quest: </p></div></li></ul></details></details>
@@ -842,9 +851,9 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <h3>ハロウィンのイベント「Halloween Treat Hunt」(目標達成で賞品・ランキング)が追加。スカイブロックのポータル料金まわりが変更</h3>
 <div class="chips"><span class="chip add">＋ 新しい文言 78</span><span class="chip chg">〜 書き換え 15</span><span class="chip del">－ 削除 2</span></div>
 <div class="pts"><div class="pt player"><div class="ico">🎃</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>ハロウィンイベント「Halloween Treat Hunt」(賞品とランキング付き)</h4></div>
-<p>ホーム画面に「EVENT」のバッジが付き、イベント専用の画面が追加されました。イベント名は「Halloween Treat Hunt」。次のどちらか一方の目標を達成すれば賞品がもらえます: ①ゲームに 3 回勝つ(Win 3 games)、②お菓子を 2,000 個集める(Collect 2,000 treats)。賞品は「Halloween 2026 profile effect」(プロフィールに付く演出)で、達成すると「賞品を獲得しました」と表示されます。「Live(開催中)」の印と「あと何時間で終わるか」の表示、「Most treats collected(お菓子をいちばん集めた人)」のランキングもあり、「全体」と「フレンド」で切り替えられます。ランキングを取得するための新しい通信先(/social/get-game-event-leaderboard)も増えました。前回追加された「Trick or Treat」ミニゲームのお菓子集めと結び付いたイベントだと思われます。</p><p class="note">「お菓子を集める」が Trick or Treat で集めるお菓子を指す、というのは名前からの推測です。開催期間や、勝利が「どのゲームでの勝ちでも数えるのか」は、ここからは分かりません。賞品の見た目も不明です。</p>
-<span class="cert">確かさ: 文言・目標・賞品名は確実 / 開始・終了日と細かい条件は不明</span></div></div><div class="pt player"><div class="ico">🎁</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>ハロウィンイベント「Halloween Treat Hunt」と、ミニゲーム「Trick or Treat」の詳細</h4></div>
+<p>【期間】日本時間で 10/27(火)09:00 から 11/3(火)01:00 まで。コードに開始・終了の日時が書いてあり、ゲームには「期間限定」と「イベント」の印が付いています。お知らせ(ニュース)は 10/27 21:00 の日付で載っています。【ゲームの内容】公式の説明文は「幽霊の出る街を走り回って、光るジャック・オ・ランタン(かぼちゃ)を集める。ドアをノックしてお菓子をもらい、ライバルにはいたずらを仕掛け、魔女(crone)から逃げる。真夜中の時点でお菓子をいちばん多く持っている人の勝ち」です。ニュースには、さらに「大かぼちゃ(Great Pumpkin)を探し出す」とも書かれています。【賞品】次のどちらか一方を達成すると、プロフィールエフェクト「Halloween 2026」がもらえます: ①ゲームに 3 回勝つ、②お菓子を 2,000 個集める。順位は賞品の条件に入っていません。このエフェクトはショップでは買えず、ゲーム側から付与される設定です。達成すると通知が出て、着せ替え画面へ進めます。【ランキング】ホーム画面のイベント欄に「お菓子をいちばん集めた人」のランキングが出ます(全体 / フレンドで切り替え)。自分の順位も表示され、集めた数が増えると「+数」の演出が出ます。1〜3 位の行は見た目が強調されるだけで、順位に応じた賞品は、ゲームのコードには見つかりませんでした。【魔女(Crone)】体の大きな敵で、当たり判定は幅 0.7・高さ 3.2 ブロック(体は幅 0.6・高さ 2.9)、向きを変えるのが遅い設定です。「魔女召喚オーブ」(投げた場所に出る)と「魔女スポナーブロック」というアイテムも存在します。【そのほか】ゲームを自作のロビーとして作ることはできない設定です。読み込み画面のロゴを、ハロウィン用に切り替える仕組みも入っています。</p><p class="note">参加人数、1 試合の長さ、マップ、いたずらの種類、魔女の体力・攻撃力は、サーバー側にあり不明です。「真夜中」がゲーム内の時刻か実際の時刻かも分かりません。ランキング上位にサーバー側で何か渡している可能性は、ここからは見えません。「集めるお菓子」が Trick or Treat のお菓子を指すのは名前からの推測です。</p>
+<span class="cert">確かさ: 期間・目標・賞品・説明文は確実 / ゲームの細かいルールは不明</span></div></div><div class="pt player"><div class="ico">🎁</div><div class="ptb">
 <div class="ptt"><span class="who">遊ぶ人</span><h4>コスメ(見た目アイテム)を獲得したときの通知が追加</h4></div>
 <p>「{{packName}} のコスメを解除しました(You unlocked the … cosmetics)」「新しいコスメが解除されました」「クリックして着せ替える(Click to customize)」という通知が追加されました。コスメのセットや単品が手に入ったとき(イベント賞品など)に出る通知だと思われます。</p><p class="note">どういうときに出るのかは、名前と文言からの推測です。</p>
 <span class="cert">確かさ: 文言は確実 / 出る場面は推測</span></div></div><div class="pt player"><div class="ico">🏝️</div><div class="ptb">
