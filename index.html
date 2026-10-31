@@ -43,7 +43,7 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 .muted{color:var(--muted);font-size:12.5px}footer{margin-top:32px}
 </style></head><body>
 <div class="hero"><div class="in"><h1>🎮 bloxd.io 更新ウォッチ</h1>
-<p>bloxd.io の更新を自動で見張って、「ゲームの中で何が変わったか」を日本語でまとめます。非公式の個人用ページで、運営とは無関係です。</p><p><a class="rbtn" href="guide/enchant.html">✨ エンチャント早見表</a> <a class="rbtn" href="guide/enchant-best.html">🏆 エンチャントの最適な組み合わせ</a></p></div></div>
+<p>bloxd.io の更新を自動で見張って、「ゲームの中で何が変わったか」を日本語でまとめます。非公式の個人用ページで、運営とは無関係です。</p><p><a class="rbtn" href="guide/enchant.html">✨ エンチャント早見表</a> <a class="rbtn" href="guide/enchant-best.html">🏆 エンチャントの最適な組み合わせ</a> <a class="rbtn" href="guide/world.html">🌍 世界の作られ方(鉱石・チェスト)</a></p></div></div>
 <main>
 <section class="status">
 <div class="stat"><b>最後に確認した時刻</b><span id="lc">2026/10/31 09:00</span></div>
@@ -3256,6 +3256,13 @@ Put the parts below in it, by hand or by belt</p></div></li><li class="d"><i>－
 - 削除: sentry
 
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
+<details class="trace"><summary><span>🔍 サーバーまわりの痕跡(自動チェック)</summary>
+<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/10/31 10:00</p>
+<dl><dt>オリジンの Server 表示</dt><dd>nginx/1.18.0 (Ubuntu)(存在しないファイルの 404 ページより)</dd>
+<dt>ソースマップ</dt><dd>配信なし(すべて 404)</dd>
+<dt>ワーカー</dt><dd>meshing.worker.c72a18a2.worker.js(実体のパスを確認できず)<br>tcwczu.procGen.worker.c6d9e124.worker.js(更新 2026/10/31 01:03)</dd>
+<dt>ゲーム本体のチャンク</dt><dd>9 番(全 202 個)</dd></dl>
+<p class="muted">これまでに記録した変化はまだありません。</p></div></details>
 <h2>🕒 確認の履歴</h2>
 <div class="tablewrap"><table><tr><td>2026/10/31 09:00</td><td><span class="tag ok">変更なし</span></td><td>tcwczu</td></tr>
 <tr><td>2026/10/31 01:30</td><td><span class="tag chg">更新</span></td><td>文字列 +3495/-3482</td></tr>
