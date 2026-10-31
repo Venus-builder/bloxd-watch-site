@@ -2,47 +2,69 @@
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>bloxd.io 更新ウォッチ</title>
 <style>
-:root{--bg:#eef1fb;--fg:#1a1d33;--muted:#5f6584;--card:#fff;--line:#dfe3f3;--accent:#5b5bf0;--accent2:#00b8d9;--add:#0c8a55;--addbg:#dcf7e9;--chg:#b45f00;--chgbg:#ffefd2;--del:#c42b3a;--delbg:#ffe1e4;--code:#eef0fa;--player:#2f6bff;--playerbg:#e5edff;--maker:#e8590c;--makerbg:#fff0e3}
-@media (prefers-color-scheme:dark){:root{--bg:#0f1224;--fg:#eceefb;--muted:#a1a7cc;--card:#1a1e38;--line:#2c3260;--accent:#8e8eff;--accent2:#4fd8ef;--add:#5fe0a5;--addbg:#12372a;--chg:#ffb454;--chgbg:#40300f;--del:#ff8794;--delbg:#43181f;--code:#252a50;--player:#7fa6ff;--playerbg:#1b2750;--maker:#ff9f5a;--makerbg:#432a14}}
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+:root{--bg:#0b1216;--fg:#e4edef;--muted:#86a0a8;--card:#121d23;--line:#223540;--accent:#4de2d4;--accent2:#f5b83d;--ink:#06201e;
+--add:#58dc8e;--addbg:#0f2f21;--chg:#f5b83d;--chgbg:#33290d;--del:#ff7070;--delbg:#391517;--code:#192830;
+--player:#4de2d4;--playerbg:#0e2b2c;--maker:#b896ff;--makerbg:#231a3b;--shadow:#0a8a80;
+--font-pixel:"DotGothic16","Yu Gothic UI","Hiragino Sans","Noto Sans JP",sans-serif;
+color-scheme:dark light}
+@media (prefers-color-scheme:light){:root{--bg:#e8eef0;--fg:#11242b;--muted:#4f6770;--card:#fff;--line:#c6d4d9;--accent:#0b8c83;--accent2:#b87400;--ink:#fff;
+--add:#12803f;--addbg:#dbf3e5;--chg:#9a5b00;--chgbg:#fbefcf;--del:#bb3030;--delbg:#fbe0e0;--code:#e4ecee;
+--player:#0b8c83;--playerbg:#d9f1ef;--maker:#6b45c9;--makerbg:#ebe3fb;--shadow:#064f4a}}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.7 system-ui,-apple-system,"Hiragino Sans","Yu Gothic UI","Noto Sans JP",sans-serif}
-.hero{background:linear-gradient(135deg,#5b5bf0 0%,#7a4df0 45%,#00b8d9 100%);color:#fff;padding:34px 16px 70px}
-.hero .in{max-width:780px;margin:0 auto}.hero h1{font-size:26px;margin:0 0 6px;letter-spacing:.01em}.hero p{margin:0;opacity:.9;font-size:13.5px}
-main{max-width:780px;margin:-48px auto 0;padding:0 16px 64px}
-.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 6px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:0 6px 18px rgba(40,40,120,.10)}.stat b{display:block;font-size:11.5px;color:var(--muted);font-weight:500;margin-bottom:2px}.stat span{font-size:16px;font-weight:700;word-break:break-all}
-.stat:nth-child(1){border-top:4px solid var(--accent)}.stat:nth-child(2){border-top:4px solid var(--accent2)}.stat:nth-child(3){border-top:4px solid #f59f00}.stat:nth-child(4){border-top:4px solid #e64980}
-h2{font-size:19px;margin:34px 0 12px}
-.upd{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 18px 12px;margin:14px 0;box-shadow:0 4px 14px rgba(40,40,120,.07)}
-.upd.latest{border:2px solid var(--accent);box-shadow:0 8px 26px rgba(91,91,240,.22)}
-.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:13px}.new{background:linear-gradient(90deg,#e64980,#f76707);color:#fff;font-weight:700;font-size:11.5px;padding:1px 10px;border-radius:99px}
-.build{font:12px ui-monospace,Consolas,monospace;background:var(--code);padding:1px 8px;border-radius:99px}
-.upd h3{font-size:19px;line-height:1.5;margin:8px 0 10px}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}.chip{font-size:12.5px;padding:2px 11px;border-radius:99px;background:var(--code);color:var(--muted);font-weight:600}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.75 "Yu Gothic UI","Hiragino Sans","Noto Sans JP",system-ui,sans-serif}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent2);outline-offset:2px}
+.hero{background:var(--card);border-bottom:1px solid var(--line);padding:44px 16px 52px;position:relative}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:repeating-linear-gradient(90deg,#4caf50 0 28px,#8d6e4a 28px 56px,#8a949b 56px 84px,#2d3338 84px 112px,#d2a98a 112px 140px,#f5b83d 140px 168px,#4de2d4 168px 196px,#e0524d 196px 224px)}
+.hero .in{max-width:820px;margin:0 auto}
+.hero h1{font:400 clamp(30px,6.2vw,46px)/1.15 var(--font-pixel);margin:0 0 12px;letter-spacing:.02em;color:var(--fg)}
+.hero p{margin:0;color:var(--muted);font-size:14px;max-width:60ch}.hero p+p{max-width:none}
+.hero .back{display:inline-block;margin:0 14px 14px 0;color:var(--muted);font-size:13px;text-decoration:none;border-bottom:1px solid var(--line)}
+.hero .back:hover{color:var(--accent);border-color:var(--accent)}
+main{max-width:820px;margin:28px auto 0;padding:0 16px 72px;position:relative}
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:0 0 6px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.stat b{display:block;font-size:12px;color:var(--muted);font-weight:500;margin-bottom:2px}
+.stat span{font:400 17px/1.4 var(--font-pixel);color:var(--fg);word-break:break-all}
+h2{font:400 21px/1.4 var(--font-pixel);margin:38px 0 14px;letter-spacing:.02em}
+.upd{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px 18px 12px;margin:14px 0}
+.upd.latest{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:13px}
+.new{background:var(--accent2);color:#1b1300;font:400 12.5px/1.6 var(--font-pixel);padding:0 9px;border-radius:3px}
+.build{font:12px ui-monospace,Consolas,monospace;background:var(--code);padding:1px 8px;border-radius:3px}
+.upd h3{font:400 20px/1.55 var(--font-pixel);margin:8px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.chip{font-size:12.5px;padding:1px 10px;border-radius:3px;background:var(--code);color:var(--muted);font-weight:600}
 .chip.add{background:var(--addbg);color:var(--add)}.chip.chg{background:var(--chgbg);color:var(--chg)}.chip.del{background:var(--delbg);color:var(--del)}
-.pts{display:grid;gap:10px}.pt{display:flex;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);border-left-width:6px}
-.pt.player{border-left-color:var(--player);background:linear-gradient(90deg,var(--playerbg),transparent 70%)}.pt.maker{border-left-color:var(--maker);background:linear-gradient(90deg,var(--makerbg),transparent 70%)}
-.ico{font-size:28px;line-height:1.1;flex:none}.ptb{min-width:0}.ptt{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.ptt h4{margin:0;font-size:15.5px;line-height:1.5}
-.who{font-size:11.5px;font-weight:700;padding:1px 9px;border-radius:99px;color:#fff;background:var(--player)}.maker .who{background:var(--maker)}
-.pt p{margin:6px 0 0;font-size:14.5px}.pt .note{color:var(--muted);font-size:13px}.cert{display:inline-block;margin-top:6px;font-size:12px;color:var(--muted);background:var(--code);padding:1px 10px;border-radius:99px}
-.rbtn{display:inline-block;margin:12px 0 4px;padding:8px 18px;border-radius:99px;background:linear-gradient(90deg,var(--accent),#7a4df0);color:#fff;text-decoration:none;font-weight:700;font-size:14px}
-.newitems{background:var(--addbg);border-radius:12px;padding:10px 14px;margin:12px 0}.newitems b{font-size:13px;color:var(--add);display:block;margin-bottom:6px}
-.pill{display:inline-block;margin:3px 6px 3px 0;padding:2px 12px;border-radius:99px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600}
+.pts{display:grid;gap:10px}
+.pt{display:flex;gap:12px;padding:12px 14px;border-radius:4px;border:1px solid var(--line);border-left-width:5px}
+.pt.player{border-left-color:var(--player);background:var(--playerbg)}.pt.maker{border-left-color:var(--maker);background:var(--makerbg)}
+.ico{font-size:26px;line-height:1.2;flex:none}.ptb{min-width:0}
+.ptt{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.ptt h4{margin:0;font-size:15.5px;line-height:1.55}
+.who{font-size:11.5px;font-weight:700;padding:0 8px;border-radius:3px;color:var(--ink);background:var(--player)}.maker .who{background:var(--maker);color:#fff}
+.pt p{margin:6px 0 0;font-size:14.5px}.pt .note{color:var(--muted);font-size:13px}
+.cert{display:inline-block;margin-top:6px;font-size:12px;color:var(--muted);background:var(--code);padding:0 9px;border-radius:3px}
+.rbtn{display:inline-block;margin:14px 10px 6px 0;padding:7px 16px;border-radius:4px;background:var(--accent);color:var(--ink);text-decoration:none;font:400 15px/1.5 var(--font-pixel);box-shadow:0 4px 0 var(--shadow);transition:transform .08s,box-shadow .08s}
+.rbtn:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--shadow)}.rbtn:active{transform:translateY(4px);box-shadow:0 0 0 var(--shadow)}
+.newitems{background:var(--addbg);border-radius:4px;padding:10px 14px;margin:12px 0}.newitems b{font-size:13px;color:var(--add);display:block;margin-bottom:6px}
+.pill{display:inline-block;margin:3px 6px 3px 0;padding:0 11px;border-radius:3px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600}
 details{padding:8px 0}summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center}
 summary::-webkit-details-marker{display:none}summary::before{content:"▸";color:var(--accent);margin-right:6px;font-size:12px}details[open]>summary::before{content:"▾"}
 summary span{flex:1}summary em{font-style:normal;font-size:12px;color:var(--muted);font-weight:500}
-.en{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}.sec{border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0;background:var(--bg)}
+.en{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}.sec{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin:8px 0;background:var(--bg)}
 .diff{list-style:none;margin:8px 0 2px;padding:0}.diff li{display:flex;gap:10px;padding:8px 0;border-top:1px dashed var(--line)}.diff li:first-child{border-top:0}
 .diff i{font-style:normal;font-weight:800;width:1.2em;text-align:center;flex:none}.a i{color:var(--add)}.c i{color:var(--chg)}.d i{color:var(--del)}
 .diff div{min-width:0;flex:1}.diff p{margin:2px 0;font-size:14px;word-break:break-word;white-space:pre-wrap}.diff p.from{color:var(--muted);text-decoration:line-through}
-code{font:11.5px ui-monospace,Consolas,monospace;color:var(--muted);background:var(--code);padding:1px 6px;border-radius:5px}
+code{font:11.5px ui-monospace,Consolas,monospace;color:var(--muted);background:var(--code);padding:1px 6px;border-radius:3px}
 .dev{margin-top:8px;font-size:12.5px;border-top:1px solid var(--line)}.dev>summary{font-weight:500;color:var(--muted)}dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:8px 0}dt{color:var(--muted)}dd{margin:0;word-break:break-all}
-pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Consolas,monospace;background:var(--code);padding:10px;border-radius:8px;max-height:420px;overflow:auto}
-.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px}table{width:100%;border-collapse:collapse;font-size:13px}td{padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap}tr:last-child td{border-bottom:0}
-.tag{font-size:12px;padding:1px 9px;border-radius:99px;border:1px solid var(--line);font-weight:600}.tag.ok{color:var(--add);background:var(--addbg);border-color:transparent}.tag.chg{color:var(--chg);background:var(--chgbg);border-color:transparent}.tag.err{color:var(--del);background:var(--delbg);border-color:transparent}
-.muted{color:var(--muted);font-size:12.5px}footer{margin-top:32px}
+pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Consolas,monospace;background:var(--code);padding:10px;border-radius:4px;max-height:420px;overflow:auto}
+.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:6px}table{width:100%;border-collapse:collapse;font-size:13px}td{padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap}tr:last-child td{border-bottom:0}
+.tag{font-size:12px;padding:0 9px;border-radius:3px;border:1px solid var(--line);font-weight:600}.tag.ok{color:var(--add);background:var(--addbg);border-color:transparent}.tag.chg{color:var(--chg);background:var(--chgbg);border-color:transparent}.tag.err{color:var(--del);background:var(--delbg);border-color:transparent}
+.muted{color:var(--muted);font-size:12.5px}footer{margin-top:36px}
+@media (prefers-reduced-motion:reduce){.rbtn{transition:none}}
 </style></head><body>
-<div class="hero"><div class="in"><h1>🎮 bloxd.io 更新ウォッチ</h1>
+<div class="hero"><div class="in"><h1>bloxd.io 更新ウォッチ</h1>
 <p>bloxd.io の更新を自動で見張って、「ゲームの中で何が変わったか」を日本語でまとめます。非公式の個人用ページで、運営とは無関係です。</p><p><a class="rbtn" href="guide/enchant.html">✨ エンチャント早見表</a> <a class="rbtn" href="guide/enchant-best.html">🏆 エンチャントの最適な組み合わせ</a> <a class="rbtn" href="guide/world.html">🌍 世界の作られ方(鉱石・チェスト)</a></p></div></div>
 <main>
 <section class="status">
@@ -58,7 +80,7 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <div class="chips"><span class="chip add">＋ 新しい文言 106</span></div>
 <div class="pts"><div class="pt player"><div class="ico">🏭</div><div class="ptb">
 <div class="ptt"><span class="who">遊ぶ人</span><h4>Build a Factory 2: 島を友達と共有できる(共同プレイ)</h4></div>
-<p>ゲーム一覧では、Build a Factory 2 に「更新あり」の印が付きました(日付は日本時間 10/30 18:00)。工場の「島」を、ほかのプレイヤーと共有できるようになったと読めます。文言から分かる仕組みは次のとおりです。【招待】コア(Core)の画面の「Islands(島)」から、同じゲームに今いるプレイヤーを招待できます(ゲームにいない人は呼べません)。招待された側は、5 分以内に「参加する(Join)」か「断る(Decline)」を選びます。【参加】参加すると、持ち物が空の状態で相手の島から始まります。自分の島の持ち物は自分の島に残ります。自分の島を 1 つは持ったままにする決まりです。島の数と、1 つの島に入れる人数には上限があります(数字は文言には出ていません)。【管理】島の持ち主(Owner)だけが、島の名前の変更、メンバーの削除(Remove)、島の削除をできます。島を消すには、先にほかのメンバーを全員外します。【抜けた人の持ち物】自分から抜けた人、外された人の持ち物は、島の持ち主のために保管されます。持ち主は「受け取る(Claim)」でもらえます。持ち主が島を消すと、メンバーの持ち物はそれぞれの人に戻ります。【そのほか】島を移動するときの「〜へ移動中…」の表示、島が混み合っている・まだ準備中・見つからないときの案内も追加されました。</p><p class="note">人数と島の数の上限は、サーバー側の設定で、ここからは分かりません。「持ち物が空で始まる」などは文言を読んだものなので、実際の動きは遊んで確かめる必要があります。</p>
+<p>ゲーム一覧では、Build a Factory 2 に「更新あり」の印が付きました(日付は日本時間 10/30 18:00)。工場の「島」を、ほかのプレイヤーと共有できるようになったと読めます。文言から分かる仕組みは次のとおりです。<br>【招待】コア(Core)の画面の「Islands(島)」から、同じゲームに今いるプレイヤーを招待できます(ゲームにいない人は呼べません)。招待された側は、5 分以内に「参加する(Join)」か「断る(Decline)」を選びます。<br>【参加】参加すると、持ち物が空の状態で相手の島から始まります。自分の島の持ち物は自分の島に残ります。自分の島を 1 つは持ったままにする決まりです。島の数と、1 つの島に入れる人数には上限があります(数字は文言には出ていません)。<br>【管理】島の持ち主(Owner)だけが、島の名前の変更、メンバーの削除(Remove)、島の削除をできます。島を消すには、先にほかのメンバーを全員外します。<br>【抜けた人の持ち物】自分から抜けた人、外された人の持ち物は、島の持ち主のために保管されます。持ち主は「受け取る(Claim)」でもらえます。持ち主が島を消すと、メンバーの持ち物はそれぞれの人に戻ります。<br>【そのほか】島を移動するときの「〜へ移動中…」の表示、島が混み合っている・まだ準備中・見つからないときの案内も追加されました。</p><p class="note">人数と島の数の上限は、サーバー側の設定で、ここからは分かりません。「持ち物が空で始まる」などは文言を読んだものなので、実際の動きは遊んで確かめる必要があります。</p>
 <span class="cert">確かさ: 文言・画面の項目は確実 / 人数や島の上限の数字は不明</span></div></div><div class="pt player"><div class="ico">⛏️</div><div class="ptb">
 <div class="ptt"><span class="who">遊ぶ人</span><h4>採掘ドリルが4段階に(Iron / Diamond / Moonstone が追加)</h4></div>
 <p>先に追加されていた「Gold Mining Drill」に加えて、「Iron Mining Drill」「Diamond Mining Drill」「Moonstone Mining Drill」が新しく入りました。どれも乗り物(車タイプ)で、見た目の元は同じ「オフロード車」の絵です。ドリルが回るアニメーションも付いています。乗り物としての数値で違うのは速さだけで、鉄 4 → 金 5 → ダイヤ 6 → ムーンストーン 7 と、段階が上がるほど速くなります。重さ 3、曲がりやすさ 1.65、グリップ 5、ジャンプ 3 倍、壁での跳ね返り 0、水に入ったときの速さの割合 0.02 は、4つとも同じです。</p><p class="note">ドリルでブロックを壊す力や、壊せるブロックの種類、入手方法(クラフト、ショップ、特定のゲーム限定)は、サーバー側にあり不明です。どのゲームで使えるのかも不明です。</p>
@@ -1261,7 +1283,7 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <div class="chips"><span class="chip add">＋ 新しい文言 78</span><span class="chip chg">〜 書き換え 15</span><span class="chip del">－ 削除 2</span></div>
 <div class="pts"><div class="pt player"><div class="ico">🎃</div><div class="ptb">
 <div class="ptt"><span class="who">遊ぶ人</span><h4>ハロウィンイベント「Halloween Treat Hunt」と、ミニゲーム「Trick or Treat」の詳細</h4></div>
-<p>【期間】日本時間で 10/27(火)09:00 から 11/3(火)01:00 まで。コードに開始・終了の日時が書いてあり、ゲームには「期間限定」と「イベント」の印が付いています。お知らせ(ニュース)は 10/27 21:00 の日付で載っています。【ゲームの内容】公式の説明文は「幽霊の出る街を走り回って、光るジャック・オ・ランタン(かぼちゃ)を集める。ドアをノックしてお菓子をもらい、ライバルにはいたずらを仕掛け、魔女(crone)から逃げる。真夜中の時点でお菓子をいちばん多く持っている人の勝ち」です。ニュースには、さらに「大かぼちゃ(Great Pumpkin)を探し出す」とも書かれています。【賞品】次のどちらか一方を達成すると、プロフィールエフェクト「Halloween 2026」がもらえます: ①ゲームに 3 回勝つ、②お菓子を 2,000 個集める。順位は賞品の条件に入っていません。このエフェクトはショップでは買えず、ゲーム側から付与される設定です。達成すると通知が出て、着せ替え画面へ進めます。【ランキング】ホーム画面のイベント欄に「お菓子をいちばん集めた人」のランキングが出ます(全体 / フレンドで切り替え)。自分の順位も表示され、集めた数が増えると「+数」の演出が出ます。1〜3 位の行は見た目が強調されるだけで、順位に応じた賞品は、ゲームのコードには見つかりませんでした。【魔女(Crone)】体の大きな敵で、当たり判定は幅 0.7・高さ 3.2 ブロック(体は幅 0.6・高さ 2.9)、向きを変えるのが遅い設定です。「魔女召喚オーブ」(投げた場所に出る)と「魔女スポナーブロック」というアイテムも存在します。【そのほか】ゲームを自作のロビーとして作ることはできない設定です。読み込み画面のロゴを、ハロウィン用に切り替える仕組みも入っています。</p><p class="note">参加人数、1 試合の長さ、マップ、いたずらの種類、魔女の体力・攻撃力は、サーバー側にあり不明です。「真夜中」がゲーム内の時刻か実際の時刻かも分かりません。ランキング上位にサーバー側で何か渡している可能性は、ここからは見えません。「集めるお菓子」が Trick or Treat のお菓子を指すのは名前からの推測です。</p>
+<p>【期間】日本時間で 10/27(火)09:00 から 11/3(火)01:00 まで。コードに開始・終了の日時が書いてあり、ゲームには「期間限定」と「イベント」の印が付いています。お知らせ(ニュース)は 10/27 21:00 の日付で載っています。<br>【ゲームの内容】公式の説明文は「幽霊の出る街を走り回って、光るジャック・オ・ランタン(かぼちゃ)を集める。ドアをノックしてお菓子をもらい、ライバルにはいたずらを仕掛け、魔女(crone)から逃げる。真夜中の時点でお菓子をいちばん多く持っている人の勝ち」です。ニュースには、さらに「大かぼちゃ(Great Pumpkin)を探し出す」とも書かれています。<br>【賞品】次のどちらか一方を達成すると、プロフィールエフェクト「Halloween 2026」がもらえます: ①ゲームに 3 回勝つ、②お菓子を 2,000 個集める。順位は賞品の条件に入っていません。このエフェクトはショップでは買えず、ゲーム側から付与される設定です。達成すると通知が出て、着せ替え画面へ進めます。<br>【ランキング】ホーム画面のイベント欄に「お菓子をいちばん集めた人」のランキングが出ます(全体 / フレンドで切り替え)。自分の順位も表示され、集めた数が増えると「+数」の演出が出ます。1〜3 位の行は見た目が強調されるだけで、順位に応じた賞品は、ゲームのコードには見つかりませんでした。<br>【魔女(Crone)】体の大きな敵で、当たり判定は幅 0.7・高さ 3.2 ブロック(体は幅 0.6・高さ 2.9)、向きを変えるのが遅い設定です。「魔女召喚オーブ」(投げた場所に出る)と「魔女スポナーブロック」というアイテムも存在します。<br>【そのほか】ゲームを自作のロビーとして作ることはできない設定です。読み込み画面のロゴを、ハロウィン用に切り替える仕組みも入っています。</p><p class="note">参加人数、1 試合の長さ、マップ、いたずらの種類、魔女の体力・攻撃力は、サーバー側にあり不明です。「真夜中」がゲーム内の時刻か実際の時刻かも分かりません。ランキング上位にサーバー側で何か渡している可能性は、ここからは見えません。「集めるお菓子」が Trick or Treat のお菓子を指すのは名前からの推測です。</p>
 <span class="cert">確かさ: 期間・目標・賞品・説明文は確実 / ゲームの細かいルールは不明</span></div></div><div class="pt player"><div class="ico">🎁</div><div class="ptb">
 <div class="ptt"><span class="who">遊ぶ人</span><h4>コスメ(見た目アイテム)を獲得したときの通知が追加</h4></div>
 <p>「{{packName}} のコスメを解除しました(You unlocked the … cosmetics)」「新しいコスメが解除されました」「クリックして着せ替える(Click to customize)」という通知が追加されました。コスメのセットや単品が手に入ったとき(イベント賞品など)に出る通知だと思われます。</p><p class="note">どういうときに出るのかは、名前と文言からの推測です。</p>
@@ -3257,7 +3279,7 @@ Put the parts below in it, by hand or by belt</p></div></li><li class="d"><i>－
 
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <details class="trace"><summary><span>🔍 サーバーまわりの痕跡(自動チェック)</summary>
-<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/10/31 12:00</p>
+<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/10/31 12:30</p>
 <dl><dt>オリジンの Server 表示</dt><dd>nginx/1.18.0 (Ubuntu)(存在しないファイルの 404 ページより)</dd>
 <dt>ソースマップ</dt><dd>配信なし(すべて 404)</dd>
 <dt>ワーカー</dt><dd>meshing.worker.c72a18a2.worker.js(実体のパスを確認できず)<br>tcwczu.procGen.worker.c6d9e124.worker.js(更新 2026/10/31 01:03)</dd>
