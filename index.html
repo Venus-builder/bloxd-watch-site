@@ -76,12 +76,24 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <h2>✨ 更新と、ゲーム内の変化</h2>
 <article class="upd latest">
 <div class="meta"><span class="new">最新</span><time>2026年11月4日 01:00</time><span class="build">ab90qa → xkg8x</span></div>
-<h3>ビルドが ab90qa から xkg8x に更新</h3>
+<h3>スカイブロックに「会話ログ(Dialogue)」画面。カスタムゲームの作り方ガイドと、ブラウザの設定のヒント画面が追加。エラー送信先の Sentry がなくなった</h3>
 <div class="chips"><span class="chip add">＋ 新しい文言 9</span></div>
-<div class="pts"><div class="pt player"><div class="ico">📝</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>ゲーム内の文言が変わった場所: skyblockDialogue</h4></div>
-<p>下の「英語の原文」で、追加・変更・削除された文を見られます。</p>
-<span class="cert">確かさ: 自動判定</span></div></div></div>
+<div class="pts"><div class="pt player"><div class="ico">💬</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>スカイブロック: クエストで聞いた会話を読み返せる「Dialogue」</h4></div>
+<p>スカイブロックのメニューに「Dialogue」ボタンが増えました。説明は「島の登場人物がクエストで話したことを読み返せます」です。クエストを始めると、その登場人物の会話がここに並びます。クエストごとに見られ(「View dialogue」)、キャラクターで絞り込めます(「All characters」)。クエスト中に誰も話しかけてこなかった場合は「Nobody spoke to you during this quest.」と出ます。完了したクエストには「Completed」の印が付きます。前回の更新で NPC のセリフがとても増えたので、それを読み返すための機能だと思われます。</p><p class="note">会話が何件まで残るか、前の更新より前にやったクエストの会話も見られるかは、文言からは分かりません。</p>
+<span class="cert">確かさ: 文言は確実 / 画面の見た目は推測</span></div></div><div class="pt maker"><div class="ico">🎮</div><div class="ptb">
+<div class="ptt"><span class="who">作る人</span><h4>カスタムゲームの作り方ガイド(3ステップの画面)</h4></div>
+<p>「Create your own game(自分のゲームを作る)」を押すと出る、3ステップの案内画面が追加されました。ステップは、(1)ワールドを作る(Create your world)、(2)建築とコードを書く(Build and code)、(3)公開して遊ぶ(Publish and play)です。画面の下の「ワールドを作る」ボタンから、そのまま作り始められます。作成に失敗したときの文言(「custom game starter world の作成中にエラーが起きました。Discord で報告してください」)も入りました。前回の更新で入った Export(ワールドをカスタムゲームとして書き出す)と、チュートリアルの続きの機能です。</p><p class="note">各ステップの説明文の中身は、この検知の一覧に出ていないため、確認していません。</p>
+<span class="cert">確かさ: 項目名は確実 / 文章の中身は未確認</span></div></div><div class="pt player"><div class="ico">🌐</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>ブラウザの設定のヒント(ハードウェアアクセラレーション)</h4></div>
+<p>ゲームの描画(WebGL)が使えない、またはグラフィックが遅い環境のために、ヒントの画面が追加されました。「ハードウェアアクセラレーションをオンにする」「グラフィックドライバーを更新する(Windows の更新画面を開くリンク付き)」「Chrome を使う」といった案内があります。設定のアドレスをコピーするボタン(コピーできなかったときの案内つき)と、「今後表示しない」の選択もあります。WebGL が使えない場合の案内(「ハードウェアのせいかも」「再起動してみて」)も入りました。</p><p class="note">どんなときに自動で出るのか(読み込みが遅いとき、WebGL が使えないときだけなど)は、コードを細かく見ていないため推測です。</p>
+<span class="cert">確かさ: 文言・項目は確実 / 出る条件は推測</span></div></div><div class="pt player"><div class="ico">🎉</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>紙吹雪(Confetti)の演出</h4></div>
+<p>紙吹雪のパーティクル(Confetti)の部品が追加されました。クエストの完了やボスを倒したときなどに使う演出だと思われますが、まだ使い道はコードからは確認していません。</p><p class="note">どの場面で出るかは不明です。</p>
+<span class="cert">確かさ: 部品の追加は確実 / 使われる場面は不明</span></div></div><div class="pt maker"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">作る人</span><h4>内部: エラー報告の送信先(Sentry)がなくなった</h4></div>
+<p>これまで、ゲームのエラーを集めるために Sentry(外部のエラー収集サービス)に送っていましたが、そのファイル(sentry)がなくなり、代わりに「errorLogging」というファイルが 1 つ増えました。送信先の URL(Sentry の受け口)も、コードから無くなりました。ビルドIDは ab90qa から xkg8x に変わり、194 個のファイルのハッシュが変わっています(中身が全部変わったわけではありません)。ビルドの入れ替えのたびに、名前の短い変数が付け替わるためです。</p><p class="note">エラーの送信先を、自分たちのサーバーに変えたのか、やめたのかは、コードを細かく見ていないため不明です。「errorLogging」の中身は読んでいません。</p>
+<span class="cert">確かさ: 外部 URL の削除は確実 / 理由は推測</span></div></div></div>
 
 
 <details class="en"><summary>📖 英語の原文を見る(追加・書き換え・削除された文)</summary><details class="sec"><summary><span>skyblockDialogue</span><em>＋9 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>button</code><p>Dialogue</p></div></li><li class="a"><i>＋</i><div><code>title</code><p>Dialogue</p></div></li><li class="a"><i>＋</i><div><code>intro</code><p>Reread what the island's characters told you on your quests.</p></div></li><li class="a"><i>＋</i><div><code>empty</code><p>Take on a quest and what its characters tell you will show up here.</p></div></li><li class="a"><i>＋</i><div><code>questEmpty</code><p>Nobody spoke to you during this quest.</p></div></li><li class="a"><i>＋</i><div><code>loading</code><p>Loading…</p></div></li><li class="a"><i>＋</i><div><code>completed</code><p>Completed</p></div></li><li class="a"><i>＋</i><div><code>allCharacters</code><p>All characters</p></div></li><li class="a"><i>＋</i><div><code>viewDialogue</code><p>View dialogue</p></div></li></ul></details></details>
@@ -4098,7 +4110,7 @@ Put the parts below in it, by hand or by belt</p></div></li><li class="d"><i>－
 
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <details class="trace"><summary><span>🔍 サーバーまわりの痕跡(自動チェック)</summary>
-<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/4 06:00</p>
+<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/4 06:30</p>
 <dl><dt>オリジンの Server 表示</dt><dd>nginx/1.18.0 (Ubuntu)(存在しないファイルの 404 ページより)</dd>
 <dt>ソースマップ</dt><dd>配信なし(すべて 404)</dd>
 <dt>ワーカー</dt><dd>meshing.worker.8b31a824.worker.js(実体のパスを確認できず)<br>xkg8x.procGen.worker.e9e32c2a.worker.js(更新 2026/11/4 00:40)</dd>
