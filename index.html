@@ -76,7 +76,7 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <h2>✨ 更新と、ゲーム内の変化</h2>
 <article class="upd latest">
 <div class="meta"><span class="new">最新</span><time>2026年11月4日 01:00</time><span class="build">ab90qa → xkg8x</span></div>
-<h3>スカイブロックに「会話ログ(Dialogue)」画面。カスタムゲームの作り方ガイドと、ブラウザの設定のヒント画面が追加。エラー送信先の Sentry がなくなった</h3>
+<h3>スカイブロックに「会話ログ(Dialogue)」画面。カスタムゲームの作り方ガイドと、ブラウザの設定のヒント画面が追加。エラーの送信先が Sentry から bloxd.io のサブドメイン(Grafana Faro)に変わった</h3>
 <div class="chips"><span class="chip add">＋ 新しい文言 9</span></div>
 <div class="pts"><div class="pt player"><div class="ico">💬</div><div class="ptb">
 <div class="ptt"><span class="who">遊ぶ人</span><h4>スカイブロック: クエストで聞いた会話を読み返せる「Dialogue」</h4></div>
@@ -91,9 +91,9 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <div class="ptt"><span class="who">遊ぶ人</span><h4>紙吹雪(Confetti)の演出</h4></div>
 <p>紙吹雪のパーティクル(Confetti)の部品が追加されました。クエストの完了やボスを倒したときなどに使う演出だと思われますが、まだ使い道はコードからは確認していません。</p><p class="note">どの場面で出るかは不明です。</p>
 <span class="cert">確かさ: 部品の追加は確実 / 使われる場面は不明</span></div></div><div class="pt maker"><div class="ico">🔧</div><div class="ptb">
-<div class="ptt"><span class="who">作る人</span><h4>内部: エラー報告の送信先(Sentry)がなくなった</h4></div>
-<p>これまで、ゲームのエラーを集めるために Sentry(外部のエラー収集サービス)に送っていましたが、そのファイル(sentry)がなくなり、代わりに「errorLogging」というファイルが 1 つ増えました。送信先の URL(Sentry の受け口)も、コードから無くなりました。ビルドIDは ab90qa から xkg8x に変わり、194 個のファイルのハッシュが変わっています(中身が全部変わったわけではありません)。ビルドの入れ替えのたびに、名前の短い変数が付け替わるためです。</p><p class="note">エラーの送信先を、自分たちのサーバーに変えたのか、やめたのかは、コードを細かく見ていないため不明です。「errorLogging」の中身は読んでいません。</p>
-<span class="cert">確かさ: 外部 URL の削除は確実 / 理由は推測</span></div></div></div>
+<div class="ptt"><span class="who">作る人</span><h4>内部: エラーの送信先が Sentry から bloxd.io のサブドメインに変わった</h4></div>
+<p>これまで、ゲームのエラーは外部サービス Sentry に送っていましたが、そのファイルと送信先 URL がなくなり、新しく「errorLogging」というファイルが増えました。中身を読むと、送信先は https://jotunn.bloxd.io/r で、Grafana Faro(エラー・ログ収集用のオープンソースの部品)で送る作りでした。全員のエラーを送るのではなく、通常の本番では 100 人に 1 人(1%)だけが対象です。1 回のページ表示で送るのは 10 件まで、同じエラーは重複して送らず、アドレスの「?」「#」より後ろは送る前に削ります。拡張機能など特定の外部スクリプト由来のエラーは捨てます。セッションの自動追跡はオフです。送る内容は、ゲームのバージョン、本番か試験環境か、エラーの内容、画面の経路などです。ビルドIDは ab90qa から xkg8x に変わり、194 個のファイルのハッシュが変わっています(名前の短い変数が付け替わるためで、中身が全部変わったわけではありません)。</p><p class="note">jotunn.bloxd.io の先が自前のサーバーか、Grafana Cloud のようなサービスを経由しているかは不明です(Cloudflare のアドレスが返りますが、これは中身の証拠にはなりません)。送信して試すことはしていません。bloxd.io のサブドメインなので、自分たちの管理下の入口に変えた可能性が高い、というのは推測です。</p>
+<span class="cert">確かさ: 送信先と仕組みはコードで確実 / その先のサーバーの正体は不明</span></div></div></div>
 
 
 <details class="en"><summary>📖 英語の原文を見る(追加・書き換え・削除された文)</summary><details class="sec"><summary><span>skyblockDialogue</span><em>＋9 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>button</code><p>Dialogue</p></div></li><li class="a"><i>＋</i><div><code>title</code><p>Dialogue</p></div></li><li class="a"><i>＋</i><div><code>intro</code><p>Reread what the island's characters told you on your quests.</p></div></li><li class="a"><i>＋</i><div><code>empty</code><p>Take on a quest and what its characters tell you will show up here.</p></div></li><li class="a"><i>＋</i><div><code>questEmpty</code><p>Nobody spoke to you during this quest.</p></div></li><li class="a"><i>＋</i><div><code>loading</code><p>Loading…</p></div></li><li class="a"><i>＋</i><div><code>completed</code><p>Completed</p></div></li><li class="a"><i>＋</i><div><code>allCharacters</code><p>All characters</p></div></li><li class="a"><i>＋</i><div><code>viewDialogue</code><p>View dialogue</p></div></li></ul></details></details>
@@ -4110,7 +4110,7 @@ Put the parts below in it, by hand or by belt</p></div></li><li class="d"><i>－
 
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <details class="trace"><summary><span>🔍 サーバーまわりの痕跡(自動チェック)</summary>
-<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/4 06:30</p>
+<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/4 07:00</p>
 <dl><dt>オリジンの Server 表示</dt><dd>nginx/1.18.0 (Ubuntu)(存在しないファイルの 404 ページより)</dd>
 <dt>ソースマップ</dt><dd>配信なし(すべて 404)</dd>
 <dt>ワーカー</dt><dd>meshing.worker.8b31a824.worker.js(実体のパスを確認できず)<br>xkg8x.procGen.worker.e9e32c2a.worker.js(更新 2026/11/4 00:40)</dd>
