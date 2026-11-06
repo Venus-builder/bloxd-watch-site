@@ -65,14 +65,16 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 .bar button{font:inherit;padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);cursor:pointer}.bar button.p{background:var(--accent);color:var(--ink);border-color:var(--accent);font-weight:700}
 #cv{width:100%;height:68vh;min-height:320px;display:block;border:1px solid var(--line);border-radius:10px;touch-action:none;background:#0b1020}
 .meta{font-size:13px;color:var(--muted);margin:6px 0}.warn{background:var(--chgbg);border-left:6px solid var(--chg);border-radius:12px;padding:10px 14px;margin:12px 0;font-size:14px}
-.back{display:inline-block;margin:0 14px 10px 0}.lg span{display:inline-block;margin-right:12px;font-size:12.5px}.lg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.back{display:inline-block;margin:0 14px 10px 0}.lg span{display:inline-block;margin:0 12px 4px 0;font-size:12.5px}.lg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:4px;vertical-align:-1px}
 code{background:var(--code);border-radius:5px;padding:1px 5px;font-size:13px}</style></head><body>
 <div class="hero"><div class="in"><a class="back" href="../">← 更新ウォッチに戻る</a><a class="back" href="./">シードマップの目次</a><a class="back" href="../ref/">分析ドキュメント</a><h1>🧭 シードマップ(好きな番号)</h1><p>サーバー(ロビー)番号を入れると、その地形を上から見た地図が出ます。ドラッグで動かせます。</p></div></div>
 <main class="rep">
 <div class="bar"><input id="seed" type="text" value="20203" inputmode="numeric" aria-label="サーバー番号(シード)"><button id="go" class="p">表示</button><button data-seed="20203">20203</button><button id="zout" title="縮小">−</button><span id="zl">×2</span><button id="zin" title="拡大">＋</button><label><input id="grid" type="checkbox"> 区画の線</label><button id="home">原点へ</button></div>
+<div class="bar"><span>表示:</span><button id="mS" class="p">表面(上から)</button><button id="mY">地下の断面</button><span>高さ Y</span><input id="yin" type="number" min="-128" max="127" value="-40" style="width:5em" disabled><input id="ysl" type="range" min="-128" max="127" value="-40" disabled style="width:160px"><button data-y="-10">Y -10</button><button data-y="-40">洞窟 -40</button><button data-y="-64">溶岩 -64</button><button data-y="-80">鉄・金 -80</button><button data-y="-95">ダイヤ -95</button></div>
+<div class="bar"><span>座標へ移動:</span>X <input id="gx" type="number" value="0" style="width:6em"> Z <input id="gz" type="number" value="0" style="width:6em"><button id="gojump" class="p">移動</button></div>
 <canvas id="cv"></canvas>
 <div class="meta" id="st">準備中…</div><div class="meta" id="pos">マウスを乗せると、座標とブロックが出ます。</div>
-<div class="meta lg"><span><i style="background:#5fa03c"></i>草</span><span><i style="background:#286e2d"></i>木の葉</span><span><i style="background:#dccd96"></i>砂</span><span><i style="background:#3264c8"></i>水</span><span><i style="background:#e1eef5"></i>雪・氷</span><span><i style="background:#7d7d7d"></i>石</span><span><i style="background:#7d5a3c"></i>土</span><span><i style="background:#e66e1e"></i>溶岩</span> 明るさ=地面の高さ。赤い十字=原点(0, 0)。1 区画=32×32 ブロック。</div>
+<div class="meta lg" id="lg"></div><div class="meta">明るさ=地面の高さ(表面のとき)。赤い十字=原点(0, 0)、黄色の円=移動した座標。1 区画=32×32 ブロック。「地下の断面」は、指定した高さ Y の水平な切り口で、暗い青=空気(空洞)です。凡例は、いま見えている範囲に多い順です。</div>
 <div class="warn"><b>確かめたこと</b>: サバイバルのロビー 20203 では、地形のシードがロビー名と同じ「20203」で、この地図は実際のゲームの地形と合っていました(2026-11-06、あなたの目で確認)。<b>確かめていないこと</b>: ほかの番号・ほかのゲームモード(スカイブロックなど)が同じ決まり方か。サーバーが地形を直す場合は、地図と違う所が出ます。番号が実在するロビーかどうかは確認しません(入力した文字をシードとして計算するだけです)。</div>
 <p class="meta">仕組み: あなたのブラウザが、ゲームの地形生成プログラム(ビルド sgjjk6r)を bloxd.io から直接読み込んで、その場で計算します。このサイトには、公式のファイルを置いていません。ゲームのサーバーには、つなぎません。ゲームが更新されると、プログラムの名前が変わり、次の自動実行(30 分ごと)まで読み込めない時間があります。URL の末尾に、番号と位置が入るので、そのまま共有できます。</p>
 </main>
@@ -80,51 +82,78 @@ code{background:var(--code);border-radius:5px;padding:1px 5px;font-size:13px}</s
 <script>// ブラウザ側のシードマップ(docs/seedmap/map.html に埋め込まれる)。
 // 公式の地形生成プログラム(procGen ワーカー)を、見る人のブラウザが bloxd.io から直接読み込んで計算する。
 // このサイトには、公式のファイルを置かない。サーバー(ゲームのロビー)にはつながない。
+// 表示: 「表面」(上から見た地面)と「断面」(指定した高さ Y の水平な切り口。洞窟・鉱石・溶岩が見える)。
 (function () {
   'use strict';
   var CFG = window.__SEEDMAP__; // { workerUrl, ids: {name: id}, build }
-  var GL = 32, YMIN = -128, SHADE_LO = -64, SHADE_HI = 96;
+  var GL = 32, SHADE_LO = -64, SHADE_HI = 96;
   var $ = function (id) { return document.getElementById(id); };
   var cv = $('cv'), ctx = cv.getContext('2d');
   var inv = {}; Object.keys(CFG.ids).forEach(function (n) { inv[CFG.ids[n]] = n; });
 
-  // ---- ブロック名 → 色 ----
-  function colorOf(n) {
-    n = n || '';
-    if (/Lava/.test(n)) return [230, 110, 30];
-    if (/Water/.test(n)) return [50, 100, 200];
-    if (/Ice|Snow/.test(n)) return [225, 238, 245];
-    if (/Leaves|Canopy/.test(n)) return [40, 110, 45];
-    if (/Log|Wood|Planks|Trunk/.test(n)) return [110, 80, 45];
-    if (/Cactus/.test(n)) return [60, 130, 70];
-    if (/Grass/.test(n)) return [95, 160, 60];
-    if (/Sand|Chalk/.test(n)) return [220, 205, 150];
-    if (/Clay/.test(n)) return [160, 140, 140];
-    if (/Dirt|Mud/.test(n)) return [125, 90, 60];
-    if (/Stone|Rock|Granite|Andesite|Diorite|Basalt|Gravel|Bedrock/.test(n)) return [125, 125, 125];
-    if (/Ore/.test(n)) return [170, 170, 100];
-    if (/Flower|Tulip|Daisy|Bush|Fern/.test(n)) return [150, 190, 90];
-    return [150, 100, 160];
+  // ---- ブロックごとの色と日本語名(生成されるブロック 113 種を調べて作成) ----
+  var P = {
+    'Grass Block': [[95, 160, 60], '草ブロック'], 'Grass': [[80, 150, 50], '草'], 'Tall Grass': [[85, 155, 55], '背の高い草'],
+    'Pine Grass Block': [[70, 120, 70], '松の草ブロック'], 'Pine Grass': [[60, 110, 60], '松の草'],
+    'Stone': [[125, 125, 125], '石'], 'Andesite': [[140, 140, 148], '安山岩'], 'Smooth Stone': [[165, 165, 165], 'なめらかな石'],
+    'Messy Stone': [[112, 112, 106], 'ごつごつ石'], 'Compressed Messy Stone': [[96, 96, 96], '圧縮ごつごつ石'], 'Mossy Messy Stone': [[95, 125, 85], '苔のごつごつ石'],
+    'Stone Bricks': [[150, 150, 152], '石レンガ'], 'Cracked Stone Bricks': [[135, 135, 138], 'ひびの石レンガ'],
+    'Bedrock': [[38, 38, 44], '岩盤'], 'Dirt': [[125, 90, 60], '土'], 'Rocky Dirt': [[110, 85, 65], '石まじりの土'], 'Clay': [[165, 150, 175], '粘土'],
+    'Sand': [[220, 205, 150], '砂'], 'Red Sand': [[190, 100, 60], '赤い砂'], 'Chalk': [[236, 236, 226], 'チョーク'],
+    'Snow': [[245, 250, 255], '雪'], 'Ice': [[165, 210, 242], '氷'], 'Water': [[50, 100, 200], '水'],
+    'Lava': [[238, 100, 24], '溶岩'], 'Magma': [[200, 66, 20], 'マグマ'],
+    'Coal Ore': [[62, 62, 68], '石炭鉱石'], 'Iron Ore': [[196, 152, 120], '鉄鉱石'], 'Gold Ore': [[236, 204, 60], '金鉱石'], 'Diamond Ore': [[80, 228, 230], 'ダイヤ鉱石'], 'Moonstone Ore': [[150, 165, 255], 'ムーンストーン鉱石'],
+    'Maple Leaves': [[40, 110, 45], 'メープルの葉'], 'Fruity Maple Leaves': [[95, 135, 50], '実のなるメープルの葉'], 'Autumn Maple Leaves': [[205, 110, 30], '秋のメープルの葉'], 'Fallen Maple Leaves': [[180, 110, 40], '落ち葉'],
+    'Plum Leaves': [[150, 60, 130], '梅の葉'], 'Fruity Plum Leaves': [[175, 70, 140], '実のなる梅の葉'],
+    'Aspen Leaves': [[120, 172, 60], 'ポプラの葉'], 'Autumn Aspen Leaves': [[214, 172, 40], '秋のポプラの葉'],
+    'Pine Leaves': [[28, 84, 58], '松の葉'], 'Pine Cone Leaves': [[45, 96, 66], '松かさの葉'], 'Cedar Leaves': [[34, 92, 72], '杉の葉'],
+    'Palm Leaves': [[70, 152, 60], 'ヤシの葉'], 'Fruity Palm Leaves': [[112, 152, 50], '実のなるヤシの葉'],
+    'Maple Log': [[110, 80, 45], 'メープルの原木'], 'Aspen Log': [[218, 212, 200], 'ポプラの原木'], 'Plum Log': [[92, 60, 62], '梅の原木'],
+    'Pine Log': [[86, 60, 40], '松の原木'], 'Palm Log': [[152, 122, 72], 'ヤシの原木'], 'Cedar Log': [[122, 70, 60], '杉の原木'],
+    'Cactus': [[60, 140, 80], 'サボテン'], 'Fat Cactus': [[70, 152, 92], '太いサボテン'],
+    'Bluebell': [[90, 110, 232], 'ブルーベル'], 'Daisy': [[250, 250, 240], 'デイジー'], 'Pink Tulip': [[240, 130, 190], 'ピンクのチューリップ'],
+    'Poppy': [[222, 40, 40], 'ポピー'], 'Orange Tulip': [[240, 140, 40], 'オレンジのチューリップ'], 'Forget-me-not': [[120, 170, 255], 'わすれな草'],
+    'Allium': [[182, 100, 222], 'アリウム'], 'Red Tulip': [[212, 30, 50], '赤いチューリップ'], 'White Tulip': [[236, 236, 236], '白いチューリップ'], 'Dandelion': [[250, 222, 40], 'タンポポ'],
+    'Glowing Mushroom': [[80, 232, 202], '光るキノコ'], 'Fat Red Mushroom': [[205, 50, 50], '太い赤キノコ'], 'Red Mushroom': [[205, 50, 50], '赤キノコ'], 'Brown Mushroom': [[150, 110, 80], '茶キノコ'],
+    'Crystal': [[152, 92, 242], 'クリスタル'], 'Lily Pad': [[30, 122, 52], 'スイレンの葉'], 'Vines': [[50, 112, 50], 'つる'], 'Cobweb': [[236, 236, 236], 'クモの巣'],
+    'Melon': [[110, 172, 60], 'メロン'], 'Watermelon': [[60, 150, 70], 'スイカ'], 'Cranberries_stage2': [[172, 40, 62], 'クランベリー'], 'Cotton_stage3': [[250, 250, 245], '綿'],
+    'Chili Pepper Plant': [[205, 40, 40], 'トウガラシ'], 'Autumn Fern': [[192, 100, 40], '秋のシダ'], 'Pine Fern': [[60, 122, 72], '松のシダ'], 'Fallen Pine Cone': [[120, 80, 50], '落ちた松かさ'],
+    'Loot Chest': [[200, 150, 40], '宝箱'], 'Draugr Banner': [[130, 30, 30], 'ドラウグの旗'], 'Draugr Banner Flag': [[130, 30, 30], 'ドラウグの旗']
+  };
+  var AIR_RGB = [14, 18, 32];
+  function baseName(n) { return (n || '').split('|')[0].replace(/^_/, ''); }
+  var infoCache = {};
+  function infoById(id) {
+    if (infoCache[id]) return infoCache[id];
+    var full = inv[id], b = baseName(full), e = P[b], rgb, ja;
+    if (e) { rgb = e[0]; ja = e[1]; }
+    else if (/Spawner/.test(b)) { rgb = [190, 40, 190]; ja = 'スポナー(' + b.replace(/ Spawner Block/, '') + ')'; }
+    else if (/Banner/.test(b)) { rgb = [130, 30, 30]; ja = b; }
+    else { rgb = [150, 100, 160]; ja = b || ('番号 ' + id); }
+    return infoCache[id] = { rgb: rgb, ja: ja, key: b || ('#' + id), full: full || ('#' + id) };
   }
-  var colCache = {};
-  function colorById(id) { return colCache[id] || (colCache[id] = colorOf(inv[id])); }
 
   // ---- ワーカー(公式のプログラムを importScripts で読む。CORS は要らない) ----
+  // t:"col" の mode: "S"=表面、数字=その高さ Y の断面
   var WSRC = [
     'var orig=null,gen=null,GL=32;',
     'function post(m,t){self.postMessage(m,t||[]);}',
     'var realPost=self.postMessage.bind(self);',
-    'function chunk(x,y,z){var buf=new Uint16Array(GL*GL*GL),cap=null;',
-    '  self.postMessage=function(m){cap=m;};',
+    'function chunk(x,y,z){var buf=new Uint16Array(GL*GL*GL);',
+    '  self.postMessage=function(m){};',
     '  try{orig({data:{type:"chunk",generatorId:gen,id:"c",x:x,y:y,z:z,array:{data:buf,shape:[GL,GL,GL],stride:[1,GL,GL*GL],offset:0}}});}finally{self.postMessage=realPost;}',
     '  return buf;}',
-    'function col(cx,cz){var top=new Uint16Array(GL*GL),h=new Int16Array(GL*GL).fill(-999),done=new Uint8Array(GL*GL),left=GL*GL,cache={};',
+    'function colSurface(cx,cz){var top=new Uint16Array(GL*GL),h=new Int16Array(GL*GL).fill(-999),done=new Uint8Array(GL*GL),left=GL*GL,cache={};',
     '  function get(cy){return cache[cy]||(cache[cy]=chunk(cx,cy,cz));}',
     '  var cy=0;',
     '  while(cy<96){var d=get(cy),any=false;for(var z=0;z<GL&&!any;z++)for(var x=0;x<GL;x++){if(d[x*1024+31*GL+z]){any=true;break;}}if(!any)break;cy+=GL;}',
     '  for(;cy>=-128&&left>0;cy-=GL){var d2=get(cy);',
     '    for(var z2=0;z2<GL;z2++)for(var x2=0;x2<GL;x2++){var k=z2*GL+x2;if(done[k])continue;',
     '      for(var y=GL-1;y>=0;y--){var v=d2[x2*1024+y*GL+z2];if(v){h[k]=cy+y;top[k]=v;done[k]=1;left--;break;}}}}',
+    '  return {top:top,h:h};}',
+    'function colSlice(cx,cz,Y){var top=new Uint16Array(GL*GL),h=new Int16Array(GL*GL).fill(Y);',
+    '  var cy=Math.floor(Y/GL)*GL,d=chunk(cx,cy,cz),yy=Y-cy;',
+    '  for(var z=0;z<GL;z++)for(var x=0;x<GL;x++){top[z*GL+x]=d[x*1024+yy*GL+z];}',
     '  return {top:top,h:h};}',
     'self.onmessage=function(e){var m=e.data;',
     '  if(m.t==="boot"){var ids=m.ids;importScripts(m.url);orig=self.onmessage;',
@@ -134,8 +163,8 @@ code{background:var(--code);border-radius:5px;padding:1px 5px;font-size:13px}</s
     '};',
     'function handler(e){var m=e.data;',
     '  if(m.t==="seed"){if(gen!==null){try{orig({data:{type:"deleteSeed",generatorId:gen}});}catch(_){}}gen=String(m.seed);orig({data:{type:"createSeed",generatorId:gen,seed:gen,yx:[],xx:null}});post({t:"seeded",seed:gen});}',
-    '  else if(m.t==="col"){if(String(m.seed)!==gen){post({t:"skip",cx:m.cx,cz:m.cz,gen:m.gen});return;}',
-    '    var r=col(m.cx,m.cz);post({t:"col",cx:m.cx,cz:m.cz,gen:m.gen,top:r.top,h:r.h},[r.top.buffer,r.h.buffer]);}}'
+    '  else if(m.t==="col"){if(String(m.seed)!==gen){post({t:"skip",cx:m.cx,cz:m.cz,gen:m.gen,mode:m.mode});return;}',
+    '    var r=m.mode==="S"?colSurface(m.cx,m.cz):colSlice(m.cx,m.cz,m.mode|0);post({t:"col",cx:m.cx,cz:m.cz,gen:m.gen,mode:m.mode,top:r.top,h:r.h},[r.top.buffer,r.h.buffer]);}}'
   ].join('\n');
   var blobUrl = URL.createObjectURL(new Blob([WSRC], { type: 'application/javascript' }));
   var N = Math.max(1, Math.min(4, (navigator.hardwareConcurrency || 4) - 1));
@@ -151,33 +180,31 @@ code{background:var(--code);border-radius:5px;padding:1px 5px;font-size:13px}</s
   }
 
   // ---- 状態 ----
-  var seed = '20203', gen = 0, tiles = {}, queued = {}, view = { x: 0, z: 0, s: 2 }; // x,z: 画面中央のブロック座標。s: 1 ブロックあたりのピクセル数
-  var pendingCount = 0, doneCount = 0;
-  function tkey(cx, cz) { return cx + ',' + cz; }
+  var seed = '20203', gen = 0, tiles = {}, inflight = {}, view = { x: 0, z: 0, s: 2 }, mode = 'S', doneCount = 0, legendAt = 0;
+  function tkey(m, cx, cz) { return m + '|' + cx + ',' + cz; }
 
   function onWorker(ev) {
     var w = this, m = ev.data;
-    if (m.t === 'ready') { ready++; w.busy = false; w.postMessage({ t: 'seed', seed: seed }); w.busy = true; return; }
+    if (m.t === 'ready') { ready++; w.postMessage({ t: 'seed', seed: seed }); return; }
     if (m.t === 'seeded') { w.busy = false; pump(); status(); return; }
     if (m.t === 'col' || m.t === 'skip') {
-      w.busy = false;
+      w.busy = false; delete inflight[tkey(m.mode, m.cx / GL, m.cz / GL)];
       if (m.gen === gen && m.t === 'col') {
-        var img = ctx.createImageData(GL, GL), p = 0;
+        var img = ctx.createImageData(GL, GL), p = 0, slice = m.mode !== 'S';
         for (var z = 0; z < GL; z++) for (var x = 0; x < GL; x++) {
-          var k = z * GL + x, id = m.top[k], h = m.h[k], c = colorById(id);
-          var sh = h === -999 ? 0.5 : 0.78 + 0.44 * Math.max(0, Math.min(1, (h - SHADE_LO) / (SHADE_HI - SHADE_LO)));
+          var k = z * GL + x, id = m.top[k], h = m.h[k], c, sh;
+          if (slice && !id) { c = AIR_RGB; sh = 1; }
+          else { c = infoById(id).rgb; sh = (slice || h === -999) ? 1 : 0.78 + 0.44 * Math.max(0, Math.min(1, (h - SHADE_LO) / (SHADE_HI - SHADE_LO))); }
           img.data[p++] = Math.min(255, c[0] * sh); img.data[p++] = Math.min(255, c[1] * sh); img.data[p++] = Math.min(255, c[2] * sh); img.data[p++] = 255;
         }
         var oc = document.createElement('canvas'); oc.width = GL; oc.height = GL; oc.getContext('2d').putImageData(img, 0, 0);
-        tiles[tkey(m.cx / GL, m.cz / GL)] = { cv: oc, top: m.top, h: m.h };
+        tiles[tkey(m.mode, m.cx / GL, m.cz / GL)] = { cv: oc, top: m.top, h: m.h };
         doneCount++;
       }
-      if (m.gen === gen) pendingCount = Math.max(0, pendingCount - 1);
-      pump(); draw(); status();
+      pump(); draw(); status(); legend();
     }
   }
 
-  // 画面に見える区画を、中心に近い順に計算する
   function visibleCols() {
     var W = cv.width / dpr, H = cv.height / dpr;
     var x0 = Math.floor((view.x - W / 2 / view.s) / GL), x1 = Math.floor((view.x + W / 2 / view.s) / GL);
@@ -188,25 +215,20 @@ code{background:var(--code);border-radius:5px;padding:1px 5px;font-size:13px}</s
     out.sort(function (a, b) { return (Math.pow(a[0] - mx, 2) + Math.pow(a[1] - mz, 2)) - (Math.pow(b[0] - mx, 2) + Math.pow(b[1] - mz, 2)); });
     return out;
   }
-  var inflight = {};
   function pump() {
     if (ready < workers.length) return;
-    var cols = visibleCols().filter(function (c) { var k = tkey(c[0], c[1]); return !tiles[k] && !inflight[k]; });
-    pendingCount = cols.length + Object.keys(inflight).length;
+    var cols = visibleCols().filter(function (c) { var k = tkey(mode, c[0], c[1]); return !tiles[k] && !inflight[k]; });
     for (var i = 0; i < workers.length && cols.length; i++) {
       var w = workers[i]; if (w.busy) continue;
-      var c = cols.shift(), k = tkey(c[0], c[1]);
-      w.busy = true; inflight[k] = true; w.cur = k;
-      (function (k2) { var h = w.onmessage; w.onmessage = function (ev) { delete inflight[k2]; w.onmessage = h; h.call(w, ev); }; })(k);
-      w.postMessage({ t: 'col', cx: c[0] * GL, cz: c[1] * GL, seed: seed, gen: gen });
+      var c = cols.shift(), k = tkey(mode, c[0], c[1]);
+      w.busy = true; inflight[k] = true;
+      w.postMessage({ t: 'col', cx: c[0] * GL, cz: c[1] * GL, seed: seed, gen: gen, mode: mode });
     }
   }
 
   // ---- 描画 ----
   var dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-  function resize() {
-    var r = cv.getBoundingClientRect(); cv.width = Math.round(r.width * dpr); cv.height = Math.round(r.height * dpr); draw(); pump();
-  }
+  function resize() { var r = cv.getBoundingClientRect(); cv.width = Math.round(r.width * dpr); cv.height = Math.round(r.height * dpr); draw(); pump(); }
   function draw() {
     var W = cv.width, H = cv.height; ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.fillStyle = '#0b1020'; ctx.fillRect(0, 0, W, H);
     ctx.imageSmoothingEnabled = false;
@@ -214,7 +236,7 @@ code{background:var(--code);border-radius:5px;padding:1px 5px;font-size:13px}</s
     var x0 = Math.floor((view.x - W / 2 / s) / GL), x1 = Math.floor((view.x + W / 2 / s) / GL);
     var z0 = Math.floor((view.z - H / 2 / s) / GL), z1 = Math.floor((view.z + H / 2 / s) / GL);
     for (var cz = z0; cz <= z1; cz++) for (var cx = x0; cx <= x1; cx++) {
-      var t = tiles[tkey(cx, cz)]; if (!t) continue;
+      var t = tiles[tkey(mode, cx, cz)]; if (!t) continue;
       ctx.drawImage(t.cv, Math.round(ox + cx * GL * s), Math.round(oz + cz * GL * s), Math.ceil(GL * s), Math.ceil(GL * s));
     }
     if ($('grid').checked) {
@@ -223,24 +245,44 @@ code{background:var(--code);border-radius:5px;padding:1px 5px;font-size:13px}</s
       for (var gz = z0; gz <= z1 + 1; gz++) { var pz = Math.round(oz + gz * GL * s) + .5; ctx.moveTo(0, pz); ctx.lineTo(W, pz); }
       ctx.stroke();
     }
-    // 原点(0,0)
-    var ax = ox, az = oz; ctx.strokeStyle = '#ff3b3b'; ctx.lineWidth = 2 * dpr; ctx.beginPath();
-    ctx.moveTo(ax - 8 * dpr, az); ctx.lineTo(ax + 8 * dpr, az); ctx.moveTo(ax, az - 8 * dpr); ctx.lineTo(ax, az + 8 * dpr); ctx.stroke();
+    ctx.strokeStyle = '#ff3b3b'; ctx.lineWidth = 2 * dpr; ctx.beginPath();
+    ctx.moveTo(ox - 8 * dpr, oz); ctx.lineTo(ox + 8 * dpr, oz); ctx.moveTo(ox, oz - 8 * dpr); ctx.lineTo(ox, oz + 8 * dpr); ctx.stroke();
+    // 指定した座標の目印
+    if (target) { var tx = ox + (target.x + 0.5) * s, tz = oz + (target.z + 0.5) * s; ctx.strokeStyle = '#ffe14a'; ctx.lineWidth = 2 * dpr; ctx.beginPath(); ctx.arc(tx, tz, 9 * dpr, 0, 7); ctx.moveTo(tx - 14 * dpr, tz); ctx.lineTo(tx + 14 * dpr, tz); ctx.moveTo(tx, tz - 14 * dpr); ctx.lineTo(tx, tz + 14 * dpr); ctx.stroke(); }
   }
   function status() {
     var el = $('st');
     if (bootError) { el.textContent = '読み込みに失敗しました: ' + bootError + '(bloxd.io のファイルが読めない、またはブラウザが止めた可能性があります)'; return; }
     if (ready < workers.length) { el.textContent = '地形のプログラムを bloxd.io から読み込み中…'; return; }
-    var left = Object.keys(inflight).length + visibleCols().filter(function (c) { return !tiles[tkey(c[0], c[1])]; }).length;
-    el.textContent = left > 0 ? ('計算中… 残り ' + left + ' 区画(1 区画 = 32×32 ブロック)') : ('シード「' + seed + '」 計算済み ' + doneCount + ' 区画');
+    var left = Object.keys(inflight).length + visibleCols().filter(function (c) { return !tiles[tkey(mode, c[0], c[1])]; }).length;
+    var name = mode === 'S' ? '表面' : ('断面 Y=' + mode);
+    el.textContent = left > 0 ? ('計算中… 残り ' + left + ' 区画(1 区画 = 32×32 ブロック)/ ' + name) : ('シード「' + seed + '」/ ' + name + ' / 計算済み ' + doneCount + ' 区画');
   }
+  // 見えている範囲に多いブロックを、凡例として出す(0.6 秒に 1 回まで)
+  function legend() {
+    var now = Date.now(); if (now - legendAt < 600) return; legendAt = now;
+    var W = cv.width / dpr, H = cv.height / dpr, cnt = {}, tot = 0;
+    var x0 = Math.floor((view.x - W / 2 / view.s) / GL), x1 = Math.floor((view.x + W / 2 / view.s) / GL), z0 = Math.floor((view.z - H / 2 / view.s) / GL), z1 = Math.floor((view.z + H / 2 / view.s) / GL);
+    for (var cz = z0; cz <= z1; cz++) for (var cx = x0; cx <= x1; cx++) {
+      var t = tiles[tkey(mode, cx, cz)]; if (!t) continue;
+      for (var i = 0; i < t.top.length; i++) { var id = t.top[i]; var key = id ? infoById(id).key : '(空気)'; cnt[key] = (cnt[key] || 0) + 1; tot++; }
+    }
+    var list = Object.keys(cnt).sort(function (a, b) { return cnt[b] - cnt[a]; }).slice(0, 18);
+    var byKey = {}; Object.keys(inv).forEach(function () {});
+    $('lg').innerHTML = list.map(function (k) {
+      var rgb = k === '(空気)' ? AIR_RGB : null, ja = k === '(空気)' ? '空気(空洞)' : null;
+      if (!rgb) { var id = CFG.ids[k] !== undefined ? CFG.ids[k] : null; var e = P[k]; if (e) { rgb = e[0]; ja = e[1]; } else { rgb = id !== null ? infoById(id).rgb : [150, 100, 160]; ja = id !== null ? infoById(id).ja : k; } }
+      return '<span><i style="background:rgb(' + rgb.join(',') + ')"></i>' + esc(ja) + ' ' + (cnt[k] / tot * 100).toFixed(cnt[k] / tot < 0.1 ? 1 : 0) + '%</span>';
+    }).join('');
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
 
   // ---- 操作 ----
-  var drag = null;
+  var drag = null, target = null;
   cv.addEventListener('pointerdown', function (e) { cv.setPointerCapture(e.pointerId); drag = { x: e.clientX, y: e.clientY, vx: view.x, vz: view.z }; cv.style.cursor = 'grabbing'; });
   cv.addEventListener('pointermove', function (e) {
     var r = cv.getBoundingClientRect();
-    if (drag) { view.x = drag.vx - (e.clientX - drag.x) / view.s; view.z = drag.vz - (e.clientY - drag.y) / view.s; draw(); pump(); hash(); }
+    if (drag) { view.x = drag.vx - (e.clientX - drag.x) / view.s; view.z = drag.vz - (e.clientY - drag.y) / view.s; draw(); pump(); hash(); syncXZ(); }
     info(e.clientX - r.left, e.clientY - r.top);
   });
   function endDrag() { drag = null; cv.style.cursor = 'grab'; }
@@ -249,30 +291,52 @@ code{background:var(--code);border-radius:5px;padding:1px 5px;font-size:13px}</s
   function zoomBy(f) { view.s = Math.max(1, Math.min(8, view.s * f)); draw(); pump(); status(); hash(); $('zl').textContent = '×' + view.s; }
   $('zin').onclick = function () { zoomBy(2); }; $('zout').onclick = function () { zoomBy(0.5); };
   $('grid').onchange = draw;
-  $('home').onclick = function () { view.x = 0; view.z = 0; draw(); pump(); hash(); };
+  $('home').onclick = function () { jump(0, 0); };
+  function jump(x, z) { view.x = x; view.z = z; target = { x: Math.floor(x), z: Math.floor(z) }; draw(); pump(); hash(); syncXZ(); status(); }
+  function syncXZ() { $('gx').value = Math.round(view.x); $('gz').value = Math.round(view.z); }
+  $('gojump').onclick = function () { var x = parseInt($('gx').value, 10), z = parseInt($('gz').value, 10); if (isFinite(x) && isFinite(z)) jump(x, z); };
+  ['gx', 'gz'].forEach(function (id) { $(id).addEventListener('keydown', function (e) { if (e.key === 'Enter') $('gojump').onclick(); }); });
   function info(px, py) {
     var W = cv.width / dpr, H = cv.height / dpr;
     var bx = Math.floor(view.x + (px - W / 2) / view.s), bz = Math.floor(view.z + (py - H / 2) / view.s);
-    var cx = Math.floor(bx / GL), cz = Math.floor(bz / GL), t = tiles[tkey(cx, cz)], s = 'X ' + bx + ', Z ' + bz;
-    if (t) { var k = (bz - cz * GL) * GL + (bx - cx * GL); s += ' / 高さ Y ' + t.h[k] + ' / ' + (inv[t.top[k]] || ('番号 ' + t.top[k])); } else s += ' / (計算前)';
+    var cx = Math.floor(bx / GL), cz = Math.floor(bz / GL), t = tiles[tkey(mode, cx, cz)], s = 'X ' + bx + ', Z ' + bz;
+    if (t) { var k = (bz - cz * GL) * GL + (bx - cx * GL), id = t.top[k]; s += mode === 'S' ? (' / 地面の高さ Y ' + t.h[k] + ' / ' + (id ? infoById(id).ja + '(' + infoById(id).full + ')' : '(なし)')) : (' / Y ' + mode + ' / ' + (id ? infoById(id).ja + '(' + infoById(id).full + ')' : '空気(空洞)')); } else s += ' / (計算前)';
     $('pos').textContent = s;
   }
-  function hash() { try { history.replaceState(null, '', '#seed=' + encodeURIComponent(seed) + '&x=' + Math.round(view.x) + '&z=' + Math.round(view.z) + '&s=' + view.s); } catch (_) {} }
+  function hash() { try { history.replaceState(null, '', '#seed=' + encodeURIComponent(seed) + '&x=' + Math.round(view.x) + '&z=' + Math.round(view.z) + '&s=' + view.s + '&m=' + mode); } catch (_) {} }
   function setSeed(v) {
-    seed = String(v).trim(); if (!seed) return; gen++; tiles = {}; inflight = {}; doneCount = 0; pendingCount = 0; $('seed').value = seed;
+    seed = String(v).trim(); if (!seed) return; gen++; tiles = {}; inflight = {}; doneCount = 0; $('seed').value = seed;
     workers.forEach(function (w) { w.busy = true; w.postMessage({ t: 'seed', seed: seed }); });
     draw(); hash(); status();
   }
-  $('go').onclick = function () { view.x = 0; view.z = 0; setSeed($('seed').value); };
+  function setMode(m) {
+    mode = m; $('ysl').disabled = $('yin').disabled = (m === 'S');
+    $('mS').classList.toggle('p', m === 'S'); $('mY').classList.toggle('p', m !== 'S');
+    // 古い断面のタイルは、たまりすぎないよう捨てる(表面と今の断面は残す)
+    Object.keys(tiles).forEach(function (k) { var km = k.split('|')[0]; if (km !== 'S' && km !== m) delete tiles[k]; });
+    draw(); pump(); status(); hash(); legend();
+  }
+  $('mS').onclick = function () { setMode('S'); };
+  $('mY').onclick = function () { setMode(String(parseInt($('yin').value, 10) || -40)); };
+  function setY(v) { v = Math.max(-128, Math.min(127, parseInt(v, 10) || 0)); $('yin').value = v; $('ysl').value = v; if (mode !== 'S') setMode(String(v)); }
+  $('ysl').addEventListener('input', function () { $('yin').value = this.value; });
+  $('ysl').addEventListener('change', function () { setY(this.value); });
+  $('yin').addEventListener('change', function () { setY(this.value); });
+  $('go').onclick = function () { view.x = 0; view.z = 0; target = null; syncXZ(); setSeed($('seed').value); };
   $('seed').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('go').onclick(); });
   window.addEventListener('resize', resize);
-  document.querySelectorAll('[data-seed]').forEach(function (b) { b.onclick = function () { view.x = 0; view.z = 0; setSeed(b.getAttribute('data-seed')); }; });
+  document.querySelectorAll('[data-seed]').forEach(function (b) { b.onclick = function () { view.x = 0; view.z = 0; target = null; syncXZ(); setSeed(b.getAttribute('data-seed')); }; });
+  document.querySelectorAll('[data-y]').forEach(function (b) { b.onclick = function () { var y = b.getAttribute('data-y'); $('yin').value = y; $('ysl').value = y; setMode(String(y)); }; });
 
-  // 起動(URL の #seed=...&x=...&z=...&s=... を読む)
-  var m = /seed=([^&]*)/.exec(location.hash); if (m) seed = decodeURIComponent(m[1]) || seed;
-  var mx = /x=(-?\d+)/.exec(location.hash), mz = /z=(-?\d+)/.exec(location.hash), ms = /s=([\d.]+)/.exec(location.hash);
-  if (mx) view.x = +mx[1]; if (mz) view.z = +mz[1]; if (ms) view.s = Math.max(1, Math.min(8, +ms[1]));
-  $('seed').value = seed; $('zl').textContent = '×' + view.s; cv.style.cursor = 'grab';
+  // 起動(URL の #seed=...&x=...&z=...&s=...&m=... を読む)
+  var h = location.hash, g = function (re) { var m = re.exec(h); return m ? m[1] : null; };
+  if (g(/seed=([^&]*)/)) seed = decodeURIComponent(g(/seed=([^&]*)/)) || seed;
+  if (g(/x=(-?\d+)/) !== null) view.x = +g(/x=(-?\d+)/); if (g(/z=(-?\d+)/) !== null) view.z = +g(/z=(-?\d+)/);
+  if (g(/s=([\d.]+)/)) view.s = Math.max(1, Math.min(8, +g(/s=([\d.]+)/)));
+  var mm = g(/m=(S|-?\d+)/); if (mm) mode = mm;
+  $('seed').value = seed; $('zl').textContent = '×' + view.s; cv.style.cursor = 'grab'; syncXZ();
+  if (mode !== 'S') { $('yin').value = mode; $('ysl').value = mode; }
+  $('ysl').disabled = $('yin').disabled = (mode === 'S'); $('mS').classList.toggle('p', mode === 'S'); $('mY').classList.toggle('p', mode !== 'S');
   resize(); boot(); status();
 })();
 </script></body></html>
