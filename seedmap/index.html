@@ -67,8 +67,8 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <div class="hero"><div class="in"><a class="back" href="../">← 更新ウォッチに戻る</a><a class="back" href="../ref/">分析ドキュメント</a><h1>🗺️ シードマップ</h1><p>サーバー(ロビー)番号から、地形を上から見た地図を作ります。</p></div></div>
 <main class="rep">
 <div class="warn">サーバー(ロビー)番号を、そのままシードにして、ゲームの地形生成プログラムで計算した地図です。サバイバルのロビー 20203 では、シードがロビー名と同じ「20203」であることを、観察で確かめました(2026-11-06、1 回)。ほかのゲームモードでは、決まり方が違う可能性があります。実際のゲーム画面との一致は、まだ確かめていません。</div>
-<p><a class="back" style="font-size:16px;font-weight:700" href="map.html">🧭 好きな番号で地形を見る(ドラッグで移動できます)→</a></p>
-<h2>作ってある地図</h2><div class="cards"><a href="20203.html"><b>🗺️ 20203</b><span>ビルド v98qt8 / 地面の高さ -52〜77</span></a><a href="undefined.html"><b>🗺️ undefined</b><span>ビルド undefined / 地面の高さ undefined〜undefined</span></a></div>
+<p><a class="back" style="font-size:16px;font-weight:700" href="map.html">🧭 好きな番号のページ(いまは、作ってある番号の地図だけ)→</a></p>
+<h2>作ってある地図</h2><div class="cards"><a href="20203.html"><b>🗺️ 20203</b><span>ビルド 7rp1w / 地面の高さ -52〜77</span></a><a href="undefined.html"><b>🗺️ undefined</b><span>ビルド undefined / 地面の高さ undefined〜undefined</span></a></div>
 <h2>番号を増やすには</h2>
 <p>入力欄からその場で作ることは、できません(地形生成プログラムは、更新ウォッチの自動実行の中で動かしています)。見たい番号を、更新ウォッチのリポジトリの <code>watch/seedmap_seeds.txt</code> に 1 行ずつ書くと、次の自動実行で地図が増えます(最大 5 つまで)。手元で作るなら、<code>node scripts/seedmap.js 番号</code> でも作れます。</p>
 <p class="src">番号が実在するロビーかどうかは確認しません。入力した文字をシードとして、計算しているだけです。</p>

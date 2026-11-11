@@ -76,12 +76,30 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <h2>✨ 更新と、ゲーム内の変化</h2>
 <article class="upd latest">
 <div class="meta"><span class="new">最新</span><time>2026年11月12日 01:30</time><span class="build">itj4su → 7rp1w</span></div>
-<h3>ビルドが itj4su から 7rp1w に更新</h3>
+<h3>ゲーム本体が「WebAssembly(wasm)」前提の読み込みに大きく組み替えられた。世界生成も新しい形に(旧ファイルは消えた)。クラッシュ・読み込み失敗・切断の専用画面、ブロック/無視リストの上限、アカウント削除の説明の変更、Greenville の初回チュートリアル</h3>
 <div class="chips"><span class="chip add">＋ 新しい文言 27</span><span class="chip chg">〜 書き換え 16</span></div>
-<div class="pts"><div class="pt player"><div class="ico">📝</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>ゲーム内の文言が変わった場所: ログイン、フレンド・ソーシャル、シェーダー、shaderPackListing、wasmScreens、texturePackLoad</h4></div>
-<p>下の「英語の原文」で、追加・変更・削除された文を見られます。</p>
-<span class="cert">確かさ: 自動判定</span></div></div></div>
+<div class="pts"><div class="pt player"><div class="ico">⚙️</div><div class="ptb">
+<div class="ptt"><span class="who">全員(仕組み)</span><h4>ゲーム本体が WebAssembly 前提の構成に組み替えられた</h4></div>
+<p>ファイルの一覧(チャンクの名前)に、「bloxd-wasm-webgl」「bloxd-wasm-webgpu」「bloxd-wasm-anim」、「wasmClientGame / wasmClientJoin / wasmClientLoad / wasmPlay / wasmMatchmaking / wasmReplay / wasmRecorder」などが並んでいます。ゲームごとの専用ファイル(「clientGame-skyblock-skyblockClient」など)も、細かく分かれています。今回のビルドで、チャンクは 138 個増え、50 個減りました(自動比較)。あわせて、wasm 用の画面の文言(次の項目)が新しく入ったので、ゲームの動く部分が WebAssembly(ブラウザで動く高速なプログラム形式)で動く形に、大きく変わり始めたと思われます。</p><p class="note">「高速化のため」などの目的は、推測です。wasm の中身(何で書かれているか)は、読んでいません。</p>
+<span class="cert">確かさ: ファイル名と文言は確認済み / 「何のために」は推測</span></div></div><div class="pt player"><div class="ico">🛑</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>読み込み失敗・クラッシュ・切断の専用画面(wasm 用)</h4></div>
+<p>表示される画面が増えました。「このブラウザでは Bloxd を動かせません(ブラウザを更新するか、別のブラウザで)」、「ゲームを読み込み切れませんでした(通信を確認して、もう一度)」、「ゲームが止まりました(再読み込みして、続くようなら、コード ○○ を Discord に報告)」、「サーバーから切断されました(理由つき)」、「再接続しています…」、「このページからは参加できません(bloxd.io/play を開いて参加)」です。クラッシュのときは、番号つきのコードが出て、Discord を開くボタンも付きます(Discord が使えない版では、コードだけ)。テクスチャパックの読み込み失敗にも、同じ形の画面があります(「Default 2 のテクスチャパックに切り替えてみて」という案内つき)。</p><p class="note">どういうときに「このブラウザでは動かない」と出るのか(条件)は、文言からは分かりません。</p>
+<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">🌍</div><div class="ptb">
+<div class="ptt"><span class="who">作る人・調べる人</span><h4>世界生成のプログラムが、別の形(wasm のエンコーダ付き)に変わった</h4></div>
+<p>これまで、地形を作っていた専用ファイル(「procGen.worker」)が、公開サーバーから取れなくなりました。代わりに、「worldgenWorker」というファイルが入りました。メッセージの形も変わり、「start(チャンクの大きさを渡す)」「seed(地形の設定を渡す)」「generate(地形のかたまりを作る)」という流れになりました。作った地形は、wasm の「GeneratedChunkEncoder」でまとめた形(32 バイトの識別値つき)で返されます。地形を作る計算そのものは、今までと同じ系統のコードに見えます(砂漠の穴や、洞窟の仕組みなど)。</p><p class="note">私たちのシードマップは、旧ファイルを使っていたため、今は動きません(下の項目)。地形そのものが変わったかは、まだ確かめていません。</p>
+<span class="cert">確かさ: 確認済み(旧ファイルは取得できなくなった) / 仕組みの細部は未解読</span></div></div><div class="pt player"><div class="ico">🚫</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>ブロック・無視リストの上限と、ブロックした相手へのフレンド申請</h4></div>
+<p>「ブロックリストがいっぱいです。誰かを解除してから、ブロックしてください」「無視リストがいっぱいです」が増えました。自分自身はブロックも無視もできません。ブロックした相手には、「解除してからでないと、フレンドに追加できません」と出ます。</p><p class="note">リストの上限の数は、文言に出ていません。</p>
+<span class="cert">確かさ: 文言は確実 / 上限の数は不明</span></div></div><div class="pt player"><div class="ico">🗑️</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>アカウント削除の説明が、より強い言い方に</h4></div>
+<p>以前は、「個人情報を消し、Google などの連携を外し、匿名の状態に戻す」でした。今回は、「個人情報(メールやフレンドなど)を消し、Google などの連携を外し、ログアウトします。このアカウントに残っている物(購入したものや進み具合を含む)は、元に戻せません」です。</p><p class="note">実際の削除の動きが変わったかは、文言だけでは分かりません。</p>
+<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">🎨</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人・作る人</span><h4>シェーダーパックの状態表示と、確認の追加</h4></div>
+<p>「Bloxd の更新のあとで動かなくなったので、これを使うゲームは始まりません。外すか、作者の修正を待ってください」という表示が増えました。シェーダーのコンパイラが読み込めなかったときの案内(ページを再読み込み)も増えました。pack.json の「keepCircleShadows」は、true か false である必要があります。そのほか、案内の文章が、短く整えられました(「保存はしたが…」の言い方が消えた、など)。アップロード案内の「30 分ごと」は、変数({{minutes}})に変わりました。</p><p class="note">「keepCircleShadows」が何を変える設定かは、文言からは分かりません。</p>
+<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">⛏️</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>Greenville の初回チュートリアル、ワンブロックのスキル案内</h4></div>
+<p>Greenville: 初めて遊ぶ人向けの流れが入りました。「ポータルに入る(F キー)かスマホは Mine を押して採掘へ」→「穴の中のブロックを長押し(左クリック長押し)で掘る」→「バックパックがいっぱいになったら、上に戻って(F キー)売る」→「ゴールドを稼いだ。市場はもっと高く買う」→「市場へ」→「B キー(スマホはカート)で家を選ぶ」。ワンブロック: スキルを使うには、「ピッケルを持って、星のボタンを押す」と案内されます。</p><p class="note">今回の文言は、画面に出るヒントです。ゲームの数値(価格など)は出ていません。</p>
+<span class="cert">確かさ: 文言は確実</span></div></div></div>
 
 
 <details class="en"><summary>📖 英語の原文を見る(追加・書き換え・削除された文)</summary><details class="sec"><summary><span>wasmScreens</span><em>＋13 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>unsupportedTitle</code><p>This browser can’t run Bloxd</p></div></li><li class="a"><i>＋</i><div><code>unsupportedHelp</code><p>Update your browser or open Bloxd in another one to play.</p></div></li><li class="a"><i>＋</i><div><code>downloadFailedTitle</code><p>The game couldn’t finish loading</p></div></li><li class="a"><i>＋</i><div><code>downloadFailedHelp</code><p>Check your internet connection and try again.</p></div></li><li class="a"><i>＋</i><div><code>crashTitle</code><p>The game stopped working</p></div></li><li class="a"><i>＋</i><div><code>crashHelp</code><p>Reload to keep playing, and if it keeps happening, report code {{code}} on our Discord.</p></div></li><li class="a"><i>＋</i><div><code>crashHelpNoDiscord</code><p>Reload to keep playing, or come back later if it keeps happening. Code: {{code}}</p></div></li><li class="a"><i>＋</i><div><code>reportOnDiscord</code><p>Open Discord</p></div></li><li class="a"><i>＋</i><div><code>disconnectedTitle</code><p>You have disconnected from the server</p></div></li><li class="a"><i>＋</i><div><code>disconnectedHelp</code><p>{{reason}}</p></div></li><li class="a"><i>＋</i><div><code>reconnectingHelp</code><p>{{reason}}
@@ -8191,7 +8209,7 @@ Put the parts below in it, by hand or by belt</p></div></li><li class="d"><i>－
 
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <details class="trace"><summary><span>🔍 サーバーまわりの痕跡(自動チェック)</summary>
-<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/12 07:00</p>
+<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/12 07:30</p>
 <dl><dt>オリジンの Server 表示</dt><dd>nginx/1.18.0 (Ubuntu)(存在しないファイルの 404 ページより)</dd>
 <dt>ソースマップ</dt><dd>配信なし(すべて 404)</dd>
 <dt>ワーカー</dt><dd>なし</dd>
