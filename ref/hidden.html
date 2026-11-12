@@ -122,6 +122,20 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <li>ホームの一覧に出す・出さないは、サイトごとの設定(bloxd.io / staging / K12 版など)で決まっています。K12 版(bloxdk12)の一覧も、コードにあります。</li>
 </ul>
 
+<h2>3b. ゲーム名の URL を、直接当てて見つかった「サブモード・エリア」のページ <span class="bd s">確実</span></h2>
+<p>2026-11-12 に、ゲームの内部名(コードの名前の一覧)135 個を、<code>bloxd.io/game/名前</code> に入れて、ページがあるかを確かめました(読むだけで、ゲームには入っていません)。<b>名前は、大文字と小文字を区別します</b>(<code>flagCapture</code> は開けるが、<code>flagcapture</code> や <code>Skyblock</code> は開けない)。空白や <code>-</code> も、効きません。もともと小文字の名前(<code>skyblock</code>、<code>bingo</code> など)だけが、小文字で当たります。結果、<b>107 個にページ</b>があり、次の 28 個が、ホームには出ないサブモードです。</p>
+<div class="tw"><table><tr><th>名前</th><th>ページの名前</th></tr>
+<tr><td><code>skyblock_hub</code> / <code>skyblock_dungeons</code> / <code>skyblock_farming_1</code> / <code>skyblock_mining_1</code> / <code>skyblock_combat_1</code> / <code>skyblock_fishing_1</code> / <code>skyblock_skills_test_gym</code></td><td>Skyblock の各エリア: Hub / Dungeons / Manor Farm / Cragrock Mines / Wild Infernos / Lantern Reach / Skills Gym(<b>Lantern Reach</b> は、2026-11-06 の更新で、クエスト名に出てきたエリア)</td></tr>
+<tr><td><code>bedwars_solo</code> / <code>_duo</code> / <code>_trio</code> / <code>_4v4v4v4</code> / <code>_4v4</code> / <code>_1v1</code></td><td>Bedwars の Solos / Duos / Trios / Squads / 4v4 / 1v1</td></tr>
+<tr><td><code>clutch_1v1</code> / <code>_2v2</code> / <code>_3v3</code>、<code>doodle_solo</code> / <code>_duo</code>、<code>shooting_ffa</code> / <code>_tdm</code>、<code>frontline_12v12</code></td><td>Clutch 1v1・2v2・3v3 / Doodle Cube Solos・Duos / Cube Warfare Free-For-All・Teams / Frontline 12v12</td></tr>
+<tr><td><code>extraction</code>、<code>extraction_match</code> / <code>_desert</code> / <code>_winter</code> / <code>_training</code></td><td><b>DimensionZ</b>(extraction の本体のページ名)と、地図 4 つ: Draugr Fields / Scorched Sands / Frozen Wastes / Training Grounds</td></tr>
+<tr><td><code>greenville_profIsland</code> / <code>greenville_spleefMM</code></td><td>Greenville Isle of Grove / Greenville Spleef</td></tr>
+<tr><td><code>rocketParkour_january</code> / <code>_sheep</code></td><td>Rocket Obby January / Sheep</td></tr>
+<tr><td><code>classic_survivalFactory</code> / <code>classic_survivalFactoryPersistent</code> / <code>classic_worlds</code></td><td>Build a Factory / Build a Factory Persistent / Sandbox Worlds</td></tr>
+<tr><td><code>flagCapture</code>、<code>duels</code> / <code>duels_build</code> / <code>duels_bed</code>、<code>bridge</code>、<code>classic_2d</code> / <code>classic_skyGrid</code> / <code>classic_anarchy</code>、<code>testGym</code>(と 14 の部屋)、<code>schematicTester</code></td><td>上の 1 で説明したもの</td></tr>
+</table></div>
+<p class="src"><b>ページがなかった名前</b>(上の方法で): <code>trickOrTreat</code>、<code>skywars_duo</code>、<code>skywars_solo</code>、<code>rocketSpleef_duo</code>、<code>rocketSpleef_ffa</code>、<code>classic_playerSchematic</code>、<code>schematicTester_test</code>。これらは、名前の一覧にあるが、ページがない(内部用か、今は使われていない)と思われます(<span class="bd g">推測</span>)。ページがあることと、遊べることは、別です。</p>
+
 <h2>4. Critter Trails(開発中のゲーム。いまの本番にはない) <span class="bd s">確実</span>(消えたこと)/ 提供された資料(中身)</h2>
 <div class="ok2"><b>確認したこと(2026-11-12)</b>: いまのビルド(7rp1w)の main.js と全チャンク(353 個)に、「critter」という名前は、1 つも出てきません。<code>bloxd.io/game/critterTrails</code> は、ホームに戻ります。つまり、今は、公式サイトの中に、このゲームのコードは、ありません。</div>
 <div class="warn"><b>以下は、提供された資料(PDF「critter_trails_guide_ja」、2026-10-23 の preprod ビルド scftlm を調べたもの)の内容です。</b>当時の preprod ビルドは、もう取得できないので、私は、原資料を再確認していません。PDF の日本語の文字は、私の環境で、一部読み取れなかったので、英語の部分(ゲーム内の文言、名前、数)だけを、使っています。</div>
