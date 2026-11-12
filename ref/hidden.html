@@ -79,7 +79,7 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <div class="nav"><a href="./">分析ドキュメント</a><a href="infra.html">サーバーとインフラ</a><a href="client.html">クライアントの作り</a><a href="combat.html">戦闘の計算式</a><a href="items.html">武器・防具の数値表</a><a href="builds.html">更新の歴史(ビルド一覧)</a><a href="hidden.html" class="on">隠れゲーム</a><a href="events.html">イベント</a><a href="method.html">調べ方と限界</a></div>
 <h1>隠れゲーム(ホームに出ていないゲーム)</h1><p>ホーム画面に出ない、開発中・期間限定・テスト用のゲームを、確かめたことと確かめていないことを分けてまとめています。</p></div></div>
 <main class="rep">
-<div class="warn">このページは、<b>ホーム画面に出ていない</b>ゲームを集めたものです。確認日は 2026-11-12(ビルド <b>7rp1w</b>)。「ページがある」「ロビーに入れた」は、実際にブラウザで確かめたことです。「コードにある」だけのものは、遊べるかどうかは確かめていません。</div>
+<div class="warn">このページは、<b>ホーム画面に出ていない</b>ゲームを集めたものです。確認日は 2026-11-12(ビルド <b>j3ktyq</b>)。「ページがある」「ロビーに入れた」は、実際にブラウザで確かめたことです。「コードにある」だけのものは、遊べるかどうかは確かめていません。</div>
 
 <h2>1. いまの公式サイトで、ホームには出ないが、ページがあるゲーム <span class="bd s">確実</span></h2>
 <p>ゲームの URL(<code>bloxd.io/game/名前</code>)を開くと、ページが出るゲームです。ホーム画面の一覧には、出てきません(期間限定、開発用、または別のゲームの中に入っているもの)。ページの表示と、人数の「0 online」は、2026-11-12 に確かめました。</p>
@@ -118,7 +118,7 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <h2>3. ブラウザから開発中のゲームを探すとき <span class="bd s">確実</span></h2>
 <ul>
 <li>ゲーム名の一覧(コードの中の配列)には、全部で 120 の名前(変種を含む)があります。そのうち、ホーム画面に直接は出ないのは、Duels 系、Bridge、テスト用、スカイブロックの内部モード(hub / dungeons / farming / mining / fishing / combat / skills_test_gym)、classic の特別な形(2d / skyGrid / anarchy / creativeFlat / playerSchematic)、extraction の地図(match / desert / winter / training)などです。</li>
-<li><code>preprod.bloxd.io</code> と <code>staging.bloxd.io</code> は、いまのところ、本番と<b>同じビルド</b>(7rp1w)を返します。つまり、開発中のゲームを、ここから見ることは、いまはできません(2026-10 末は、違うビルドだったと、下の資料にあります)。</li>
+<li><code>preprod.bloxd.io</code> と <code>staging.bloxd.io</code> は、いまのところ、本番と<b>同じビルド</b>(j3ktyq)を返します。つまり、開発中のゲームを、ここから見ることは、いまはできません(2026-10 末は、違うビルドだったと、下の資料にあります)。</li>
 <li>ホームの一覧に出す・出さないは、サイトごとの設定(bloxd.io / staging / K12 版など)で決まっています。K12 版(bloxdk12)の一覧も、コードにあります。</li>
 </ul>
 
@@ -137,7 +137,7 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <p class="src"><b>ページがなかった名前</b>(上の方法で): <code>trickOrTreat</code>、<code>skywars_duo</code>、<code>skywars_solo</code>、<code>rocketSpleef_duo</code>、<code>rocketSpleef_ffa</code>、<code>classic_playerSchematic</code>、<code>schematicTester_test</code>。これらは、名前の一覧にあるが、ページがない(内部用か、今は使われていない)と思われます(<span class="bd g">推測</span>)。ページがあることと、遊べることは、別です。</p>
 
 <h2>4. Critter Trails(開発中のゲーム。いまの本番にはない) <span class="bd s">確実</span>(消えたこと)/ 提供された資料(中身)</h2>
-<div class="ok2"><b>確認したこと(2026-11-12)</b>: いまのビルド(7rp1w)の main.js と全チャンク(353 個)に、「critter」という名前は、1 つも出てきません。<code>bloxd.io/game/critterTrails</code> は、ホームに戻ります。つまり、今は、公式サイトの中に、このゲームのコードは、ありません。</div>
+<div class="ok2"><b>確認したこと(2026-11-12)</b>: いまのビルド(j3ktyq)の main.js と全チャンク(353 個)に、「critter」という名前は、1 つも出てきません。<code>bloxd.io/game/critterTrails</code> は、ホームに戻ります。つまり、今は、公式サイトの中に、このゲームのコードは、ありません。</div>
 <div class="warn"><b>以下は、提供された資料(PDF「critter_trails_guide_ja」、2026-10-23 の preprod ビルド scftlm を調べたもの)の内容です。</b>当時の preprod ビルドは、もう取得できないので、私は、原資料を再確認していません。PDF の日本語の文字は、私の環境で、一部読み取れなかったので、英語の部分(ゲーム内の文言、名前、数)だけを、使っています。</div>
 <p><b>概要(資料より)</b>: 「Critter Trails」は、<b>55 種類の生き物(Critter)を捕まえて、育てて、戦わせる</b>タイプの RPG(ポケモン風)です。生き物は、1 種類につき 4 つの姿(default / evolved / glimmer / glimmerEvolved)があり、合計 55 × 4 = <b>220</b> の絵があります。glimmer(色違い)は、約 <b>0.18%</b> の確率とされています。</p>
 <p><b>見つかった経緯(資料より)</b>: 2026-10-22 と 23 に、preprod の 2 つのビルド(al23et / scftlm)に入っていました。サイズは、約 3.4MB 増(3D モデル GLB が 152 個、PNG が 275 個、翻訳が 55 種類ぶん)。ゲーム名は、設定上は「Blank Test」(URL は <code>/blank-test</code>)で、開発用ゲームの一覧(<code>Set([schematicTester, testGym, critterTrails])</code>)に入っていました。</p>
@@ -166,5 +166,5 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <li>資料にある数値(Orb の強さ、体力回復の割合、確率など)は、資料の記述であって、私は検証していません。<span class="bd g">推測</span></li>
 <li>他のビルドにも残っていないか: 私は、現在のビルドだけを確認しました。過去の preprod ビルドは、取得できません。</li>
 </ul>
-<p class="src" style="margin-top:34px">非公式の調査です。bloxd.io の運営・開発元とは関係ありません。公開されているクライアント(ブラウザに配られるファイル)の読み取りと、通信の観察だけを根拠にしています。確信度: <span class="bd s">確実</span>コードや観察で直接確認 <span class="bd g">推測</span>読み取りからの推測 <span class="bd u">不明</span>クライアントからは分からない。最終更新(ビルド 7rp1w): 11/12 01:30(日本時間)</p>
+<p class="src" style="margin-top:34px">非公式の調査です。bloxd.io の運営・開発元とは関係ありません。公開されているクライアント(ブラウザに配られるファイル)の読み取りと、通信の観察だけを根拠にしています。確信度: <span class="bd s">確実</span>コードや観察で直接確認 <span class="bd g">推測</span>読み取りからの推測 <span class="bd u">不明</span>クライアントからは分からない。最終更新(ビルド j3ktyq): 11/13 01:30(日本時間)</p>
 </main></body></html>
