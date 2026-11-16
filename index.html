@@ -76,12 +76,24 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <h2>✨ 更新と、ゲーム内の変化</h2>
 <article class="upd latest">
 <div class="meta"><span class="new">最新</span><time>2026年11月17日 01:00</time><span class="build">tykq5g → vjxd5n</span></div>
-<h3>ビルドが tykq5g から vjxd5n に更新</h3>
+<h3>AI ヘルパーが「質問・コード・答えを 30 日間保存して改善に使ってよいか」を聞くようになった。ホーム・ワープ・スポーン・部族のホームに「何かが邪魔している」ときの案内、スマホの「ジャンプロック」、再接続まわりの文言、Plots 用の専用ファイルが追加</h3>
 <div class="chips"><span class="chip add">＋ 新しい文言 15</span><span class="chip chg">〜 書き換え 1</span></div>
-<div class="pts"><div class="pt player"><div class="ico">📝</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>ゲーム内の文言が変わった場所: general、設定メニュー、ホームコマンド、テレポートコマンド、tribe、aiHelperDataSharing、texturePackLoad</h4></div>
-<p>下の「英語の原文」で、追加・変更・削除された文を見られます。</p>
-<span class="cert">確かさ: 自動判定</span></div></div></div>
+<div class="pts"><div class="pt player"><div class="ico">🤖</div><div class="ptb">
+<div class="ptt"><span class="who">AI ヘルパーを使う人</span><h4>AI ヘルパーのデータ保存の同意を聞く画面</h4></div>
+<p>「AI ヘルパーをもっと良くする手伝いをしませんか?」という確認画面の文言が増えました。内容は、「Bloxd は、あなたの質問・あなたのコード・AI の答えを、30 日間保管して、AI ヘルパーの改善に使ってよいですか?AI の設定で、あとから変更できます」で、ボタンは「はい」「いいえ」です。以前の更新で入った、DeepSeek の同意の確認(利用規約の同意)とは、別の確認画面です。</p><p class="note">「いいえ」を選んだときに、AI ヘルパーの動きが変わるのかは、文言からは分かりません。初期値や、表示される頻度も確認していません。</p>
+<span class="cert">確かさ: 文言は確実 / いつ表示されるかは未確認</span></div></div><div class="pt player"><div class="ico">🧱</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>ホーム・ワープ・スポーン地点に「何かが邪魔している」ときの案内</h4></div>
+<p>/home や /warp などで移動しようとしたとき、行き先にブロックなどがあって降りられない場合の案内が増えました。「ホーム ○○ に、何かが邪魔しています。片づけるか、別の場所にホームを設定し直してください」「ワープ ○○ に何かが邪魔しています」「スポーン地点が邪魔されているので、ワールドのスポーンに戻りました。片づけると、また使えます」「部族のホームに何かが邪魔しています」「その場所が、時間内に読み込まれませんでした。もう一度試してください」。</p><p class="note">「邪魔」の判定の細かい条件(どのブロックが当てはまるか)は、文言からは分かりません。</p>
+<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">📱</div><div class="ptb">
+<div class="ptt"><span class="who">スマホで遊ぶ人</span><h4>「ジャンプロック」</h4></div>
+<p>設定に「Jump Lock」が増えました。説明は、「ジャンプを 1 秒押し続けてから、上の『Jump Lock』の位置までスライドして離すと、ジャンプし続けます。ジャンプをタップすると止まります」です。前の更新で入った、ジョイスティックの「オートラン」と同じ考え方です。</p><p class="note">初期値(オンかオフか)は、確認していません。</p>
+<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">🔌</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>接続が切れたときの文言と「再接続」→「再参加」</h4></div>
+<p>「サーバーとの接続が切れました」と、「再接続している間に送ったメッセージは送られていません。戻ってからもう一度送ってください」が増えました。ボタンの名前は、「Reconnect(再接続)」から「Rejoin(再参加)」に変わりました。テクスチャパックの読み込みエラーにも、「Details:(詳細)」の見出しが増えました。</p><p class="note">「再接続」を「再参加」に変えた理由は、文言からは分かりません。</p>
+<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">🏗️</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人・運営の内部</span><h4>Plots の専用ファイル(clientGame-plots-plotsClient)</h4></div>
+<p>ゲームごとの専用ファイルの一覧に、Plots 用の「clientGame-plots-plotsClient」が増えました。Plots は、ホーム画面の上段(Classic、Greenville、One Block などと同じ段)に並ぶ、すでにあるゲームです(公式のページの題は「区画を取って、友達と建築する」)。ほかの多くのゲームが、すでにこの形(ゲームごとの専用ファイル)に分かれているので、Plots も同じ形に移されたと見えます。ほかに、番号つきのファイルが 3 つ増え、1 つ消えました。</p><p class="note">Plots の中身(新しい機能が入ったのか、ファイルの分け方だけが変わったのか)は、読んでいません。「移された」は、推測です。</p>
+<span class="cert">確かさ: ファイル名と、Plots が既存のゲームであることは確認済み / 中身は未確認</span></div></div></div>
 
 
 <details class="en"><summary>📖 英語の原文を見る(追加・書き換え・削除された文)</summary><details class="sec"><summary><span>aiHelperDataSharing</span><em>＋4 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>title</code><p>Help make the AI Helper better?</p></div></li><li class="a"><i>＋</i><div><code>subtitle</code><p>Can Bloxd keep your questions, your code and the AI's answers for 30 days to improve the AI Helper? You can change this in AI settings.</p></div></li><li class="a"><i>＋</i><div><code>yes</code><p>Yes</p></div></li><li class="a"><i>＋</i><div><code>no</code><p>No</p></div></li></ul></details><details class="sec"><summary><span>general</span><em>＋2 〜1 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>lostConnection</code><p>You lost connection to the server.</p></div></li><li class="a"><i>＋</i><div><code>chatNotSentWhileReconnecting</code><p>Your message wasn't sent while reconnecting. Try again once you're back.</p></div></li><li class="c"><i>〜</i><div><code>reconnect</code><p class="from">Reconnect</p><p>Rejoin</p></div></li></ul></details><details class="sec"><summary><span>テレポートコマンド</span><em>＋3 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>warpBlocked</code><p>Something is in the way at warp &quot;{{warp}}&quot;</p></div></li><li class="a"><i>＋</i><div><code>notLoaded</code><p>That place didn't load in time. Try again</p></div></li><li class="a"><i>＋</i><div><code>spawnPointBlocked</code><p>Something is in the way at your spawn point, so you're back at spawn. Clear it to use it again</p></div></li></ul></details><details class="sec"><summary><span>設定メニュー</span><em>＋2 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>jumpLock</code><p>Jump Lock</p></div></li><li class="a"><i>＋</i><div><code>jumpLockInfo</code><p>Hold Jump for a second, then slide up onto Jump Lock and let go there to keep jumping. Tap Jump to stop.</p></div></li></ul></details><details class="sec"><summary><span>ホームコマンド</span><em>＋2 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>homeBlocked</code><p>Something is in the way at home &quot;{{home}}&quot;. Clear it or set the home somewhere else</p></div></li><li class="a"><i>＋</i><div><code>defaultHomeBlocked</code><p>Something is in the way at your home. Clear it or use /sethome somewhere else</p></div></li></ul></details><details class="sec"><summary><span>tribe</span><em>＋1 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>tribeHomeBlocked</code><p>Something is in the way at your tribe home. Clear it to use it again</p></div></li></ul></details><details class="sec"><summary><span>texturePackLoad</span><em>＋1 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>details</code><p>Details:</p></div></li></ul></details></details>
@@ -651,12 +663,27 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <article class="upd">
 <div class="meta"><time>2026年11月16日 06:30</time><span class="build">8f728 → tykq5g</span></div>
-<h3>ビルドが 8f728 から tykq5g に更新</h3>
+<h3>ワールドに「友達を招待する」画面と、入れる人(公開・限定公開・ホワイトリスト・非公開)の切り替え画面が入った。招待できない理由の表示、ホーム画面の「3D で見る」ボタンも追加</h3>
 <div class="chips"><span class="chip add">＋ 新しい文言 40</span><span class="chip chg">〜 書き換え 1</span></div>
-<div class="pts"><div class="pt player"><div class="ico">📝</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>ゲーム内の文言が変わった場所: ホーム画面、フレンド・ソーシャル、通知、worldSocial</h4></div>
-<p>下の「英語の原文」で、追加・変更・削除された文を見られます。</p>
-<span class="cert">確かさ: 自動判定</span></div></div></div>
+<div class="pts"><div class="pt player"><div class="ico">💌</div><div class="ptb">
+<div class="ptt"><span class="who">ワールドを作る人</span><h4>「友達を招待する」画面(worldSocial)</h4></div>
+<p>ワールドの画面に、「Invite friends(友達を招待)」の新しい画面用の文言が、28 個入りました。内容は次のとおりです。ワールドコードとワールドのリンク(共有ボタンつき)/「友達の名前」を入れて「Invite(招待)」を押す/招待済み(Invited)の表示/「このワールドにいる人」「あなたと遊んだ人」の一覧/「○○さんを入れる(Let … join)」と「リクエストを送りました」/「さらに ○○ 件を表示」。招待できるのは、オーナーだけ、という表示(「Only the owner can invite here」)もあります。</p><p class="note">「あなたと遊んだ人」が、どのくらいの範囲の記録なのかは、文言からは分かりません。</p>
+<span class="cert">確かさ: 文言は確実 / 画面の見た目・動きは未確認</span></div></div><div class="pt player"><div class="ico">🔐</div><div class="ptb">
+<div class="ptt"><span class="who">ワールドを作る人</span><h4>「誰が入れるか」の切り替え(Who can join)</h4></div>
+<p>前回(8f728)で説明文だけ入っていた 4 段階が、切り替えの選択肢として出てきました。Unlisted(リンクを知っている人なら誰でも)/ Public(ワールド一覧に載る)/ Whitelist(あなたが選んだ人だけ)/ Private(ほかの人は入れない)。ホワイトリストにするときは、「友達の名前を入れて、入れる人を足します」と案内されます。読み込みや変更に失敗したとき、名前の人が見つからないときの表示もあります。</p><p class="note">選択肢の初期値(新しいワールドは、どれから始まるか)は、確認していません。</p>
+<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">🚫</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>友達を招待できなかったときの理由が、細かく出る</h4></div>
+<p>フレンド欄などから招待しようとしたとき、次の理由が出ます。「このワールドは非公開なので、友達を招待するにはホワイトリストを選んでください」/「非公開なので、誰も招待できません」/「このワールドでは、オーナーと共同オーナーだけが招待できます」/「Bloxd の管理者がこのワールドをロックしました」/「○○さんを招待するには、先にホワイトリストに入れてください」/「○○さんは、このワールドで BAN されています」。ロビーが満員のときの「Full」も増えました。</p><p class="note">「共同オーナー(co-owners)」という役割が、実際に画面のどこで決められるのかは、確認していません。</p>
+<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">🔔</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>ワールドへの招待が、通知に届く</h4></div>
+<p>通知に、「○○さんが、あなたをワールドに招待しました」が増えました。</p><p class="note">通知をタップしたあとの動き(すぐ参加できるのか)は、文言からは分かりません。</p>
+<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">🏠</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>ホーム画面に「3D で見る」ボタンと、もっと見る</h4></div>
+<p>ホーム画面に、「View in 3D(3D で見る)」「Loading 3D…(読み込み中)」と、「See More / See Less(もっと見る / 閉じる)」が増えました。「マイワールド」の説明も変わりました。以前は「自分のペースで探検・建築できる、非公開のサバイバルワールド」でしたが、今回は、「探検・建築できる、あなただけのサバイバルワールド」です。「非公開」という言葉が消えています(上の、公開範囲の切り替えが入ったためと思われます)。</p><p class="note">「3D で見る」の対象(ワールドそのものか、アイテムか)は、文言からは分かりません。「非公開が消えた理由」は、推測です。</p>
+<span class="cert">確かさ: 文言は確実 / 何が 3D で見えるのかは未確認</span></div></div><div class="pt player"><div class="ico">⚙️</div><div class="ptb">
+<div class="ptt"><span class="who">運営の内部</span><h4>ファイルの組み替え</h4></div>
+<p>新しいファイルが「renderDebug」の 1 つ増え、チャンク「60」が 1 つ消えました。「renderDebug」は、名前から描画の確認用と思われますが、中身は読んでいません。そのほかは、ビルドの作り直しで、ハッシュだけが変わっています。</p><p class="note">「renderDebug」の用途は、名前からの推測です。</p>
+<span class="cert">確かさ: 自動比較</span></div></div></div>
 
 
 <details class="en"><summary>📖 英語の原文を見る(追加・書き換え・削除された文)</summary><details class="sec"><summary><span>worldSocial</span><em>＋28 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>title</code><p>Invite friends</p></div></li><li class="a"><i>＋</i><div><code>moreRequests</code><p>Show {{count}} more</p></div></li><li class="a"><i>＋</i><div><code>share</code><p>Share</p></div></li><li class="a"><i>＋</i><div><code>worldCode</code><p>World code</p></div></li><li class="a"><i>＋</i><div><code>worldLink</code><p>World link</p></div></li><li class="a"><i>＋</i><div><code>privateLinkRow</code><p>Pick Whitelist to invite friends.</p></div></li><li class="a"><i>＋</i><div><code>ownerOnlyInvites</code><p>Only the owner can invite here.</p></div></li><li class="a"><i>＋</i><div><code>whoCanJoin</code><p>Who can join</p></div></li><li class="a"><i>＋</i><div><code>unlisted</code><p>Unlisted</p></div></li><li class="a"><i>＋</i><div><code>unlistedDescription</code><p>Anyone with link</p></div></li><li class="a"><i>＋</i><div><code>public</code><p>Public</p></div></li><li class="a"><i>＋</i><div><code>publicDescription</code><p>Listed in Worlds</p></div></li><li class="a"><i>＋</i><div><code>whitelist</code><p>Whitelist</p></div></li><li class="a"><i>＋</i><div><code>whitelistDescription</code><p>Players you pick</p></div></li><li class="a"><i>＋</i><div><code>private</code><p>Private</p></div></li><li class="a"><i>＋</i><div><code>privateDescription</code><p>No one else</p></div></li><li class="a"><i>＋</i><div><code>addFriendPlaceholder</code><p>New friend's name</p></div></li><li class="a"><i>＋</i><div><code>invite</code><p>Invite</p></div></li><li class="a"><i>＋</i><div><code>invited</code><p>Invited</p></div></li><li class="a"><i>＋</i><div><code>inThisWorld</code><p>In this world</p></div></li><li class="a"><i>＋</i><div><code>playedWithYou</code><p>Played with you</p></div></li><li class="a"><i>＋</i><div><code>canJoin</code><p>can join</p></div></li><li class="a"><i>＋</i><div><code>letJoin</code><p>Let {{playerName}} join</p></div></li><li class="a"><i>＋</i><div><code>requestSent</code><p>Request sent</p></div></li><li class="a"><i>＋</i><div><code>whitelistNoFriends</code><p>Add friends by name to let them in.</p></div></li><li class="a"><i>＋</i><div><code>loadFailed</code><p>Couldn't load who can join. Try again.</p></div></li><li class="a"><i>＋</i><div><code>changeFailed</code><p>Couldn't change who can join. Try again.</p></div></li><li class="a"><i>＋</i><div><code>notFound</code><p>No player is called {{playerName}}</p></div></li></ul></details><details class="sec"><summary><span>フレンド・ソーシャル</span><em>＋7 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>lobbyFull</code><p>Full</p></div></li><li class="a"><i>＋</i><div><code>inviteOwnWorldPrivate</code><p>This world is private. Pick Whitelist to invite friends</p></div></li><li class="a"><i>＋</i><div><code>inviteWorldPrivate</code><p>This world is private, so no one can be invited</p></div></li><li class="a"><i>＋</i><div><code>inviteWorldManagersOnly</code><p>Only this world's owner and co-owners can invite friends here</p></div></li><li class="a"><i>＋</i><div><code>inviteWorldAdminLocked</code><p>This world was locked by a Bloxd admin</p></div></li><li class="a"><i>＋</i><div><code>inviteNotWhitelisted</code><p>Add {{playerName}} to your world's whitelist to invite them</p></div></li><li class="a"><i>＋</i><div><code>inviteBannedFromWorld</code><p>{{playerName}} is banned from this world</p></div></li></ul></details><details class="sec"><summary><span>ホーム画面</span><em>＋4 〜1 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>viewIn3d</code><p>View in 3D</p></div></li><li class="a"><i>＋</i><div><code>loading3d</code><p>Loading 3D...</p></div></li><li class="a"><i>＋</i><div><code>seeMore</code><p>See More</p></div></li><li class="a"><i>＋</i><div><code>seeLess</code><p>See Less</p></div></li><li class="c"><i>〜</i><div><code>myWorldDescription</code><p class="from">A private survival world to explore and build at your own pace.</p><p>Your own survival world to explore and build in.</p></div></li></ul></details><details class="sec"><summary><span>通知</span><em>＋1 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>worldInvite</code><p>{{player}} invited you to a world</p></div></li></ul></details></details>
@@ -1220,12 +1247,21 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <article class="upd">
 <div class="meta"><time>2026年11月15日 02:00</time><span class="build">98edle → 8f728</span></div>
-<h3>ビルドが 98edle から 8f728 に更新</h3>
+<h3>自分のワールドに「誰が入れるか」を決める設定(公開・限定公開・ホワイトリスト・非公開)と、入れなかったときの理由の表示が入った</h3>
 <div class="chips"><span class="chip add">＋ 新しい文言 9</span></div>
-<div class="pts"><div class="pt player"><div class="ico">📝</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>ゲーム内の文言が変わった場所: general、カスタムロビー、worldOwnerOffer</h4></div>
-<p>下の「英語の原文」で、追加・変更・削除された文を見られます。</p>
-<span class="cert">確かさ: 自動判定</span></div></div></div>
+<div class="pts"><div class="pt player"><div class="ico">🌐</div><div class="ptb">
+<div class="ptt"><span class="who">ワールドを作る人</span><h4>ワールドに入れる人を決める、4 段階の設定</h4></div>
+<p>ワールドの説明文に、次の 4 つが書かれています。Public(誰でも参加でき、ワールド一覧に載る)/ Unlisted(リンクを知っている人なら誰でも参加できる)/ Whitelist(許可した人だけ参加できる)/ Private(他の人は参加できない)。「すでに中にいる人は、そのまま残る」とも書かれています。</p><p class="note">ワールド一覧(worlds browser)が、今のサイトのどこにあるのかは、確認していません。</p>
+<span class="cert">確かさ: 文言は確実 / 実際の動きは未確認</span></div></div><div class="pt player"><div class="ico">🚪</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>ワールドに入れなかったときの理由が、細かく出る</h4></div>
+<p>入れなかったときに、次の表示が出ます。「このワールドには参加できません」/「このワールドは非公開です」/「ホワイトリストに入っていません(オーナーに許可を頼んでください)」/「このワールドから BAN されています」/「Bloxd の管理者が、このワールドをロックしました」。</p><p class="note">「管理者がロックした」が、どんな場合に使われるのかは、文言からは分かりません。</p>
+<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">👑</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>「このワールドの持ち主」の表示と、新しい API</h4></div>
+<p>ワールドの持ち主であることを示す表示「Owns this world」が増えました。あわせて、新しい API(/social/get-world-owner-friend-offer)が入りました。名前から、ワールドの持ち主に関係する、フレンド申請の案内のようなものを取り出す API に見えます。「Chat(チャット)」という単語も、共通の文言に増えました。</p><p class="note">この API が何を返すのかは、読んでいません(推測)。</p>
+<span class="cert">確かさ: 文言と API 名は確実 / 目的は推測</span></div></div><div class="pt player"><div class="ico">⚙️</div><div class="ptb">
+<div class="ptt"><span class="who">運営の内部</span><h4>内部の分類の増減</h4></div>
+<p>端末の GPU の種類を分ける名前(arc_igpu、discrete)が増え、古い分類(windows_firefox)が消えました。画面には出ません。ビルドの作り直しで、ファイルの名前は全部変わっています(新しいファイル 6、消えたファイル 1)。</p><p class="note">画面に出ない内部の分類です。目的は推測です。</p>
+<span class="cert">確かさ: コードを読んだ / 目的は推測</span></div></div></div>
 
 
 <details class="en"><summary>📖 英語の原文を見る(追加・書き換え・削除された文)</summary><details class="sec"><summary><span>カスタムロビー</span><em>＋7 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>cantJoinWorld</code><p>Can't join this world</p></div></li><li class="a"><i>＋</i><div><code>cantJoinPrivate</code><p>This world is private.</p></div></li><li class="a"><i>＋</i><div><code>cantJoinNotWhitelistedTitle</code><p>You're not on the whitelist</p></div></li><li class="a"><i>＋</i><div><code>cantJoinNotWhitelisted</code><p>Ask the owner to whitelist you</p></div></li><li class="a"><i>＋</i><div><code>cantJoinBanned</code><p>You're banned from this world.</p></div></li><li class="a"><i>＋</i><div><code>cantJoinAdminLocked</code><p>A Bloxd admin locked this world.</p></div></li><li class="a"><i>＋</i><div><code>worldVisibilityDescription</code><p>Set who can join your World. Players already here stay.
@@ -11666,7 +11702,7 @@ Put the parts below in it, by hand or by belt</p></div></li><li class="d"><i>－
 
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <details class="trace"><summary><span>🔍 サーバーまわりの痕跡(自動チェック)</summary>
-<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/17 06:30</p>
+<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/17 06:48</p>
 <dl><dt>オリジンの Server 表示</dt><dd>nginx/1.18.0 (Ubuntu)(存在しないファイルの 404 ページより)</dd>
 <dt>ソースマップ</dt><dd>配信なし(すべて 404)</dd>
 <dt>ワーカー</dt><dd>なし</dd>
