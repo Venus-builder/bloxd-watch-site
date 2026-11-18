@@ -75,7 +75,7 @@ label.chk{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--sub
 <body>
 <div class="wrap">
   <div style="margin-bottom:12px"><a href="https://venus-builder.github.io/bloxd-watch-site/" style="display:inline-flex;align-items:center;gap:7px;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--tx);text-decoration:none">← bloxd.io 更新ウォッチ に戻る</a></div>
-  <h1>Bloxd スキンビューア <span class="tag">実素材版</span> <span class="tag" id="verStamp" style="font-weight:700">v2026.11.18-09:40</span></h1>
+  <h1>Bloxd スキンビューア <span class="tag">実素材版</span> <span class="tag" id="verStamp" style="font-weight:700">v2026.11.18-09:54</span></h1>
   <p class="lead">bloxd.io の配信 JS に同梱されていた<b>公式プレイヤーモデル(Player_Model.glb)と公式テクスチャアトラス(Player_Atlas.png)</b>をそのまま抽出し、ゲームと同じ「コスメ層 + アトラスUV」方式で描画するデモです。表示中のキャラは公式テクスチャの生データです。</p>
   <div class="flow">
     <div class="chip"><b>①素材</b>配信JS内のbase64から実アトラス(2048×2048・660部品)と実GLBモデルを抽出</div>
@@ -539,8 +539,8 @@ const LAYER_MESHES={
   head:    [byName('HeadMesh_1')],            /* 髪(帽子も同じふわふわ箱を使用) */
   eyebrows:[byName('HeadMesh_3'),byName('HeadMesh_5')],
   eyes:    [byName('HeadMesh_2'),byName('HeadMesh_4')],
-  body:    ['ArmLeftMesh_2','ArmRightMesh_2','ArmLeftMesh_1','ArmRightMesh_1','ArmLeftMesh','ArmRightMesh','BodyMesh'].map(byName),
-  legs:    ['LegLeftMesh_2','LegRightMesh_2','LegLeftMesh_1','LegRightMesh_1','LegLeftMesh','LegRightMesh'].map(byName),
+  body:    ['ArmLeftMesh_2','ArmRightMesh_2','ArmLeftMesh_1','ArmRightMesh_1','ArmLeftMesh','ArmRightMesh','BodyMesh','LegLeftMesh','LegRightMesh','LegLeftMesh_1','LegRightMesh_1','LegLeftMesh_2','LegRightMesh_2'].map(byName),  /* 脚にも: ドレス等は脚UVに焼かれている */
+  legs:    ['LegLeftMesh_2','LegRightMesh_2','LegLeftMesh_1','LegRightMesh_1','LegLeftMesh','LegRightMesh','BodyMesh'].map(byName),  /* 胴にも: ワンピ下端等 */
   shoes:   ['LegLeftMesh','LegRightMesh','LegLeftMesh_1','LegRightMesh_1','LegLeftMesh_2','LegRightMesh_2'].map(byName),
 };
 const LAYER_ORDER=['skin','head','eyebrows','eyes','body','legs','shoes'];
