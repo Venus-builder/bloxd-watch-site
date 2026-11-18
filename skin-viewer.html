@@ -667,18 +667,14 @@ function frame(){
   lerpPose();
   /* モブ: 描画ポーズ = ユーザーポーズ(poseM→tgtM lerp) + アイドル/歩行オフセット(度) */
   if(curMob){
-    const t=performance.now()/1000;
     const nd=MOBS[curMob].nodes;
     lerpPoseM();
     const add={};
-    if(nd.TorsoNode)add.TorsoNode=[Math.sin(t*1.7)*2.6,0,0];
     if(mobWalk){
       if(nd.LegLeftMesh)add.LegLeftMesh=[Math.sin(t*7)*30,0,0];
       if(nd.LegRightMesh)add.LegRightMesh=[-Math.sin(t*7)*30,0,0];
       if(nd.ArmLeftMesh)add.ArmLeftMesh=[-Math.sin(t*7)*18,0,0];
       if(nd.ArmRightMesh)add.ArmRightMesh=[Math.sin(t*7)*18,0,0];
-    }else if(nd.HeadMesh){
-      add.HeadMesh=[Math.sin(t*1.1)*3.5,0,0];
     }
     for(const n in curM){
       const a=add[n]||Z3,pm2=poseM[n]||Z3;
