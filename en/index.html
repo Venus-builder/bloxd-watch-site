@@ -77,13 +77,16 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <h2>✨ Updates and in-game changes</h2>
 <article class="upd latest">
 <div class="meta"><span class="new">Latest</span><time>2026-11-20 16:00 UTC</time><span class="build">bcgkc → bbb6l5</span></div>
-<h3>Build updated from bcgkc to bbb6l5</h3>
+<h3>The code editor AI helper gets a &quot;Safety Check&quot; toggle for use with your own API key.</h3>
 <div class="chips"><span class="chip add">+ 3 new strings</span></div>
-<div class="pts"><div class="pt player"><div class="ico">📝</div><div class="ptb">
-<div class="ptt"><span class="who">Players</span><h4>In-game text changed in: codeEditorAiKeySafetyCheck</h4></div>
-<p>See &quot;Original in-game text&quot; below for exactly what was added, changed or removed.</p>
-<span class="cert">Confidence: automatic</span></div></div></div>
-<p class="muted">An English summary has not been written for this update yet. The Japanese version has one if it is available.</p>
+<div class="pts"><div class="pt maker"><div class="ico">🤖</div><div class="ptb">
+<div class="ptt"><span class="who">Creators</span><h4>AI helper: &quot;Safety Check&quot; for your own API key</h4></div>
+<p>When you use your own API key, questions and answers can be checked. Turning it off shows a warning that responses will not be filtered.</p><p class="note">Which checks run, and whether it is on by default, is not clear from the text.</p>
+<span class="cert">Confidence: Wording certain / default and behaviour unchecked</span></div></div><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">Under the hood</span><h4>A rebuild (bbb6l5)</h4></div>
+<p>Same file count; only hashes changed. About 9,000 string differences, mostly renamed variables.</p>
+<span class="cert">Confidence: Automatic comparison</span></div></div></div>
+
 
 <details class="en"><summary>📖 Original in-game text (added, rewritten and removed lines)</summary><details class="sec"><summary><span>codeEditorAiKeySafetyCheck</span><em>+3 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>toggle</code><p>Safety Check for own API keys</p></div></li><li class="a"><i>+</i><div><code>toggleHint</code><p>Checks your questions and the answers when the AI Helper uses your own API key.</p></div></li><li class="a"><i>+</i><div><code>offWarning</code><p>Turning off the safety check will mean that responses from AI will not be filtered.</p></div></li></ul></details></details>
 <details class="dev"><summary>🔧 Technical details (you can usually skip this)</summary><dl>
@@ -92,10 +95,13 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <dt>Chunks</dt><dd>0 added / 0 removed / 385 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
 <article class="upd">
 <div class="meta"><time>2026-11-20 15:00 UTC</time><span class="build">qepqb8 → bcgkc</span></div>
-<h3>Build updated from qepqb8 to bcgkc</h3>
+<h3>No in-game text changed. Rebuild only (the biggest string churn of the day, but no text changed).</h3>
 <div class="chips"></div>
+<div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">Under the hood</span><h4>A rebuild (bcgkc) with no in-game change</h4></div>
+<p>Zero strings added, changed or removed in the game text; only hashes changed. The string differences are mostly renamed variables.</p>
+<span class="cert">Confidence: No text change is certain / contents a guess</span></div></div></div>
 
-<p class="muted">An English summary has not been written for this update yet. The Japanese version has one if it is available.</p>
 
 
 <details class="dev"><summary>🔧 Technical details (you can usually skip this)</summary><dl>
@@ -104,13 +110,31 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <dt>Chunks</dt><dd>0 added / 0 removed / 385 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
 <article class="upd">
 <div class="meta"><time>2026-11-20 14:00 UTC</time><span class="build">7rj44 → qepqb8</span></div>
-<h3>Build updated from 7rj44 to qepqb8</h3>
+<h3>A &quot;Manage lobby&quot; screen for world owners (players, joining, rules, leaderboard) arrives, with about 55 rule settings: day and night, sleeping, fall damage, spawn, world border and more.</h3>
 <div class="chips"><span class="chip add">+ 113 new strings</span><span class="chip del">- 1 removed</span></div>
-<div class="pts"><div class="pt player"><div class="ico">📝</div><div class="ptb">
-<div class="ptt"><span class="who">Players</span><h4>In-game text changed in: general, auth, lobbyManage, lobbyManageEntry, lobbyRules, payments</h4></div>
-<p>See &quot;Original in-game text&quot; below for exactly what was added, changed or removed.</p>
-<span class="cert">Confidence: automatic</span></div></div></div>
-<p class="muted">An English summary has not been written for this update yet. The Japanese version has one if it is available.</p>
+<div class="pts"><div class="pt maker"><div class="ico">🛡️</div><div class="ptb">
+<div class="ptt"><span class="who">World creators</span><h4>&quot;Manage lobby&quot;: kick, ban, unban and roles</h4></div>
+<p>Tabs: Players, Joining, Rules, Leaderboard. Each player shows here / not here / banned and a history (&quot;joined 5 min ago&quot;, &quot;tried to join&quot;). Actions: kick, ban (with confirmation), unban, kick everyone with no role. Four roles: co-owner (kick, ban, code, change rules, give lower roles), moderator (kick, ban, unban), coder (world-edit tools and World Code), builder (world-edit tools). The whitelist can be searched by name, with friend markers.</p><p class="note">What &quot;world-edit tools&quot; means is not clear from the text.</p>
+<span class="cert">Confidence: Wording certain / layout unchecked</span></div></div><div class="pt maker"><div class="ico">⚙️</div><div class="ptb">
+<div class="ptt"><span class="who">World creators</span><h4>World rules (about 55 settings)</h4></div>
+<p>Default gamemode, dropping items on death (always, in PvP, never), fall damage, spawn protection, teleport requests, tribes, protectors, SMP marketplace, survival guns, mobs (hostile only in the dark). A detailed day-and-night section: pause, set the time (ten steps from dawn to midnight), how sleeping skips the night, a days leaderboard, on-screen time and progress bar, chat announcements, torches for new players. Also spawn point, world border radius, void death height, warps, and hiding the world code from non-coders.</p><p class="note">Whether this is playable now or limited to some players has not been checked.</p>
+<span class="cert">Confidence: Wording certain / defaults unchecked</span></div></div><div class="pt maker"><div class="ico">✏️</div><div class="ptb">
+<div class="ptt"><span class="who">World creators</span><h4>Description, emojis and colour settings</h4></div>
+<p>Headings for description, emojis, colour, gameplay and world inside lobby management.</p><p class="note">Contents not read (guess).</p>
+<span class="cert">Confidence: Headings only</span></div></div><div class="pt player"><div class="ico">🗑️</div><div class="ptb">
+<div class="ptt"><span class="who">Players</span><h4>Account deletion warning is clearer</h4></div>
+<p>Your name, progress, items, purchases and friends will be gone for good and cannot be recovered (inside a Discord activity, the activity also closes).</p>
+<span class="cert">Confidence: Wording certain</span></div></div><div class="pt player"><div class="ico">🖥️</div><div class="ptb">
+<div class="ptt"><span class="who">Players</span><h4>&quot;Your graphics stopped working&quot;</h4></div>
+
+<span class="cert">Confidence: Wording certain / when it shows a guess</span></div></div><div class="pt player"><div class="ico">🚫</div><div class="ptb">
+<div class="ptt"><span class="who">Players</span><h4>Banned accounts cannot subscribe</h4></div>
+<p>Added for the Super Rank subscription.</p>
+<span class="cert">Confidence: Wording certain</span></div></div><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">Under the hood</span><h4>Files reorganised</h4></div>
+<p>Two new files (386 and renderProbe) and one removed (69). renderProbe is probably a rendering check, going by the name.</p>
+<span class="cert">Confidence: Automatic comparison</span></div></div></div>
+
 
 <details class="en"><summary>📖 Original in-game text (added, rewritten and removed lines)</summary><details class="sec"><summary><span>lobbyRules</span><em>+55 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>defaultGamemode</code><p>Default gamemode</p></div></li><li class="a"><i>+</i><div><code>gamemodeSurvivalAdventure</code><p>Survival adventure</p></div></li><li class="a"><i>+</i><div><code>gamemodePeacefulAdventure</code><p>Peaceful adventure</p></div></li><li class="a"><i>+</i><div><code>dropItemsOnDeath</code><p>Drop items on death</p></div></li><li class="a"><i>+</i><div><code>dropAllDeaths</code><p>All deaths</p></div></li><li class="a"><i>+</i><div><code>dropInPvp</code><p>In PvP</p></div></li><li class="a"><i>+</i><div><code>never</code><p>Never</p></div></li><li class="a"><i>+</i><div><code>fallDamage</code><p>Fall damage</p></div></li><li class="a"><i>+</i><div><code>spawnProtection</code><p>Spawn protection</p></div></li><li class="a"><i>+</i><div><code>teleportRequests</code><p>Teleport requests</p></div></li><li class="a"><i>+</i><div><code>tribes</code><p>Tribes</p></div></li><li class="a"><i>+</i><div><code>protectors</code><p>Protectors</p></div></li><li class="a"><i>+</i><div><code>protectorsInfo</code><p>When off, only the owner and co-owners can craft and place protectors.</p></div></li><li class="a"><i>+</i><div><code>smpMarketplace</code><p>SMP marketplace</p></div></li><li class="a"><i>+</i><div><code>survivalGuns</code><p>Survival guns</p></div></li><li class="a"><i>+</i><div><code>mobs</code><p>Mobs</p></div></li><li class="a"><i>+</i><div><code>hostileMobsOnlyInDark</code><p>Hostile mobs only in the dark</p></div></li><li class="a"><i>+</i><div><code>dayNight</code><p>Day &amp; night</p></div></li><li class="a"><i>+</i><div><code>dayNightTime</code><p>Time</p></div></li><li class="a"><i>+</i><div><code>pause</code><p>Pause</p></div></li><li class="a"><i>+</i><div><code>dayNightSetTime</code><p>Set time</p></div></li><li class="a"><i>+</i><div><code>timeDawn</code><p>Dawn</p></div></li><li class="a"><i>+</i><div><code>timeSunrise</code><p>Sunrise</p></div></li><li class="a"><i>+</i><div><code>timeDay</code><p>Day</p></div></li><li class="a"><i>+</i><div><code>timeMidday</code><p>Midday</p></div></li><li class="a"><i>+</i><div><code>timeAfternoon</code><p>Afternoon</p></div></li><li class="a"><i>+</i><div><code>timeEvening</code><p>Evening</p></div></li><li class="a"><i>+</i><div><code>timeSunset</code><p>Sunset</p></div></li><li class="a"><i>+</i><div><code>timeDusk</code><p>Dusk</p></div></li><li class="a"><i>+</i><div><code>timeNight</code><p>Night</p></div></li><li class="a"><i>+</i><div><code>timeMidnight</code><p>Midnight</p></div></li><li class="a"><i>+</i><div><code>dayNightSleepRequirement</code><p>Sleeping skips the night</p></div></li><li class="a"><i>+</i><div><code>sleepHalf</code><p>When over half sleep</p></div></li><li class="a"><i>+</i><div><code>sleepAll</code><p>When everyone sleeps</p></div></li><li class="a"><i>+</i><div><code>sleepCustom</code><p>When a set number sleep</p></div></li><li class="a"><i>+</i><div><code>dayNightSleepPlayersNeeded</code><p>Players needed to sleep</p></div></li><li class="a"><i>+</i><div><code>playersNeededPlaceholder</code><p>Number of players</p></div></li><li class="a"><i>+</i><div><code>dayNightLeaderboard</code><p>Days leaderboard</p></div></li><li class="a"><i>+</i><div><code>dayNightTimeDisplay</code><p>Time on screen</p></div></li><li class="a"><i>+</i><div><code>dayNightProgressBar</code><p>Progress bar</p></div></li><li class="a"><i>+</i><div><code>dayNightBroadcastTime</code><p>Announce the time in chat</p></div></li><li class="a"><i>+</i><div><code>dayNightBroadcastSleeping</code><p>Announce sleepers in chat</p></div></li><li class="a"><i>+</i><div><code>dayNightLighting</code><p>Lighting on for everyone</p></div></li><li class="a"><i>+</i><div><code>dayNightFreshJoinTorches</code><p>Torches for new players</p></div></li><li class="a"><i>+</i><div><code>spawnReset</code><p>Spawn reset</p></div></li><li class="a"><i>+</i><div><code>spawnPoint</code><p>Spawn point</p></div></li><li class="a"><i>+</i><div><code>setToWhereYouStand</code><p>Set to where you stand</p></div></li><li class="a"><i>+</i><div><code>teleportToSpawn</code><p>Teleport to spawn</p></div></li><li class="a"><i>+</i><div><code>worldBorder</code><p>World border</p></div></li><li class="a"><i>+</i><div><code>worldBorderPlaceholder</code><p>Radius or off</p></div></li><li class="a"><i>+</i><div><code>voidDeathHeight</code><p>Void death height</p></div></li><li class="a"><i>+</i><div><code>heightPlaceholder</code><p>Height</p></div></li><li class="a"><i>+</i><div><code>warps</code><p>Warps</p></div></li><li class="a"><i>+</i><div><code>warpNamePlaceholder</code><p>Warp name</p></div></li><li class="a"><i>+</i><div><code>hideWorldCode</code><p>Hide world code from non-coders</p></div></li></ul></details><details class="sec"><summary><span>lobbyManage</span><em>+45 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>players</code><p>Players</p></div></li><li class="a"><i>+</i><div><code>joining</code><p>Joining</p></div></li><li class="a"><i>+</i><div><code>rules</code><p>Rules</p></div></li><li class="a"><i>+</i><div><code>leaderboard</code><p>Leaderboard</p></div></li><li class="a"><i>+</i><div><code>here</code><p>Here</p></div></li><li class="a"><i>+</i><div><code>notHere</code><p>Not here</p></div></li><li class="a"><i>+</i><div><code>banned</code><p>Banned</p></div></li><li class="a"><i>+</i><div><code>you</code><p>You</p></div></li><li class="a"><i>+</i><div><code>joinedAgo</code><p>Joined {{time}} ago</p></div></li><li class="a"><i>+</i><div><code>joinedAgoJustNow</code><p>Joined just now</p></div></li><li class="a"><i>+</i><div><code>leftAgo</code><p>Left {{time}} ago</p></div></li><li class="a"><i>+</i><div><code>leftAgoJustNow</code><p>Left just now</p></div></li><li class="a"><i>+</i><div><code>kickedAgo</code><p>Kicked {{time}} ago</p></div></li><li class="a"><i>+</i><div><code>kickedAgoJustNow</code><p>Kicked just now</p></div></li><li class="a"><i>+</i><div><code>bannedAgo</code><p>Banned {{time}} ago</p></div></li><li class="a"><i>+</i><div><code>bannedAgoJustNow</code><p>Banned just now</p></div></li><li class="a"><i>+</i><div><code>triedToJoinAgo</code><p>Tried to join {{time}} ago</p></div></li><li class="a"><i>+</i><div><code>triedToJoinAgoJustNow</code><p>Tried to join just now</p></div></li><li class="a"><i>+</i><div><code>kickAll</code><p>Kick all</p></div></li><li class="a"><i>+</i><div><code>kickAllConfirm</code><p>Kick {{count}} players with no role?</p></div></li><li class="a"><i>+</i><div><code>roleConfirm</code><p>Make {{playerName}} {{role}}?</p></div></li><li class="a"><i>+</i><div><code>roleCanCoOwner</code><p>Can kick, ban, code, change the rules and give roles below co-owner.</p></div></li><li class="a"><i>+</i><div><code>roleCanMod</code><p>Can kick, ban and unban.</p></div></li><li class="a"><i>+</i><div><code>roleCanCoder</code><p>Can build with world-edit tools and edit World Code.</p></div></li><li class="a"><i>+</i><div><code>roleCanBuilder</code><p>Can build with world-edit tools.</p></div></li><li class="a"><i>+</i><div><code>makeRole</code><p>Make {{role}}</p></div></li><li class="a"><i>+</i><div><code>allCount</code><p>All {{count}}</p></div></li><li class="a"><i>+</i><div><code>allOnWhitelist</code><p>All {{count}} on the whitelist</p></div></li><li class="a"><i>+</i><div><code>findName</code><p>Find a name</p></div></li><li class="a"><i>+</i><div><code>add</code><p>Add</p></div></li><li class="a"><i>+</i><div><code>noPlayerCalled</code><p>No player called {{playerName}}</p></div></li><li class="a"><i>+</i><div><code>friend</code><p>Friend</p></div></li><li class="a"><i>+</i><div><code>friendHere</code><p>Friend · here</p></div></li><li class="a"><i>+</i><div><code>friendOnline</code><p>Friend · online</p></div></li><li class="a"><i>+</i><div><code>hereStatus</code><p>Here</p></div></li><li class="a"><i>+</i><div><code>inWorldsList</code><p>In the worlds list</p></div></li><li class="a"><i>+</i><div><code>description</code><p>Description</p></div></li><li class="a"><i>+</i><div><code>emojis</code><p>Emojis</p></div></li><li class="a"><i>+</i><div><code>colour</code><p>Colour</p></div></li><li class="a"><i>+</i><div><code>gameplay</code><p>Gameplay</p></div></li><li class="a"><i>+</i><div><code>world</code><p>World</p></div></li><li class="a"><i>+</i><div><code>setJustNow</code><p>Set just now</p></div></li><li class="a"><i>+</i><div><code>namePlaceholder</code><p>Name</p></div></li><li class="a"><i>+</i><div><code>addHere</code><p>Add here</p></div></li><li class="a"><i>+</i><div><code>removeName</code><p>Remove {{name}}</p></div></li></ul></details><details class="sec"><summary><span>lobbyManageEntry</span><em>+9 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>manageLobby</code><p>Manage lobby</p></div></li><li class="a"><i>+</i><div><code>kick</code><p>Kick</p></div></li><li class="a"><i>+</i><div><code>ban</code><p>Ban</p></div></li><li class="a"><i>+</i><div><code>unban</code><p>Unban</p></div></li><li class="a"><i>+</i><div><code>banConfirm</code><p>Ban {{playerName}}?</p></div></li><li class="a"><i>+</i><div><code>kicked</code><p>Kicked</p></div></li><li class="a"><i>+</i><div><code>banned</code><p>Banned</p></div></li><li class="a"><i>+</i><div><code>unbanned</code><p>Unbanned</p></div></li><li class="a"><i>+</i><div><code>noAnswer</code><p>The world didn't answer. Try again.</p></div></li></ul></details><details class="sec"><summary><span>auth</span><em>+2 ~0 -1</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>deleteAccountLossWarning</code><p>Your name, progress, items, purchases and friends will be gone for good and can't be recovered.</p></div></li><li class="a"><i>+</i><div><code>discordActivityDeleteAccountLossWarning</code><p>Your name, progress, items, purchases and friends will be gone for good and can't be recovered, and the activity will close.</p></div></li><li class="d"><i>-</i><div><code>discordActivityDeleteAccountWarning</code><p class="from">This process cannot be undone. Make sure you are certain before you continue. The activity will exit after you delete your account.</p></div></li></ul></details><details class="sec"><summary><span>general</span><em>+1 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>graphicsStoppedWorking</code><p>Your graphics stopped working.</p></div></li></ul></details><details class="sec"><summary><span>payments</span><em>+1 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>subscriptionBanned</code><p>Banned accounts can't subscribe.</p></div></li></ul></details></details>
 <details class="dev"><summary>🔧 Technical details (you can usually skip this)</summary><dl>
@@ -119,10 +143,13 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <dt>Chunks</dt><dd>2 added / 1 removed / 383 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
 <article class="upd">
 <div class="meta"><time>2026-11-20 12:30 UTC</time><span class="build">teusab → 7rj44</span></div>
-<h3>Build updated from teusab to 7rj44</h3>
+<h3>No in-game text changed. Rebuild only.</h3>
 <div class="chips"></div>
+<div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">Under the hood</span><h4>A rebuild (7rj44) with no in-game change</h4></div>
+<p>Zero strings added, changed or removed in the game text; only hashes changed. The string differences are mostly renamed variables.</p>
+<span class="cert">Confidence: No text change is certain / contents a guess</span></div></div></div>
 
-<p class="muted">An English summary has not been written for this update yet. The Japanese version has one if it is available.</p>
 
 
 <details class="dev"><summary>🔧 Technical details (you can usually skip this)</summary><dl>
@@ -131,10 +158,13 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <dt>Chunks</dt><dd>0 added / 0 removed / 384 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
 <article class="upd">
 <div class="meta"><time>2026-11-20 11:00 UTC</time><span class="build">fsa8nn → teusab</span></div>
-<h3>Build updated from fsa8nn to teusab</h3>
+<h3>No in-game text changed. Rebuild only (again, an hour later).</h3>
 <div class="chips"></div>
+<div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">Under the hood</span><h4>A rebuild (teusab) with no in-game change</h4></div>
+<p>Zero strings added, changed or removed in the game text; only hashes changed. The string differences are mostly renamed variables.</p>
+<span class="cert">Confidence: No text change is certain / contents a guess</span></div></div></div>
 
-<p class="muted">An English summary has not been written for this update yet. The Japanese version has one if it is available.</p>
 
 
 <details class="dev"><summary>🔧 Technical details (you can usually skip this)</summary><dl>
@@ -143,10 +173,13 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <dt>Chunks</dt><dd>0 added / 0 removed / 384 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
 <article class="upd">
 <div class="meta"><time>2026-11-20 10:00 UTC</time><span class="build">6ndy1f → fsa8nn</span></div>
-<h3>Build updated from 6ndy1f to fsa8nn</h3>
+<h3>No in-game text changed. Rebuild only.</h3>
 <div class="chips"></div>
+<div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">Under the hood</span><h4>A rebuild (fsa8nn) with no in-game change</h4></div>
+<p>Zero strings added, changed or removed in the game text; only hashes changed. The string differences are mostly renamed variables.</p>
+<span class="cert">Confidence: No text change is certain / contents a guess</span></div></div></div>
 
-<p class="muted">An English summary has not been written for this update yet. The Japanese version has one if it is available.</p>
 
 
 <details class="dev"><summary>🔧 Technical details (you can usually skip this)</summary><dl>
@@ -155,10 +188,13 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <dt>Chunks</dt><dd>0 added / 0 removed / 384 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
 <article class="upd">
 <div class="meta"><time>2026-11-20 07:30 UTC</time><span class="build">q3ynmh → 6ndy1f</span></div>
-<h3>Build updated from q3ynmh to 6ndy1f</h3>
+<h3>No in-game text changed. Rebuild only (again, 30 minutes later).</h3>
 <div class="chips"></div>
+<div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">Under the hood</span><h4>A rebuild (6ndy1f) with no in-game change</h4></div>
+<p>Zero strings added, changed or removed in the game text; only hashes changed. The string differences are mostly renamed variables.</p>
+<span class="cert">Confidence: No text change is certain / contents a guess</span></div></div></div>
 
-<p class="muted">An English summary has not been written for this update yet. The Japanese version has one if it is available.</p>
 
 
 <details class="dev"><summary>🔧 Technical details (you can usually skip this)</summary><dl>
@@ -167,10 +203,13 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <dt>Chunks</dt><dd>0 added / 0 removed / 384 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
 <article class="upd">
 <div class="meta"><time>2026-11-20 07:00 UTC</time><span class="build">eulrrq → q3ynmh</span></div>
-<h3>Build updated from eulrrq to q3ynmh</h3>
+<h3>No in-game text changed. Rebuild only (again, two hours later).</h3>
 <div class="chips"></div>
+<div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">Under the hood</span><h4>A rebuild (q3ynmh) with no in-game change</h4></div>
+<p>Zero strings added, changed or removed in the game text; only hashes changed. The string differences are mostly renamed variables.</p>
+<span class="cert">Confidence: No text change is certain / contents a guess</span></div></div></div>
 
-<p class="muted">An English summary has not been written for this update yet. The Japanese version has one if it is available.</p>
 
 
 <details class="dev"><summary>🔧 Technical details (you can usually skip this)</summary><dl>
@@ -179,10 +218,13 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <dt>Chunks</dt><dd>0 added / 0 removed / 384 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
 <article class="upd">
 <div class="meta"><time>2026-11-20 05:00 UTC</time><span class="build">wd13r → eulrrq</span></div>
-<h3>Build updated from wd13r to eulrrq</h3>
+<h3>No in-game text changed. Rebuild only.</h3>
 <div class="chips"></div>
+<div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">Under the hood</span><h4>A rebuild (eulrrq) with no in-game change</h4></div>
+<p>Zero strings added, changed or removed in the game text; only hashes changed. The string differences are mostly renamed variables.</p>
+<span class="cert">Confidence: No text change is certain / contents a guess</span></div></div></div>
 
-<p class="muted">An English summary has not been written for this update yet. The Japanese version has one if it is available.</p>
 
 
 <details class="dev"><summary>🔧 Technical details (you can usually skip this)</summary><dl>
@@ -805,7 +847,7 @@ Mine its Comet Ore too: 8 Shards make a Core</p></div></li><li class="d"><i>-</i
 <dt>main.js strings</dt><dd>7216 added / 11682 removed. Renamed variables create many apparent differences, so this is not the same as in-game changes.</dd>
 <dt>Chunks</dt><dd>6 added / 0 removed / 195 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
 <details class="trace"><summary><span>🔍 Server traces (automatic check)</span></summary>
-<div class="en"><p class="muted">Observations of publicly served files, taken at every update. The inside of the server is not visible. Checked at 2026-11-20 16:01 UTC.</p>
+<div class="en"><p class="muted">Observations of publicly served files, taken at every update. The inside of the server is not visible. Checked at 2026-11-20 16:31 UTC.</p>
 <dl><dt>Origin "Server" header</dt><dd>nginx/1.18.0 (Ubuntu) (from the 404 page of a missing file)</dd>
 <dt>Source maps</dt><dd>none served (all 404)</dd>
 <dt>Workers</dt><dd>none</dd>

@@ -76,12 +76,15 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <h2>✨ 更新と、ゲーム内の変化</h2>
 <article class="upd latest">
 <div class="meta"><span class="new">最新</span><time>2026年11月21日 01:00</time><span class="build">bcgkc → bbb6l5</span></div>
-<h3>ビルドが bcgkc から bbb6l5 に更新</h3>
+<h3>コードエディタの AI ヘルパーに、「自分の API キーを使うときの安全チェック」の切り替えが入った。</h3>
 <div class="chips"><span class="chip add">＋ 新しい文言 3</span></div>
-<div class="pts"><div class="pt player"><div class="ico">📝</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>ゲーム内の文言が変わった場所: codeEditorAiKeySafetyCheck</h4></div>
-<p>下の「英語の原文」で、追加・変更・削除された文を見られます。</p>
-<span class="cert">確かさ: 自動判定</span></div></div></div>
+<div class="pts"><div class="pt maker"><div class="ico">🤖</div><div class="ptb">
+<div class="ptt"><span class="who">作る人</span><h4>AI ヘルパー:自分の API キーを使うときの「安全チェック」</h4></div>
+<p>コードエディタの AI ヘルパーを、自分の API キーで使うときに、質問と答えを検査する「安全チェック」を、オン・オフできるようになる。オフにすると、AI の答えは、フィルターを通らない、という警告が出る。</p><p class="note">どの検査が行われるのか、初期値がオンかオフかは、文言からは分からない。</p>
+<span class="cert">確かさ: 文言は確実 / 初期値・動きは未確認</span></div></div><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">運営の内部</span><h4>ビルドの作り直し(bbb6l5)</h4></div>
+<p>ファイルの数は同じで、ハッシュが変わっただけ。文字列の増減は、約 9,000 件と大きいが、変数名の付け替えなどによる見かけの差。</p>
+<span class="cert">確かさ: 自動比較</span></div></div></div>
 
 
 <details class="en"><summary>📖 英語の原文を見る(追加・書き換え・削除された文)</summary><details class="sec"><summary><span>codeEditorAiKeySafetyCheck</span><em>＋3 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>toggle</code><p>Safety Check for own API keys</p></div></li><li class="a"><i>＋</i><div><code>toggleHint</code><p>Checks your questions and the answers when the AI Helper uses your own API key.</p></div></li><li class="a"><i>＋</i><div><code>offWarning</code><p>Turning off the safety check will mean that responses from AI will not be filtered.</p></div></li></ul></details></details>
@@ -657,9 +660,12 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <article class="upd">
 <div class="meta"><time>2026年11月21日 00:00</time><span class="build">qepqb8 → bcgkc</span></div>
-<h3>ビルドが qepqb8 から bcgkc に更新</h3>
+<h3>ゲーム内の文言の変化はなし。ビルドの作り直しだけ(文字列の増減は約 7,400〜8,000 件で、この日で最大)。</h3>
 <div class="chips"></div>
-
+<div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">運営の内部</span><h4>ビルドの作り直し(bcgkc)。ゲーム内の変化はなし</h4></div>
+<p>ゲーム内の文言の増減は 0 件。ファイルの数も同じで、ハッシュが変わっただけ。文字列の増減は、変数名の付け替えなどによる見かけの差。文字列の増減の件数は、この日の中で一番大きいが、ゲーム内の文言は変わっていない。</p><p class="note">どこが変わったかは、読んでいない。</p>
+<span class="cert">確かさ: 「文言に変化なし」は確実 / 中身は推測</span></div></div></div>
 
 
 
@@ -1234,12 +1240,30 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <article class="upd">
 <div class="meta"><time>2026年11月20日 23:00</time><span class="build">7rj44 → qepqb8</span></div>
-<h3>ビルドが 7rj44 から qepqb8 に更新</h3>
+<h3>ワールドの持ち主向けの「ロビー管理」画面(プレイヤー・参加状況・ルール・ランキング)が、まとめて入った。ルールには、昼夜・睡眠・落下ダメージ・リスポーン・ワールドボーダーなど約 55 項目。</h3>
 <div class="chips"><span class="chip add">＋ 新しい文言 113</span><span class="chip del">－ 削除 1</span></div>
-<div class="pts"><div class="pt player"><div class="ico">📝</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>ゲーム内の文言が変わった場所: general、ログイン、lobbyManage、lobbyManageEntry、lobbyRules、payments</h4></div>
-<p>下の「英語の原文」で、追加・変更・削除された文を見られます。</p>
-<span class="cert">確かさ: 自動判定</span></div></div></div>
+<div class="pts"><div class="pt player"><div class="ico">🛡️</div><div class="ptb">
+<div class="ptt"><span class="who">ワールドを作る人</span><h4>「ロビー管理」画面:キック・BAN・解除、役割の付与</h4></div>
+<p>「Manage lobby(ロビーを管理)」の画面の文言が加わった。タブは「プレイヤー」「参加状況(Joining)」「ルール」「ランキング」。プレイヤーごとに、いる・いない・BAN 中・自分の表示と、「○分前に参加・退出・キック・BAN された」「○分前に入ろうとした」の履歴が出る。操作は、キック、BAN(確認つき)、BAN 解除、「役割のない ○ 人を全員キック」。役割は、共同オーナー(キック・BAN・コード・ルール変更・下の役割の付与)、モデレーター(キック・BAN・解除)、コーダー(ワールドエディット用の道具と World Code の編集)、ビルダー(ワールドエディット用の道具)の 4 種類。ホワイトリストには、名前で探して足す・外す、フレンドの印(いる・オンライン)がある。ワールドが応答しないときの「もう一度試して」もある。</p><p class="note">「ワールドエディット用の道具」が何を指すかは、文言からは分からない。</p>
+<span class="cert">確かさ: 文言は確実 / 画面の見た目・出る場所は未確認</span></div></div><div class="pt player"><div class="ico">⚙️</div><div class="ptb">
+<div class="ptt"><span class="who">ワールドを作る人</span><h4>ワールドのルール設定(約 55 項目)</h4></div>
+<p>既定のゲームモード(サバイバル冒険・平和な冒険など)、死んだときにアイテムを落とすか(いつも・PvP のとき・しない)、落下ダメージ、スポーン保護、テレポートの申請、部族、プロテクター(オフのときは、オーナーと共同オーナーだけが作る・置ける)、SMP のマーケット、サバイバルの銃、モブ(敵は暗い所だけ、など)。「昼と夜」の設定は細かく、時刻の一時停止・時刻の指定(夜明け〜真夜中の 10 段階)、眠って夜を飛ばす条件(半数が眠ったとき・全員・人数を指定)、何日たったかのランキング、画面の時刻と進行バー、チャットでの時刻・睡眠の知らせ、新しく入った人に松明を渡す、などがある。ほかに、スポーン地点の設定、ワールドボーダー(半径)、奈落で死ぬ高さ、ワープ地点、「コードを書かない人には、ワールドコードを隠す」。</p><p class="note">これらがいま遊べるのか、一部の人だけなのかは、確認していない。</p>
+<span class="cert">確かさ: 文言は確実 / 初期値は未確認</span></div></div><div class="pt player"><div class="ico">✏️</div><div class="ptb">
+<div class="ptt"><span class="who">ワールドを作る人</span><h4>説明・絵文字・色の設定</h4></div>
+<p>ロビー管理の中に、「説明」「絵文字」「色」「ゲームプレイ」「ワールド」という見出しがある。ワールドの紹介まわりの設定と思われる。</p><p class="note">中身は、読んでいない(推測)。</p>
+<span class="cert">確かさ: 項目名のみ確認</span></div></div><div class="pt player"><div class="ico">🗑️</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>アカウント削除の警告が、はっきりした言い方に</h4></div>
+<p>「あなたの名前・進行状況・アイテム・購入品・フレンドは、完全に消え、元に戻せません」に変わった(Discord のアクティビティ内では、「アクティビティも閉じます」が付く)。Discord 用の古い警告文(「この操作は取り消せません」)は消えた。</p>
+<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">🖥️</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>「グラフィックが止まりました」</h4></div>
+<p>描画が止まったときの案内の文言が加わった。以前の更新で入った、描画の復旧(「グラフィックを復元中」)と、つながる表示と思われる。</p>
+<span class="cert">確かさ: 文言は確実 / 出る場面は推測</span></div></div><div class="pt player"><div class="ico">🚫</div><div class="ptb">
+<div class="ptt"><span class="who">遊ぶ人</span><h4>BAN されたアカウントは、サブスクリプションに申し込めない</h4></div>
+<p>「BAN されたアカウントは、申し込めません」が加わった(Super Rank のサブスクリプション)。</p><p class="note">BAN された人が、これで何を見るかは、文言からは分からない。</p>
+<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">運営の内部</span><h4>ファイルの組み替え</h4></div>
+<p>新しいファイルが 2 つ(番号の 386 と renderProbe)増え、1 つ(69)が消えた。renderProbe は、名前から、描画の確認用と思われる(中身は読んでいない)。</p>
+<span class="cert">確かさ: 自動比較</span></div></div></div>
 
 
 <details class="en"><summary>📖 英語の原文を見る(追加・書き換え・削除された文)</summary><details class="sec"><summary><span>lobbyRules</span><em>＋55 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>defaultGamemode</code><p>Default gamemode</p></div></li><li class="a"><i>＋</i><div><code>gamemodeSurvivalAdventure</code><p>Survival adventure</p></div></li><li class="a"><i>＋</i><div><code>gamemodePeacefulAdventure</code><p>Peaceful adventure</p></div></li><li class="a"><i>＋</i><div><code>dropItemsOnDeath</code><p>Drop items on death</p></div></li><li class="a"><i>＋</i><div><code>dropAllDeaths</code><p>All deaths</p></div></li><li class="a"><i>＋</i><div><code>dropInPvp</code><p>In PvP</p></div></li><li class="a"><i>＋</i><div><code>never</code><p>Never</p></div></li><li class="a"><i>＋</i><div><code>fallDamage</code><p>Fall damage</p></div></li><li class="a"><i>＋</i><div><code>spawnProtection</code><p>Spawn protection</p></div></li><li class="a"><i>＋</i><div><code>teleportRequests</code><p>Teleport requests</p></div></li><li class="a"><i>＋</i><div><code>tribes</code><p>Tribes</p></div></li><li class="a"><i>＋</i><div><code>protectors</code><p>Protectors</p></div></li><li class="a"><i>＋</i><div><code>protectorsInfo</code><p>When off, only the owner and co-owners can craft and place protectors.</p></div></li><li class="a"><i>＋</i><div><code>smpMarketplace</code><p>SMP marketplace</p></div></li><li class="a"><i>＋</i><div><code>survivalGuns</code><p>Survival guns</p></div></li><li class="a"><i>＋</i><div><code>mobs</code><p>Mobs</p></div></li><li class="a"><i>＋</i><div><code>hostileMobsOnlyInDark</code><p>Hostile mobs only in the dark</p></div></li><li class="a"><i>＋</i><div><code>dayNight</code><p>Day &amp; night</p></div></li><li class="a"><i>＋</i><div><code>dayNightTime</code><p>Time</p></div></li><li class="a"><i>＋</i><div><code>pause</code><p>Pause</p></div></li><li class="a"><i>＋</i><div><code>dayNightSetTime</code><p>Set time</p></div></li><li class="a"><i>＋</i><div><code>timeDawn</code><p>Dawn</p></div></li><li class="a"><i>＋</i><div><code>timeSunrise</code><p>Sunrise</p></div></li><li class="a"><i>＋</i><div><code>timeDay</code><p>Day</p></div></li><li class="a"><i>＋</i><div><code>timeMidday</code><p>Midday</p></div></li><li class="a"><i>＋</i><div><code>timeAfternoon</code><p>Afternoon</p></div></li><li class="a"><i>＋</i><div><code>timeEvening</code><p>Evening</p></div></li><li class="a"><i>＋</i><div><code>timeSunset</code><p>Sunset</p></div></li><li class="a"><i>＋</i><div><code>timeDusk</code><p>Dusk</p></div></li><li class="a"><i>＋</i><div><code>timeNight</code><p>Night</p></div></li><li class="a"><i>＋</i><div><code>timeMidnight</code><p>Midnight</p></div></li><li class="a"><i>＋</i><div><code>dayNightSleepRequirement</code><p>Sleeping skips the night</p></div></li><li class="a"><i>＋</i><div><code>sleepHalf</code><p>When over half sleep</p></div></li><li class="a"><i>＋</i><div><code>sleepAll</code><p>When everyone sleeps</p></div></li><li class="a"><i>＋</i><div><code>sleepCustom</code><p>When a set number sleep</p></div></li><li class="a"><i>＋</i><div><code>dayNightSleepPlayersNeeded</code><p>Players needed to sleep</p></div></li><li class="a"><i>＋</i><div><code>playersNeededPlaceholder</code><p>Number of players</p></div></li><li class="a"><i>＋</i><div><code>dayNightLeaderboard</code><p>Days leaderboard</p></div></li><li class="a"><i>＋</i><div><code>dayNightTimeDisplay</code><p>Time on screen</p></div></li><li class="a"><i>＋</i><div><code>dayNightProgressBar</code><p>Progress bar</p></div></li><li class="a"><i>＋</i><div><code>dayNightBroadcastTime</code><p>Announce the time in chat</p></div></li><li class="a"><i>＋</i><div><code>dayNightBroadcastSleeping</code><p>Announce sleepers in chat</p></div></li><li class="a"><i>＋</i><div><code>dayNightLighting</code><p>Lighting on for everyone</p></div></li><li class="a"><i>＋</i><div><code>dayNightFreshJoinTorches</code><p>Torches for new players</p></div></li><li class="a"><i>＋</i><div><code>spawnReset</code><p>Spawn reset</p></div></li><li class="a"><i>＋</i><div><code>spawnPoint</code><p>Spawn point</p></div></li><li class="a"><i>＋</i><div><code>setToWhereYouStand</code><p>Set to where you stand</p></div></li><li class="a"><i>＋</i><div><code>teleportToSpawn</code><p>Teleport to spawn</p></div></li><li class="a"><i>＋</i><div><code>worldBorder</code><p>World border</p></div></li><li class="a"><i>＋</i><div><code>worldBorderPlaceholder</code><p>Radius or off</p></div></li><li class="a"><i>＋</i><div><code>voidDeathHeight</code><p>Void death height</p></div></li><li class="a"><i>＋</i><div><code>heightPlaceholder</code><p>Height</p></div></li><li class="a"><i>＋</i><div><code>warps</code><p>Warps</p></div></li><li class="a"><i>＋</i><div><code>warpNamePlaceholder</code><p>Warp name</p></div></li><li class="a"><i>＋</i><div><code>hideWorldCode</code><p>Hide world code from non-coders</p></div></li></ul></details><details class="sec"><summary><span>lobbyManage</span><em>＋45 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>players</code><p>Players</p></div></li><li class="a"><i>＋</i><div><code>joining</code><p>Joining</p></div></li><li class="a"><i>＋</i><div><code>rules</code><p>Rules</p></div></li><li class="a"><i>＋</i><div><code>leaderboard</code><p>Leaderboard</p></div></li><li class="a"><i>＋</i><div><code>here</code><p>Here</p></div></li><li class="a"><i>＋</i><div><code>notHere</code><p>Not here</p></div></li><li class="a"><i>＋</i><div><code>banned</code><p>Banned</p></div></li><li class="a"><i>＋</i><div><code>you</code><p>You</p></div></li><li class="a"><i>＋</i><div><code>joinedAgo</code><p>Joined {{time}} ago</p></div></li><li class="a"><i>＋</i><div><code>joinedAgoJustNow</code><p>Joined just now</p></div></li><li class="a"><i>＋</i><div><code>leftAgo</code><p>Left {{time}} ago</p></div></li><li class="a"><i>＋</i><div><code>leftAgoJustNow</code><p>Left just now</p></div></li><li class="a"><i>＋</i><div><code>kickedAgo</code><p>Kicked {{time}} ago</p></div></li><li class="a"><i>＋</i><div><code>kickedAgoJustNow</code><p>Kicked just now</p></div></li><li class="a"><i>＋</i><div><code>bannedAgo</code><p>Banned {{time}} ago</p></div></li><li class="a"><i>＋</i><div><code>bannedAgoJustNow</code><p>Banned just now</p></div></li><li class="a"><i>＋</i><div><code>triedToJoinAgo</code><p>Tried to join {{time}} ago</p></div></li><li class="a"><i>＋</i><div><code>triedToJoinAgoJustNow</code><p>Tried to join just now</p></div></li><li class="a"><i>＋</i><div><code>kickAll</code><p>Kick all</p></div></li><li class="a"><i>＋</i><div><code>kickAllConfirm</code><p>Kick {{count}} players with no role?</p></div></li><li class="a"><i>＋</i><div><code>roleConfirm</code><p>Make {{playerName}} {{role}}?</p></div></li><li class="a"><i>＋</i><div><code>roleCanCoOwner</code><p>Can kick, ban, code, change the rules and give roles below co-owner.</p></div></li><li class="a"><i>＋</i><div><code>roleCanMod</code><p>Can kick, ban and unban.</p></div></li><li class="a"><i>＋</i><div><code>roleCanCoder</code><p>Can build with world-edit tools and edit World Code.</p></div></li><li class="a"><i>＋</i><div><code>roleCanBuilder</code><p>Can build with world-edit tools.</p></div></li><li class="a"><i>＋</i><div><code>makeRole</code><p>Make {{role}}</p></div></li><li class="a"><i>＋</i><div><code>allCount</code><p>All {{count}}</p></div></li><li class="a"><i>＋</i><div><code>allOnWhitelist</code><p>All {{count}} on the whitelist</p></div></li><li class="a"><i>＋</i><div><code>findName</code><p>Find a name</p></div></li><li class="a"><i>＋</i><div><code>add</code><p>Add</p></div></li><li class="a"><i>＋</i><div><code>noPlayerCalled</code><p>No player called {{playerName}}</p></div></li><li class="a"><i>＋</i><div><code>friend</code><p>Friend</p></div></li><li class="a"><i>＋</i><div><code>friendHere</code><p>Friend · here</p></div></li><li class="a"><i>＋</i><div><code>friendOnline</code><p>Friend · online</p></div></li><li class="a"><i>＋</i><div><code>hereStatus</code><p>Here</p></div></li><li class="a"><i>＋</i><div><code>inWorldsList</code><p>In the worlds list</p></div></li><li class="a"><i>＋</i><div><code>description</code><p>Description</p></div></li><li class="a"><i>＋</i><div><code>emojis</code><p>Emojis</p></div></li><li class="a"><i>＋</i><div><code>colour</code><p>Colour</p></div></li><li class="a"><i>＋</i><div><code>gameplay</code><p>Gameplay</p></div></li><li class="a"><i>＋</i><div><code>world</code><p>World</p></div></li><li class="a"><i>＋</i><div><code>setJustNow</code><p>Set just now</p></div></li><li class="a"><i>＋</i><div><code>namePlaceholder</code><p>Name</p></div></li><li class="a"><i>＋</i><div><code>addHere</code><p>Add here</p></div></li><li class="a"><i>＋</i><div><code>removeName</code><p>Remove {{name}}</p></div></li></ul></details><details class="sec"><summary><span>lobbyManageEntry</span><em>＋9 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>manageLobby</code><p>Manage lobby</p></div></li><li class="a"><i>＋</i><div><code>kick</code><p>Kick</p></div></li><li class="a"><i>＋</i><div><code>ban</code><p>Ban</p></div></li><li class="a"><i>＋</i><div><code>unban</code><p>Unban</p></div></li><li class="a"><i>＋</i><div><code>banConfirm</code><p>Ban {{playerName}}?</p></div></li><li class="a"><i>＋</i><div><code>kicked</code><p>Kicked</p></div></li><li class="a"><i>＋</i><div><code>banned</code><p>Banned</p></div></li><li class="a"><i>＋</i><div><code>unbanned</code><p>Unbanned</p></div></li><li class="a"><i>＋</i><div><code>noAnswer</code><p>The world didn't answer. Try again.</p></div></li></ul></details><details class="sec"><summary><span>ログイン</span><em>＋2 〜0 －1</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>deleteAccountLossWarning</code><p>Your name, progress, items, purchases and friends will be gone for good and can't be recovered.</p></div></li><li class="a"><i>＋</i><div><code>discordActivityDeleteAccountLossWarning</code><p>Your name, progress, items, purchases and friends will be gone for good and can't be recovered, and the activity will close.</p></div></li><li class="d"><i>－</i><div><code>discordActivityDeleteAccountWarning</code><p class="from">This process cannot be undone. Make sure you are certain before you continue. The activity will exit after you delete your account.</p></div></li></ul></details><details class="sec"><summary><span>general</span><em>＋1 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>graphicsStoppedWorking</code><p>Your graphics stopped working.</p></div></li></ul></details><details class="sec"><summary><span>payments</span><em>＋1 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>subscriptionBanned</code><p>Banned accounts can't subscribe.</p></div></li></ul></details></details>
@@ -1821,9 +1845,12 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <article class="upd">
 <div class="meta"><time>2026年11月20日 21:30</time><span class="build">teusab → 7rj44</span></div>
-<h3>ビルドが teusab から 7rj44 に更新</h3>
+<h3>ゲーム内の文言の変化はなし。ビルドの作り直しだけ。</h3>
 <div class="chips"></div>
-
+<div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">運営の内部</span><h4>ビルドの作り直し(7rj44)。ゲーム内の変化はなし</h4></div>
+<p>ゲーム内の文言の増減は 0 件。ファイルの数も同じで、ハッシュが変わっただけ。文字列の増減は、変数名の付け替えなどによる見かけの差。</p><p class="note">どこが変わったかは、読んでいない。</p>
+<span class="cert">確かさ: 「文言に変化なし」は確実 / 中身は推測</span></div></div></div>
 
 
 
@@ -2397,9 +2424,12 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <article class="upd">
 <div class="meta"><time>2026年11月20日 20:00</time><span class="build">fsa8nn → teusab</span></div>
-<h3>ビルドが fsa8nn から teusab に更新</h3>
+<h3>ゲーム内の文言の変化はなし。ビルドの作り直しだけ(1 時間後に、また作り直し)。</h3>
 <div class="chips"></div>
-
+<div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">運営の内部</span><h4>ビルドの作り直し(teusab)。ゲーム内の変化はなし</h4></div>
+<p>ゲーム内の文言の増減は 0 件。ファイルの数も同じで、ハッシュが変わっただけ。文字列の増減は、変数名の付け替えなどによる見かけの差。前のビルドの 1 時間後。</p><p class="note">どこが変わったかは、読んでいない。</p>
+<span class="cert">確かさ: 「文言に変化なし」は確実 / 中身は推測</span></div></div></div>
 
 
 
@@ -2973,9 +3003,12 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <article class="upd">
 <div class="meta"><time>2026年11月20日 19:00</time><span class="build">6ndy1f → fsa8nn</span></div>
-<h3>ビルドが 6ndy1f から fsa8nn に更新</h3>
+<h3>ゲーム内の文言の変化はなし。ビルドの作り直しだけ。</h3>
 <div class="chips"></div>
-
+<div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">運営の内部</span><h4>ビルドの作り直し(fsa8nn)。ゲーム内の変化はなし</h4></div>
+<p>ゲーム内の文言の増減は 0 件。ファイルの数も同じで、ハッシュが変わっただけ。文字列の増減は、変数名の付け替えなどによる見かけの差。</p><p class="note">どこが変わったかは、読んでいない。</p>
+<span class="cert">確かさ: 「文言に変化なし」は確実 / 中身は推測</span></div></div></div>
 
 
 
@@ -3549,9 +3582,12 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <article class="upd">
 <div class="meta"><time>2026年11月20日 16:30</time><span class="build">q3ynmh → 6ndy1f</span></div>
-<h3>ビルドが q3ynmh から 6ndy1f に更新</h3>
+<h3>ゲーム内の文言の変化はなし。ビルドの作り直しだけ(30 分後に、また作り直し)。</h3>
 <div class="chips"></div>
-
+<div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">運営の内部</span><h4>ビルドの作り直し(6ndy1f)。ゲーム内の変化はなし</h4></div>
+<p>ゲーム内の文言の増減は 0 件。ファイルの数も同じで、ハッシュが変わっただけ。文字列の増減は、変数名の付け替えなどによる見かけの差。直前のビルドの 30 分後に、もう一度作り直されている。</p><p class="note">どこが変わったかは、読んでいない。</p>
+<span class="cert">確かさ: 「文言に変化なし」は確実 / 中身は推測</span></div></div></div>
 
 
 
@@ -4125,9 +4161,12 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <article class="upd">
 <div class="meta"><time>2026年11月20日 16:00</time><span class="build">eulrrq → q3ynmh</span></div>
-<h3>ビルドが eulrrq から q3ynmh に更新</h3>
+<h3>ゲーム内の文言の変化はなし。ビルドの作り直しだけ(2 時間後に、また作り直し)。</h3>
 <div class="chips"></div>
-
+<div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">運営の内部</span><h4>ビルドの作り直し(q3ynmh)。ゲーム内の変化はなし</h4></div>
+<p>ゲーム内の文言の増減は 0 件。ファイルの数も同じで、ハッシュが変わっただけ。文字列の増減は、変数名の付け替えなどによる見かけの差。前のビルドの 2 時間後。</p><p class="note">どこが変わったかは、読んでいない。</p>
+<span class="cert">確かさ: 「文言に変化なし」は確実 / 中身は推測</span></div></div></div>
 
 
 
@@ -4701,9 +4740,12 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <article class="upd">
 <div class="meta"><time>2026年11月20日 14:00</time><span class="build">wd13r → eulrrq</span></div>
-<h3>ビルドが wd13r から eulrrq に更新</h3>
+<h3>ゲーム内の文言の変化はなし。ビルドの作り直しだけ。</h3>
 <div class="chips"></div>
-
+<div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
+<div class="ptt"><span class="who">運営の内部</span><h4>ビルドの作り直し(eulrrq)。ゲーム内の変化はなし</h4></div>
+<p>ゲーム内の文言の増減は 0 件。ファイルの数も同じで、ハッシュが変わっただけ。文字列の増減は、変数名の付け替えなどによる見かけの差。</p><p class="note">どこが変わったかは、読んでいない。</p>
+<span class="cert">確かさ: 「文言に変化なし」は確実 / 中身は推測</span></div></div></div>
 
 
 
@@ -16616,7 +16658,7 @@ Mine its Comet Ore too: 8 Shards make a Core</p></div></li><li class="d"><i>－<
 
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <details class="trace"><summary><span>🔍 サーバーまわりの痕跡(自動チェック)</summary>
-<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/21 01:01</p>
+<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/21 01:31</p>
 <dl><dt>オリジンの Server 表示</dt><dd>nginx/1.18.0 (Ubuntu)(存在しないファイルの 404 ページより)</dd>
 <dt>ソースマップ</dt><dd>配信なし(すべて 404)</dd>
 <dt>ワーカー</dt><dd>なし</dd>
