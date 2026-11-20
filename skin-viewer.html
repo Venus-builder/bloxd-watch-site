@@ -70,90 +70,200 @@ label.chk{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--sub
 .howto li{margin:5px 0 5px 18px}
 .howto code{background:#10131f;border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:12.5px;color:#c9d2ff}
 .note{color:var(--sub);font-size:13px}
+.langbtn{position:fixed;top:10px;right:12px;z-index:99999;display:inline-block;padding:4px 12px;border-radius:6px;background:#4de2d4;color:#06201e;font:700 13px/1.6 system-ui,"Yu Gothic UI",sans-serif;text-decoration:none;border:1px solid rgba(0,0,0,.25);box-shadow:0 2px 0 rgba(0,0,0,.35)}.langbtn:hover{filter:brightness(1.08)}@media (prefers-color-scheme:light){.langbtn{background:#0b8c83;color:#fff}}
 </style>
 </head>
 <body>
+<a class="langbtn" id="langBtn" href="#" role="button"></a>
 <div class="wrap">
-  <div style="margin-bottom:12px"><a href="https://venus-builder.github.io/bloxd-watch-site/" style="display:inline-flex;align-items:center;gap:7px;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--tx);text-decoration:none">← bloxd.io 更新ウォッチ に戻る</a></div>
-  <h1>Bloxd スキンビューア <span class="tag">実素材版</span> <span class="tag" id="verStamp" style="font-weight:700">v2026.11.19-23:29</span></h1>
-  <p class="lead">bloxd.io の配信 JS に同梱されていた<b>公式プレイヤーモデル(Player_Model.glb)と公式テクスチャアトラス(Player_Atlas.png)</b>をそのまま抽出し、ゲームと同じ「コスメ層 + アトラスUV」方式で描画するデモです。表示中のキャラは公式テクスチャの生データです。</p>
+  <div style="margin-bottom:12px"><a id="backLink" data-i="back" href="https://venus-builder.github.io/bloxd-watch-site/" style="display:inline-flex;align-items:center;gap:7px;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--tx);text-decoration:none">← bloxd.io 更新ウォッチ に戻る</a></div>
+  <h1><span data-i="h1">Bloxd スキンビューア</span> <span class="tag" data-i="tagReal">実素材版</span> <span class="tag" id="verStamp" style="font-weight:700">v2026.11.19-23:29</span></h1>
+  <p class="lead" data-i="lead">bloxd.io の配信 JS に同梱されていた<b>公式プレイヤーモデル(Player_Model.glb)と公式テクスチャアトラス(Player_Atlas.png)</b>をそのまま抽出し、ゲームと同じ「コスメ層 + アトラスUV」方式で描画するデモです。表示中のキャラは公式テクスチャの生データです。</p>
   <div class="flow">
-    <div class="chip"><b>①素材</b>配信JS内のbase64から実アトラス(2048×2048・660部品)と実GLBモデルを抽出</div>
-    <div class="chip"><b>②展開</b>GLBはDraco圧縮 → 実ジオメトリ・実UV・ノード階層を復元</div>
-    <div class="chip"><b>③描画</b>skin→head→eyebrows→eyes→body→legs→shoes の層で全メッシュを重ね描き(αテストでマスク)</div>
-    <div class="chip"><b>④出力</b>透過PNGで保存(toDataURL)</div>
+    <div class="chip" data-i="chip1"><b>①素材</b>配信JS内のbase64から実アトラス(2048×2048・660部品)と実GLBモデルを抽出</div>
+    <div class="chip" data-i="chip2"><b>②展開</b>GLBはDraco圧縮 → 実ジオメトリ・実UV・ノード階層を復元</div>
+    <div class="chip" data-i="chip3"><b>③描画</b>skin→head→eyebrows→eyes→body→legs→shoes の層で全メッシュを重ね描き(αテストでマスク)</div>
+    <div class="chip" data-i="chip4"><b>④出力</b>透過PNGで保存(toDataURL)</div>
   </div>
   <div class="grid">
     <div class="stage">
       <div class="cvbox"><canvas id="cv" width="920" height="640"></canvas>
-        <div id="zoomCtl" title="拡大/縮小(モブ・プレイヤー共通)"><button id="zOut">−</button><button id="zReset">⟳</button><button id="zIn">＋</button></div>
+        <div id="zoomCtl" title="拡大/縮小(モブ・プレイヤー共通)" data-ia="title:zoomT"><button id="zOut">−</button><button id="zReset">⟳</button><button id="zIn">＋</button></div>
       </div>
 
       <!-- 全操作をまとめた単一コントロールパネル(タブ式)。
            デスクトップ=キャンバス上に浮遊(ドラッグ移動・折りたたみ可)、
            モバイル=キャンバスの下に通常配置(重なりなし+キャンバスはstickyで常に見える) -->
       <div id="ctrlPanel" class="ctrlpanel">
-        <div class="cphead" id="cpHead"><span class="cptitle">⚙ コントロール<span class="cpstat" id="hfHand"></span></span><button id="cpMin" title="折りたたむ">−</button></div>
+        <div class="cphead" id="cpHead"><span class="cptitle"><span data-i="ctrl">⚙ コントロール</span><span class="cpstat" id="hfHand"></span></span><button id="cpMin" title="折りたたむ" data-ia="title:collapse">−</button></div>
         <div class="cptabs" id="cpTabs"></div>
         <div class="cpwrap" id="cpWrap">
           <section class="cptab on" data-tab="held">
-            <p class="hint" style="margin:0 0 8px">右手/左手を切替えてアイテムを持たせ、スライダーで回転・位置・大きさを自由に調整(左手は鏡像配置)。値は手ごとに保存されます。</p>
+            <p class="hint" data-i="heldHint" style="margin:0 0 8px">右手/左手を切替えてアイテムを持たせ、スライダーで回転・位置・大きさを自由に調整(左手は鏡像配置)。値は手ごとに保存されます。</p>
             <div class="row" id="handSel" style="margin-bottom:8px"></div>
             <div class="row" id="handItems"></div>
             <div class="row" style="margin-top:8px;gap:6px;align-items:center">
-              <input id="itemName" type="text" placeholder="アイテム名で指定(英語: AK-47, TNT, torch …)" style="flex:1;min-width:0;padding:7px 10px;border:1px solid var(--line,#3a3f5c);border-radius:8px;background:#1a1e33;color:#e8eaf6;font-size:13px">
-              <button id="itemAdd" style="padding:7px 14px;border-radius:8px">追加</button>
+              <input id="itemName" type="text" placeholder="アイテム名で指定(英語: AK-47, TNT, torch …)" data-ia="placeholder:itemPh" style="flex:1;min-width:0;padding:7px 10px;border:1px solid var(--line,#3a3f5c);border-radius:8px;background:#1a1e33;color:#e8eaf6;font-size:13px">
+              <button id="itemAdd" data-i="add" style="padding:7px 14px;border-radius:8px">追加</button>
             </div>
-            <p class="hint" id="itemMsg" style="margin:6px 0 0;font-size:12px">全アイテム1724種から部分一致で検索。未知の名前はスプライトからボクセル化して手持ちに表示します。</p>
+            <p class="hint" data-i="itemMsg0" id="itemMsg" style="margin:6px 0 0;font-size:12px">全アイテム1724種から部分一致で検索。未知の名前はスプライトからボクセル化して手持ちに表示します。</p>
             <div class="joints" id="heldAdjust" style="margin-top:8px"></div>
-            <div class="row" style="margin-top:8px"><button id="heldReset">初期位置に戻す</button></div>
+            <div class="row" style="margin-top:8px"><button id="heldReset" data-i="heldReset">初期位置に戻す</button></div>
           </section>
           <section class="cptab" data-tab="pose">
             <div class="row" id="poses"></div>
             <div class="joints" id="joints" style="margin-top:8px"></div>
-            <div class="row" style="margin-top:10px"><button id="poseReset">ポーズをリセット</button></div>
-            <p class="hint" style="margin-top:8px">スライダーで全関節を自由に回転(X=前後 / Y=ひねり / Z=左右への開き、°)。プリセットを選ぶとスライダーに値が反映されます。ドラッグで視点回転・ホイールでズーム。</p>
+            <div class="row" style="margin-top:10px"><button id="poseReset" data-i="poseReset">ポーズをリセット</button></div>
+            <p class="hint" data-i="poseHint" style="margin-top:8px">スライダーで全関節を自由に回転(X=前後 / Y=ひねり / Z=左右への開き、°)。プリセットを選ぶとスライダーに値が反映されます。ドラッグで視点回転・ホイールでズーム。</p>
           </section>
           <section class="cptab" data-tab="look">
-            <p class="hint" style="margin:0 0 8px">スキン=ゲーム内 Characters → Default の8人(実テクスチャ)。選ぶと各部品のコスメ名(<code>body_4_3</code> 等)のアトラスセルが切り替わります。</p>
+            <p class="hint" data-i="lookHint" style="margin:0 0 8px">スキン=ゲーム内 Characters → Default の8人(実テクスチャ)。選ぶと各部品のコスメ名(<code>body_4_3</code> 等)のアトラスセルが切り替わります。</p>
             <div class="row" id="skins"></div>
             <div class="msg ok" id="msg" style="margin-top:8px"></div>
-            <p class="hint" style="margin:12px 0 8px"><b>防具</b>:公式モデル内蔵の実メッシュ+バンドル埋め込みの実テクスチャ(Player_Armour.png 4096×64)。素材は公式の順序で、エンジンと同じUV式 u=(uv.x+素材idx)/64 でサンプリング。αテストで顔開口部も透過します。</p>
+            <p class="hint" data-i="armourHint" style="margin:12px 0 8px"><b>防具</b>:公式モデル内蔵の実メッシュ+バンドル埋め込みの実テクスチャ(Player_Armour.png 4096×64)。素材は公式の順序で、エンジンと同じUV式 u=(uv.x+素材idx)/64 でサンプリング。αテストで顔開口部も透過します。</p>
             <div class="row" id="armourMats"></div>
             <div class="row" id="armourSlots" style="margin-top:8px"></div>
-            <div class="row" style="margin-top:8px"><button id="armourAll" class="primary">フル装備</button><button id="armourNone">すべて外す</button></div>
-            <p class="hint" style="margin:12px 0 6px"><b>プレイヤーのスキンを取得</b>:bloxd内 F12 → Network の <code>get-player-profile</code> レスポンス(JSON)や <code>updateMyCosmetic</code> をコピーして貼り付け「反映」。コスメ名(skin_0_5 等)を直接書いてもOK。</p>
+            <div class="row" style="margin-top:8px"><button id="armourAll" class="primary" data-i="armourAll">フル装備</button><button id="armourNone" data-i="armourNone">すべて外す</button></div>
+            <p class="hint" data-i="getSkin" style="margin:12px 0 6px"><b>プレイヤーのスキンを取得</b>:bloxd内 F12 → Network の <code>get-player-profile</code> レスポンス(JSON)や <code>updateMyCosmetic</code> をコピーして貼り付け「反映」。コスメ名(skin_0_5 等)を直接書いてもOK。</p>
             <textarea id="cosPaste" rows="3" placeholder='{"skin":"skin_0_5","head":"head_2_0","eyebrows":"eyebrows_2_0","eyes":"eyes_0_2","body":"body_6_5","legs":"legs_0_2","shoes":"shoes_0_0"}'></textarea>
-            <div class="row" style="margin-top:6px"><button id="cosApply" class="primary">反映</button><button id="cosBob">bobに戻す</button></div>
+            <div class="row" style="margin-top:6px"><button id="cosApply" class="primary" data-i="cosApply">反映</button><button id="cosBob" data-i="cosBob">bobに戻す</button></div>
           </section>
           <section class="cptab" data-tab="mob">
-            <p class="hint" style="margin:0 0 8px">公式モデル内蔵モブ(バンドル内の実GLB+実アトラス)。表示中はプレイヤー系タブが一時無効になります。「歩かせる」は足・腕を振る簡易アニメ。</p>
+            <p class="hint" data-i="mobHint" style="margin:0 0 8px">公式モデル内蔵モブ(バンドル内の実GLB+実アトラス)。表示中はプレイヤー系タブが一時無効になります。「歩かせる」は足・腕を振る簡易アニメ。</p>
             <div class="row" id="mobs"></div>
-            <div class="row" style="margin-top:8px"><button id="mobWalk">歩かせる</button><button id="mobBack" class="primary">プレイヤーに戻す</button></div>
+            <div class="row" style="margin-top:8px"><button id="mobWalk" data-i="mobWalk">歩かせる</button><button id="mobBack" class="primary" data-i="mobBack">プレイヤーに戻す</button></div>
             <p class="hint" id="mobState" style="margin-top:8px"></p>
           </section>
           <section class="cptab" data-tab="out">
             <div class="row">
-              <button id="btnPNG" class="primary">透過PNGで保存</button>
-              <button id="btnSkin">64x64風スキン画像を保存</button>
+              <button id="btnPNG" class="primary" data-i="btnPNG">透過PNGで保存</button>
+              <button id="btnSkin" data-i="btnSkin">64x64風スキン画像を保存</button>
             </div>
-            <p class="hint" style="margin-top:8px">スキン画像は現在のプリセットの各部品セルを1枚に並べたものです。</p>
+            <p class="hint" data-i="outHint" style="margin-top:8px">スキン画像は現在のプリセットの各部品セルを1枚に並べたものです。</p>
           </section>
         </div>
       </div>
     </div>
   </div>
   <div class="howto">
-    <h2>調査で分かった Bloxd の実装(実データ確認済み)</h2>
-    <li>プレイヤーモデルは <code>Player_Model.glb</code>(32メッシュ・Draco圧縮・blockbench_export)。頭は9×9×9テクセル、腕・脚は3セグメント構造で、目・眉は顔の前面に貼る独立プレートメッシュ。</li>
-    <li>全コスメ部品の実テクスチャは <code>Player_Atlas.png</code>(2048×2048)に64pxセルで660個格納され、配信JSに base64 で同梱されています。ゲームも同じファイルを <code>getTexture("Player_Atlas")</code> で使用。</li>
-    <li>外見は <code>skin/head/eyebrows/eyes/body/legs/shoes/back/hat</code> のコスメ名(例 <code>body_4_3</code>)で指定され、描画は各層のセル原点をUVに加算して全メッシュを重ね描き・αテストでマスクする方式(本デモと同じ)。</li>
-    <li>ポーズは <code>ArmLeftMesh</code> 等のノードを関節ピボットで回転(公式APIの <code>api.setPlayerPose</code> も同原理)。まばたき・歩行はエンジン側でUV/頂点をアニメさせる別実装。</li>
-    <li>なお「プレイヤー名 → スキン取得」API(<code>social9.bloxd.io/social/get-player-profile</code>)は認証必須(401実測)のため非公開のままです。本ページは公開素材だけで動いています。</li>
+    <h2 data-i="howH2">調査で分かった Bloxd の実装(実データ確認済み)</h2>
+    <li data-i="li1">プレイヤーモデルは <code>Player_Model.glb</code>(32メッシュ・Draco圧縮・blockbench_export)。頭は9×9×9テクセル、腕・脚は3セグメント構造で、目・眉は顔の前面に貼る独立プレートメッシュ。</li>
+    <li data-i="li2">全コスメ部品の実テクスチャは <code>Player_Atlas.png</code>(2048×2048)に64pxセルで660個格納され、配信JSに base64 で同梱されています。ゲームも同じファイルを <code>getTexture("Player_Atlas")</code> で使用。</li>
+    <li data-i="li3">外見は <code>skin/head/eyebrows/eyes/body/legs/shoes/back/hat</code> のコスメ名(例 <code>body_4_3</code>)で指定され、描画は各層のセル原点をUVに加算して全メッシュを重ね描き・αテストでマスクする方式(本デモと同じ)。</li>
+    <li data-i="li4">ポーズは <code>ArmLeftMesh</code> 等のノードを関節ピボットで回転(公式APIの <code>api.setPlayerPose</code> も同原理)。まばたき・歩行はエンジン側でUV/頂点をアニメさせる別実装。</li>
+    <li data-i="li5">なお「プレイヤー名 → スキン取得」API(<code>social9.bloxd.io/social/get-player-profile</code>)は認証必須(401実測)のため非公開のままです。本ページは公開素材だけで動いています。</li>
   </div>
 </div>
 <script>
 window.__errs=[];
+/* ===== i18n: 日本語 / English(同じファイル内で切替。素材は複製しない) ===== */
+const EN={
+title:'Bloxd Skin Viewer — Real-asset edition (official model + official atlas)',
+back:'← Back to bloxd.io Update Watch',
+h1:'Bloxd Skin Viewer',
+tagReal:'Real-asset edition',
+lead:'A demo that renders the <b>official player model (Player_Model.glb) and the official texture atlas (Player_Atlas.png)</b>, extracted as-is from the JS delivered by bloxd.io, using the same "cosmetic layers + atlas UV" method as the game. The character shown uses the raw official textures.',
+chip1:'<b>① Assets</b>Extract the real atlas (2048×2048, 660 parts) and the real GLB model from the base64 inside the delivered JS',
+chip2:'<b>② Unpack</b>The GLB is Draco-compressed → restore the real geometry, real UVs and node hierarchy',
+chip3:'<b>③ Render</b>Draw all meshes on top of each other in the layers skin→head→eyebrows→eyes→body→legs→shoes (masked by alpha test)',
+chip4:'<b>④ Export</b>Save as a transparent PNG (toDataURL)',
+zoomT:'Zoom in/out (shared by mobs and player)',
+ctrl:'⚙ Controls',
+collapse:'Collapse',
+heldHint:'Switch between the right/left hand to hold an item, and freely adjust rotation, position and size with the sliders (the left hand is mirrored). Values are saved per hand.',
+itemPh:'Specify by item name (English: AK-47, TNT, torch …)',
+add:'Add',
+itemMsg0:'Searches all 1724 items by partial match. Unknown names are voxelized from their sprite and shown in hand.',
+heldReset:'Reset to default position',
+poseReset:'Reset pose',
+poseHint:'Freely rotate every joint with the sliders (X = forward/back / Y = twist / Z = spread left/right, in °). Choosing a preset applies its values to the sliders. Drag to rotate the view, scroll wheel to zoom.',
+lookHint:'Skins = the 8 characters under Characters → Default in the game (real textures). Selecting one switches the atlas cells for each part\'s cosmetic name (e.g. <code>body_4_3</code>).',
+armourHint:'<b>Armour</b>: real meshes built into the official model + real textures embedded in the bundle (Player_Armour.png 4096×64). Materials are in the official order, sampled with the same UV formula as the engine, u=(uv.x+material idx)/64. The face opening is also made transparent by the alpha test.',
+armourAll:'Full armour',
+armourNone:'Remove all',
+getSkin:'<b>Get a player\'s skin</b>: in bloxd, press F12 → Network, copy the <code>get-player-profile</code> response (JSON) or <code>updateMyCosmetic</code>, paste it and press "Apply". You can also write cosmetic names (such as skin_0_5) directly.',
+cosApply:'Apply',
+cosBob:'Back to bob',
+mobHint:'Mobs built into the official model (real GLB + real atlas inside the bundle). While one is shown, the player-related tabs are temporarily disabled. "Walk" is a simple animation that swings the legs and arms.',
+mobWalk:'Walk',
+mobBack:'Back to player',
+btnPNG:'Save transparent PNG',
+btnSkin:'Save 64x64-style skin image',
+outHint:'The skin image lays out the part cells of the current preset on a single sheet.',
+howH2:'Findings on Bloxd\'s implementation (verified against real data)',
+li1:'The player model is <code>Player_Model.glb</code> (32 meshes, Draco-compressed, blockbench_export). The head is 9×9×9 texels, the arms and legs have a 3-segment structure, and the eyes and eyebrows are independent plate meshes attached to the front of the face.',
+li2:'The real textures of all cosmetic parts are stored as 660 cells of 64px in <code>Player_Atlas.png</code> (2048×2048), bundled into the delivered JS as base64. The game uses the same file via <code>getTexture("Player_Atlas")</code>.',
+li3:'Appearance is specified by cosmetic names for <code>skin/head/eyebrows/eyes/body/legs/shoes/back/hat</code> (e.g. <code>body_4_3</code>); rendering adds each layer\'s cell origin to the UV, draws all meshes on top of each other and masks them with the alpha test (same as this demo).',
+li4:'Poses rotate nodes such as <code>ArmLeftMesh</code> around joint pivots (the official API <code>api.setPlayerPose</code> works on the same principle). Blinking and walking are a separate implementation in which the engine animates UVs/vertices.',
+li5:'The "player name → get skin" API (<code>social9.bloxd.io/social/get-player-profile</code>) requires authentication (401 measured), so it stays private. This page runs on public assets only.',
+ovHint:'If saving failed, <b style="color:#4fd1c5">long-press (iOS/Android) or right-click (PC)</b> the image above to save it.',
+dlSave:'Try saving (download)',
+dlClose:'Close',
+/* 動的ラベル(キー=日本語) */
+'立つ':'Stand','手を振る':'Wave','ビクトリー':'Victory','指差し':'Point','考え中':'Thinking','敬礼':'Salute','すくめる':'Shrug','リラックス':'Relax','狙う':'Aim',
+'頭':'Head','右腕':'Right arm','左腕':'Left arm','右脚':'Right leg','左脚':'Left leg','胴体(傾き)':'Torso (tilt)','胴体':'Torso','首':'Neck','尾':'Tail',
+'左前脚':'Front left leg','右前脚':'Front right leg','左後脚':'Back left leg','右後脚':'Back right leg','体':'Body','全体(回転)':'Whole (rotation)',
+'手持ち':'Held','ポーズ':'Pose','見た目':'Look','モブ':'Mobs','出力':'Export',
+'右手':'Right hand','左手':'Left hand',
+'回転X':'Rotation X','回転Y':'Rotation Y','回転Z':'Rotation Z','位置X':'Position X','位置Y':'Position Y','位置Z':'Position Z','大きさ':'Size'
+};
+const LS_KEY='bloxd-skinviewer-lang';
+let LANG='ja';
+try{
+  const q=new URLSearchParams(location.search).get('lang');
+  if(q==='en'||q==='ja')LANG=q;
+  else{
+    let sv=null;try{sv=localStorage.getItem(LS_KEY);}catch(e){}
+    if(sv==='en'||sv==='ja')LANG=sv;
+    else if(!/^ja/i.test(navigator.language||'ja'))LANG='en';
+  }
+}catch(e){}
+function L(ja,en){return LANG==='en'?en:ja;}
+function tr(ja,en){return LANG==='en'?(en!==undefined?en:(EN[ja]!==undefined?EN[ja]:ja)):ja;}
+const FNS=new Set();
+function setTxt(el,fn){el._fn=fn;FNS.add(el);el.textContent=fn();}
+function T(el,ja,en){el.dataset.t=ja;if(en!==undefined)el.dataset.en=en;el.textContent=tr(ja,en);}
+function applyI18n(root){
+  root.querySelectorAll('[data-i]').forEach(el=>{
+    if(el._fn)return;
+    if(el._ja===undefined)el._ja=el.innerHTML;
+    const k=el.dataset.i;
+    el.innerHTML=(LANG==='en'&&EN[k]!==undefined)?EN[k]:el._ja;
+  });
+  root.querySelectorAll('[data-t]').forEach(el=>{el.textContent=tr(el.dataset.t,el.dataset.en);});
+  root.querySelectorAll('[data-ia]').forEach(el=>{
+    el._jaA=el._jaA||{};
+    el.dataset.ia.split(',').forEach(pair=>{
+      const[a,k]=pair.split(':');
+      if(el._jaA[a]===undefined)el._jaA[a]=el.getAttribute(a);
+      el.setAttribute(a,(LANG==='en'&&EN[k]!==undefined)?EN[k]:el._jaA[a]);
+    });
+  });
+}
+if(document.title&&window.__jaTitle===undefined)window.__jaTitle=document.title;
+function applyLang(){
+  document.documentElement.lang=LANG;
+  document.title=LANG==='en'?EN.title:window.__jaTitle;
+  applyI18n(document);
+  FNS.forEach(el=>{if(el.isConnected)el.textContent=el._fn();});
+  const back=document.getElementById('backLink');
+  if(back)back.href='https://venus-builder.github.io/bloxd-watch-site/'+(LANG==='en'?'en/':'');
+  const b=document.getElementById('langBtn');
+  if(b){
+    b.textContent=LANG==='en'?'日本語':'English';
+    b.title=LANG==='en'?'日本語版へ':'English version';
+    b.setAttribute('hreflang',LANG==='en'?'ja':'en');
+  }
+}
+function setLang(l){
+  LANG=l;
+  try{localStorage.setItem(LS_KEY,l);}catch(e){}
+  try{const u=new URL(location.href);u.searchParams.set('lang',l);history.replaceState(null,'',u);}catch(e){}
+  applyLang();
+}
+document.getElementById('langBtn').addEventListener('click',e=>{e.preventDefault();setLang(LANG==='en'?'ja':'en');});
+applyLang();
+
 window.addEventListener('error',e=>{window.__errs.push((e.message||'?')+' @'+(e.lineno||0));if(window.__errSync)window.__errSync();});
 </script>
 <script>
@@ -494,7 +604,7 @@ function setPose(p){
   syncSliders();
 }
 const poseBox=document.getElementById('poses');
-for(const p of POSES){const b=document.createElement('button');b.textContent=p.label;b.dataset.key=p.key;b.onclick=()=>setPose(p);poseBox.appendChild(b);}
+for(const p of POSES){const b=document.createElement('button');T(b,p.label);b.dataset.key=p.key;b.onclick=()=>setPose(p);poseBox.appendChild(b);}
 
 /* ---------- 自由ポーズ(全関節スライダー) ---------- */
 const JOINTS=[['Head','頭'],['RightArm','右腕'],['LeftArm','左腕'],['RightLeg','右脚'],['LeftLeg','左脚'],['TorsoNode','胴体(傾き)']];
@@ -519,7 +629,7 @@ function buildJointSliders(){
   jointBox.innerHTML='';sliders.length=0;
   for(const[node,name]of def){
     const jd=document.createElement('div');jd.className='joint';
-    jd.innerHTML=`<div class="jhead"><span class="jname">${name}</span><span class="hint" style="font-size:11px">${node}</span></div>`;
+    jd.innerHTML=`<div class="jhead"><span class="jname" data-t="${name}">${tr(name)}</span><span class="hint" style="font-size:11px">${node}</span></div>`;
     for(let a=0;a<3;a++){
       const row=document.createElement('div');row.className='jrow';
       row.innerHTML=`<span class="ax">${AXN[a]}</span><input type="range" min="-180" max="180" step="1" value="0"><span class="val">0°</span>`;
@@ -563,8 +673,8 @@ let curCos=null;
 function setCosmetics(c,label){
   curCos=c;
   const m=document.getElementById('msg');
-  m.className='msg ok';
-  m.textContent=label;
+  m.className='msg ok';m.style.color='';
+  setTxt(m,label);
 }
 /* ---------- 防具(公式GLB内蔵メッシュ+公式アトラス実テクスチャ)+手持ちアイテム ---------- */
 /* スロット→メッシュ割当はエンジン updatePlayerArmour の実装そのもの */
@@ -721,18 +831,20 @@ frame();
 /* ---------- スキンプリセット(公式デフォルト8人) ---------- */
 const skinBox=document.getElementById('skins');
 const LABELS={skin:'肌',head:'髪',eyebrows:'眉',eyes:'目',body:'トップス',legs:'ズボン',shoes:'靴'};
+const LABELS_EN={skin:'skin',head:'hair',eyebrows:'eyebrows',eyes:'eyes',body:'top',legs:'pants',shoes:'shoes'};
+const lab=k=>L(LABELS[k],LABELS_EN[k]);
 for(const name of Object.keys(PRESETS)){
   const b=document.createElement('button');
   b.textContent=name.charAt(0).toUpperCase()+name.slice(1);
   if(name==='bob')b.classList.add('primary','on');
   b.onclick=()=>{
     const p=PRESETS[name];
-    setCosmetics(p,`${name} — `+LAYER_ORDER.filter(k=>p[k]&&!p[k].endsWith('_none')).map(k=>`${LABELS[k]}:${p[k]}`).join(' / '));
+    setCosmetics(p,()=>`${name} — `+LAYER_ORDER.filter(k=>p[k]&&!p[k].endsWith('_none')).map(k=>`${lab(k)}:${p[k]}`).join(' / '));
     document.querySelectorAll('#skins button').forEach(x=>x.classList.toggle('on',x===b));
   };
   skinBox.appendChild(b);
 }
-setCosmetics(PRESETS.bob,'bob — '+LAYER_ORDER.filter(k=>PRESETS.bob[k]&&!PRESETS.bob[k].endsWith('_none')).map(k=>`${LABELS[k]}:${PRESETS.bob[k]}`).join(' / '));
+setCosmetics(PRESETS.bob,()=>'bob — '+LAYER_ORDER.filter(k=>PRESETS.bob[k]&&!PRESETS.bob[k].endsWith('_none')).map(k=>`${lab(k)}:${PRESETS.bob[k]}`).join(' / '));
 setPose(POSES[0]);
 
 /* ---------- 防具/手持ちUI ---------- */
@@ -748,7 +860,7 @@ const slotsBox=document.getElementById('armourSlots');
 const SLOT_LABELS={Helmet:'ヘルメット',Chestplate:'チェストプレート',Gauntlets:'ガントレット',Leggings:'レギンス',Boots:'ブーツ'};
 for(const part of Object.keys(ARMOUR_PARTS)){
   const b=document.createElement('button');
-  b.textContent=SLOT_LABELS[part];
+  T(b,SLOT_LABELS[part],part);
   b.onclick=()=>{armourOn[part]=!armourOn[part];b.classList.toggle('on',armourOn[part]);};
   slotsBox.appendChild(b);
 }
@@ -760,7 +872,7 @@ const ITEM_LABELS={'none':'なし','Iron Sword':'鉄の剣','Gold Sword':'金の
 function mkHandButtons(box){
   for(const[h,label]of[['R','右手'],['L','左手']]){
     const b=document.createElement('button');
-    b.textContent=label;b.dataset.hand=h;if(h==='R')b.classList.add('on');
+    T(b,label);b.dataset.hand=h;if(h==='R')b.classList.add('on');
     b.onclick=()=>{activeHand=h;document.querySelectorAll('#handSel button').forEach(x=>x.classList.toggle('on',x.dataset.hand===activeHand));syncItemButtons();syncHeldSliders();};
     box.appendChild(b);
   }
@@ -773,7 +885,7 @@ function syncItemButtons(){
 {
   const mkBtn=key=>{
     const b=document.createElement('button');
-    b.textContent=ITEM_LABELS[key]||key;b.dataset.item=key;
+    T(b,ITEM_LABELS[key]||key,key==='none'?'None':key);b.dataset.item=key;
     b.onclick=()=>{if(activeHand==='R')curItemR=key;else curItemL=key;syncItemButtons();syncHeldSliders();};
     itemsBox.appendChild(b);
   };
@@ -863,17 +975,17 @@ syncItemButtons();
   function apply(){
     if(!inp)return;
     const r=resolveItem(inp.value);
-    if(!r){msg.textContent='「'+inp.value+'」は見つかりません';return;}
+    if(!r){const v=inp.value;setTxt(msg,()=>L('「'+v+'」は見つかりません','"'+v+'" not found'));return;}
     let ok=true;
-    if(r.type==='icon'){ok=addCustomItem(r.name);if(!ok){msg.textContent='テクスチャ準備中です…もう一度押してください';return;}}
+    if(r.type==='icon'){ok=addCustomItem(r.name);if(!ok){setTxt(msg,()=>L('テクスチャ準備中です…もう一度押してください','Texture is still being prepared… press again.'));return;}}
     if(activeHand==='R')curItemR=r.name;else curItemL=r.name;
     if(![...itemsBox.querySelectorAll('button')].some(b=>b.dataset.item===r.name)){
       const b=document.createElement('button');
-      b.textContent=ITEM_LABELS[r.name]||r.name;b.dataset.item=r.name;
+      T(b,ITEM_LABELS[r.name]||r.name,r.name);b.dataset.item=r.name;
       b.onclick=()=>{if(activeHand==='R')curItemR=r.name;else curItemL=r.name;syncItemButtons();syncHeldSliders();};
       itemsBox.appendChild(b);
     }
-    msg.textContent='適用: '+(ITEM_LABELS[r.name]||r.name)+(r.type==='icon'?' (スプライトからボクセル化)':'');
+    {const rn=r.name,ric=r.type==='icon';setTxt(msg,()=>L('適用: '+(ITEM_LABELS[rn]||rn)+(ric?' (スプライトからボクセル化)':''),'Applied: '+rn+(ric?' (voxelized from sprite)':'')));}
     inp.value=r.name;
     syncItemButtons();syncHeldSliders();
   }
@@ -886,7 +998,7 @@ syncItemButtons();
   const TABS=[['held','手持ち'],['pose','ポーズ'],['look','見た目'],['mob','モブ'],['out','出力']];
   const tb=document.getElementById('cpTabs');
   for(const[t,label]of TABS){
-    const b=document.createElement('button');b.textContent=label;b.dataset.tab=t;
+    const b=document.createElement('button');T(b,label);b.dataset.tab=t;
     if(t==='held')b.classList.add('on');
     b.onclick=()=>{
       document.querySelectorAll('#cpTabs button').forEach(x=>x.classList.toggle('on',x===b));
@@ -904,7 +1016,7 @@ const heldRows=[];
 {
   const mk=(label,k,a,min,max,step,fmt)=>{
     const row=document.createElement('div');row.className='jrow';
-    row.innerHTML=`<span class="ax w">${label}</span><input type="range" min="${min}" max="${max}" step="${step}"><span class="val"></span>`;
+    row.innerHTML=`<span class="ax w" data-t="${label}">${tr(label)}</span><input type="range" min="${min}" max="${max}" step="${step}"><span class="val"></span>`;
     const inp=row.querySelector('input'),val=row.querySelector('.val');
     inp.addEventListener('input',()=>{
       const A=heldAdj[activeHand][heldBranch()],v=+inp.value;
@@ -925,7 +1037,7 @@ const heldRows=[];
 document.getElementById('heldReset').onclick=()=>{const b=heldBranch();heldAdj[activeHand][b]={pos:[...HELD_DEF[b].pos],rot:[...HELD_DEF[b].rot],scl:1};syncHeldSliders();};
 function syncHeldSliders(){
   const b=heldBranch(),A=heldAdj[activeHand][b],none=activeItem()==='none';
-  document.getElementById('hfHand').textContent=(activeHand==='R'?'右手':'左手')+'・'+(b==='tool'?'道具系':'その他')+(none?'(未選択)':'');
+  {const ah=activeHand,bb=b;setTxt(document.getElementById('hfHand'),()=>(ah==='R'?L('右手','Right hand'):L('左手','Left hand'))+L('・',' · ')+(bb==='tool'?L('道具系','Tools'):L('その他','Other'))+(none?L('(未選択)',' (none selected)'):''));}
   for(const h of heldRows){
     const v=h.k==='rot'?A.rot[h.a]*180/Math.PI:(h.k==='pos'?A.pos[h.a]:A.scl);
     h.inp.value=v; h.inp.disabled=none; h.val.textContent=h.fmt(v);
@@ -1009,13 +1121,13 @@ function setMob(name){
   buildJointSliders();
   setPose(POSES.find(q=>q.key===poseName)||POSES[0]);   /* 現在のプリセットを再適用 */
   document.querySelectorAll('#mobs button').forEach(x=>x.classList.toggle('on',x.dataset.mob===curMob));
-  document.getElementById('mobState').textContent=curMob?('表示中: '+(MOB_LABELS[curMob]||curMob)+' — ポーズタブで関節を動かせます'):'プレイヤーを表示中';
+  {const cm=curMob;setTxt(document.getElementById('mobState'),()=>cm?L('表示中: '+(MOB_LABELS[cm]||cm)+' — ポーズタブで関節を動かせます','Showing: '+cm+' — use the Pose tab to move joints'):L('プレイヤーを表示中','Showing the player'));}
 }
 {
   const box=document.getElementById('mobs');
   for(const name of Object.keys(MOBS)){
     const b=document.createElement('button');
-    b.textContent=MOB_LABELS[name]||name;b.dataset.mob=name;
+    T(b,MOB_LABELS[name]||name,name);b.dataset.mob=name;
     b.onclick=()=>setMob(name);
     box.appendChild(b);
   }
@@ -1034,13 +1146,14 @@ function setMob(name){
 /* ---------- プレイヤースキン: コスメJSON貼り付け反映 ---------- */
 {
   const ta=document.getElementById('cosPaste');
-  const fail=t=>{const m=document.getElementById('msg');m.className='msg';m.style.color='#ff9a9a';m.textContent='✗ '+t;};
+  const fail=fn=>{const m=document.getElementById('msg');m.className='msg';m.style.color='#ff9a9a';setTxt(m,()=>'✗ '+fn());};
+  const E=fn=>{const e=new Error();e.fn=fn;return e;};
   document.getElementById('cosApply').onclick=()=>{
     try{
       let o=JSON.parse(ta.value.trim());
       if(o.player&&o.player.cosmetics)o=o.player.cosmetics;
       else if(o.cosmetics)o=o.cosmetics;
-      if(typeof o!=='object'||!o)throw new Error('JSONの形式が違います(cosmeticsのオブジェクトを貼ってください)');
+      if(typeof o!=='object'||!o)throw E(()=>L('JSONの形式が違います(cosmeticsのオブジェクトを貼ってください)','Wrong JSON format (paste the cosmetics object).'));
       const KEYS=['skin','hat','back','head','eyebrows','eyes','body','legs','shoes'];
       /* 別オブジェクトの色指定(cosmeticColours/colours)も取り込む */
       const colmap=o.cosmeticColours||o.colours||o.colourGroups||{};
@@ -1058,18 +1171,18 @@ function setMob(name){
         else if(cl!=null&&ok(v+'_'+cl))sid=v+'_'+cl;
         else if(ok(v+'_0'))sid=v+'_0';
         if(sid){picked[k]=sid;if(!sid.endsWith('_none'))hit++;}
-        else unk.push(v+(cl!=null?'(色'+cl+')':''));
+        else unk.push([v,cl]);
       }
-      if(!hit)throw new Error('有効なコスメ名がありません'+(unk.length?'(未対応: '+unk.join(', ')+')':''));
+      if(!hit){const u=unk.slice();throw E(()=>L('有効なコスメ名がありません'+(u.length?'(未対応: '+u.map(x=>x[0]+(x[1]!=null?'(色'+x[1]+')':'')).join(', ')+')':''),'No valid cosmetic names'+(u.length?' (unsupported: '+u.map(x=>x[0]+(x[1]!=null?' (colour '+x[1]+')':'')).join(', ')+')':'')));}
       if(curMob)setMob(null);
       document.querySelectorAll('#skins button').forEach(x=>x.classList.remove('on'));
-      setCosmetics(picked,'反映 — '+KEYS.filter(k=>picked[k]&&!picked[k].endsWith('_none')).map(k=>k+':'+picked[k]).join(' / ')+(unk.length?' (未対応セル: '+unk.join(', ')+')':''));
-    }catch(e){fail(e.message);}
+      {const u=unk.slice(),ud=()=>u.map(x=>x[0]+(x[1]!=null?L('(色'+x[1]+')',' (colour '+x[1]+')'):'')).join(', ');setCosmetics(picked,()=>L('反映 — ','Applied — ')+KEYS.filter(k=>picked[k]&&!picked[k].endsWith('_none')).map(k=>k+':'+picked[k]).join(' / ')+(u.length?L(' (未対応セル: ',' (unsupported cells: ')+ud()+')':''));}
+    }catch(e){fail(e.fn||(()=>e.message));}
   };
   document.getElementById('cosBob').onclick=()=>{
     if(curMob)setMob(null);
     document.querySelectorAll('#skins button').forEach(x=>x.classList.remove('on'));
-    setCosmetics(PRESETS.bob,'bob — '+LAYER_ORDER.filter(k=>PRESETS.bob[k]&&!PRESETS.bob[k].endsWith('_none')).map(k=>`${LABELS[k]}:${PRESETS.bob[k]}`).join(' / '));
+    setCosmetics(PRESETS.bob,()=>'bob — '+LAYER_ORDER.filter(k=>PRESETS.bob[k]&&!PRESETS.bob[k].endsWith('_none')).map(k=>`${lab(k)}:${PRESETS.bob[k]}`).join(' / '));
   };
 }
 
@@ -1084,15 +1197,15 @@ function imgOverlay(url,name){
     ov.innerHTML=`<div style="max-width:560px;width:100%;background:#1a1e33;border:1px solid #2a2f4a;border-radius:14px;padding:16px;text-align:center">
       <div id="dlTitle" style="font-size:14px;color:#e8e9f3;margin-bottom:10px"></div>
       <img id="dlImg" style="max-width:100%;max-height:52vh;image-rendering:pixelated;background:#141728;border-radius:8px"/>
-      <div style="font-size:12.5px;color:#9aa0c0;margin:10px 0;line-height:1.7">保存できなかった場合は、上の画像を<b style="color:#4fd1c5">長押し(iOS/Android)または右クリック(PC)</b>して保存してください。</div>
+      <div data-i="ovHint" style="font-size:12.5px;color:#9aa0c0;margin:10px 0;line-height:1.7">保存できなかった場合は、上の画像を<b style="color:#4fd1c5">長押し(iOS/Android)または右クリック(PC)</b>して保存してください。</div>
       <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
-        <button id="dlSave" class="primary" style="padding:8px 16px">保存を試す(ダウンロード)</button>
-        <button id="dlClose" style="padding:8px 16px">閉じる</button>
+        <button id="dlSave" data-i="dlSave" class="primary" style="padding:8px 16px">保存を試す(ダウンロード)</button>
+        <button id="dlClose" data-i="dlClose" style="padding:8px 16px">閉じる</button>
       </div></div>`;
-    document.body.appendChild(ov);
+    document.body.appendChild(ov);applyI18n(ov);
   }
   ov.style.display='flex';
-  document.getElementById('dlTitle').textContent=name+' を生成しました';
+  setTxt(document.getElementById('dlTitle'),()=>L(name+' を生成しました',name+' generated'));
   document.getElementById('dlImg').src=url;
   document.getElementById('dlSave').onclick=()=>{
     const a=document.createElement('a');a.download=name;a.href=url;
