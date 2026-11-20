@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hidden games (games not shown on the home screen) | bloxd.io analysis documents</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+:root{--bg:#0b1216;--fg:#e4edef;--muted:#86a0a8;--card:#121d23;--line:#223540;--accent:#4de2d4;--accent2:#f5b83d;--ink:#06201e;
+--add:#58dc8e;--addbg:#0f2f21;--chg:#f5b83d;--chgbg:#33290d;--del:#ff7070;--delbg:#391517;--code:#192830;
+--player:#4de2d4;--playerbg:#0e2b2c;--maker:#b896ff;--makerbg:#231a3b;--shadow:#0a8a80;
+--font-pixel:"DotGothic16","Yu Gothic UI","Hiragino Sans","Noto Sans JP",sans-serif;
+color-scheme:dark light}
+@media (prefers-color-scheme:light){:root{--bg:#e8eef0;--fg:#11242b;--muted:#4f6770;--card:#fff;--line:#c6d4d9;--accent:#0b8c83;--accent2:#b87400;--ink:#fff;
+--add:#12803f;--addbg:#dbf3e5;--chg:#9a5b00;--chgbg:#fbefcf;--del:#bb3030;--delbg:#fbe0e0;--code:#e4ecee;
+--player:#0b8c83;--playerbg:#d9f1ef;--maker:#6b45c9;--makerbg:#ebe3fb;--shadow:#064f4a}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.75 "Yu Gothic UI","Hiragino Sans","Noto Sans JP",system-ui,sans-serif}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent2);outline-offset:2px}
+.hero{background:var(--card);border-bottom:1px solid var(--line);padding:44px 16px 52px;position:relative}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:repeating-linear-gradient(90deg,#4caf50 0 28px,#8d6e4a 28px 56px,#8a949b 56px 84px,#2d3338 84px 112px,#d2a98a 112px 140px,#f5b83d 140px 168px,#4de2d4 168px 196px,#e0524d 196px 224px)}
+.hero .in{max-width:820px;margin:0 auto}
+.hero h1{font:400 clamp(30px,6.2vw,46px)/1.15 var(--font-pixel);margin:0 0 12px;letter-spacing:.02em;color:var(--fg)}
+.hero p{margin:0;color:var(--muted);font-size:14px;max-width:60ch}.hero p+p{max-width:none}
+.hero .back{display:inline-block;margin:0 14px 14px 0;color:var(--muted);font-size:13px;text-decoration:none;border-bottom:1px solid var(--line)}
+.hero .back:hover{color:var(--accent);border-color:var(--accent)}
+main{max-width:820px;margin:28px auto 0;padding:0 16px 72px;position:relative}
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:0 0 6px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.stat b{display:block;font-size:12px;color:var(--muted);font-weight:500;margin-bottom:2px}
+.stat span{font:400 17px/1.4 var(--font-pixel);color:var(--fg);word-break:break-all}
+h2{font:400 21px/1.4 var(--font-pixel);margin:38px 0 14px;letter-spacing:.02em}
+.upd{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px 18px 12px;margin:14px 0}
+.upd.latest{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:13px}
+.new{background:var(--accent2);color:#1b1300;font:400 12.5px/1.6 var(--font-pixel);padding:0 9px;border-radius:3px}
+.build{font:12px ui-monospace,Consolas,monospace;background:var(--code);padding:1px 8px;border-radius:3px}
+.upd h3{font:400 20px/1.55 var(--font-pixel);margin:8px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.chip{font-size:12.5px;padding:1px 10px;border-radius:3px;background:var(--code);color:var(--muted);font-weight:600}
+.chip.add{background:var(--addbg);color:var(--add)}.chip.chg{background:var(--chgbg);color:var(--chg)}.chip.del{background:var(--delbg);color:var(--del)}
+.pts{display:grid;gap:10px}
+.pt{display:flex;gap:12px;padding:12px 14px;border-radius:4px;border:1px solid var(--line);border-left-width:5px}
+.pt.player{border-left-color:var(--player);background:var(--playerbg)}.pt.maker{border-left-color:var(--maker);background:var(--makerbg)}
+.ico{font-size:26px;line-height:1.2;flex:none}.ptb{min-width:0}
+.ptt{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.ptt h4{margin:0;font-size:15.5px;line-height:1.55}
+.who{font-size:11.5px;font-weight:700;padding:0 8px;border-radius:3px;color:var(--ink);background:var(--player)}.maker .who{background:var(--maker);color:#fff}
+.pt p{margin:6px 0 0;font-size:14.5px}.pt .note{color:var(--muted);font-size:13px}
+.cert{display:inline-block;margin-top:6px;font-size:12px;color:var(--muted);background:var(--code);padding:0 9px;border-radius:3px}
+.rbtn{display:inline-block;margin:14px 10px 6px 0;padding:7px 16px;border-radius:4px;background:var(--accent);color:var(--ink);text-decoration:none;font:400 15px/1.5 var(--font-pixel);box-shadow:0 4px 0 var(--shadow);transition:transform .08s,box-shadow .08s}
+.rbtn:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--shadow)}.rbtn:active{transform:translateY(4px);box-shadow:0 0 0 var(--shadow)}
+.newitems{background:var(--addbg);border-radius:4px;padding:10px 14px;margin:12px 0}.newitems b{font-size:13px;color:var(--add);display:block;margin-bottom:6px}
+.pill{display:inline-block;margin:3px 6px 3px 0;padding:0 11px;border-radius:3px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600}
+details{padding:8px 0}summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center}
+summary::-webkit-details-marker{display:none}summary::before{content:"▸";color:var(--accent);margin-right:6px;font-size:12px}details[open]>summary::before{content:"▾"}
+summary span{flex:1}summary em{font-style:normal;font-size:12px;color:var(--muted);font-weight:500}
+.en{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}.sec{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin:8px 0;background:var(--bg)}
+.diff{list-style:none;margin:8px 0 2px;padding:0}.diff li{display:flex;gap:10px;padding:8px 0;border-top:1px dashed var(--line)}.diff li:first-child{border-top:0}
+.diff i{font-style:normal;font-weight:800;width:1.2em;text-align:center;flex:none}.a i{color:var(--add)}.c i{color:var(--chg)}.d i{color:var(--del)}
+.diff div{min-width:0;flex:1}.diff p{margin:2px 0;font-size:14px;word-break:break-word;white-space:pre-wrap}.diff p.from{color:var(--muted);text-decoration:line-through}
+code{font:11.5px ui-monospace,Consolas,monospace;color:var(--muted);background:var(--code);padding:1px 6px;border-radius:3px}
+.dev{margin-top:8px;font-size:12.5px;border-top:1px solid var(--line)}.dev>summary{font-weight:500;color:var(--muted)}dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:8px 0}dt{color:var(--muted)}dd{margin:0;word-break:break-all}
+pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Consolas,monospace;background:var(--code);padding:10px;border-radius:4px;max-height:420px;overflow:auto}
+.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:6px}table{width:100%;border-collapse:collapse;font-size:13px}td{padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap}tr:last-child td{border-bottom:0}
+.tag{font-size:12px;padding:0 9px;border-radius:3px;border:1px solid var(--line);font-weight:600}.tag.ok{color:var(--add);background:var(--addbg);border-color:transparent}.tag.chg{color:var(--chg);background:var(--chgbg);border-color:transparent}.tag.err{color:var(--del);background:var(--delbg);border-color:transparent}
+.muted{color:var(--muted);font-size:12.5px}footer{margin-top:36px}
+@media (prefers-reduced-motion:reduce){.rbtn{transition:none}}
+
+.rep h2{margin:30px 0 10px}.rep h3{margin:18px 0 6px}.rep table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
+.rep th{background:var(--code);text-align:left;font-weight:700;padding:8px 12px;font-size:12.5px}.rep td{padding:8px 12px;border-top:1px solid var(--line);vertical-align:top}
+.rep .tw{overflow-x:auto;margin:8px 0}.rep p,.rep li{font-size:14.5px}.warn{background:var(--chgbg);border-left:6px solid var(--chg);border-radius:12px;padding:10px 14px;margin:12px 0}
+.ok2{background:var(--addbg);border-left:6px solid var(--add);border-radius:12px;padding:10px 14px;margin:12px 0}.back{display:inline-block;margin:0 0 10px}
+.src{font-size:12px;color:var(--muted)}.bd{display:inline-block;font-size:11px;font-weight:700;border-radius:6px;padding:1px 7px;margin-right:4px;vertical-align:1px}
+.bd.s{background:var(--addbg);color:var(--add)}.bd.g{background:var(--chgbg);color:var(--chg)}.bd.u{background:var(--delbg);color:var(--del)}
+.nav{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px}.nav a{font-size:12.5px;background:var(--code);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:3px 10px;text-decoration:none}
+.nav a.on{background:var(--accent);color:var(--ink);border-color:var(--accent);font-weight:700}code{background:var(--code);border-radius:5px;padding:1px 5px;font-size:13px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:12px 0}.cards a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:inherit}
+.cards a b{display:block;margin-bottom:4px}.cards a span{font-size:13px;color:var(--muted)}
+</style><style id="langcss">.langbtn{position:fixed;top:10px;right:12px;z-index:99999;display:inline-block;padding:4px 12px;border-radius:6px;background:#4de2d4;color:#06201e;font:700 13px/1.6 system-ui,"Yu Gothic UI",sans-serif;text-decoration:none;border:1px solid rgba(0,0,0,.25);box-shadow:0 2px 0 rgba(0,0,0,.35)}.langbtn:hover{filter:brightness(1.08)}@media (prefers-color-scheme:light){.langbtn{background:#0b8c83;color:#fff}}</style></head><body><a class="langbtn" href="../../ref/hidden.html" hreflang="ja" title="日本語版へ">日本語</a>
+<div class="hero"><div class="in"><a class="back" href="../">← Back to Update Watch</a>
+<div class="nav"><a href="./">Analysis documents</a><a href="infra.html">Servers and infrastructure</a><a href="client.html">How the client is built</a><a href="combat.html">Combat formulas</a><a href="items.html">Weapon and armor numbers</a><a href="builds.html">Update history</a><a href="events.html">Events</a><a href="hidden.html" class="on">Hidden games</a><a href="skin.html">Skin viewer</a><a href="ban.html">Ban investigation</a><a href="texture.html">Texture packs</a><a href="method.html">Method and limits</a></div>
+<h1>Hidden games (games not shown on the home screen)</h1><p>Games that are not on the home screen (in development, limited-time or for testing), separating what was checked from what was not.</p></div></div>
+<main class="rep">
+<div class="warn">This page collects games that are <b>not shown on the home screen</b>. Checked on 2026-11-12 (build <b>bbb6l5</b>). "The page exists" and "I could join a lobby" are things I confirmed in a real browser. For things that are only "in the code", I have not checked whether they are playable.</div>
+
+<h2>1. Games with a page on the official site but not on the home screen <span class="bd s">Certain</span></h2>
+<p>These are games whose page opens at <code>bloxd.io/game/name</code> but that do not appear in the home list (limited-time, development, or ones living inside another game). The pages and the "0 online" counts were checked on 2026-11-12.</p>
+<div class="tw"><table><tr><th>Name (URL)</th><th>Display name</th><th>Description (official text)</th><th>What was checked</th><th>Notes</th></tr>
+<tr><td><code>flagCapture</code></td><td>Capture The Flag</td><td>"Grab the flag and bring it back to your base. First to 3 wins" (a kind of Duels; shown as limited-time)</td><td><span class="bd s">Certain</span> Page exists / <b>I could join the lobby</b> (lobby 1, up to the spectating screen)</td><td>A wooden-building arena. With 0 players it goes to spectating. Whether a match really runs cannot be checked without enough players.</td></tr>
+<tr><td><code>duels</code></td><td>Sword Fight and others (Duels)</td><td>"1v1 ranked fights in armor and swords": Sword Fight, Build Fight, Bed Fight and Bridge Fight (4 kinds)</td><td><span class="bd s">Certain</span> Page exists (0 online)</td><td>Used as rooms inside the ranked games.</td></tr>
+<tr><td><code>bridge</code></td><td>Bridge Fight</td><td>A 1v1 where you build and defend a bridge and score before the opponent</td><td><span class="bd s">Certain</span> Page exists (0 online)</td><td>A mode inside Duels.</td></tr>
+<tr><td><code>classic_2d</code></td><td>One Block Wide</td><td>"Like survival, but there is only one dimension"</td><td><span class="bd s">Certain</span> Page exists (0 online, shown as limited-time)</td><td>Survival that is one block wide.</td></tr>
+<tr><td><code>classic_skyGrid</code></td><td>Sky Grid</td><td>"Survive on an endless grid of blocks in the sky"</td><td><span class="bd s">Certain</span> Page exists (0 online, shown as limited-time)</td><td></td></tr>
+<tr><td><code>classic_anarchy</code></td><td>Anarchy</td><td>"Fight to barely survive in a ruthless, persistent open world"</td><td><span class="bd s">Certain</span> Page exists (0 online)</td><td>The text says persistent open world.</td></tr>
+<tr><td><code>testGym</code></td><td>Test Gym</td><td>"A test room for all kinds of tests"</td><td><span class="bd s">Certain</span> Page exists. 14 rooms (Empty / Mobs / Mobs &amp; Worldgen / Imported Mobs / Schematic / Fragment Shader / Item Drops / Bot Armour / Void / Nametag Occlusion / Busy / Particles / Interest / Options)</td><td>For developers. The code also lists testGym and schematicTester as dev-only games (devOnlyGameNames).</td></tr>
+<tr><td><code>schematicTester</code></td><td>Test Mode</td><td>"Test Mode" (the description is the same as the name)</td><td><span class="bd s">Certain</span> Page exists (0 online)</td><td>For development (as above).</td></tr>
+</table></div>
+
+<h2>2. Games in the code or settings with no page on the official site <span class="bd s">Certain</span> (that they exist) / <span class="bd u">Unknown</span> (that they are playable)</h2>
+<p>These have a definition in the game's list of settings (the "static config"). Opening the URL sends you back to the home screen (for the names I tried). I have not checked whether they can be played.</p>
+<div class="tw"><table><tr><th>Name</th><th>Kind</th><th>Description (text in the code)</th><th>What is known</th></tr>
+<tr><td><b>Defusal</b></td><td>Shooting</td><td>"Defuse or detonate the spike"</td><td>It has its own client file (<code>clientGame-defusal-defusalClient</code>) and a static config. The 2025-02-25 update notes mention "Defusal new map: Luna Borough" (so it was probably playable in the past). <code>/game/defusal</code> returns to the home screen.</td></tr>
+<tr><td><b>Trick or Treat</b></td><td>(no config)</td><td>"Run around a haunted town collecting glowing jack-o'-lanterns. Knock on doors for candy, play tricks on rivals, and run from the witch. Whoever has the most candy at midnight wins."</td><td>Only in the translation text and the game-name list. It was probably limited to Halloween (<span class="bd g">Guess</span>). <code>/game/trickOrTreat</code> returns to the home screen.</td></tr>
+<tr><td>Battle Arena</td><td>Arena</td><td>"Fight for glory in a 2v2v2v2v2v2v2v2 arena"</td><td>Static config only.</td></tr>
+<tr><td>BattleBox</td><td>Arena</td><td>"Fight round by round as a team"</td><td>A limited-time marker and a "coming soon" countdown (2025-08-13 to 08-18) remain in the config.</td></tr>
+<tr><td>Capture the Flag (2 kinds)</td><td>Arena</td><td>"Capture the flag to win. That's it" / "Old-school capture the flag with kits"</td><td>Static config only. The flagCapture above (inside Duels) is a separate definition.</td></tr>
+<tr><td>Conqueror</td><td>Arena</td><td>"Pick a strategy and conquer your enemies"</td><td>Static config only.</td></tr>
+<tr><td>Goldrush</td><td>Arena</td><td>"Who is the best miner? Mine gold and deposit it at spawn, but do not get killed."</td><td>Static config only.</td></tr>
+<tr><td>Walls</td><td>Arena</td><td>"Prepare with your team before the walls fall, then fight to the death"</td><td>Static config only.</td></tr>
+<tr><td>Dodge Bow</td><td>Arena</td><td>"Runners survive with their legs and cover until the timer ends. The chasers use bows to take everyone out in time."</td><td>Static config only.</td></tr>
+<tr><td>The Pit</td><td>Arena</td><td>"Jump into the pit and kill everyone"</td><td>Static config only.</td></tr>
+<tr><td>Survival Royale</td><td>Survival</td><td>"Like Fortnite, but better" (a joking description)</td><td>Static config only.</td></tr>
+<tr><td>Rush Racing</td><td>Racing</td><td>"Race other players at speed"</td><td>Static config only.</td></tr>
+<tr><td>Parkour Builder</td><td>Parkour</td><td>"Run a parkour course, but each round you can add one block to the course"</td><td>Static config only.</td></tr>
+<tr><td>Pet Simulator</td><td>Simulator</td><td>(text is in the translation dictionary)</td><td>It has a limited-time marker (<code>limitedTimeGame</code>). The dictionary has a name and description for "Pet Simulator".</td></tr>
+<tr><td>Prison</td><td>(unread)</td><td>(unread)</td><td>Only the name was confirmed.</td></tr>
+</table></div>
+<p class="src">These are the official game settings read as they are. Whether they are in a playable state, or will ever be released, is unknown. The home screen's "Top Games" (production, 2026-11-12) were survival, SMP, Skyblock, Bedwars, Skywars, Greenville and others (24 in all), plus custom games made by players.</p>
+
+<h2>3. Looking for in-development games from the browser <span class="bd s">Certain</span></h2>
+<ul>
+<li>The list of game names in the code (an array) has 120 names in total (including variants). Those not shown directly on the home screen are the Duels family, Bridge, test games, Skyblock's internal modes (hub / dungeons / farming / mining / fishing / combat / skills_test_gym), special forms of classic (2d / skyGrid / anarchy / creativeFlat / playerSchematic), and the extraction maps (match / desert / winter / training).</li>
+<li><code>preprod.bloxd.io</code> and <code>staging.bloxd.io</code> currently return the <b>same build</b> as production (bbb6l5). So in-development games cannot be seen from there right now (the document below says they were different builds in late 2026-10). <span class="src">Note: a later check showed preprod lagging behind production at times (for example on 2026-11-14), so "same build" holds only at the moments checked.</span></li>
+<li>Whether a game appears in the home list is decided by per-site settings (bloxd.io / staging / K12 and so on). The K12 edition (bloxdk12) list is also in the code.</li>
+</ul>
+
+<h2>3b. "Sub-mode and area" pages found by trying game names directly <span class="bd s">Certain</span></h2>
+<p>On 2026-11-12 I put the 135 internal game names (the name list in the code) into <code>bloxd.io/game/name</code> and checked whether a page exists (reading only; I did not join a game). <b>Names are case-sensitive</b> (<code>flagCapture</code> opens, but <code>flagcapture</code> and <code>Skyblock</code> do not). Spaces and <code>-</code> do not work either. Only names that are lower-case to begin with (<code>skyblock</code>, <code>bingo</code> and so on) match in lower case. The result: <b>107 have a page</b>, and the following 28 are sub-modes not shown on the home screen.</p>
+<div class="tw"><table><tr><th>Name</th><th>Page name</th></tr>
+<tr><td><code>skyblock_hub</code> / <code>skyblock_dungeons</code> / <code>skyblock_farming_1</code> / <code>skyblock_mining_1</code> / <code>skyblock_combat_1</code> / <code>skyblock_fishing_1</code> / <code>skyblock_skills_test_gym</code></td><td>The Skyblock areas: Hub / Dungeons / Manor Farm / Cragrock Mines / Wild Infernos / Lantern Reach / Skills Gym (<b>Lantern Reach</b> is an area that appeared in a quest name in the 2026-11-06 update)</td></tr>
+<tr><td><code>bedwars_solo</code> / <code>_duo</code> / <code>_trio</code> / <code>_4v4v4v4</code> / <code>_4v4</code> / <code>_1v1</code></td><td>Bedwars Solos / Duos / Trios / Squads / 4v4 / 1v1</td></tr>
+<tr><td><code>clutch_1v1</code> / <code>_2v2</code> / <code>_3v3</code>, <code>doodle_solo</code> / <code>_duo</code>, <code>shooting_ffa</code> / <code>_tdm</code>, <code>frontline_12v12</code></td><td>Clutch 1v1, 2v2, 3v3 / Doodle Cube Solos, Duos / Cube Warfare Free-For-All, Teams / Frontline 12v12</td></tr>
+<tr><td><code>extraction</code>, <code>extraction_match</code> / <code>_desert</code> / <code>_winter</code> / <code>_training</code></td><td><b>DimensionZ</b> (the page name of extraction itself) and four maps: Draugr Fields / Scorched Sands / Frozen Wastes / Training Grounds</td></tr>
+<tr><td><code>greenville_profIsland</code> / <code>greenville_spleefMM</code></td><td>Greenville Isle of Grove / Greenville Spleef</td></tr>
+<tr><td><code>rocketParkour_january</code> / <code>_sheep</code></td><td>Rocket Obby January / Sheep</td></tr>
+<tr><td><code>classic_survivalFactory</code> / <code>classic_survivalFactoryPersistent</code> / <code>classic_worlds</code></td><td>Build a Factory / Build a Factory Persistent / Sandbox Worlds</td></tr>
+<tr><td><code>flagCapture</code>, <code>duels</code> / <code>duels_build</code> / <code>duels_bed</code>, <code>bridge</code>, <code>classic_2d</code> / <code>classic_skyGrid</code> / <code>classic_anarchy</code>, <code>testGym</code> (and its 14 rooms), <code>schematicTester</code></td><td>Described in section 1 above</td></tr>
+</table></div>
+<p class="src"><b>Names with no page</b> (by the method above): <code>trickOrTreat</code>, <code>skywars_duo</code>, <code>skywars_solo</code>, <code>rocketSpleef_duo</code>, <code>rocketSpleef_ffa</code>, <code>classic_playerSchematic</code>, <code>schematicTester_test</code>. They are in the name list but have no page (internal, or no longer used) (<span class="bd g">Guess</span>). Having a page and being playable are separate things.</p>
+
+<h2>4. Critter Trails (a game in development; not in current production) <span class="bd s">Certain</span> (that it is gone) / supplied material (the contents)</h2>
+<div class="ok2"><b>What was checked (2026-11-12)</b>: the name "critter" does not appear anywhere in the current build's (bbb6l5) main.js or its 353 chunks. <code>bloxd.io/game/critterTrails</code> returns to the home screen. So right now there is no code of this game on the official site.</div>
+<div class="warn"><b>What follows is from supplied material (a PDF, "critter_trails_guide_ja", examining the 2026-10-23 preprod build scftlm).</b> That preprod build can no longer be fetched, so I have not re-checked the source. Some of the Japanese text in the PDF could not be read in my environment, so only the English parts (in-game text, names, numbers) are used.</div>
+<p><b>Overview (from the material)</b>: "Critter Trails" is a Pokémon-like RPG in which you <b>catch, raise and battle 55 kinds of creatures (critters)</b>. Each has four forms (default / evolved / glimmer / glimmerEvolved), so there are 55 × 4 = <b>220</b> pictures. A glimmer (shiny) form is said to have about a <b>0.18%</b> chance.</p>
+<p><b>How it was found (from the material)</b>: it was in two preprod builds (al23et / scftlm) on 2026-10-22 and 23, about 3.4 MB larger (152 3D-model GLBs, 275 PNGs, translations for 55 kinds). The game's name in the config was "Blank Test" (URL <code>/blank-test</code>), and it was in the dev-game list (<code>Set([schematicTester, testGym, critterTrails])</code>).</p>
+<h3>How it works (from the material; in-game text)</h3>
+<ul>
+<li><b>Four elements</b>: Fire, Water, Leaf, Earth. There is a "Fire beats Leaf" message (other matchups are unknown within what I could read).</li>
+<li><b>Bosses (Keepers)</b>: nine. Beating one unlocks things such as new teams. The last area is "The Summit".</li>
+<li><b>Shrines and seals</b>: four of each can be read ("Seals X/4"). There are "Sealed / Locked / Not yet" labels.</li>
+<li><b>Catching</b>: prompts read "Tap a critter", "Energy", "Catch!" (it reads as lowering health before catching, but <span class="bd g">Guess</span>). The tool is the <b>Critter Orb</b> (6 tiers: Twig / Stone / Iron / Gold / Diamond / Moon, strength 1 to 6) and a Pouch to hold it (Twig Pouch and 5 more). The catch chance is shown as "Easy catch! / Good chance / Tricky!".</li>
+<li><b>Healing and boost items (5)</b>: Critter Heal Bloom ("Energy 35%"), Critter Wake Bell ("40%"), Critter Power Pepper ("+25% (15)"), Critter Guard Shell ("-30% (15)"), Critter Quick Feather ("Big move + 2"). The units of the numbers (seconds or counts) and the Japanese descriptions could not be read in my environment, so they are unknown.</li>
+<li>The material also mentions the <b>Big move</b>, <b>riding</b> (run on land / swim / fly, dig, freeze water into a path (frost), a vine bridge (vines)), a <b>Field Guide</b>, <b>trainer levels</b> (player battles say "Reach Trainer N to battle other trainers. (Opens soon. Keep playing.)", meaning not open yet), and <b>Glimmer Dust</b> (a boss reward).</li>
+<li>Six menus: Party / Field Guide / Trail / Me (Trainer) / Battles / Settings.</li>
+</ul>
+<h3>The creatures (from the material; 55 kinds)</h3>
+<p><b>Starter partners (choose 1 of 3)</b>: Sootpup (Fire) / Finnip (Water) / Mossbun (Leaf), with "Pick your partner!". <b>Rare ones ("A rare beast. Tougher than other critters.")</b>: five kinds: Fizzbang (Fire), Whirlbloom (Leaf), Auroray (Water), Sandtock (Earth), Moonwhale (Water).</p>
+<div class="tw"><table><tr><th>Element</th><th>Kinds</th><th>Names</th></tr>
+<tr><td>Fire</td><td>11</td><td>Sootpup, Ashlet, Cinderchick, Cindrake, Kilnkin, Flueling, Mothwick, Kindlestep, Puffbellow, Sizzlug, Fizzbang</td></tr>
+<tr><td>Water</td><td>15</td><td>Finnip, Dropple, Chillkit, Shellmaw, Wispgill, Galekite, Bellglow, Igloon, Buoyling, Dewbie, Skidling, Auroray, Moonwhale, Skimfin, Drizzlestilt</td></tr>
+<tr><td>Leaf</td><td>13</td><td>Mossbun, Budling, Leaflit, Bramblebear, Capling, Sprigvix, Knollback, Peapling, Twinklet, Twiggle, Whirlbloom, Dandecub, Hedgecrawl</td></tr>
+<tr><td>Earth</td><td>16</td><td>Gritlet, Burrowkit, Clodcalf, Bouldron, Shardtick, Cairnling, Steeplet, Siftscale, Moundlet, Isling, Sandtock, Foldling, Millroll, Peeklet, Orrelume, Hillmark</td></tr>
+</table></div>
+<p class="src">The total is 11 + 15 + 13 + 16 = 55 (matching the material's count). The material says each creature has a 256×256 portrait and a 3D model (GLB, Draco-compressed) with animation per body part. These files are not placed on this site.</p>
+<h3>Unchecked and unknown</h3>
+<ul>
+<li>Whether and when it will be released in production: <span class="bd u">Unknown</span>. (Games in development often disappear before release.)</li>
+<li>The numbers in the material (orb strength, healing percentages, odds and so on) are the material's statements; I have not verified them. <span class="bd g">Guess</span></li>
+<li>Whether it remains in other builds: I only checked the current build. Past preprod builds cannot be fetched.</li>
+</ul>
+<p class="src" style="margin-top:34px">This is an unofficial investigation, not connected to the bloxd.io team. It is based only on reading the publicly served client files and observing traffic.</p>
+</main></body></html>

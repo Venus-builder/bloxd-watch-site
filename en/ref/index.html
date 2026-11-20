@@ -76,7 +76,7 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 .cards a b{display:block;margin-bottom:4px}.cards a span{font-size:13px;color:var(--muted)}
 </style><style id="langcss">.langbtn{position:fixed;top:10px;right:12px;z-index:99999;display:inline-block;padding:4px 12px;border-radius:6px;background:#4de2d4;color:#06201e;font:700 13px/1.6 system-ui,"Yu Gothic UI",sans-serif;text-decoration:none;border:1px solid rgba(0,0,0,.25);box-shadow:0 2px 0 rgba(0,0,0,.35)}.langbtn:hover{filter:brightness(1.08)}@media (prefers-color-scheme:light){.langbtn{background:#0b8c83;color:#fff}}</style></head><body><a class="langbtn" href="../../ref/index.html" hreflang="ja" title="日本語版へ">日本語</a>
 <div class="hero"><div class="in"><a class="back" href="../">← Back to Update Watch</a>
-<div class="nav"><a href="./" class="on">Analysis documents</a><a href="infra.html">Servers and infrastructure</a><a href="client.html">How the client is built</a><a href="combat.html">Combat formulas</a><a href="items.html">Weapon and armor numbers</a><a href="builds.html">Update history</a><a href="events.html">Events</a><a href="skin.html">Skin viewer</a><a href="ban.html">Ban investigation</a><a href="texture.html">Texture packs</a><a href="method.html">Method and limits</a></div>
+<div class="nav"><a href="./" class="on">Analysis documents</a><a href="infra.html">Servers and infrastructure</a><a href="client.html">How the client is built</a><a href="combat.html">Combat formulas</a><a href="items.html">Weapon and armor numbers</a><a href="builds.html">Update history</a><a href="events.html">Events</a><a href="hidden.html">Hidden games</a><a href="skin.html">Skin viewer</a><a href="ban.html">Ban investigation</a><a href="texture.html">Texture packs</a><a href="method.html">Method and limits</a></div>
 <h1>bloxd.io analysis documents</h1><p>What can be confirmed from the game client (the files served to the browser), with a confidence level for each statement.</p></div></div>
 <main class="rep">
 <div class="ok2">Current build: <b>bbb6l5</b> (checked 2026-11-20 16:00 UTC). The number tables and the update history are rebuilt automatically whenever the game updates.</div>
@@ -92,15 +92,17 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <a href="ban.html"><b>🚫 Ban investigation</b><span>The reported wave of account bans: what is checked and what is not.</span></a>
 <a href="texture.html"><b>🎨 Texture packs</b><span>How packs are made, the list, and their history (no image contents).</span></a>
 <a href="method.html"><b>🔎 Method and limits</b><span>What the evidence is and what has not been done. What the confidence labels mean.</span></a>
-<a href="../../ref/hidden.html"><b>🕵️ Hidden games (Japanese)</b><span>Games not shown on the home screen. Not translated yet.</span></a>
-<a href="../../seedmap/map.html"><b>🗺️ Seed map (Japanese)</b><span>Type a server number (e.g. 20203) and view the terrain from above.</span></a>
-<a href="../../guide/world.html"><b>🌍 How worlds are generated (Japanese)</b><span>Ores, chests, biomes. Not translated yet.</span></a>
-<a href="../../guide/enchant-best.html"><b>✨ Best enchantment combinations (Japanese)</b><span>Quick table computed from the formulas. Not translated yet.</span></a>
+<a href="hidden.html"><b>🕵️ Hidden games</b><span>Games not shown on the home screen (Critter Trails and others).</span></a>
+<a href="../seedmap/map.html"><b>🗺️ Seed map</b><span>Type a server number (e.g. 20203) and view the terrain from above.</span></a>
+<a href="../guide/world.html"><b>🌍 How worlds are generated</b><span>Ores, chests, biomes (the ore and ruin tables are frozen; see the page).</span></a>
+<a href="../guide/enchant-best.html"><b>✨ Best enchantment combinations</b><span>Quick table computed from the formulas.</span></a>
+<a href="../guide/enchant.html"><b>🪄 Enchantment quick table</b><span>Table levels, tiers, effects by level.</span></a>
+<a href="../analysis/2026-10-26-glider.html"><b>🪂 Glider enchantments report</b><span>The three new glider enchantments, from the formulas.</span></a>
 </div>
 <h2>What the labels mean</h2>
 <table><tr><th>Label</th><th>Meaning</th></tr>
 <tr><td><span class="bd s">Certain</span></td><td>It is written in the code, or I observed it myself. The build and date are given.</td></tr>
 <tr><td><span class="bd g">Guess</span></td><td>Read from code or text, but the real behaviour has not been checked.</td></tr>
 <tr><td><span class="bd u">Unknown</span></td><td>The client has no number for it; it is probably on the server (final damage, enemy health, and so on).</td></tr></table>
-<p class="src" style="margin-top:34px">This is an unofficial investigation, not connected to the bloxd.io team. It is based only on reading the publicly served client files and observing traffic. Not translated yet: the "Hidden games" page, the guides and the seed map (Japanese only).</p>
+<p class="src" style="margin-top:34px">This is an unofficial investigation, not connected to the bloxd.io team. It is based only on reading the publicly served client files and observing traffic.</p>
 </main></body></html>

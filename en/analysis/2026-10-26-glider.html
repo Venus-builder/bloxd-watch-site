@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Analysis report: the new glider enchantments</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+:root{--bg:#0b1216;--fg:#e4edef;--muted:#86a0a8;--card:#121d23;--line:#223540;--accent:#4de2d4;--accent2:#f5b83d;--ink:#06201e;
+--add:#58dc8e;--addbg:#0f2f21;--chg:#f5b83d;--chgbg:#33290d;--del:#ff7070;--delbg:#391517;--code:#192830;
+--player:#4de2d4;--playerbg:#0e2b2c;--maker:#b896ff;--makerbg:#231a3b;--shadow:#0a8a80;
+--font-pixel:"DotGothic16","Yu Gothic UI","Hiragino Sans","Noto Sans JP",sans-serif;
+color-scheme:dark light}
+@media (prefers-color-scheme:light){:root{--bg:#e8eef0;--fg:#11242b;--muted:#4f6770;--card:#fff;--line:#c6d4d9;--accent:#0b8c83;--accent2:#b87400;--ink:#fff;
+--add:#12803f;--addbg:#dbf3e5;--chg:#9a5b00;--chgbg:#fbefcf;--del:#bb3030;--delbg:#fbe0e0;--code:#e4ecee;
+--player:#0b8c83;--playerbg:#d9f1ef;--maker:#6b45c9;--makerbg:#ebe3fb;--shadow:#064f4a}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.75 "Yu Gothic UI","Hiragino Sans","Noto Sans JP",system-ui,sans-serif}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent2);outline-offset:2px}
+.hero{background:var(--card);border-bottom:1px solid var(--line);padding:44px 16px 52px;position:relative}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:repeating-linear-gradient(90deg,#4caf50 0 28px,#8d6e4a 28px 56px,#8a949b 56px 84px,#2d3338 84px 112px,#d2a98a 112px 140px,#f5b83d 140px 168px,#4de2d4 168px 196px,#e0524d 196px 224px)}
+.hero .in{max-width:820px;margin:0 auto}
+.hero h1{font:400 clamp(30px,6.2vw,46px)/1.15 var(--font-pixel);margin:0 0 12px;letter-spacing:.02em;color:var(--fg)}
+.hero p{margin:0;color:var(--muted);font-size:14px;max-width:60ch}.hero p+p{max-width:none}
+.hero .back{display:inline-block;margin:0 14px 14px 0;color:var(--muted);font-size:13px;text-decoration:none;border-bottom:1px solid var(--line)}
+.hero .back:hover{color:var(--accent);border-color:var(--accent)}
+main{max-width:820px;margin:28px auto 0;padding:0 16px 72px;position:relative}
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:0 0 6px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.stat b{display:block;font-size:12px;color:var(--muted);font-weight:500;margin-bottom:2px}
+.stat span{font:400 17px/1.4 var(--font-pixel);color:var(--fg);word-break:break-all}
+h2{font:400 21px/1.4 var(--font-pixel);margin:38px 0 14px;letter-spacing:.02em}
+.upd{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px 18px 12px;margin:14px 0}
+.upd.latest{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:13px}
+.new{background:var(--accent2);color:#1b1300;font:400 12.5px/1.6 var(--font-pixel);padding:0 9px;border-radius:3px}
+.build{font:12px ui-monospace,Consolas,monospace;background:var(--code);padding:1px 8px;border-radius:3px}
+.upd h3{font:400 20px/1.55 var(--font-pixel);margin:8px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.chip{font-size:12.5px;padding:1px 10px;border-radius:3px;background:var(--code);color:var(--muted);font-weight:600}
+.chip.add{background:var(--addbg);color:var(--add)}.chip.chg{background:var(--chgbg);color:var(--chg)}.chip.del{background:var(--delbg);color:var(--del)}
+.pts{display:grid;gap:10px}
+.pt{display:flex;gap:12px;padding:12px 14px;border-radius:4px;border:1px solid var(--line);border-left-width:5px}
+.pt.player{border-left-color:var(--player);background:var(--playerbg)}.pt.maker{border-left-color:var(--maker);background:var(--makerbg)}
+.ico{font-size:26px;line-height:1.2;flex:none}.ptb{min-width:0}
+.ptt{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.ptt h4{margin:0;font-size:15.5px;line-height:1.55}
+.who{font-size:11.5px;font-weight:700;padding:0 8px;border-radius:3px;color:var(--ink);background:var(--player)}.maker .who{background:var(--maker);color:#fff}
+.pt p{margin:6px 0 0;font-size:14.5px}.pt .note{color:var(--muted);font-size:13px}
+.cert{display:inline-block;margin-top:6px;font-size:12px;color:var(--muted);background:var(--code);padding:0 9px;border-radius:3px}
+.rbtn{display:inline-block;margin:14px 10px 6px 0;padding:7px 16px;border-radius:4px;background:var(--accent);color:var(--ink);text-decoration:none;font:400 15px/1.5 var(--font-pixel);box-shadow:0 4px 0 var(--shadow);transition:transform .08s,box-shadow .08s}
+.rbtn:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--shadow)}.rbtn:active{transform:translateY(4px);box-shadow:0 0 0 var(--shadow)}
+.newitems{background:var(--addbg);border-radius:4px;padding:10px 14px;margin:12px 0}.newitems b{font-size:13px;color:var(--add);display:block;margin-bottom:6px}
+.pill{display:inline-block;margin:3px 6px 3px 0;padding:0 11px;border-radius:3px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600}
+details{padding:8px 0}summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center}
+summary::-webkit-details-marker{display:none}summary::before{content:"▸";color:var(--accent);margin-right:6px;font-size:12px}details[open]>summary::before{content:"▾"}
+summary span{flex:1}summary em{font-style:normal;font-size:12px;color:var(--muted);font-weight:500}
+.en{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}.sec{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin:8px 0;background:var(--bg)}
+.diff{list-style:none;margin:8px 0 2px;padding:0}.diff li{display:flex;gap:10px;padding:8px 0;border-top:1px dashed var(--line)}.diff li:first-child{border-top:0}
+.diff i{font-style:normal;font-weight:800;width:1.2em;text-align:center;flex:none}.a i{color:var(--add)}.c i{color:var(--chg)}.d i{color:var(--del)}
+.diff div{min-width:0;flex:1}.diff p{margin:2px 0;font-size:14px;word-break:break-word;white-space:pre-wrap}.diff p.from{color:var(--muted);text-decoration:line-through}
+code{font:11.5px ui-monospace,Consolas,monospace;color:var(--muted);background:var(--code);padding:1px 6px;border-radius:3px}
+.dev{margin-top:8px;font-size:12.5px;border-top:1px solid var(--line)}.dev>summary{font-weight:500;color:var(--muted)}dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:8px 0}dt{color:var(--muted)}dd{margin:0;word-break:break-all}
+pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Consolas,monospace;background:var(--code);padding:10px;border-radius:4px;max-height:420px;overflow:auto}
+.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:6px}table{width:100%;border-collapse:collapse;font-size:13px}td{padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap}tr:last-child td{border-bottom:0}
+.tag{font-size:12px;padding:0 9px;border-radius:3px;border:1px solid var(--line);font-weight:600}.tag.ok{color:var(--add);background:var(--addbg);border-color:transparent}.tag.chg{color:var(--chg);background:var(--chgbg);border-color:transparent}.tag.err{color:var(--del);background:var(--delbg);border-color:transparent}
+.muted{color:var(--muted);font-size:12.5px}footer{margin-top:36px}
+@media (prefers-reduced-motion:reduce){.rbtn{transition:none}}
+
+.rep h2{margin:30px 0 10px}.rep table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
+.rep th{background:var(--code);text-align:left;font-weight:700;padding:8px 12px;font-size:12.5px}.rep td{padding:8px 12px;border-top:1px solid var(--line)}
+.rep .tw{overflow-x:auto;margin:8px 0}.rep p,.rep li{font-size:14.5px}.rep .big{font-size:16px}.warn{background:var(--chgbg);border-left:6px solid var(--chg);border-radius:12px;padding:10px 14px;margin:12px 0}
+.ok2{background:var(--addbg);border-left:6px solid var(--add);border-radius:12px;padding:10px 14px;margin:12px 0}.back{display:inline-block;margin:0 0 10px;color:#fff;opacity:.95;font-size:13px}
+.src{font-size:12px;color:var(--muted)}
+</style><style id="langcss">.langbtn{position:fixed;top:10px;right:12px;z-index:99999;display:inline-block;padding:4px 12px;border-radius:6px;background:#4de2d4;color:#06201e;font:700 13px/1.6 system-ui,"Yu Gothic UI",sans-serif;text-decoration:none;border:1px solid rgba(0,0,0,.25);box-shadow:0 2px 0 rgba(0,0,0,.35)}.langbtn:hover{filter:brightness(1.08)}@media (prefers-color-scheme:light){.langbtn{background:#0b8c83;color:#fff}}</style></head><body><a class="langbtn" href="../../analysis/2026-10-26-glider.html" hreflang="ja" title="日本語版へ">日本語</a>
+<div class="hero"><div class="in"><a class="back" href="../">← Back to Update Watch</a><h1>🪂 Analysis report: the new glider enchantments</h1>
+<p>The effects of the three glider enchantments added in the 2026-10-26 update (build cnty9), turned into numbers from the formulas in the game program.</p></div></div>
+<main class="rep">
+
+<h2>✅ Conclusion (the numbers you most want)</h2>
+<div class="ok2 big">
+<b>Firecracker cooldown</b>: <b>about 15% shorter per level (multiplicatively)</b>. Level 1 is −15.0%, level 2 −27.8%, level 3 −38.6%.<br>
+<b>Firecracker boost</b>: <b>+15% stronger per level</b>. Level 1 is +15%, level 2 +30%, level 3 +45%.<br>
+<b>Gliding speed</b>: <b>+2 to top speed per level</b>. +2 at level 1, +4 at level 2, +6 at level 3. As a percentage, at level 3 that is about +46% for a wood glider (base 13) and +24% for diamond (base 25).
+</div>
+
+<h2>📊 Effects by level</h2>
+<div class="tw"><table><tr><th></th><th>Cooldown (base 1 s)</th><th>Boost (base force 50)</th><th>Gliding top-speed bonus</th></tr><tr><td>Level 1</td><td>-15.0% (850.0 ms)</td><td>+15.0% (push force 57.5)</td><td>+2</td></tr><tr><td>Level 2</td><td>-27.8% (722.5 ms)</td><td>+30.0% (push force 65.0)</td><td>+4</td></tr><tr><td>Level 3</td><td>-38.6% (614.1 ms)</td><td>+45.0% (push force 72.5)</td><td>+6</td></tr></table></div>
+<p class="src">Formula source: in the client (main.js), <code>getFirecrackerCooldownMultiplier</code> = 0.85 to the power of the level (lower limit 0.4), <code>getFirecrackerBoostMultiplier</code> = 1 + 0.15 × level (upper limit 2), <code>getGlidingSpeedBonus</code> = 2 × level (upper limit 10). The base cooldown is the setting <code>gliderFuelCooldown: 1000</code> (milliseconds), and the base boost force is <code>50</code>, to which the multiplier is applied.</p>
+
+<h2>🔎 A bit more detail</h2>
+<h3>Cooldown (how much shorter)</h3>
+<p>At level L the original time is multiplied by 0.85, L times (a 15% reduction each time, multiplicatively). It is not additive, so each extra level reduces less than the one before.</p>
+<p>In terms of how often you can use it, against the base of "once per second", level 1 is about 1.2 times, level 2 about 1.4 times and level 3 about 1.6 times (per second).</p>
+<p class="src">Share of the original time per level: 1: 85.0% / 2: 72.2% / 3: 61.4% / 4: 52.2% / 5: 44.4% / 6: 40.0% / 7: 40.0% (the floor is 40%; it flattens out from level 6).</p>
+<h3>Boost (how much stronger)</h3>
+<p>At level L the push force becomes (1 + 0.15 × L) times. It is additive, so each level adds the same amount (+15%). The upper limit is 2 times (+100%), reached at level 7.</p>
+<p class="src">Multiplier per level: 1: 115.0% / 2: 130.0% / 3: 145.0% / 4: 160.0% / 5: 175.0% / 6: 190.0% / 7: 200.0% / 8: 200.0%</p>
+<h3>Gliding speed (top-speed bonus)</h3>
+<p>At level L the bonus is 2 × L (upper limit 10; it flattens out at level 5). According to the game documents (the Studio description), the base top speeds of gliders are wood 13, iron 17, gold 21 and diamond 25. If the bonus is simply added to this top speed, you get the following.</p>
+<div class="tw"><table><tr><th>Glider (base)</th><th>Level 1</th><th>Level 2</th><th>Level 3</th><th>Limit (+10)</th></tr><tr><td>Wood hang glider (base 13)</td><td>15(+15.4%)</td><td>17(+30.8%)</td><td>19(+46.2%)</td><td>23(+76.9%)</td></tr><tr><td>Iron hang glider (base 17)</td><td>19(+11.8%)</td><td>21(+23.5%)</td><td>23(+35.3%)</td><td>27(+58.8%)</td></tr><tr><td>Gold hang glider (base 21)</td><td>23(+9.5%)</td><td>25(+19.0%)</td><td>27(+28.6%)</td><td>31(+47.6%)</td></tr><tr><td>Diamond hang glider (base 25)</td><td>27(+8.0%)</td><td>29(+16.0%)</td><td>31(+24.0%)</td><td>35(+40.0%)</td></tr></table></div>
+
+<div class="warn"><b>⚠ This speed table contains guesses.</b> In the client code I found where the bonus value is computed and held, but I did not find where it is added to the top speed (it may be used on the server or somewhere else). The calculation assumes that "it is added to the top speed" and that "the unit is the same as top speed". The real effect can only be confirmed by measuring it in play.</div>
+
+<h2>🎲 How the enchantments get applied</h2>
+<ul>
+<li>The target is the glider (wood, iron, gold and diamond hang gliders). Only these three can be applied.</li>
+<li>The higher the enchantment tier (Tier 1 to 5), the more times "pick one at random and raise its level by 1" happens: once for Tier 1, five times for Tier 5.</li>
+<li>When applied at random, one kind reaches at most level <b>3</b> (a kind that reaches 3 is not chosen again).</li>
+<li>For example, on a Tier 5 glider, a total of 5 levels are split among the three kinds. Up to 3 levels in one kind and the remaining 2 in another is the combination that maximises one effect.</li>
+<li>The limits in the program (cooldown level 6, boost level 7, speed level 5) look like safety nets for when a high level is applied by a command or some special means. In normal play you only reach level 3.</li>
+</ul>
+<p class="src">Source: the code that decides enchantments (rolls per tier <code>{"Tier 1":1 … "Tier 5":5}</code>, cap per kind <code>3</code>) and the glider enchantment list <code>Glider: ["Firecracker Cooldown","Firecracker Boost","Gliding Speed"]</code>.</p>
+
+<h2>🚀 How firecrackers are used (related behaviour)</h2>
+<ul>
+<li>The boost works while gliding with the hang glider in hand and a firecracker held. Each use consumes one firecracker (not in creative mode).</li>
+<li>The boost goes in the direction you are looking (mostly horizontal). The momentum fades back to normal gliding over a fixed time (about 100 ticks).</li>
+<li>You cannot use a firecracker during the cooldown. A bar appears near the middle of the screen.</li>
+</ul>
+
+<h2>🧪 Other analysis of this update</h2>
+<ul>
+<li><b>The formulas of the other enchantments did not change.</b> I compared the existing formulas for bows, pickaxes, axes, armor and so on (Quick Charge, arrow speed, damage calculation and others) between the old and new builds, and the numbers were the same. The only formulas added in this update are the three glider ones. (Only these formulas were checked, not every item stat.)</li>
+<li><b>The Build a Factory 2 "Islands"</b> screen code (the "Islands" button inside the core) is in the program. The number of islands you can have uses a value sent from the server (<code>baf2IslandsMax</code>), so it cannot be known from the client code.</li>
+<li><b>The "Standing Noticeboard"</b> remains in the program as a block. Only its display-name entry disappeared from the dictionary (translations).</li>
+<li><b>The animal sound data</b> disappeared from the main file (main.js), but it remains in the list of sound names (the Studio material). It is most likely that only the place where the data is stored moved.</li>
+<li><b>The official announcements</b> (the in-game news list) did not yet include an item for this update. The newest item was "Skyblock Official Trailer" on October 21.</li>
+</ul>
+
+<h2>⚠ Limits of this report</h2>
+<ul>
+<li>Nothing here was measured by playing the game. The numbers are computed from the formulas and settings of the game client (the program served to the browser).</li>
+<li>The server may judge with a different formula from the client (cooldown and boost in particular should also be checked on the server, but that code cannot be seen).</li>
+<li>How to obtain them (which tier of enchantment, and how they appear) is server-side information and unknown.</li>
+<li>This is a new feature, so the numbers may change in later updates. Update Watch will detect a change.</li>
+</ul>
+<p class="muted">This is an unofficial personal report and is not connected to the bloxd.io team.</p>
+</main></body></html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Handy info: enchantment quick table</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+:root{--bg:#0b1216;--fg:#e4edef;--muted:#86a0a8;--card:#121d23;--line:#223540;--accent:#4de2d4;--accent2:#f5b83d;--ink:#06201e;
+--add:#58dc8e;--addbg:#0f2f21;--chg:#f5b83d;--chgbg:#33290d;--del:#ff7070;--delbg:#391517;--code:#192830;
+--player:#4de2d4;--playerbg:#0e2b2c;--maker:#b896ff;--makerbg:#231a3b;--shadow:#0a8a80;
+--font-pixel:"DotGothic16","Yu Gothic UI","Hiragino Sans","Noto Sans JP",sans-serif;
+color-scheme:dark light}
+@media (prefers-color-scheme:light){:root{--bg:#e8eef0;--fg:#11242b;--muted:#4f6770;--card:#fff;--line:#c6d4d9;--accent:#0b8c83;--accent2:#b87400;--ink:#fff;
+--add:#12803f;--addbg:#dbf3e5;--chg:#9a5b00;--chgbg:#fbefcf;--del:#bb3030;--delbg:#fbe0e0;--code:#e4ecee;
+--player:#0b8c83;--playerbg:#d9f1ef;--maker:#6b45c9;--makerbg:#ebe3fb;--shadow:#064f4a}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.75 "Yu Gothic UI","Hiragino Sans","Noto Sans JP",system-ui,sans-serif}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent2);outline-offset:2px}
+.hero{background:var(--card);border-bottom:1px solid var(--line);padding:44px 16px 52px;position:relative}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:repeating-linear-gradient(90deg,#4caf50 0 28px,#8d6e4a 28px 56px,#8a949b 56px 84px,#2d3338 84px 112px,#d2a98a 112px 140px,#f5b83d 140px 168px,#4de2d4 168px 196px,#e0524d 196px 224px)}
+.hero .in{max-width:820px;margin:0 auto}
+.hero h1{font:400 clamp(30px,6.2vw,46px)/1.15 var(--font-pixel);margin:0 0 12px;letter-spacing:.02em;color:var(--fg)}
+.hero p{margin:0;color:var(--muted);font-size:14px;max-width:60ch}.hero p+p{max-width:none}
+.hero .back{display:inline-block;margin:0 14px 14px 0;color:var(--muted);font-size:13px;text-decoration:none;border-bottom:1px solid var(--line)}
+.hero .back:hover{color:var(--accent);border-color:var(--accent)}
+main{max-width:820px;margin:28px auto 0;padding:0 16px 72px;position:relative}
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:0 0 6px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.stat b{display:block;font-size:12px;color:var(--muted);font-weight:500;margin-bottom:2px}
+.stat span{font:400 17px/1.4 var(--font-pixel);color:var(--fg);word-break:break-all}
+h2{font:400 21px/1.4 var(--font-pixel);margin:38px 0 14px;letter-spacing:.02em}
+.upd{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px 18px 12px;margin:14px 0}
+.upd.latest{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:13px}
+.new{background:var(--accent2);color:#1b1300;font:400 12.5px/1.6 var(--font-pixel);padding:0 9px;border-radius:3px}
+.build{font:12px ui-monospace,Consolas,monospace;background:var(--code);padding:1px 8px;border-radius:3px}
+.upd h3{font:400 20px/1.55 var(--font-pixel);margin:8px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.chip{font-size:12.5px;padding:1px 10px;border-radius:3px;background:var(--code);color:var(--muted);font-weight:600}
+.chip.add{background:var(--addbg);color:var(--add)}.chip.chg{background:var(--chgbg);color:var(--chg)}.chip.del{background:var(--delbg);color:var(--del)}
+.pts{display:grid;gap:10px}
+.pt{display:flex;gap:12px;padding:12px 14px;border-radius:4px;border:1px solid var(--line);border-left-width:5px}
+.pt.player{border-left-color:var(--player);background:var(--playerbg)}.pt.maker{border-left-color:var(--maker);background:var(--makerbg)}
+.ico{font-size:26px;line-height:1.2;flex:none}.ptb{min-width:0}
+.ptt{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.ptt h4{margin:0;font-size:15.5px;line-height:1.55}
+.who{font-size:11.5px;font-weight:700;padding:0 8px;border-radius:3px;color:var(--ink);background:var(--player)}.maker .who{background:var(--maker);color:#fff}
+.pt p{margin:6px 0 0;font-size:14.5px}.pt .note{color:var(--muted);font-size:13px}
+.cert{display:inline-block;margin-top:6px;font-size:12px;color:var(--muted);background:var(--code);padding:0 9px;border-radius:3px}
+.rbtn{display:inline-block;margin:14px 10px 6px 0;padding:7px 16px;border-radius:4px;background:var(--accent);color:var(--ink);text-decoration:none;font:400 15px/1.5 var(--font-pixel);box-shadow:0 4px 0 var(--shadow);transition:transform .08s,box-shadow .08s}
+.rbtn:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--shadow)}.rbtn:active{transform:translateY(4px);box-shadow:0 0 0 var(--shadow)}
+.newitems{background:var(--addbg);border-radius:4px;padding:10px 14px;margin:12px 0}.newitems b{font-size:13px;color:var(--add);display:block;margin-bottom:6px}
+.pill{display:inline-block;margin:3px 6px 3px 0;padding:0 11px;border-radius:3px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600}
+details{padding:8px 0}summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center}
+summary::-webkit-details-marker{display:none}summary::before{content:"▸";color:var(--accent);margin-right:6px;font-size:12px}details[open]>summary::before{content:"▾"}
+summary span{flex:1}summary em{font-style:normal;font-size:12px;color:var(--muted);font-weight:500}
+.en{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}.sec{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin:8px 0;background:var(--bg)}
+.diff{list-style:none;margin:8px 0 2px;padding:0}.diff li{display:flex;gap:10px;padding:8px 0;border-top:1px dashed var(--line)}.diff li:first-child{border-top:0}
+.diff i{font-style:normal;font-weight:800;width:1.2em;text-align:center;flex:none}.a i{color:var(--add)}.c i{color:var(--chg)}.d i{color:var(--del)}
+.diff div{min-width:0;flex:1}.diff p{margin:2px 0;font-size:14px;word-break:break-word;white-space:pre-wrap}.diff p.from{color:var(--muted);text-decoration:line-through}
+code{font:11.5px ui-monospace,Consolas,monospace;color:var(--muted);background:var(--code);padding:1px 6px;border-radius:3px}
+.dev{margin-top:8px;font-size:12.5px;border-top:1px solid var(--line)}.dev>summary{font-weight:500;color:var(--muted)}dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:8px 0}dt{color:var(--muted)}dd{margin:0;word-break:break-all}
+pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Consolas,monospace;background:var(--code);padding:10px;border-radius:4px;max-height:420px;overflow:auto}
+.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:6px}table{width:100%;border-collapse:collapse;font-size:13px}td{padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap}tr:last-child td{border-bottom:0}
+.tag{font-size:12px;padding:0 9px;border-radius:3px;border:1px solid var(--line);font-weight:600}.tag.ok{color:var(--add);background:var(--addbg);border-color:transparent}.tag.chg{color:var(--chg);background:var(--chgbg);border-color:transparent}.tag.err{color:var(--del);background:var(--delbg);border-color:transparent}
+.muted{color:var(--muted);font-size:12.5px}footer{margin-top:36px}
+@media (prefers-reduced-motion:reduce){.rbtn{transition:none}}
+
+.rep h2{margin:30px 0 10px}.rep h3{margin:18px 0 6px}.rep table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
+.rep th{background:var(--code);text-align:left;font-weight:700;padding:8px 12px;font-size:12.5px}.rep td{padding:8px 12px;border-top:1px solid var(--line);vertical-align:top}
+.rep .tw{overflow-x:auto;margin:8px 0}.rep p,.rep li{font-size:14.5px}.warn{background:var(--chgbg);border-left:6px solid var(--chg);border-radius:12px;padding:10px 14px;margin:12px 0}
+.ok2{background:var(--addbg);border-left:6px solid var(--add);border-radius:12px;padding:10px 14px;margin:12px 0}.back{display:inline-block;margin:0 0 10px;color:#fff;opacity:.95;font-size:13px}
+.src{font-size:12px;color:var(--muted)}
+</style><style id="langcss">.langbtn{position:fixed;top:10px;right:12px;z-index:99999;display:inline-block;padding:4px 12px;border-radius:6px;background:#4de2d4;color:#06201e;font:700 13px/1.6 system-ui,"Yu Gothic UI",sans-serif;text-decoration:none;border:1px solid rgba(0,0,0,.25);box-shadow:0 2px 0 rgba(0,0,0,.35)}.langbtn:hover{filter:brightness(1.08)}@media (prefers-color-scheme:light){.langbtn{background:#0b8c83;color:#fff}}</style></head><body><a class="langbtn" href="../../guide/enchant.html" hreflang="ja" title="日本語版へ">日本語</a>
+<div class="hero"><div class="in"><a class="back" href="../">← Back to Update Watch</a> <a class="back" href="enchant-best.html">Best combinations →</a><h1>✨ Handy info: enchantment quick table</h1>
+<p>The enchantment system and the effect numbers, put together from the formulas written in the game program (build bbb6l5). This looks at what the game contains now, separately from updates.</p></div></div>
+<main class="rep">
+
+<h2>✅ The short version</h2>
+<div class="ok2">
+The <b>enchanting table</b> has five levels: wood, stone, iron, gold and diamond. A better table offers higher levels and makes higher tiers likelier.<br>
+<b>Tier (1 to 5)</b> is "how many times the effects are rolled". For Tier N, one of the enchantments the tool can have is chosen N times, each time raising its level by +1.<br>
+The level of one enchantment is <b>at most 3</b> (once it reaches 3 it is not chosen again). For example, if Tier 5 is put on a tool with three candidates, the five rolls split among the three, and the most you get is a shape like 3-2-0, 3-1-1 or 2-2-1.
+</div>
+
+<h2>🪄 Table levels and how likely each tier is</h2>
+<p>The table shows three choices, and each has a required level. The required level is chosen at random each time from the ranges below.</p>
+<div class="tw"><table><tr><th></th><th>First choice</th><th>Second</th><th>Third</th></tr><tr><td>Wood table</td><td>1 to 2</td><td>3 to 4</td><td>5 to 6</td></tr><tr><td>Stone table</td><td>2 to 4</td><td>5 to 10</td><td>11 to 15</td></tr><tr><td>Iron table</td><td>5 to 10</td><td>11 to 20</td><td>21 to 30</td></tr><tr><td>Gold table</td><td>20 to 30</td><td>31 to 40</td><td>41 to 50</td></tr><tr><td>Diamond table</td><td>40 to 50</td><td>50 to 70</td><td>71 to 80</td></tr></table></div>
+<p class="src">Source: <code>enchantingBounds</code> in chunk 8. What kind of level (experience and so on) the "required level" refers to has not been checked here.</p>
+<h3>Tier probability by required level</h3>
+<div class="tw"><table><tr><th>Required level</th><th>Tier 1</th><th>Tier 2</th><th>Tier 3</th><th>Tier 4</th><th>Tier 5</th></tr><tr><td>1</td><td>79%</td><td>19%</td><td>1.8%</td><td>0.4%</td><td><0.1%</td></tr><tr><td>5</td><td>70%</td><td>26%</td><td>3.0%</td><td>0.8%</td><td><0.1%</td></tr><tr><td>10</td><td>57%</td><td>36%</td><td>5.2%</td><td>1.6%</td><td><0.1%</td></tr><tr><td>20</td><td>25%</td><td>57%</td><td>13%</td><td>5.0%</td><td>0.1%</td></tr><tr><td>30</td><td>—</td><td>60%</td><td>27%</td><td>12%</td><td>0.5%</td></tr><tr><td>40</td><td>—</td><td>32%</td><td>42%</td><td>25%</td><td>1.6%</td></tr><tr><td>50</td><td>—</td><td>5.6%</td><td>48%</td><td>43%</td><td>3.9%</td></tr><tr><td>60</td><td>—</td><td>—</td><td>31%</td><td>62%</td><td>7.8%</td></tr><tr><td>70</td><td>—</td><td>—</td><td>11%</td><td>76%</td><td>13%</td></tr><tr><td>80</td><td>—</td><td>—</td><td>—</td><td>79%</td><td>21%</td></tr></table></div>
+<p class="src">Source: the formula of <code>getDistribution</code>, computed as is (the same formula as the "chance per tier" shown on the in-game table). The higher the level, the likelier the higher tiers.</p>
+
+<h2>🎲 What a tier gives you</h2>
+<p>Tier N means "N rolls". Each roll picks one of the tool's candidates with equal probability and adds +1. A candidate that reaches level 3 drops out. The table below shows the resulting probabilities.</p>
+<div class="tw"><table><tr><th>Candidates</th><th>Tier</th><th>Only 1 kind</th><th>2 kinds</th><th>3 kinds</th><th>4 kinds</th><th>Any at Lv3</th></tr><tr><td>from 3 kinds</td><td>Tier 1 (1 rolls)</td><td>100%</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>from 3 kinds</td><td>Tier 2 (2 rolls)</td><td>33%</td><td>67%</td><td>—</td><td>—</td><td>—</td></tr><tr><td>from 3 kinds</td><td>Tier 3 (3 rolls)</td><td>11%</td><td>67%</td><td>22%</td><td>—</td><td>11%</td></tr><tr><td>from 3 kinds</td><td>Tier 4 (4 rolls)</td><td>—</td><td>56%</td><td>44%</td><td>—</td><td>33%</td></tr><tr><td>from 3 kinds</td><td>Tier 5 (5 rolls)</td><td>—</td><td>31%</td><td>69%</td><td>—</td><td>63%</td></tr><tr><td>from 4 kinds</td><td>Tier 1 (1 rolls)</td><td>100%</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>from 4 kinds</td><td>Tier 2 (2 rolls)</td><td>25%</td><td>75%</td><td>—</td><td>—</td><td>—</td></tr><tr><td>from 4 kinds</td><td>Tier 3 (3 rolls)</td><td>6.3%</td><td>56%</td><td>38%</td><td>—</td><td>6.3%</td></tr><tr><td>from 4 kinds</td><td>Tier 4 (4 rolls)</td><td>—</td><td>34%</td><td>56%</td><td>9.4%</td><td>20%</td></tr><tr><td>from 4 kinds</td><td>Tier 5 (5 rolls)</td><td>—</td><td>14%</td><td>63%</td><td>23%</td><td>41%</td></tr></table></div>
+<p class="src">Source: <code>chooseRandomEnchantmentAttributes</code> (each capped at 3). The probabilities are computed by enumerating this procedure completely.</p>
+
+<h2>🗡️ Enchantments by tool</h2>
+<div class="tw"><table><tr><th>Tool</th><th>Possible enchantments</th></tr><tr><td>Sword, spear, dagger, mace, whip</td><td>Damage / Attack Speed / Critical Damage</td></tr><tr><td>Knight Sword</td><td>Damage / Attack Speed / Critical Damage / Horizontal Knockback</td></tr><tr><td>Stick</td><td>Horizontal Knockback / Vertical Knockback / Damage</td></tr><tr><td>Helmet, chestplate, leggings, boots, gauntlets</td><td>Protection / Health / Health Regen</td></tr><tr><td>Fur Chestplate</td><td>Protection / Health / Health Regen / Knockback Resist</td></tr><tr><td>Spiked Boots</td><td>Protection / Health / Health Regen / Stomp Damage</td></tr><tr><td>Bow, crossbow</td><td>Arrow Speed / Arrow Damage / Quick Charge</td></tr><tr><td>Pickaxe</td><td>Break Speed / Momentum / Mining Yield / Mining Aura</td></tr><tr><td>Moonstone Pickaxe</td><td>Break Speed / Momentum</td></tr><tr><td>Shovel (Spade)</td><td>Break Speed / Momentum / Digging Aura</td></tr><tr><td>Axe</td><td>Break Speed / Momentum / Lumber Aura</td></tr><tr><td>Hoe</td><td>Break Speed / Momentum / Farming Yield / Farming Aura</td></tr><tr><td>Glider</td><td>Firecracker Cooldown / Firecracker Boost / Gliding Speed</td></tr></table></div>
+<p class="src">Source: the tool-name table of <code>EnchantmentsPool</code> (matched by the last word of the name; for example "Diamond Sword" is a Sword).</p>
+
+<h2>📐 Enchantment effects by level</h2>
+<div class="tw"><table><tr><th>Enchantment</th><th>What changes</th><th>Lv1</th><th>Lv2</th><th>Lv3</th><th>Formula and confidence</th></tr><tr><td><b>Quick Charge (bow, crossbow)</b></td><td>Time to draw (load) the bow</td><td>×0.833(-16.7%)</td><td>×0.694(-30.6%)</td><td>×0.579(-42.1%)</td><td class="src">1.2 to the power of −L. Lower limit 0.1.<br><span class="tag ok">Certain</span></td></tr><tr><td><b>Arrow Speed (bow, crossbow)</b></td><td>Arrow flight speed</td><td>×1.483(+48.3%)</td><td>×1.844(+84.4%)</td><td>×2.145(+114.5%)</td><td class="src">√(1.2×L+1) times.<br><span class="tag ok">Certain</span></td></tr><tr><td><b>Arrow Damage (bow, crossbow)</b></td><td>Arrow damage (example with a base of 10)</td><td>15.8(+57.9%)</td><td>18.8(+87.5%)</td><td>21.0(+109.6%)</td><td class="src">With j=L÷2: (base+5√j)×(1+0.5×j÷(1+j)). The bigger the base, the smaller the percentage.<br><span class="tag chg">Formula certain / base value unknown</span></td></tr><tr><td><b>Break Speed (pickaxe, axe and so on)</b></td><td>Time to break one block</td><td>×0.833(-16.7%)</td><td>×0.694(-30.6%)</td><td>×0.579(-42.1%)</td><td class="src">1.2 to the power of −L. Lower limit 0.1.<br><span class="tag ok">Certain</span></td></tr><tr><td><b>Momentum (digging tools)</b></td><td>Break time while you keep digging (at its maximum)</td><td>×0.714(-28.6%)</td><td>×0.510(-49.0%)</td><td>×0.364(-63.6%)</td><td class="src">1.4 to the power of −(L × share of time spent digging). The value shown is for a share of 1 (digging for 5 seconds).<br><span class="tag chg">Formula certain / meaning of the share is a guess</span></td></tr><tr><td><b>Mining Yield / Farming Yield</b></td><td>Extra drops per action</td><td>0 to 1 (average 0.5)</td><td>0 to 2 (average 1.0)</td><td>0 to 3 (average 1.5)</td><td class="src">One integer from 0 to L is chosen with equal probability (L included).<br><span class="tag ok">Certain</span></td></tr><tr><td><b>Horizontal Knockback</b></td><td>Sideways knockback</td><td>×1.414(+41.4%)</td><td>×1.732(+73.2%)</td><td>×2.000(+100.0%)</td><td class="src">√(L+1) times.<br><span class="tag ok">Certain</span></td></tr><tr><td><b>Vertical Knockback</b></td><td>Vertical knockback</td><td>×1.414(+41.4%)</td><td>×1.732(+73.2%)</td><td>×2.000(+100.0%)</td><td class="src">√(L+1) times.<br><span class="tag ok">Certain</span></td></tr><tr><td><b>Stomp Damage (Spiked Boots)</b></td><td>Stomp damage</td><td>×1.414(+41.4%)</td><td>×1.732(+73.2%)</td><td>×2.000(+100.0%)</td><td class="src">√(L+1) times.<br><span class="tag ok">Certain</span></td></tr><tr><td><b>Firecracker Cooldown (glider)</b></td><td>Wait time for a firecracker</td><td>×0.850(-15.0%)</td><td>×0.722(-27.8%)</td><td>×0.614(-38.6%)</td><td class="src">0.85 to the power of L. Lower limit 0.4.<br><span class="tag ok">Certain</span></td></tr><tr><td><b>Firecracker Boost (glider)</b></td><td>Firecracker acceleration</td><td>×1.15(+15.0%)</td><td>×1.30(+30.0%)</td><td>×1.45(+45.0%)</td><td class="src">1+0.15×L times. Upper limit 2.<br><span class="tag ok">Certain</span></td></tr><tr><td><b>Gliding Speed (glider)</b></td><td>Value added to top gliding speed</td><td>+2</td><td>+4</td><td>+6</td><td class="src">Adds 2×L. Upper limit +10.<br><span class="tag chg">Formula certain / how it is added is a guess</span></td></tr></table></div>
+<p class="src">Source: <code>getQuickChargeMultiplier</code>, <code>getArrowSpeedMultiplier</code>, <code>getArrowDamage</code>, <code>getBreakSpeedMultiplier</code>, <code>getMomentumMultiplier</code>, <code>getExtraYieldAmount</code>, <code>getHorizontalKnockbackMultiplier</code> and others in main.js. "×" in the table is a multiplier; "-" means shorter or smaller.</p>
+
+<h2>🛡️ How defence works (Protection and so on)</h2>
+<p>The formula for taking damage (<code>nM</code>) works like this. First the "defence total B" is made by adding the armor defence enchantments and the damage-reduction effect and subtracting the weakness effect. Then damage taken becomes <b>0.4 to the power of (B÷3)</b> times (the bigger B is, the smaller it gets).</p>
+<div class="tw"><table><tr><th>B (defence total)</th><th>Damage taken</th></tr><tr><td>1</td><td>×0.737(-26.3%)</td></tr><tr><td>2</td><td>×0.543(-45.7%)</td></tr><tr><td>3</td><td>×0.400(-60.0%)</td></tr><tr><td>6</td><td>×0.160(-84.0%)</td></tr><tr><td>9</td><td>×0.064(-93.6%)</td></tr></table></div>
+<div class="warn"><b>Unchecked:</b> I have not confirmed how much one level of the Protection enchantment raises B (it may also depend on the armor tier and material). So "Protection Lv3 reduces by X%" cannot be written yet.</div>
+
+<h2>❓ Things not yet turned into numbers</h2>
+<ul>
+<li><b>Damage / Attack Speed / Critical Damage</b> (melee weapons): candidate formulas are in the code, but I have not confirmed which values they apply to. For gun headshots, Critical Damage is used as +8% damage per level (certain), but whether melee weapons use the same is unknown.</li>
+<li><b>Health / Health Regen / Knockback Resist</b> and the various <b>Aura</b> effects: I have not found their formulas.</li>
+<li>A per-tier strength multiplier is in the code (about 1.272 times for each tier up; about 2.62 times at Tier 5), but I have not confirmed what it is used for.</li>
+<li>Server-side-only values and fine adjustments other than damage cannot be seen from here.</li>
+</ul>
+<p class="src">This is an unofficial summary made by reading the game client program (build bbb6l5). I have not confirmed it by playing. If the game updates and the formulas change, it will be rebuilt.</p>
+</main></body></html>
