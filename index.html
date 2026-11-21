@@ -68,14 +68,591 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <p>bloxd.io の更新を自動で見張って、「ゲームの中で何が変わったか」を日本語でまとめます。非公式の個人用ページで、運営とは無関係です。</p><p><a class="rbtn" href="skin-viewer.html">🧍 スキンビューアー(3Dで見る)</a><a class="rbtn" href="ref/">📚 詳しい分析ドキュメント</a><a class="rbtn" href="seedmap/map.html">🗺️ シードマップ(好きな番号)</a><a class="rbtn" href="guide/enchant.html">✨ エンチャント早見表</a> <a class="rbtn" href="guide/enchant-best.html">🏆 エンチャントの最適な組み合わせ</a> <a class="rbtn" href="guide/world.html">🌍 世界の作られ方(鉱石・チェスト)</a></p></div></div>
 <main>
 <section class="status">
-<div class="stat"><b>最後に確認した時刻</b><span id="lc">2026/11/21 09:00</span></div>
-<div class="stat"><b>現在のビルド</b><span>halsg</span></div>
-<div class="stat"><b>検知した更新</b><span>42 回</span></div>
-<div class="stat"><b>最後の更新</b><span>2026/11/21 04:30</span></div>
+<div class="stat"><b>最後に確認した時刻</b><span id="lc">2026/11/21 10:00</span></div>
+<div class="stat"><b>現在のビルド</b><span>x17cru</span></div>
+<div class="stat"><b>検知した更新</b><span>43 回</span></div>
+<div class="stat"><b>最後の更新</b><span>2026/11/21 10:00</span></div>
 </section>
 <h2>✨ 更新と、ゲーム内の変化</h2>
 <article class="upd latest">
-<div class="meta"><span class="new">最新</span><time>2026年11月21日 04:30</time><span class="build">bbb6l5 → halsg</span></div>
+<div class="meta"><span class="new">最新</span><time>2026年11月21日 10:00</time><span class="build">halsg → x17cru</span></div>
+<h3>ビルドが halsg から x17cru に更新</h3>
+<div class="chips"></div>
+
+
+
+
+<details class="dev"><summary>🔧 開発者向けの詳細(ふつうは見なくて大丈夫)</summary><dl>
+<dt>ビルド</dt><dd>halsg / 2bd74967 → x17cru / 159bd7ce</dd>
+<dt>main.js の文字列</dt><dd>追加 4356 / 削除 4270(大型更新(±4000超))。変数名の付け替えで見かけ上の差も大量に出るので、ゲーム内の変化とは別物です。</dd>
+<dt>チャンク(ファイル)</dt><dd>追加 0 / 削除 0 / 変更 385(ビルドが変わると全ファイルの名前が変わるので、「変更」の数に意味はありません)</dd></dl>
+<details><summary>元のレポート</summary><pre># bloxd.io 更新検知 2026-11-21T01:00:44.078Z
+
+- ビルドID: halsg → x17cru
+- main hash: 2bd74967 → 159bd7ce
+- main.js サイズ: 2628495 → 2652229
+- CSS: static/css/halsg.main.bfa36ab5.css → static/css/x17cru.main.bfa36ab5.css
+- main.js 文字列: 追加 4356 / 削除 4270(大型更新(±4000超))
+- チャンク: 追加 0 / 削除 0 / ハッシュ変更 385
+## ゲーム内の変化
+
+- ゲーム内テキスト: 追加 0 / 変更 0 / 削除 0
+
+
+## 追加された文字列(先頭80件)
+- `t JSON:&quot;,Wd),null}if(&quot;object&quot;!==typeof Jd||null===Jd||!Object.prototype.hasOwnProperty.call(Jd,Nd.b))return null;const k`
+- `${Nd}`
+- `${Jd.options.indexOf(kd)}`
+- `${Jd.options.indexOf(pd)}`
+- `${String(Jd)}`
+- `${dd}`
+- `${Jd}`
+- `);bd.i.discord().then((dd=&gt;{null!==dd&amp;&amp;dd.signOut()}))},[gd.e.CRAZY_GAMES]:()=&gt;{},[gd.e.APPLE]:()=&gt;{nJ(gd.e.APPLE)},[gd.`
+- `,[gd.e.APPLE]:`
+- `,[gd.e.MICROSOFT]:`
+- `,[gd.e.GAME_CENTER]:`
+- `,[gd.e.PLAY_GAMES]:`
+- `};let DJ=null;const TJ=new class{constructor(){this.currentUserContextIsSetPromise=void 0,this.onCurrentUserContextIsSet`
+- `,(()=&gt;{if(0===this.pQueue.sizeBy({priority:jJ.SET})&amp;&amp;this.shouldPublishUpdate){var dd;const Jd=null!==(dd=this.userConte`
+- `,dd.getRecentlyPlayedGames()),this.updateCurrentUserContext(dd.type)},switchTo:dd=&gt;{this.updateCurrentUserContext(dd)}},`
+- `,dd.message),this.updateCurrentUserContext(null),dd})).then((dd=&gt;(this.updateCurrentUserContext(this.currentUserContextT`
+- `===typeof dd)throw new Error(`
+- `);return dd}));if(dd)return dd;console.warn(`
+- `,pd,`
+- `);const pd=await async function(dd,Jd,kd,pd,Nd){const Wd=dd.canSignIn(Jd);if(!kd||!Wd){const kd=await dd.getCurrentUser(`
+- `===typeof(null===Jd||void 0===Jd?void 0:Jd.code)&amp;&amp;(null===Jd||void 0===Jd?void 0:Jd.code.startsWith(`
+- `===Jd.code||`
+- `===Jd.code?(pd=!1,kd=Jd.code):kd=(0,CJ.w)(Jd.code.replace(`
+- `)):kd=`
+- `,new HJ(dd,kd,{forceSignOut:!0,showPopup:pd})}),(()=&gt;new HJ(dd,`
+- `,{showPopup:Jd})));if(null===pd)throw new HJ(dd,`
+- `,confirmText:(0,fd.t)(Nd),confirmTooltip:`
+- `);let Nd=null;if((0,Dd.e)()){Nd=(await bd.i.discordActivity()).getInstanceId()}const Wd=Jd.getMetricsCookies(),{anonymiz`
+- `:Ld,whamm:Od,error:ed,superRankInfo:Rd,ranksMayChange:Id,ownedCosmeticPacks:Gd,personalWorldLobbyName:vd,recentlyPlayedG`
+- `,dd),{error:(0,OJ.r)(dd,`
+- `)})));if(ed)throw new HJ(gd.e.DISCORD,ed,{forceSignOut:pd===aJ.LINK,showPopup:!0});if((0,Dd.e)()){const Jd=await bd.i.di`
+- `);const pd=await Jd.getUserLocale();null!==pd&amp;&amp;Ud.c.get().setCurrentLanguage(pd)}return console.log(`
+- `),Wd[`
+- `]=Ld,new bJ(gd.e.DISCORD,{authProvider:gd.f.DISCORD,accountInfo:Pd},Zd,Cd,Kd,Wd,Od,od,!(0,Dd.e)(),Rd,null!==Gd&amp;&amp;void 0!=`
+- `);const[kd,Nd]=await Promise.all([Jk(),pd()]),Wd=await async function(dd,Jd){if(!dd)throw new HJ(gd.e.CRAZY_GAMES,`
+- `);return await pk(gd.e.CRAZY_GAMES,`
+- `,{crazyGamesToken:dd},Jd)}(kd,Nd),Pd=Wd.includes(gd.e.ANONYMOUS),Zd=Nd.availableUserContextTypes.includes(gd.e.CRAZY_GAM`
+- `),Cd=!0):Pd||Zd?(console.log(`
+- `),Cd=!0):(console.log(`
+- `),Cd=await dd.doesUserWantToTieExistingAccount()),!Cd)throw Error(`
+- `);const Kd=Ed.g&amp;&amp;!Pd;return await async function(dd,Jd,kd,pd){if(!dd)throw new HJ(gd.e.CRAZY_GAMES,`
+- `);return await Nk(gd.e.CRAZY_GAMES,`
+- `,{crazyGamesToken:dd,preferCrazyGamesName:kd,onlyLink:pd===aJ.LINK},Jd,pd)}(kd,Nd,Kd,Jd)}case gd.e.MSN:{const[dd,Nd]=awa`
+- `,Wd,Nd)).includes(gd.e.ANONYMOUS);return await Nk(gd.e.MSN,`
+- `,{...Wd,preferMsnName:Ed.g&amp;&amp;!Pd,onlyLink:Jd===aJ.LINK},Nd,Jd)}default:throw new Error('Unknown user context type: ${dd}'`
+- `,Jd.getRecentlyPlayedGames()),Jd))).catch((Jd=&gt;{throw this.userContexts.delete(dd),new Error('Failed to create ${dd} use`
+- `,dd),null)))))&amp;&amp;void 0!==pd?pd:null)&amp;&amp;Wd.push(gd.e.CRAZY_GAMES);const Cd=await bd.i.discordActivity();if(null!==Cd)Wd.pu`
+- `,dd)})).catch((dd=&gt;{console.error(`
+- `,dd.message),Cd.exit(`
+- `)}));else{(await bd.i.discord()).hasCurrentUser()&amp;&amp;Wd.push(gd.e.DISCORD)}const Kd=await bd.i.msn();null!==(null!==(Nd=aw`
+- `,dd)}))}catch(od){console.error('Failed to set initial user context to ${gd}:',od)}if(0===Wd.length&amp;&amp;await EJ().attemptA`
+- `,(()=&gt;{cJ=!0}));function rJ(){return cJ}const uJ=new Promise((dd=&gt;{Ld.j.oR(`
+- `,(()=&gt;{dd()}))}));async function tJ(){var dd;const Jd=SJ.getMetricsCookies(),kd=dd=&gt;{const kd=sd.d.getItem(dd);return(0,`
+- `)]},Nd={`
+- `:kd(`
+- `:null!==(dd=(0,Ed.c)())&amp;&amp;void 0!==dd?dd:(0,pd.j)((0,Pd.e)(),(0,Pd.e)(),(0,Pd.e)()),`
+- `)};Nd[`
+- `]===Jd[`
+- `]&amp;&amp;(Nd[`
+- `]=(0,pd.f)((0,Sd.l)(Zd.c))),(0,Ed.k)(Nd[`
+- `]),lJ.e.markHomepageLoadEnd(),cJ&amp;&amp;(await uJ,cJ=!1),Ld.j.unsubscribe(hJ);const Wd=await Ck('${Xd.clientSideServerUrls.ind`
+- `,dd),new Error(`
+- `)})),{name:Cd,cosmetics:Kd,ranks:od,availableUserContextTypes:ld,`
+- `:Od,superRankInfo:ed,ownedCosmeticPacks:Rd,personalWorldLobbyName:Id,recentlyPlayedGames:Gd,countryCode:vd,appTrafficCod`
+- `]=Od,new bJ(gd.e.ANONYMOUS,null,Cd,Kd,od,Nd,null,ld,!0,ed,null!==Rd&amp;&amp;void 0!==Rd?Rd:[],null!==Id&amp;&amp;void 0!==Id?Id:null,nu`
+- `;class HJ extends Error{constructor(dd,Jd){let kd=arguments.length&gt;2&amp;&amp;void 0!==arguments[2]?arguments[2]:{};kd.forceSign`
+- `,subtitle:Jd,confirmText:`
+- `:Kd,whamm:od,ranks:ld,superRankInfo:Ld,ranksMayChange:Od,ownedCosmeticPacks:ed,personalWorldLobbyName:Rd,recentlyPlayedG`
+- `]=Kd,new bJ(dd,{authProvider:gd.f[dd],accountInfo:Wd},Pd,Zd,ld,xd,od,Cd,!0,Ld,null!==ed&amp;&amp;void 0!==ed?ed:[],null!==Rd&amp;&amp;vo`
+- `);if(null===await dd.getCurrentUser())try{await dd.signInWithPopup()}catch(Jd){let dd,kd=!0;throw`
+- `===Jd.code?(kd=!1,dd=Jd.message):dd=`
+- `,new HJ(gd.e.CRAZY_GAMES,dd,{forceSignOut:!0,showPopup:kd})}return await dd.getCurrentUserToken()}async function kk(dd){`
+- `);const kd=await Jd.getSignedInUser();if(null!==kd)return kd;if(!dd)throw new HJ(gd.e.MSN,`
+- `);try{return await Jd.signIn()}catch(Nd){var pd;const dd=`
+- `===(null===Nd||void 0===Nd?void 0:Nd.code);throw new HJ(gd.e.MSN,dd?`
+- `);TJ.setCurrentUserContext(gd.e.ANONYMOUS,dd,aJ.LOGIN).catch((dd=&gt;{console.error(`
+- `,dd.message),Ld.j.nO(`
+- `(ABqHjslIQgickJ')1u^ZPb_*#d$fxCDoUM:X!W47a,=}L0~8vp&quot;mG+&lt;/E]@?T6Ke5[tz&gt;9.w|F3{2%NOyhYSVr&amp;nR;`
+- `[qZ2m&quot;B,~/aq)@!*@+(UhL.l|1C{)8G$e!{pS@4ydZ?2~Wc4&quot;MK{f`
+- `4_M3w6pui5^3gJB1R6(s`
+
+## 削除された文字列(先頭80件)
+- `t JSON:&quot;,Gb),null}if(&quot;object&quot;!==typeof ub||null===ub||!Object.prototype.hasOwnProperty.call(ub,Ob.b))return null;const h`
+- `${Ob}`
+- `${ub.options.indexOf(hb)}`
+- `${ub.options.indexOf(Bb)}`
+- `${String(ub)}`
+- `${bb}`
+- `${ub}`
+- `);vb.l.discord().then((bb=&gt;{null!==bb&amp;&amp;bb.signOut()}))},[Yb.b.CRAZY_GAMES]:()=&gt;{},[Yb.b.APPLE]:()=&gt;{su(Yb.b.APPLE)},[Yb.`
+- `,[Yb.b.APPLE]:`
+- `,[Yb.b.MICROSOFT]:`
+- `,[Yb.b.GAME_CENTER]:`
+- `,[Yb.b.PLAY_GAMES]:`
+- `};let Iu=null;const Pu=new class{constructor(){this.currentUserContextIsSetPromise=void 0,this.onCurrentUserContextIsSet`
+- `,(()=&gt;{if(0===this.pQueue.sizeBy({priority:Ju.SET})&amp;&amp;this.shouldPublishUpdate){var bb;const ub=null!==(bb=this.userConte`
+- `,bb.getRecentlyPlayedGames()),this.updateCurrentUserContext(bb.type)},switchTo:bb=&gt;{this.updateCurrentUserContext(bb)}},`
+- `,bb.message),this.updateCurrentUserContext(null),bb})).then((bb=&gt;(this.updateCurrentUserContext(this.currentUserContextT`
+- `===typeof bb)throw new Error(`
+- `);return bb}));if(bb)return bb;console.warn(`
+- `,Bb,`
+- `);const Bb=await async function(bb,ub,hb,Bb,Ob){const Gb=bb.canSignIn(ub);if(!hb||!Gb){const hb=await bb.getCurrentUser(`
+- `===typeof(null===ub||void 0===ub?void 0:ub.code)&amp;&amp;(null===ub||void 0===ub?void 0:ub.code.startsWith(`
+- `===ub.code||`
+- `===ub.code?(Bb=!1,hb=ub.code):hb=(0,Su.w)(ub.code.replace(`
+- `)):hb=`
+- `,new cu(bb,hb,{forceSignOut:!0,showPopup:Bb})}),(()=&gt;new cu(bb,`
+- `,{showPopup:ub})));if(null===Bb)throw new cu(bb,`
+- `,confirmText:(0,Nb.r)(Ob),confirmTooltip:`
+- `);let Ob=null;if((0,Ib.d)()){Ob=(await vb.l.discordActivity()).getInstanceId()}const Gb=ub.getMetricsCookies(),{anonymiz`
+- `:Xb,whamm:pb,error:ob,superRankInfo:Ab,ranksMayChange:lb,ownedCosmeticPacks:Kb,personalWorldLobbyName:Wb,recentlyPlayedG`
+- `,bb),{error:(0,pu.m)(bb,`
+- `)})));if(ob)throw new cu(Yb.b.DISCORD,ob,{forceSignOut:Bb===Du.LINK,showPopup:!0});if((0,Ib.d)()){const ub=await vb.l.di`
+- `);const Bb=await ub.getUserLocale();null!==Bb&amp;&amp;Mb.h.get().setCurrentLanguage(Bb)}return console.log(`
+- `),Gb[`
+- `]=Xb,new vu(Yb.b.DISCORD,{authProvider:Yb.e.DISCORD,accountInfo:Ub},Lb,Sb,ab,Gb,pb,Hb,!(0,Ib.d)(),Ab,null!==Kb&amp;&amp;void 0!=`
+- `);const[hb,Ob]=await Promise.all([uh(),Bb()]),Gb=await async function(bb,ub){if(!bb)throw new cu(Yb.b.CRAZY_GAMES,`
+- `);return await Bh(Yb.b.CRAZY_GAMES,`
+- `,{crazyGamesToken:bb},ub)}(hb,Ob),Ub=Gb.includes(Yb.b.ANONYMOUS),Lb=Ob.availableUserContextTypes.includes(Yb.b.CRAZY_GAM`
+- `),Sb=!0):Ub||Lb?(console.log(`
+- `),Sb=!0):(console.log(`
+- `),Sb=await bb.doesUserWantToTieExistingAccount()),!Sb)throw Error(`
+- `);const ab=qb.g&amp;&amp;!Ub;return await async function(bb,ub,hb,Bb){if(!bb)throw new cu(Yb.b.CRAZY_GAMES,`
+- `);return await Oh(Yb.b.CRAZY_GAMES,`
+- `,{crazyGamesToken:bb,preferCrazyGamesName:hb,onlyLink:Bb===Du.LINK},ub,Bb)}(hb,Ob,ab,ub)}case Yb.b.MSN:{const[bb,Ob]=awa`
+- `,Gb,Ob)).includes(Yb.b.ANONYMOUS);return await Oh(Yb.b.MSN,`
+- `,{...Gb,preferMsnName:qb.g&amp;&amp;!Ub,onlyLink:ub===Du.LINK},Ob,ub)}default:throw new Error('Unknown user context type: ${bb}'`
+- `,ub.getRecentlyPlayedGames()),ub))).catch((ub=&gt;{throw this.userContexts.delete(bb),new Error('Failed to create ${bb} use`
+- `,bb),null)))))&amp;&amp;void 0!==Bb?Bb:null)&amp;&amp;Gb.push(Yb.b.CRAZY_GAMES);const Sb=await vb.l.discordActivity();if(null!==Sb)Gb.pu`
+- `,bb)})).catch((bb=&gt;{console.error(`
+- `,bb.message),Sb.exit(`
+- `)}));else{(await vb.l.discord()).hasCurrentUser()&amp;&amp;Gb.push(Yb.b.DISCORD)}const ab=await vb.l.msn();null!==(null!==(Ob=aw`
+- `,bb)}))}catch(Hb){console.error('Failed to set initial user context to ${Yb}:',Hb)}if(0===Gb.length&amp;&amp;await qu().attemptA`
+- `,(()=&gt;{Eu=!0}));function Vu(){return Eu}const Fu=new Promise((bb=&gt;{Xb.i.sA(`
+- `,(()=&gt;{bb()}))}));async function fu(){var bb;const ub=tu.getMetricsCookies(),hb=bb=&gt;{const hb=jb.c.getItem(bb);return(0,`
+- `)]},Ob={`
+- `:hb(`
+- `:null!==(bb=(0,qb.e)())&amp;&amp;void 0!==bb?bb:(0,Bb.i)((0,Ub.e)(),(0,Ub.e)(),(0,Ub.e)()),`
+- `)};Ob[`
+- `]===ub[`
+- `]&amp;&amp;(Ob[`
+- `]=(0,Bb.g)((0,tb.i)(Lb.b))),(0,qb.k)(Ob[`
+- `]),wu.b.markHomepageLoadEnd(),Eu&amp;&amp;(await Fu,Eu=!1),Xb.i.unsubscribe(yu);const Gb=await Sh('${eb.clientSideServerUrls.ind`
+- `,bb),new Error(`
+- `)})),{name:Sb,cosmetics:ab,ranks:Hb,availableUserContextTypes:wb,`
+- `:pb,superRankInfo:ob,ownedCosmeticPacks:Ab,personalWorldLobbyName:lb,recentlyPlayedGames:Kb,countryCode:Wb,appTrafficCod`
+- `]=pb,new vu(Yb.b.ANONYMOUS,null,Sb,ab,Hb,Ob,null,wb,!0,ob,null!==Ab&amp;&amp;void 0!==Ab?Ab:[],null!==lb&amp;&amp;void 0!==lb?lb:null,nu`
+- `;class cu extends Error{constructor(bb,ub){let hb=arguments.length&gt;2&amp;&amp;void 0!==arguments[2]?arguments[2]:{};hb.forceSign`
+- `,subtitle:ub,confirmText:`
+- `:ab,whamm:Hb,ranks:wb,superRankInfo:Xb,ranksMayChange:pb,ownedCosmeticPacks:ob,personalWorldLobbyName:Ab,recentlyPlayedG`
+- `]=ab,new vu(bb,{authProvider:Yb.e[bb],accountInfo:Gb},Ub,Lb,wb,Cb,Hb,Sb,!0,Xb,null!==ob&amp;&amp;void 0!==ob?ob:[],null!==Ab&amp;&amp;vo`
+- `);if(null===await bb.getCurrentUser())try{await bb.signInWithPopup()}catch(ub){let bb,hb=!0;throw`
+- `===ub.code?(hb=!1,bb=ub.message):bb=`
+- `,new cu(Yb.b.CRAZY_GAMES,bb,{forceSignOut:!0,showPopup:hb})}return await bb.getCurrentUserToken()}async function hh(bb){`
+- `);const hb=await ub.getSignedInUser();if(null!==hb)return hb;if(!bb)throw new cu(Yb.b.MSN,`
+- `);try{return await ub.signIn()}catch(Ob){var Bb;const bb=`
+- `===(null===Ob||void 0===Ob?void 0:Ob.code);throw new cu(Yb.b.MSN,bb?`
+- `);Pu.setCurrentUserContext(Yb.b.ANONYMOUS,bb,Du.LOGIN).catch((bb=&gt;{console.error(`
+- `,bb.message),Xb.i.vp(`
+- `1IHKUFGYqZBsTjb]{NpyL750il&quot;?(RxCoh!/zDO6Wvw#2_3a4S&amp;:PEef.Ag&gt;m$&lt;9t=*Xkrd;JM@Q8}^n)u+V,'|%~c[`
+- `aA7Y?^xPmsK{gri/{&quot;Bo$gyYQb:&gt;/&quot;4&quot;_DXR[eju*e.`
+- `}k'Ph&gt;#r5gu3I`
+
+## チャンク
+- 変更: 70
+- 変更: 71
+- 変更: 72
+- 変更: 73
+- 変更: 74
+- 変更: 75
+- 変更: 76
+- 変更: 77
+- 変更: 78
+- 変更: 79
+- 変更: 80
+- 変更: 81
+- 変更: 82
+- 変更: 83
+- 変更: 84
+- 変更: 85
+- 変更: 86
+- 変更: 87
+- 変更: 88
+- 変更: 89
+- 変更: 90
+- 変更: 91
+- 変更: 92
+- 変更: 93
+- 変更: 94
+- 変更: 95
+- 変更: 96
+- 変更: 97
+- 変更: 98
+- 変更: 99
+- 変更: 100
+- 変更: 101
+- 変更: 102
+- 変更: 103
+- 変更: 104
+- 変更: 105
+- 変更: 106
+- 変更: 107
+- 変更: 108
+- 変更: 109
+- 変更: 110
+- 変更: 111
+- 変更: 112
+- 変更: 113
+- 変更: 114
+- 変更: 115
+- 変更: 116
+- 変更: 117
+- 変更: 118
+- 変更: 119
+- 変更: 120
+- 変更: 121
+- 変更: 122
+- 変更: 123
+- 変更: 124
+- 変更: 125
+- 変更: 126
+- 変更: 127
+- 変更: 128
+- 変更: 129
+- 変更: 130
+- 変更: 131
+- 変更: 132
+- 変更: 133
+- 変更: 134
+- 変更: 135
+- 変更: 136
+- 変更: 137
+- 変更: 138
+- 変更: 139
+- 変更: 140
+- 変更: 141
+- 変更: 142
+- 変更: 143
+- 変更: 144
+- 変更: 145
+- 変更: 146
+- 変更: 147
+- 変更: 148
+- 変更: 149
+- 変更: 150
+- 変更: 151
+- 変更: 152
+- 変更: 153
+- 変更: 154
+- 変更: 155
+- 変更: 156
+- 変更: 157
+- 変更: 158
+- 変更: 159
+- 変更: 160
+- 変更: 161
+- 変更: 162
+- 変更: 163
+- 変更: 164
+- 変更: 165
+- 変更: 166
+- 変更: 167
+- 変更: 168
+- 変更: 169
+- 変更: 170
+- 変更: 171
+- 変更: 172
+- 変更: 173
+- 変更: 174
+- 変更: 175
+- 変更: 176
+- 変更: 177
+- 変更: 178
+- 変更: 179
+- 変更: 180
+- 変更: 181
+- 変更: 182
+- 変更: 183
+- 変更: 184
+- 変更: 185
+- 変更: 186
+- 変更: 187
+- 変更: 188
+- 変更: 189
+- 変更: 190
+- 変更: 191
+- 変更: 192
+- 変更: 193
+- 変更: 194
+- 変更: 195
+- 変更: 196
+- 変更: 197
+- 変更: 198
+- 変更: 199
+- 変更: 200
+- 変更: 201
+- 変更: 202
+- 変更: 203
+- 変更: 204
+- 変更: 205
+- 変更: 206
+- 変更: 207
+- 変更: 208
+- 変更: 209
+- 変更: 210
+- 変更: 211
+- 変更: 212
+- 変更: 213
+- 変更: 214
+- 変更: 215
+- 変更: 216
+- 変更: 217
+- 変更: 218
+- 変更: 219
+- 変更: 220
+- 変更: 221
+- 変更: 222
+- 変更: 223
+- 変更: 224
+- 変更: 225
+- 変更: 226
+- 変更: 227
+- 変更: 228
+- 変更: 229
+- 変更: 230
+- 変更: 231
+- 変更: 232
+- 変更: 233
+- 変更: 234
+- 変更: 235
+- 変更: 236
+- 変更: 237
+- 変更: 238
+- 変更: 239
+- 変更: 240
+- 変更: 241
+- 変更: 242
+- 変更: 243
+- 変更: 244
+- 変更: 245
+- 変更: 246
+- 変更: 247
+- 変更: 248
+- 変更: 249
+- 変更: 250
+- 変更: 251
+- 変更: 252
+- 変更: 253
+- 変更: 254
+- 変更: 255
+- 変更: 256
+- 変更: 257
+- 変更: 258
+- 変更: 259
+- 変更: 260
+- 変更: 261
+- 変更: 262
+- 変更: 263
+- 変更: 264
+- 変更: 265
+- 変更: 266
+- 変更: 267
+- 変更: 268
+- 変更: 269
+- 変更: 270
+- 変更: 271
+- 変更: 272
+- 変更: 273
+- 変更: 274
+- 変更: 275
+- 変更: 276
+- 変更: 277
+- 変更: 278
+- 変更: 279
+- 変更: 280
+- 変更: 281
+- 変更: 282
+- 変更: 283
+- 変更: 284
+- 変更: 285
+- 変更: 286
+- 変更: 287
+- 変更: 288
+- 変更: 289
+- 変更: 290
+- 変更: 291
+- 変更: 292
+- 変更: 293
+- 変更: 294
+- 変更: 295
+- 変更: 296
+- 変更: 297
+- 変更: 298
+- 変更: 299
+- 変更: 300
+- 変更: 301
+- 変更: 302
+- 変更: 303
+- 変更: 304
+- 変更: 305
+- 変更: 306
+- 変更: 307
+- 変更: 308
+- 変更: 309
+- 変更: 310
+- 変更: 311
+- 変更: 312
+- 変更: 313
+- 変更: 314
+- 変更: 315
+- 変更: 316
+- 変更: 317
+- 変更: 318
+- 変更: 319
+- 変更: 320
+- 変更: 321
+- 変更: 322
+- 変更: 323
+- 変更: 324
+- 変更: 325
+- 変更: 326
+- 変更: 327
+- 変更: 328
+- 変更: 329
+- 変更: 330
+- 変更: 331
+- 変更: 332
+- 変更: 333
+- 変更: 334
+- 変更: 335
+- 変更: 336
+- 変更: 337
+- 変更: 338
+- 変更: 339
+- 変更: 340
+- 変更: 341
+- 変更: 342
+- 変更: 343
+- 変更: 344
+- 変更: 345
+- 変更: 346
+- 変更: 347
+- 変更: 348
+- 変更: 349
+- 変更: 350
+- 変更: 351
+- 変更: 352
+- 変更: 353
+- 変更: 354
+- 変更: 355
+- 変更: 356
+- 変更: 357
+- 変更: 358
+- 変更: 359
+- 変更: 360
+- 変更: 361
+- 変更: 362
+- 変更: 363
+- 変更: 364
+- 変更: 365
+- 変更: 366
+- 変更: 367
+- 変更: 368
+- 変更: 369
+- 変更: 370
+- 変更: 371
+- 変更: 372
+- 変更: 373
+- 変更: 374
+- 変更: 375
+- 変更: 376
+- 変更: 377
+- 変更: 378
+- 変更: 379
+- 変更: 380
+- 変更: 381
+- 変更: 382
+- 変更: 383
+- 変更: 384
+- 変更: 385
+- 変更: 386
+- 変更: babylon-backend
+- 変更: blockFaceTable
+- 変更: blockIconDrawing
+- 変更: blockIconWorker
+- 変更: blockModelIcons
+- 変更: bloxd-wasm-anim
+- 変更: bloxd-wasm-webgl
+- 変更: bloxd-wasm-webgl1
+- 変更: bloxd-wasm-webgpu
+- 変更: clientGame-bedwars-bedwarsClient
+- 変更: clientGame-bridgeBattle-bridgeBattleClient
+- 変更: clientGame-buildAFactory2-buildAFactory2Client
+- 変更: clientGame-classic-classicClient
+- 変更: clientGame-clutch-clutchClient
+- 変更: clientGame-containmentBreach-containmentBreachClient
+- 変更: clientGame-cooking-cookingClient
+- 変更: clientGame-defusal-defusalClient
+- 変更: clientGame-frontline-frontlineClient
+- 変更: clientGame-goalRush-goalRushClient
+- 変更: clientGame-luckyBedwars-luckyBedwarsClient
+- 変更: clientGame-ninetyNineNights-ninetyNineNightsClient
+- 変更: clientGame-oneBlock-oneBlockClient
+- 変更: clientGame-plots-plotsClient
+- 変更: clientGame-pvpCiv-pvpCivClient
+- 変更: clientGame-skyIslands-skyIslandsClient
+- 変更: clientGame-skyblock-skyblockClient
+- 変更: clientGame-tsunami-tsunamiClient
+- 変更: clientGamePlugins
+- 変更: controller
+- 変更: debugDeviceHeader
+- 変更: diagSink
+- 変更: errorLogging
+- 変更: fa-renderer
+- 変更: frameDebug
+- 変更: icons-brands
+- 変更: icons-duotone
+- 変更: icons-regular
+- 変更: icons-solid
+- 変更: itemSprites
+- 変更: meshWorkerLoader
+- 変更: modelCatalogue
+- 変更: modelPool
+- 変更: modelWorkerLoader
+- 変更: packAssets
+- 変更: packTerrain
+- 変更: playGameSources
+- 変更: renderDebug
+- 変更: renderLite
+- 変更: renderProbe
+- 変更: replayHookSkyblock
+- 変更: textureNameTable
+- 変更: texturePackFeed
+- 変更: texturePackStorage
+- 変更: wasmClientGame
+- 変更: wasmClientJoin
+- 変更: wasmClientLoad
+- 変更: wasmClientPreviews
+- 変更: wasmClientReplayViewer
+- 変更: wasmClientTextIcons
+- 変更: wasmMatchmaking
+- 変更: wasmPlay
+- 変更: wasmRecorder
+- 変更: wasmReplay
+- 変更: wasmReplayVideoExport
+- 変更: wasmZstdDecoder
+- 変更: webGpuLossDebug
+- 変更: worldgenWorker
+- 変更: worldgenWorkerLoader
+
+注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
+<article class="upd">
+<div class="meta"><time>2026年11月21日 04:30</time><span class="build">bbb6l5 → halsg</span></div>
 <h3>ゲーム内の文言の変化はなし。ビルドの作り直しだけ(本体は約 43KB 増)。</h3>
 <div class="chips"></div>
 <div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
@@ -16385,446 +16962,22 @@ Mine its Comet Ore too: 8 Shards make a Core</p></div></li><li class="d"><i>－<
 - 変更: icons-solid
 
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
-<article class="upd">
-<div class="meta"><time>2026年11月6日 01:30</time><span class="build">bny9u → 6i9gblo</span></div>
-<h3>スカイブロックに「プロフィール(最大3つ)」、Spencer の島づくりクエスト(小屋・灯台・花壇・池・果樹園)、自動で作物を作る「Helper」。観戦の操作表示、テクスチャパックの制限、Potion Table が Cauldron に改名</h3>
-<div class="chips"><span class="chip add">＋ 新しい文言 263</span><span class="chip chg">〜 書き換え 6</span><span class="chip del">－ 削除 2</span></div>
-<div class="pts"><div class="pt player"><div class="ico">👤</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>スカイブロック: プロフィールを最大3つ持てる(個人用 / 共同用)</h4></div>
-<p>「Profiles(プロフィール)」の分類が追加されました。1 つのアカウントで、最大 3 つのプロフィールを作れて、それぞれが自分の島と進み具合を持ちます。種類は「Personal profile(個人用)」と「Co-op profile(共同用)」です。画面では、新規作成(「新しい島で最初からやり直す」)、切り替え(Switch)、名前の変更(連続では変えられず、数十秒の待ち時間あり)、削除ができます。削除は、プロフィールの名前を正確に入力しないとできず、島と進み具合は完全に消えます。切り替えには条件があります。ダンジョンの途中では切り替えられない。島を一度訪れてからでないと切り替えられない。切り替え直後は待ち時間がある。メールが届いたままのプロフィールは、先に切り替えて受け取らないと消せない。持ち物や Moonstone Chest の中身が多すぎると、切り替えに失敗し、「片付けてからもう一度」と出ます。同じ文言群に、メールボックス(「You've got mail!」)も入りました。</p><p class="note">3 つのプロフィールで、ゴールド、スキル、持ち物のどこまでが別々なのかは、文言からは分かりません。共同用プロフィールの人数の上限も不明です。</p>
-<span class="cert">確かさ: 文言は確実 / 引き継ぐ範囲の細部は推測</span></div></div><div class="pt player"><div class="ico">🎨</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>Spencer のクエストが大幅に増えた(島を作り込む流れ)</h4></div>
-<p>前回追加された新 NPC の Spencer(絵描き)が、島づくりのクエストを次々に出す形になりました。<br>【建築】Cosy Cabin(小屋): Maple Door を作って置き、扉の 4 マス以内に、木か石の壁 20 ブロック(扉と同じ高さ)、ガラス 4 枚、ほかの条件を満たして建てます。ガラスは、ハブの浜の砂を炉で焼いて作ります。Lighthouse(灯台): Artisan Bench(島に置く作業台)でランタンを作り、10 ブロック以上の高さの塔のてっぺんに置きます。<br>【畑・庭】Carrot Patch: Manor Farm でニンジンの種 16 個を集め、4×4 に植えて育てる。Flower Bed: 赤チューリップ・ピンクチューリップ・デイジーを 4 本ずつ集め、3 種類以上の花 12 本を、真ん中の 1 本から 3 ブロック以内に植える。Fish Pond: バケツ 4 杯の水を汲み、島に 2×2×深さ 1 の穴を作って池にし、釣りで魚を 1 匹釣る(島には水がないので、水はハブで汲みます)。Orchard: ヤシの苗 1 本と梨の苗 2 本を育てる。<br>【石】Twin Springs: 石 64 個と石炭 16 個を渡して、2 つ目の Stone Generator をもらい、2 つの生成器から石を 32 個掘る。<br>【絵の具】Paint Box(赤と黄): 梨ブロック 3 個とスイカのスライス 32 個。Deep Purple(紫と金): ビートルート 16 個と、金のかけら 8 個(Cragrock Mines の金鉱石から)。Bone White(白): 骨 20 個(Wild Infernos の骸骨から)と、Magma Golem から落ちる Golem Eye 4 個。報酬として、赤・黄のコンクリート、スイカの種、紫のガラス、紫のたいまつ、桜の苗などがもらえる文言があります。<br>【毎日】「Island Order」: 小麦 32、ニンジン 32、石 32、Maple の原木 16 のどれかを、日替わりで頼まれます。</p><p class="note">建築の判定(壁の数や形)の細かい条件は、文言の一部しか見えていません。報酬は文言に出ている分だけで、全部とは限りません。</p>
-<span class="cert">確かさ: 文言は確実 / 報酬の量は不明</span></div></div><div class="pt player"><div class="ico">🤖</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>新アイテム: Wheat Helper / Carrot Helper(島にいる間に作物を作る装置)</h4></div>
-<p>島に置くと、自分が島にいる間、小麦やニンジンを自動で作ってくれる装置です。使うと、たまった分を受け取れます。持ち物がいっぱいのときは、装置が保管してくれます。置けるのは、それぞれ島に 1 つまでで、中身が残っているうちは動かせません。受け取れるのは島の持ち主だけです。Carrot Helper は、クエスト文言に「ニンジン 1 個を 45 秒ごと」とあります。クエストで、Wheat Helper は Spencer からもらい、Carrot Helper は、鉄のインゴット 4 個とニンジン 32 個を渡して作ってもらいます。</p><p class="note">小麦が何秒ごとにできるかは、クエスト文言には出ていません。装置が貯められる上限も不明です。</p>
-<span class="cert">確かさ: ニンジン 1 個 45 秒は確実(文言)/ 小麦の間隔は不明</span></div></div><div class="pt player"><div class="ico">🧪</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>「Potion Table」が「Cauldron」に改名</h4></div>
-<p>アイテム名の表示が、「Potion Table(ポーション台)」から「Cauldron(大釜)」に変わりました。クエストの Stone Generator の条件も、「Messy Stone 32 個」から「Messy Stone か Stone」に緩くなりました(普通の Stone でも納品できます)。</p><p class="note">見た目やレシピが変わったかは、文言だけでは分かりません。</p>
-<span class="cert">確かさ: 確実</span></div></div><div class="pt player"><div class="ico">👀</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>観戦中の操作の表示(セッション制のゲーム)</h4></div>
-<p>観戦中に出る操作案内が追加されました。「クリックで次のプレイヤー」「右クリックで自由に飛ぶ」「タップで次のプレイヤー(スマホ)」、メニューの項目は「Next Player / Fly Freely / Watch Players」です。</p><p class="note">どのゲームモードで使われるのかは不明です。</p>
-<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt maker"><div class="ico">🧑‍💻</div><div class="ptb">
-<div class="ptt"><span class="who">作る人</span><h4>テクスチャパックの制限と、スタジオの新しい指標</h4></div>
-<p>カスタムテクスチャパックで、外部の画像やリソースの URL は使えなくなり、パックの中にファイルを全部入れる必要があります。外部 URL を使っているゲームのパックは、適用できない旨の案内が出ます。ワールドビルダーには、「変更が保存されませんでした」の案内が入りました。スタジオ(作ったゲームの統計)には、「◯分以上遊んだ人の割合」と「◯分以内に抜けた人の割合」の指標が追加され、「抜ける人を減らすのが遊ぶ時間を伸ばす一番の近道」という説明が付いています(古い指標 2 つは入れ替わりました)。</p>
-<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt maker"><div class="ico">🔧</div><div class="ptb">
-<div class="ptt"><span class="who">作る人</span><h4>内部: ビルド入れ替えと、ファイル5つの追加</h4></div>
-<p>ビルドIDが bny9u から 6i9gblo に変わり、ファイル(チャンク)が 5 つ追加されました(202〜206 番)。main.js は約 78KB 大きくなっています。</p><p class="note">追加された 5 つのファイルの中身は読んでいません。</p>
-<span class="cert">確かさ: 追加は確実 / 中身は未確認</span></div></div></div>
-
-<div class="newitems"><b>🆕 新しいアイテム・ブロック</b><div><span class="pill">Wheat Helper</span><span class="pill">Makes Wheat for you while you're on your island.</span><span class="pill">Carrot Helper</span><span class="pill">Makes Carrots for you while you're on your island.</span></div></div>
-<details class="en"><summary>📖 英語の原文を見る(追加・書き換え・削除された文)</summary><details class="sec"><summary><span>スカイブロック</span><em>＋246 〜5 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>islandPainterNewIdea</code><p>Spencer has a new idea for your island! Visit him at home.</p></div></li><li class="a"><i>＋</i><div><code>islandBuildCosyCabin</code><p>Cosy Cabin needs:</p></div></li><li class="a"><i>＋</i><div><code>islandBuildLighthouse</code><p>Lighthouse needs:</p></div></li><li class="a"><i>＋</i><div><code>islandBuildWindows</code><p>Glass [[Glass]] {{have}}/{{need}}</p></div></li><li class="a"><i>＋</i><div><code>islandBuildLights</code><p>Torches [[Torch]] {{have}}/{{need}}</p></div></li><li class="a"><i>＋</i><div><code>islandBuildWalls</code><p>Walls {{have}}/{{need}}</p></div></li><li class="a"><i>＋</i><div><code>islandBuildRoof</code><p>Roof {{have}}/{{need}}</p></div></li><li class="a"><i>＋</i><div><code>islandBuildTower</code><p>Tower {{have}}/{{need}}</p></div></li><li class="a"><i>＋</i><div><code>islandBuildFlowerBed</code><p>Flower Bed needs:</p></div></li><li class="a"><i>＋</i><div><code>islandBuildPond</code><p>Pond needs:</p></div></li><li class="a"><i>＋</i><div><code>islandBuildFlowers</code><p>Flowers {{have}}/{{need}}</p></div></li><li class="a"><i>＋</i><div><code>islandBuildFlowerKinds</code><p>Kinds of flower {{have}}/{{need}}</p></div></li><li class="a"><i>＋</i><div><code>islandBuildWater</code><p>Pond water side by side {{have}}/{{need}}</p></div></li><li class="a"><i>＋</i><div><code>islandCropSquareWheat</code><p>Square of Wheat [[Wheat]]:</p></div></li><li class="a"><i>＋</i><div><code>islandCropSquareCarrot</code><p>Patch of Carrots [[Carrot]]:</p></div></li><li class="a"><i>＋</i><div><code>islandCropSquarePlanted</code><p>Planted {{have}}/{{need}}</p></div></li><li class="a"><i>＋</i><div><code>islandCropSquareGrown</code><p>Grown {{have}}/{{need}}</p></div></li><li class="a"><i>＋</i><div><code>profilesCategory</code><p>Profiles</p></div></li><li class="a"><i>＋</i><div><code>profilesCategoryDescription</code><p>Play up to 3 profiles, each with its own island and progress.</p></div></li><li class="a"><i>＋</i><div><code>profileTypePersonal</code><p>Personal profile</p></div></li><li class="a"><i>＋</i><div><code>profileTypeCoop</code><p>Co-op profile</p></div></li><li class="a"><i>＋</i><div><code>profileActive</code><p>You're playing this profile.</p></div></li><li class="a"><i>＋</i><div><code>profilePlayingButton</code><p>Playing</p></div></li><li class="a"><i>＋</i><div><code>profileSwitchButton</code><p>Switch</p></div></li><li class="a"><i>＋</i><div><code>profileNew</code><p>New Profile</p></div></li><li class="a"><i>＋</i><div><code>profileNewDescription</code><p>Start again on a fresh island. You can have up to {{max}} profiles.</p></div></li><li class="a"><i>＋</i><div><code>profileNewButton</code><p>Create</p></div></li><li class="a"><i>＋</i><div><code>profileRename</code><p>Rename Profile</p></div></li><li class="a"><i>＋</i><div><code>profileRenameDescription</code><p>Give the profile you're playing a new name.</p></div></li><li class="a"><i>＋</i><div><code>profileRenameButton</code><p>Rename</p></div></li><li class="a"><i>＋</i><div><code>profileRenameCooldown</code><p>You can rename again in {{seconds}}s.</p></div></li><li class="a"><i>＋</i><div><code>profileDelete</code><p>Delete {{name}}</p></div></li><li class="a"><i>＋</i><div><code>profileDeleteDescription</code><p>Type {{name}} to delete this profile's island and progress for good.</p></div></li><li class="a"><i>＋</i><div><code>profileDeleteButton</code><p>Delete</p></div></li><li class="a"><i>＋</i><div><code>profileDeleteNameMismatch</code><p>Type {{name}} exactly to delete it.</p></div></li><li class="a"><i>＋</i><div><code>profileDeleteNewerFormat</code><p>This profile was saved by a newer version of Skyblock. Try again later.</p></div></li><li class="a"><i>＋</i><div><code>profileDeleteMailWaiting</code><p>{{name}} has mail waiting. Switch to it to collect its mail, then delete it.</p></div></li><li class="a"><i>＋</i><div><code>profileDeleteMailUnread</code><p>Couldn't check {{name}}'s mail. Try again.</p></div></li><li class="a"><i>＋</i><div><code>profilesNotInDungeon</code><p>Finish your dungeon run before changing profile.</p></div></li><li class="a"><i>＋</i><div><code>profilesNoIsland</code><p>Visit your island before changing profile.</p></div></li><li class="a"><i>＋</i><div><code>profilesCooldown</code><p>You can change profile again in {{seconds}}s.</p></div></li><li class="a"><i>＋</i><div><code>profileNowPlaying</code><p>You're now playing {{name}}.</p></div></li><li class="a"><i>＋</i><div><code>profileChangeFailed</code><p>Your profile couldn't be changed. Try again.</p></div></li><li class="a"><i>＋</i><div><code>profileRequestDropped</code><p>Your profile change didn't go through, so you're still on the same profile.</p></div></li><li class="a"><i>＋</i><div><code>profileRequestWaiting</code><p>Your progress is still saving. Choose the profile again in a moment to switch.</p></div></li><li class="a"><i>＋</i><div><code>profileTooLarge</code><p>Your profiles hold too many items to switch. Clear out your inventory or Moonstone Chest [[Moonstone Chest]], then try again.</p></div></li><li class="a"><i>＋</i><div><code>mailboxTitle</code><p>You've got mail!</p></div></li><li class="a"><i>＋</i><div><code>mailboxMore</code><p>+{{count}} more</p></div></li><li class="a"><i>＋</i><div><code>mailReasonDevGift</code><p>Sent by {{name}}.</p></div></li><li class="a"><i>＋</i><div><code>questMeetMaverickOnIslandDescription</code><p>Your island could use a little adventure too! Meet me back there when you're ready.</p></div></li><li class="a"><i>＋</i><div><code>questCosyCabinName</code><p>Four Walls and a Window</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCosyCabinDescription</code><p>Neighbour, this island needs a cosy cabin, and I'm itching to paint one! Every cabin starts with a front door, so craft a Maple Door [[Maple Door]] at the Workbench [[Workbench]] on your island.</p></div></li><li class="a"><i>＋</i><div><code>questCraftCabinDoorName</code><p>Craft 1 Maple Door [[Maple Door]] at the Workbench [[Workbench]] on Your Island</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCraftCabinDoorDescription</code><p>Craft a Maple Door [[Maple Door]] at the Workbench [[Workbench]] on your island. Every cabin starts with a front door!</p></div></li><li class="a"><i>＋</i><div><code>questSmeltCabinGlassName</code><p>Smelt 4 Glass [[Glass]] at a Furnace [[Furnace]]</p></div></li><li class="a"><i>＋</i><div><code>questSpencerSmeltCabinGlassDescription</code><p>A cabin needs windows for the view! Dig Sand [[Sand]] on the beach by Blubberbeard's Shack in the Hub, then smelt 4 Glass [[Glass]] at a Furnace [[Furnace]].</p></div></li><li class="a"><i>＋</i><div><code>questBuildCosyCabinName</code><p>Build a Cabin Around Your Maple Door [[Maple Door]] on Your Island</p></div></li><li class="a"><i>＋</i><div><code>questSpencerBuildCosyCabinDescription</code><p>Place your Maple Door [[Maple Door]] on your island and build a cabin around it, no more than 4 blocks from the door: 20 blocks of wood or stone wall, as tall as the door, 4 Glass [[Glass]] windows, 2 Torches [[Torch]] to light it and a wood or stone roof over 9 blocks of floor.</p></div></li><li class="a"><i>＋</i><div><code>questLighthouseName</code><p>Light the Way</p></div></li><li class="a"><i>＋</i><div><code>questSpencerLighthouseDescription</code><p>Your cabin looks wonderful, neighbour! Now I'd love a lighthouse to paint, shining out over the sky. First, set down that Artisan Bench [[Artisan Bench]] and craft a Lantern [[Lantern]] at it.</p></div></li><li class="a"><i>＋</i><div><code>questCraftLighthouseLanternName</code><p>Craft 1 Lantern [[Lantern]] at an Artisan Bench [[Artisan Bench]] on Your Island</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCraftLighthouseLanternDescription</code><p>Place your Artisan Bench [[Artisan Bench]] on your island and craft a Lantern [[Lantern]] at it. Its Iron Bar [[Iron Bar]] comes from Iron Ore [[Iron Ore]]: mine it at Ruby's Rockpile in the Hub with a Stone Pickaxe [[Stone Pickaxe]] or better.</p></div></li><li class="a"><i>＋</i><div><code>questBuildLighthouseName</code><p>Build a Tower 10 Blocks Tall With Your Lantern [[Lantern]] on Top</p></div></li><li class="a"><i>＋</i><div><code>questSpencerBuildLighthouseDescription</code><p>Build a wood or stone tower at least 10 blocks tall on your island and set your Lantern [[Lantern]] right on top. Somewhere everyone can see it, please!</p></div></li><li class="a"><i>＋</i><div><code>questCarrotPatchName</code><p>The Carrot Patch</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCarrotPatchDescription</code><p>Your Wheat [[Wheat]] square was lovely, neighbour, but I'm dreaming of a bigger splash of orange! Gather 16 Carrot Seeds [[Carrot Seeds]] at Goldenroot Burrow in Manor Farm.</p></div></li><li class="a"><i>＋</i><div><code>questGatherCarrotSeedsName</code><p>Gather 16 Carrot Seeds [[Carrot Seeds]] at Manor Farm</p></div></li><li class="a"><i>＋</i><div><code>questSpencerGatherCarrotSeedsDescription</code><p>Harvest ripe Carrots [[Carrot]] at Goldenroot Burrow in Manor Farm until you have 16 Carrot Seeds [[Carrot Seeds]].</p></div></li><li class="a"><i>＋</i><div><code>questGrowCarrotSquareName</code><p>Grow 16 Carrots [[Carrot]] in a 4 by 4 Square on Your Island</p></div></li><li class="a"><i>＋</i><div><code>questSpencerGrowCarrotSquareDescription</code><p>Plant 16 Carrot Seeds [[Carrot Seeds]] in a 4 by 4 square on flat ground on your island, then stay on your island until all 16 are fully grown. Harvest Carrots [[Carrot]] at Goldenroot Burrow in Manor Farm for more seeds.</p></div></li><li class="a"><i>＋</i><div><code>questFlowerBedsName</code><p>Bloom and Grow</p></div></li><li class="a"><i>＋</i><div><code>questSpencerFlowerBedsDescription</code><p>Those Carrots [[Carrot]] are a picture, neighbour! Now I'm longing for some colour. Gather 4 of each of these flowers at Goldenroot Burrow in Manor Farm: Red Tulip [[Red Tulip]], Pink Tulip [[Pink Tulip]] and Daisy [[Daisy]].</p></div></li><li class="a"><i>＋</i><div><code>questGatherRedTulipsName</code><p>Gather 4 Red Tulips [[Red Tulip]] at Manor Farm</p></div></li><li class="a"><i>＋</i><div><code>questSpencerGatherRedTulipsDescription</code><p>Pick 4 Red Tulips [[Red Tulip]] in Manor Farm. They grow all over, and Goldenroot Burrow has plenty.</p></div></li><li class="a"><i>＋</i><div><code>questGatherPinkTulipsName</code><p>Gather 4 Pink Tulips [[Pink Tulip]] at Manor Farm</p></div></li><li class="a"><i>＋</i><div><code>questSpencerGatherPinkTulipsDescription</code><p>Pick 4 Pink Tulips [[Pink Tulip]] in Manor Farm. They grow all over, and Goldenroot Burrow has plenty.</p></div></li><li class="a"><i>＋</i><div><code>questGatherDaisiesName</code><p>Gather 4 Daisy [[Daisy]] at Manor Farm</p></div></li><li class="a"><i>＋</i><div><code>questSpencerGatherDaisiesDescription</code><p>Pick 4 Daisy [[Daisy]] in Manor Farm. They grow all over, and Goldenroot Burrow has plenty.</p></div></li><li class="a"><i>＋</i><div><code>questBuildFlowerBedName</code><p>Plant a Flower Bed of 12 Flowers, 3 Kinds or More, on Your Island</p></div></li><li class="a"><i>＋</i><div><code>questSpencerBuildFlowerBedDescription</code><p>Plant 12 flowers close together on your island, at least 3 different kinds, all within 3 blocks of one flower in the middle. A splash of colour for my next painting!</p></div></li><li class="a"><i>＋</i><div><code>questFishPondName</code><p>A Splash of Blue</p></div></li><li class="a"><i>＋</i><div><code>questSpencerFishPondDescription</code><p>A garden needs water, neighbour, and I'd love a pond to paint! Here are 3 more Buckets [[Bucket]]. With the one I gave you, fill 4 Water Buckets [[Water Bucket]] at the water by Blubberbeard's Shack in the Hub.</p></div></li><li class="a"><i>＋</i><div><code>questFillWaterBucketsName</code><p>Fill 4 Water Buckets [[Water Bucket]] in the Hub</p></div></li><li class="a"><i>＋</i><div><code>questSpencerFillWaterBucketsDescription</code><p>Use your Buckets [[Bucket]] on the water by Blubberbeard's Shack in the Hub until you hold 4 Water Buckets [[Water Bucket]]. Your island has no water of its own!</p></div></li><li class="a"><i>＋</i><div><code>questBuildPondName</code><p>Pour 4 Water Buckets [[Water Bucket]] Side by Side for a Pond on Your Island</p></div></li><li class="a"><i>＋</i><div><code>questSpencerBuildPondDescription</code><p>Pour your 4 Water Buckets [[Water Bucket]] side by side on your island, all at the same height with ground under each. A hole 2 blocks wide, 2 long and 1 deep is perfect. My very own pond!</p></div></li><li class="a"><i>＋</i><div><code>questCatchPondFishName</code><p>Catch 1 Fish in Your Pond on Your Island</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCatchPondFishDescription</code><p>Cast your fishing rod into your new pond on your island and catch a fish. I've never painted a fish before!</p></div></li><li class="a"><i>＋</i><div><code>questOrchardName</code><p>The Orchard</p></div></li><li class="a"><i>＋</i><div><code>questSpencerOrchardDescription</code><p>A pond looks its best with fruit trees round it, neighbour! First, find a Palm Sapling [[Palm Sapling]] on the palm trees along the Hub's beach.</p></div></li><li class="a"><i>＋</i><div><code>questGatherPalmSaplingName</code><p>Gather 1 Palm Sapling [[Palm Sapling]] on the Hub's Beach</p></div></li><li class="a"><i>＋</i><div><code>questSpencerGatherPalmSaplingDescription</code><p>Break the leaves on the palm trees on the beach east of Blubberbeard's Shack in the Hub until a Palm Sapling [[Palm Sapling]] drops. Not every leaf has one, so keep at it!</p></div></li><li class="a"><i>＋</i><div><code>questGatherPearSaplingsName</code><p>Gather 2 Pear Saplings [[Pear Sapling]] at Manor Farm</p></div></li><li class="a"><i>＋</i><div><code>questSpencerGatherPearSaplingsDescription</code><p>Break the leaves on the pear trees at Stagstep Gardens in Manor Farm until you have 2 Pear Saplings [[Pear Sapling]]. Not every leaf has one, so keep at it!</p></div></li><li class="a"><i>＋</i><div><code>questGrowPalmTreeName</code><p>Grow 1 Palm Sapling [[Palm Sapling]] into a Tree on Your Island</p></div></li><li class="a"><i>＋</i><div><code>questSpencerGrowPalmTreeDescription</code><p>Plant your Palm Sapling [[Palm Sapling]] on your island and stay there while it grows into a tree.</p></div></li><li class="a"><i>＋</i><div><code>questGrowPearTreesName</code><p>Grow 2 Pear Saplings [[Pear Sapling]] into Trees on Your Island</p></div></li><li class="a"><i>＋</i><div><code>questSpencerGrowPearTreesDescription</code><p>Plant your 2 Pear Saplings [[Pear Sapling]] on your island and stay there while they grow into trees. Blossom, here we come!</p></div></li><li class="a"><i>＋</i><div><code>questTwinSpringsName</code><p>Twin Springs</p></div></li><li class="a"><i>＋</i><div><code>questSpencerTwinSpringsDescription</code><p>That Stone Generator [[Stone Generator]] is my favourite thing on this island, neighbour, and two would be twice as nice! Bring me 64 Messy Stone [[Messy Stone]] and 16 Coal [[Coal]], and I'll find you another.</p></div></li><li class="a"><i>＋</i><div><code>questTwinSpringsStoneGatherName</code><p>Gather 64 Messy Stone [[Messy Stone]] or Stone [[Stone]]</p></div></li><li class="a"><i>＋</i><div><code>questSpencerTwinSpringsStoneGatherDescription</code><p>Mine Stone [[Stone]] at Ruby's Rockpile in the Hub, or on your Stone Generator [[Stone Generator]], until you have 64 Messy Stone [[Messy Stone]] or Stone [[Stone]].</p></div></li><li class="a"><i>＋</i><div><code>questTwinSpringsStoneHandInName</code><p>Bring 64 Messy Stone [[Messy Stone]] or Stone [[Stone]] to Spencer</p></div></li><li class="a"><i>＋</i><div><code>questSpencerTwinSpringsStoneHandInDescription</code><p>Bring the 64 Messy Stone [[Messy Stone]] or Stone [[Stone]] back to me on your island.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerTwinSpringsStoneHandedIn</code><p>What a pile of stone! Thank you, neighbour.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerTwinSpringsStoneReminder</code><p>Just {{remaining}} more Messy Stone [[Messy Stone]] or Stone [[Stone]] to go! Mine Stone [[Stone]] at Ruby's Rockpile in the Hub, or on your Stone Generator [[Stone Generator]].</p></div></li><li class="a"><i>＋</i><div><code>questTwinSpringsCoalGatherName</code><p>Gather 16 Coal [[Coal]]</p></div></li><li class="a"><i>＋</i><div><code>questSpencerTwinSpringsCoalGatherDescription</code><p>Mine Coal Ore [[Coal Ore]] at Ruby's Rockpile in the Hub until you have 16 Coal [[Coal]].</p></div></li><li class="a"><i>＋</i><div><code>questTwinSpringsCoalHandInName</code><p>Bring 16 Coal [[Coal]] to Spencer</p></div></li><li class="a"><i>＋</i><div><code>questSpencerTwinSpringsCoalHandInDescription</code><p>Bring the 16 Coal [[Coal]] back to me on your island.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerTwinSpringsCoalHandedIn</code><p>Perfect! Here's your second Stone Generator [[Stone Generator]]. Two springs of stone, side by side!</p></div></li><li class="a"><i>＋</i><div><code>questSpencerTwinSpringsCoalReminder</code><p>Just {{remaining}} more Coal [[Coal]] to go! Mine Coal Ore [[Coal Ore]] at Ruby's Rockpile in the Hub.</p></div></li><li class="a"><i>＋</i><div><code>questPlaceSecondGeneratorName</code><p>Place a Second Stone Generator [[Stone Generator]] on Your Island</p></div></li><li class="a"><i>＋</i><div><code>questSpencerPlaceSecondGeneratorDescription</code><p>Place your new Stone Generator [[Stone Generator]] on your island so two stand there, each with open air above it. Lost it? I've got another for you.</p></div></li><li class="a"><i>＋</i><div><code>questMineTwinStoneName</code><p>Mine 32 Stone [[Stone]] Grown by Your Stone Generators [[Stone Generator]]</p></div></li><li class="a"><i>＋</i><div><code>questSpencerMineTwinStoneDescription</code><p>Stay on your island and mine 32 Stone [[Stone]] as it grows on your Stone Generators [[Stone Generator]]. Lost a generator? I've got another for you.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCosyCabinCompleted</code><p>A real cabin, with glowing windows and all! I'm painting it this very minute.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerLighthouseCompleted</code><p>Look at it shine! Nobody will ever get lost out here now.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCarrotPatchCompleted</code><p>Sixteen Carrots [[Carrot]] in one bright orange square! Just what I was dreaming of.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerFlowerBedsCompleted</code><p>Twelve flowers, all in one bed! The bees are going to love it.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerFishPondCompleted</code><p>A pond with a real fish in it! I'll paint it this very afternoon.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerOrchardCompleted</code><p>A palm and two pears, all grown! This island is starting to look like a picture book.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerTwinSpringsCompleted</code><p>Listen to those two springs go, neighbour! That's plenty of Stone [[Stone]] for building.</p></div></li><li class="a"><i>＋</i><div><code>questHelpingHandName</code><p>A Helping Hand</p></div></li><li class="a"><i>＋</i><div><code>questSpencerHelpingHandDescription</code><p>All that Wheat [[Wheat]] keeps you so busy, neighbour, you hardly have time to enjoy the view! Here, take this Wheat Helper [[Wheat Helper]]. Set it down on your island and it makes Wheat [[Wheat]] for you while you're home.</p></div></li><li class="a"><i>＋</i><div><code>questHelpingHandWheatGatherName</code><p>Harvest 32 Wheat [[Wheat]]</p></div></li><li class="a"><i>＋</i><div><code>questSpencerHelpingHandWheatGatherDescription</code><p>While your helper works, harvest the ripe Wheat [[Wheat]] on your island until you have 32. I'm weaving myself a sun hat for painting!</p></div></li><li class="a"><i>＋</i><div><code>questHelpingHandWheatHandInName</code><p>Bring 32 Wheat [[Wheat]] to Spencer</p></div></li><li class="a"><i>＋</i><div><code>questSpencerHelpingHandWheatHandInDescription</code><p>Bring the 32 Wheat [[Wheat]] back to me on your island.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerHelpingHandWheatHandedIn</code><p>Perfect, that's plenty for my sun hat! No more squinting at my paints.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerHelpingHandWheatReminder</code><p>Just {{remaining}} more Wheat [[Wheat]] to go! It grows right here on your island.</p></div></li><li class="a"><i>＋</i><div><code>questPlaceWheatHelperName</code><p>Place the Wheat Helper [[Wheat Helper]] on Your Island</p></div></li><li class="a"><i>＋</i><div><code>questSpencerPlaceWheatHelperDescription</code><p>Place your Wheat Helper [[Wheat Helper]] anywhere on your island. Lost it? I've got another for you.</p></div></li><li class="a"><i>＋</i><div><code>questCollectHelperWheatName</code><p>Collect 2 Wheat [[Wheat]] from Your Wheat Helper [[Wheat Helper]]</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCollectHelperWheatDescription</code><p>Stay on your island while your Wheat Helper [[Wheat Helper]] works, then use it to collect 2 Wheat [[Wheat]]. Lost it? I've got another for you.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerHelpingHandCompleted</code><p>Look at that little helper go! Empty it now and then, neighbour, and it'll keep the Wheat [[Wheat]] coming.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerWheatHelperAgain</code><p>Lost your Wheat Helper [[Wheat Helper]]? Here's another. Set it down on your island and it'll get back to work.</p></div></li><li class="a"><i>＋</i><div><code>questCarrotHelperName</code><p>Carrots on Tap</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCarrotHelperDescription</code><p>Your Wheat Helper [[Wheat Helper]] could use a friend, neighbour! I'm building a Carrot Helper [[Carrot Helper]]. Bring me 4 Iron Bars [[Iron Bar]] for its gears, and 32 Carrots [[Carrot]] so it learns what a good carrot looks like.</p></div></li><li class="a"><i>＋</i><div><code>questCarrotHelperCarrotsGatherName</code><p>Harvest 32 Carrots [[Carrot]]</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCarrotHelperCarrotsGatherDescription</code><p>Harvest the Carrots [[Carrot]] in the carrot patch on your island until you have 32. They grow while you're home!</p></div></li><li class="a"><i>＋</i><div><code>questCarrotHelperCarrotsHandInName</code><p>Bring 32 Carrots [[Carrot]] to Spencer</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCarrotHelperCarrotsHandInDescription</code><p>Bring the 32 Carrots [[Carrot]] back to me on your island.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCarrotHelperCarrotsHandedIn</code><p>Lovely and orange! Now it'll know a good carrot when it sees one.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCarrotHelperCarrotsReminder</code><p>Just {{remaining}} more Carrots [[Carrot]] to go! They grow in the carrot patch on your island.</p></div></li><li class="a"><i>＋</i><div><code>questCarrotHelperIronGatherName</code><p>Smelt 4 Iron Bars [[Iron Bar]]</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCarrotHelperIronGatherDescription</code><p>Mine Iron Ore [[Iron Ore]] at Ruby's Rockpile in the Hub, and smelt it into 4 Iron Bars [[Iron Bar]]. They'll make perfect little gears!</p></div></li><li class="a"><i>＋</i><div><code>questCarrotHelperIronHandInName</code><p>Bring 4 Iron Bars [[Iron Bar]] to Spencer</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCarrotHelperIronHandInDescription</code><p>Bring the 4 Iron Bars [[Iron Bar]] back to me on your island.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCarrotHelperIronHandedIn</code><p>Nice and shiny! These will make perfect little gears.</p></div></li><li class="a"><i>＋</i><div><code>questBuildCarrotHelperName</code><p>Get Your Carrot Helper [[Carrot Helper]] from Spencer</p></div></li><li class="a"><i>＋</i><div><code>questSpencerBuildCarrotHelperDescription</code><p>Come and see me on your island, and I'll hand over your Carrot Helper [[Carrot Helper]].</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCarrotHelperBuilt</code><p>Gears in, lid on... ta-da! Here's your Carrot Helper [[Carrot Helper]]. It makes a Carrot [[Carrot]] every 45 seconds while you're home.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCarrotHelperIronReminder</code><p>Just {{remaining}} more Iron Bars [[Iron Bar]] to go! Mine Iron Ore [[Iron Ore]] at Ruby's Rockpile in the Hub.</p></div></li><li class="a"><i>＋</i><div><code>questPlaceCarrotHelperName</code><p>Place the Carrot Helper [[Carrot Helper]] on Your Island</p></div></li><li class="a"><i>＋</i><div><code>questSpencerPlaceCarrotHelperDescription</code><p>Set your Carrot Helper [[Carrot Helper]] down anywhere on your island, next to its friend if you like. Lost it? I've got another for you.</p></div></li><li class="a"><i>＋</i><div><code>questCollectHelperCarrotsName</code><p>Collect 2 Carrots [[Carrot]] from Your Carrot Helper [[Carrot Helper]]</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCollectHelperCarrotsDescription</code><p>Keep your Carrot Helper [[Carrot Helper]] company on your island while it works, then use it to collect 2 Carrots [[Carrot]]. Lost it? I've got another for you.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCarrotHelperCompleted</code><p>Two helpers hard at work! Empty them now and then, neighbour, and they'll keep your island busy.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCarrotHelperAgain</code><p>Lost your Carrot Helper [[Carrot Helper]]? Here's another. Set it down on your island and it'll get back to work.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerStoneSpringWaitingOn</code><p>I've got a plan for a spring of stone, neighbour, but you'll need to learn mining first. Help Ruby at Ruby's Rockpile in the Hub!</p></div></li><li class="a"><i>＋</i><div><code>questSpencerCarrotPatchWaitingOn</code><p>I'm dreaming of a carrot patch, neighbour, but Carrot Seeds [[Carrot Seeds]] only come from Manor Farm. Help Tillie in the Hub, and she'll show you the way there!</p></div></li><li class="a"><i>＋</i><div><code>questSpencerFishPondWaitingOn</code><p>I'd love a pond with fish in it, neighbour! Learn to fish with Blubberbeard at Blubberbeard's Shack in the Hub first.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerPaintBoxDescription</code><p>Neighbour, I've painted this island so often that my paint box is empty! I mix my own paints, so let's start with yellow and red. The pear trees and the Watermelon [[Watermelon]] at Stagstep Gardens in Manor Farm have just the colours I need.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerPaintBoxCompleted</code><p>Red and yellow, back in my paint box! Here's some Red Concrete [[Red Concrete]] and Yellow Concrete [[Yellow Concrete]] to build something bright, and Watermelon Seeds [[Watermelon Seeds]] so you can grow your own red.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerPaintBoxPearGatherDescription</code><p>Break the Pear Blocks [[Pear Block]] off the low branches of the pear tree at Stagstep Gardens in Manor Farm until you have 3. They grow back quickly!</p></div></li><li class="a"><i>＋</i><div><code>questSpencerPaintBoxPearHandInDescription</code><p>Bring the 3 Pear Blocks [[Pear Block]] back to me on your island.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerPaintBoxPearHandedIn</code><p>The perfect pear yellow! It's like sunshine in a paint pot.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerPaintBoxPearReminder</code><p>Just {{remaining}} more Pear Blocks [[Pear Block]] to go! They grow back on the low branches of the pear tree at Stagstep Gardens in Manor Farm.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerPaintBoxWatermelonGatherDescription</code><p>Harvest Watermelon [[Watermelon]] at Stagstep Gardens in Manor Farm until you have 32 Watermelon Slices [[Watermelon Slice]]. They'll make a lovely red!</p></div></li><li class="a"><i>＋</i><div><code>questSpencerPaintBoxWatermelonHandInDescription</code><p>Bring the 32 Watermelon Slices [[Watermelon Slice]] back to me on your island.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerPaintBoxWatermelonHandedIn</code><p>What a juicy red! Just right for my sunsets.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerPaintBoxWatermelonReminder</code><p>Just {{remaining}} more Watermelon Slices [[Watermelon Slice]] to go! Harvest Watermelon [[Watermelon]] at Stagstep Gardens in Manor Farm.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDeepPurpleDescription</code><p>Neighbour, I'm painting a royal portrait, and royals wear purple and gold! Nothing beats Beetroot [[Beetroot]] juice for a deep purple, and Gold Fragments [[Gold Fragment]] make the finest gold leaf for the frame. Both start out in Cragrock Mines.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDeepPurpleWaitingOn</code><p>I'm dreaming of a royal purple, neighbour, but Beetroot [[Beetroot]] only grows in Hearthdeep Village. Prove yourself to Elder Crag at his mine door in Cragrock Mines and he'll let you through. Ruby at Ruby's Rockpile in the Hub can show you the way there!</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDeepPurpleCompleted</code><p>Purple and gold, fit for a king! Here's some Patterned Purple Glass [[Patterned Purple Glass]] for your windows, and Purple Torches [[Purple Torch]] to light them up at night.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDeepPurpleBeetrootGatherDescription</code><p>Pick 16 Beetroot [[Beetroot]] from the beetroot bed behind Sapphire's house in Hearthdeep Village, in Cragrock Mines.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDeepPurpleBeetrootHandInDescription</code><p>Bring the 16 Beetroot [[Beetroot]] back to me on your island.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDeepPurpleBeetrootHandedIn</code><p>Ooh, look at that colour! My fingers are purple already.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDeepPurpleBeetrootReminder</code><p>Just {{remaining}} more Beetroot [[Beetroot]] to go! Sapphire's bed in Hearthdeep Village has plenty.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDeepPurpleRawGoldGatherDescription</code><p>Mine Gold Ore [[Gold Ore]] in the Gilded Gallery of Cragrock Mines until you have 4 Raw Gold [[Raw Gold]].</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDeepPurpleGoldCraftDescription</code><p>Craft your Raw Gold [[Raw Gold]] into 8 Gold Fragments [[Gold Fragment]] at a Workbench [[Workbench]].</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDeepPurpleGoldHandInDescription</code><p>Bring the 8 Gold Fragments [[Gold Fragment]] to me on your island.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDeepPurpleGoldHandedIn</code><p>Gold leaf! My frame is going to look so grand.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDeepPurpleGoldReminder</code><p>Just {{remaining}} more Gold Fragments [[Gold Fragment]] to go! Craft them from Raw Gold [[Raw Gold]] at a Workbench [[Workbench]].</p></div></li><li class="a"><i>＋</i><div><code>questSpencerBoneWhiteDescription</code><p>Every painting starts on a canvas, neighbour, and the best canvases are primed with bone white! The skeletons on the Scorched Flats in the Wild Infernos have the whitest Bones [[Bone]] around, and a Golem Eye [[Golem Eye]] ground up fine gives the white a pearly shine.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerBoneWhiteWaitingOn</code><p>I need bone white for my canvases, neighbour, and the best Bones [[Bone]] are in the Wild Infernos. Lorenzo at the Badlands in the Hub can show you the way there!</p></div></li><li class="a"><i>＋</i><div><code>questSpencerBoneWhiteCompleted</code><p>A proper bone white with a pearly shine! My paint box is looking wonderful, neighbour, thanks to you. Plant these Cherry Saplings [[Cherry Sapling]] on your island, and just wait till you see the blossom!</p></div></li><li class="a"><i>＋</i><div><code>questSpencerBoneWhiteBonesGatherDescription</code><p>Defeat the skeletons on the Scorched Flats, just outside the gate of Emberwatch Outpost in the Wild Infernos, until you have 20 Bones [[Bone]].</p></div></li><li class="a"><i>＋</i><div><code>questSpencerBoneWhiteBonesHandInDescription</code><p>Bring the 20 Bones [[Bone]] back to me on your island.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerBoneWhiteBonesHandedIn</code><p>Now that's a proper bone white, the perfect start for any painting!</p></div></li><li class="a"><i>＋</i><div><code>questSpencerBoneWhiteBonesReminder</code><p>Just {{remaining}} more Bones [[Bone]] to go! The skeletons on the Scorched Flats in the Wild Infernos have plenty.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerBoneWhiteGolemEyesGatherDescription</code><p>Knock the Magma Golems off the skeleton's ribs at the Shooting Gallery in the Wild Infernos until you have 4 Golem Eyes [[Golem Eye]]. Flint in her booth there can show you how!</p></div></li><li class="a"><i>＋</i><div><code>questSpencerBoneWhiteGolemEyesHandInDescription</code><p>Bring the 4 Golem Eyes [[Golem Eye]] back to me on your island.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerBoneWhiteGolemEyesHandedIn</code><p>Look at that shine! Ground up fine, these will make my whites sparkle.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerBoneWhiteGolemEyesReminder</code><p>Just {{remaining}} more Golem Eyes [[Golem Eye]] to go! The Magma Golems at the Shooting Gallery in the Wild Infernos drop one as they fall.</p></div></li><li class="a"><i>＋</i><div><code>questPaintBoxName</code><p>Spencer's Paint Box</p></div></li><li class="a"><i>＋</i><div><code>questPaintBoxPearGatherName</code><p>Break 3 Pear Blocks [[Pear Block]] off the pear tree</p></div></li><li class="a"><i>＋</i><div><code>questPaintBoxPearHandInName</code><p>Bring 3 Pear Blocks [[Pear Block]] to Spencer</p></div></li><li class="a"><i>＋</i><div><code>questPaintBoxWatermelonGatherName</code><p>Harvest 32 Watermelon Slices [[Watermelon Slice]]</p></div></li><li class="a"><i>＋</i><div><code>questPaintBoxWatermelonHandInName</code><p>Bring 32 Watermelon Slices [[Watermelon Slice]] to Spencer</p></div></li><li class="a"><i>＋</i><div><code>questDeepPurpleName</code><p>Deep Purple</p></div></li><li class="a"><i>＋</i><div><code>questDeepPurpleBeetrootGatherName</code><p>Pick 16 Beetroot [[Beetroot]]</p></div></li><li class="a"><i>＋</i><div><code>questDeepPurpleBeetrootHandInName</code><p>Bring 16 Beetroot [[Beetroot]] to Spencer</p></div></li><li class="a"><i>＋</i><div><code>questDeepPurpleRawGoldGatherName</code><p>Mine 4 Raw Gold [[Raw Gold]]</p></div></li><li class="a"><i>＋</i><div><code>questDeepPurpleGoldCraftName</code><p>Craft 8 Gold Fragments [[Gold Fragment]] at a Workbench [[Workbench]]</p></div></li><li class="a"><i>＋</i><div><code>questDeepPurpleGoldHandInName</code><p>Bring 8 Gold Fragments [[Gold Fragment]] to Spencer</p></div></li><li class="a"><i>＋</i><div><code>questBoneWhiteName</code><p>Bone White</p></div></li><li class="a"><i>＋</i><div><code>questBoneWhiteBonesGatherName</code><p>Defeat skeletons for 20 Bones [[Bone]]</p></div></li><li class="a"><i>＋</i><div><code>questBoneWhiteBonesHandInName</code><p>Bring 20 Bones [[Bone]] to Spencer</p></div></li><li class="a"><i>＋</i><div><code>questBoneWhiteGolemEyesGatherName</code><p>Knock Magma Golems off for 4 Golem Eyes [[Golem Eye]]</p></div></li><li class="a"><i>＋</i><div><code>questBoneWhiteGolemEyesHandInName</code><p>Bring 4 Golem Eyes [[Golem Eye]] to Spencer</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyName</code><p>Island Order</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyWheat</code><p>I'm painting a harvest festival, neighbour, and I need a big golden pile of Wheat [[Wheat]] to copy! Could you bring me 32 from your island?</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyWheatErrand</code><p>Harvest the ripe Wheat [[Wheat]] on your island until you have 32. It grows back while you stay there.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyWheatCollect</code><p>Harvest 32 Wheat [[Wheat]]</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyWheatDelivery</code><p>Bring 32 Wheat [[Wheat]] to Spencer</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyCarrots</code><p>My orange paint's all gone, so I'm mixing my own from Carrots [[Carrot]]! Could you bring me 32 from your island?</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyCarrotsErrand</code><p>Harvest the ripe Carrots [[Carrot]] on your island until you have 32. They grow back while you stay there.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyCarrotsCollect</code><p>Harvest 32 Carrots [[Carrot]]</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyCarrotsDelivery</code><p>Bring 32 Carrots [[Carrot]] to Spencer</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyMessyStone</code><p>My paint pots keep tipping over in the grass, so I'm building a stone shelf for them! Could you bring me 32 Messy Stone [[Messy Stone]]?</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyMessyStoneErrand</code><p>Mine the Stone [[Stone]] that grows on your Stone Generators [[Stone Generator]] until you have 32 Messy Stone [[Messy Stone]] or Stone [[Stone]]. It keeps growing while you stay on your island.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyMessyStoneCollect</code><p>Gather 32 Messy Stone [[Messy Stone]] or Stone [[Stone]]</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyMessyStoneDelivery</code><p>Bring 32 Messy Stone [[Messy Stone]] or Stone [[Stone]] to Spencer</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyMapleLogs</code><p>My easel's gone all wobbly, neighbour! Bring me 16 Maple Logs [[Maple Log]] from your island and I'll build a sturdier one.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyMapleLogsErrand</code><p>Chop the Maple trees on your island until you have 16 Maple Logs [[Maple Log]]. Each tree grows back from a sapling while you stay there.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyMapleLogsCollect</code><p>Chop 16 Maple Logs [[Maple Log]]</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyMapleLogsDelivery</code><p>Bring 16 Maple Logs [[Maple Log]] to Spencer</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyHandIn</code><p>Bring today's order back to me on your island.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyReminder</code><p>Just {{remaining}} more to go, neighbour! It all grows right here on your island.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyCompleted</code><p>Thank you, neighbour! That's just what I needed.</p></div></li><li class="a"><i>＋</i><div><code>questSpencerDailyDone</code><p>Your island's looking brighter already, neighbour! Pop back tomorrow and I'll have a new order.</p></div></li><li class="a"><i>＋</i><div><code>toCollectFromHelper</code><p> to collect</p></div></li><li class="a"><i>＋</i><div><code>islandHelperLimit</code><p>Your island already has a Wheat Helper [[Wheat Helper]].</p></div></li><li class="a"><i>＋</i><div><code>islandHelperNotEmpty</code><p>Collect the Wheat [[Wheat]] in your Wheat Helper [[Wheat Helper]] before moving it.</p></div></li><li class="a"><i>＋</i><div><code>islandHelperWorking</code><p>Next Wheat [[Wheat]] in {{seconds}}s. Your Wheat Helper [[Wheat Helper]] works while you're on your island.</p></div></li><li class="a"><i>＋</i><div><code>islandHelperCollected</code><p>+{{amount}} Wheat [[Wheat]]</p></div></li><li class="a"><i>＋</i><div><code>islandHelperHolding</code><p>Your inventory is full! Your Wheat Helper [[Wheat Helper]] is keeping {{amount}} Wheat [[Wheat]] for you.</p></div></li><li class="a"><i>＋</i><div><code>islandHelperNotYours</code><p>Only the island's owner can collect from its Wheat Helper [[Wheat Helper]].</p></div></li><li class="a"><i>＋</i><div><code>carrotHelperLimit</code><p>Your island already has a Carrot Helper [[Carrot Helper]].</p></div></li><li class="a"><i>＋</i><div><code>carrotHelperNotEmpty</code><p>Collect the Carrots [[Carrot]] in your Carrot Helper [[Carrot Helper]] before moving it.</p></div></li><li class="a"><i>＋</i><div><code>carrotHelperWorking</code><p>Next Carrot [[Carrot]] in {{seconds}}s. Your Carrot Helper [[Carrot Helper]] works while you're on your island.</p></div></li><li class="a"><i>＋</i><div><code>carrotHelperCollected</code><p>Carrots [[Carrot]] collected: +{{amount}}</p></div></li><li class="a"><i>＋</i><div><code>carrotHelperHolding</code><p>Your inventory is full! Carrots [[Carrot]] still in your Carrot Helper [[Carrot Helper]]: {{amount}}</p></div></li><li class="a"><i>＋</i><div><code>carrotHelperNotYours</code><p>Only the island's owner can collect from its Carrot Helper [[Carrot Helper]].</p></div></li><li class="c"><i>〜</i><div><code>questStoneSpringGatherName</code><p class="from">Gather 32 Messy Stone [[Messy Stone]]</p><p>Gather 32 Messy Stone [[Messy Stone]] or Stone [[Stone]]</p></div></li><li class="c"><i>〜</i><div><code>questSpencerStoneSpringGatherDescription</code><p class="from">Mine Stone [[Stone]] at Ruby's Rockpile in the Hub until you have 32 Messy Stone [[Messy Stone]].</p><p>Mine Stone [[Stone]] at Ruby's Rockpile in the Hub until you have 32 Messy Stone [[Messy Stone]] or Stone [[Stone]].</p></div></li><li class="c"><i>〜</i><div><code>questStoneSpringHandInName</code><p class="from">Bring 32 Messy Stone [[Messy Stone]] to Spencer</p><p>Bring 32 Messy Stone [[Messy Stone]] or Stone [[Stone]] to Spencer</p></div></li><li class="c"><i>〜</i><div><code>questSpencerStoneSpringHandInDescription</code><p class="from">Bring the 32 Messy Stone [[Messy Stone]] back to me on your island.</p><p>Bring the 32 Messy Stone [[Messy Stone]] or Stone [[Stone]] back to me on your island.</p></div></li><li class="c"><i>〜</i><div><code>questSpencerStoneSpringReminder</code><p class="from">Just {{remaining}} more Messy Stone [[Messy Stone]] to go! Mine Stone [[Stone]] at Ruby's Rockpile in the Hub.</p><p>Just {{remaining}} more Messy Stone [[Messy Stone]] or Stone [[Stone]] to go! Mine Stone [[Stone]] at Ruby's Rockpile in the Hub.</p></div></li></ul></details><details class="sec"><summary><span>sessionBasedGame</span><em>＋7 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>spectatingPlayerWithHint</code><p>Watching {{name}} · Click for the next player · Right click to fly free</p></div></li><li class="a"><i>＋</i><div><code>spectatingPlayerWithTapHint</code><p>Watching {{name}} · Tap for the next player</p></div></li><li class="a"><i>＋</i><div><code>spectatorFreeCameraHint</code><p>Click to watch a player</p></div></li><li class="a"><i>＋</i><div><code>spectatorFreeCameraTapHint</code><p>Tap to watch a player</p></div></li><li class="a"><i>＋</i><div><code>spectatorNextPlayerItem</code><p>Next Player</p></div></li><li class="a"><i>＋</i><div><code>spectatorFreeCameraItem</code><p>Fly Freely</p></div></li><li class="a"><i>＋</i><div><code>spectatorWatchPlayersItem</code><p>Watch Players</p></div></li></ul></details><details class="sec"><summary><span>アイテム・ブロック</span><em>＋4 〜1 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>wheatHelper</code><p>Wheat Helper</p></div></li><li class="a"><i>＋</i><div><code>wheatHelperDescription</code><p>Makes Wheat for you while you're on your island.</p></div></li><li class="a"><i>＋</i><div><code>carrotHelper</code><p>Carrot Helper</p></div></li><li class="a"><i>＋</i><div><code>carrotHelperDescription</code><p>Makes Carrots for you while you're on your island.</p></div></li><li class="c"><i>〜</i><div><code>potionTable</code><p class="from">Potion Table</p><p>Cauldron</p></div></li></ul></details><details class="sec"><summary><span>customTexturePack</span><em>＋3 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>externalUrlsNotAllowed</code><p>External image or resource URLs are not allowed, so keep every file inside the pack.</p></div></li><li class="a"><i>＋</i><div><code>cantApplyTitle</code><p>This game's texture pack can't be applied</p></div></li><li class="a"><i>＋</i><div><code>gamePackHasExternalUrls</code><p>It uses external image or resource URLs, which are not allowed.</p></div></li></ul></details><details class="sec"><summary><span>スタジオ</span><em>＋2 〜0 －2</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>metricStayedSessions</code><p>Stayed For {{minutes}} Minutes Or More</p></div></li><li class="a"><i>＋</i><div><code>metricStayedSessionsInfo</code><p>The share of play sessions that lasted at least {{minutes}} minutes, over the {{range}}. The rest are players who left almost as soon as they arrived, so raising this is usually the fastest way to grow your playtime.</p></div></li><li class="d"><i>－</i><div><code>metricShortSessions</code><p class="from">Left Within {{minutes}} Minutes</p></div></li><li class="d"><i>－</i><div><code>metricShortSessionsInfo</code><p class="from">The share of play sessions that ended before {{minutes}} minutes, over the {{range}}. These are players who left almost as soon as they arrived, so bringing this down is usually the fastest way to grow your playtime.</p></div></li></ul></details><details class="sec"><summary><span>worldBuilder</span><em>＋1 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>changesNotSaved</code><p>Your changes weren't saved</p></div></li></ul></details></details>
-<details class="dev"><summary>🔧 開発者向けの詳細(ふつうは見なくて大丈夫)</summary><dl>
-<dt>ビルド</dt><dd>bny9u / 02116121 → 6i9gblo / d2c8691c</dd>
-<dt>main.js の文字列</dt><dd>追加 5469 / 削除 4223(大型更新(±4000超))。変数名の付け替えで見かけ上の差も大量に出るので、ゲーム内の変化とは別物です。</dd>
-<dt>チャンク(ファイル)</dt><dd>追加 5 / 削除 0 / 変更 201(ビルドが変わると全ファイルの名前が変わるので、「変更」の数に意味はありません)</dd></dl>
-<details><summary>元のレポート</summary><pre># bloxd.io 更新検知 2026-11-05T16:30:45.390Z
-
-- ビルドID: bny9u → 6i9gblo
-- main hash: 02116121 → d2c8691c
-- main.js サイズ: 3362913 → 3440833
-- CSS: static/css/bny9u.main.64217b5a.css → static/css/6i9gblo.main.4e0ff351.css
-- main.js 文字列: 追加 5469 / 削除 4223(大型更新(±4000超))
-- チャンク: 追加 5 / 削除 0 / ハッシュ変更 201
-## ゲーム内の変化
-
-- ゲーム内テキスト: 追加 263 / 変更 6 / 削除 2
-- スカイブロック: 追加 246 / 変更 5 / 削除 0
-- sessionBasedGame: 追加 7 / 変更 0 / 削除 0
-- アイテム・ブロック: 追加 4 / 変更 1 / 削除 0
-- customTexturePack: 追加 3 / 変更 0 / 削除 0
-- スタジオ: 追加 2 / 変更 0 / 削除 2
-- worldBuilder: 追加 1 / 変更 0 / 削除 0
-
-
-## 追加された文字列(先頭80件)
-- `${ZZ}`
-- `${AZ}`
-- `^(?:[\\s#.,%/+]|[\\w-]+(?![\\w(-])|(?:rgba?|hsla?|hwb|lab|lch|oklab|oklch|color-mix|color|light-dark)\\([\\w\\s#.,%/+-]*`
-- `${xx}`
-- `reCAPTCHA Timeout`
-- `Failed to play video preview (NotSupportedError)`
-- `${RZ}`
-- `Cauldron`
-- `wheatHelper`
-- `Wheat Helper`
-- `wheatHelperDescription`
-- `Makes Wheat for you while you\'re on your island.`
-- `carrotHelper`
-- `Carrot Helper`
-- `carrotHelperDescription`
-- `Makes Carrots for you while you\'re on your island.`
-- `spectatingPlayerWithHint`
-- `Watching {{name}} \xb7 Click for the next player \xb7 Right click to fly free`
-- `spectatingPlayerWithTapHint`
-- `Watching {{name}} \xb7 Tap for the next player`
-- `spectatorFreeCameraHint`
-- `Click to watch a player`
-- `spectatorFreeCameraTapHint`
-- `Tap to watch a player`
-- `spectatorNextPlayerItem`
-- `Next Player`
-- `spectatorFreeCameraItem`
-- `Fly Freely`
-- `spectatorWatchPlayersItem`
-- `Watch Players`
-- `changesNotSaved`
-- `Your changes weren\'t saved`
-- `externalUrlsNotAllowed`
-- `External image or resource URLs are not allowed, so keep every file inside the pack.`
-- `cantApplyTitle`
-- `This game\'s texture pack can\'t be applied`
-- `gamePackHasExternalUrls`
-- `It uses external image or resource URLs, which are not allowed.`
-- `metricStayedSessions`
-- `Stayed For {{minutes}} Minutes Or More`
-- `metricStayedSessionsInfo`
-- `The share of play sessions that lasted at least {{minutes}} minutes, over the {{range}}. The rest are players who left a`
-- `islandPainterNewIdea`
-- `Spencer has a new idea for your island! Visit him at home.`
-- `islandBuildCosyCabin`
-- `Cosy Cabin needs:`
-- `islandBuildLighthouse`
-- `Lighthouse needs:`
-- `islandBuildWindows`
-- `Glass [[Glass]] {{have}}/{{need}}`
-- `islandBuildLights`
-- `Torches [[Torch]] {{have}}/{{need}}`
-- `islandBuildWalls`
-- `Walls {{have}}/{{need}}`
-- `islandBuildRoof`
-- `Roof {{have}}/{{need}}`
-- `islandBuildTower`
-- `Tower {{have}}/{{need}}`
-- `islandBuildFlowerBed`
-- `Flower Bed needs:`
-- `islandBuildPond`
-- `Pond needs:`
-- `islandBuildFlowers`
-- `Flowers {{have}}/{{need}}`
-- `islandBuildFlowerKinds`
-- `Kinds of flower {{have}}/{{need}}`
-- `islandBuildWater`
-- `Pond water side by side {{have}}/{{need}}`
-- `islandCropSquareWheat`
-- `Square of Wheat [[Wheat]]:`
-- `islandCropSquareCarrot`
-- `Patch of Carrots [[Carrot]]:`
-- `islandCropSquarePlanted`
-- `Planted {{have}}/{{need}}`
-- `islandCropSquareGrown`
-- `Grown {{have}}/{{need}}`
-- `profilesCategory`
-- `Profiles`
-- `profilesCategoryDescription`
-- `Play up to 3 profiles, each with its own island and progress.`
-
-## 削除された文字列(先頭80件)
-- `${dd}`
-- `${hd}`
-- `${pd}`
-- `${Ld}`
-- `Potion Table`
-- `metricShortSessions`
-- `Left Within {{minutes}} Minutes`
-- `metricShortSessionsInfo`
-- `The share of play sessions that ended before {{minutes}} minutes, over the {{range}}. These are players who left almost `
-- `Gather 32 Messy Stone [[Messy Stone]]`
-- `Mine Stone [[Stone]] at Ruby\'s Rockpile in the Hub until you have 32 Messy Stone [[Messy Stone]].`
-- `Bring 32 Messy Stone [[Messy Stone]] to Spencer`
-- `Bring the 32 Messy Stone [[Messy Stone]] back to me on your island.`
-- `Just {{remaining}} more Messy Stone [[Messy Stone]] to go! Mine Stone [[Stone]] at Ruby\'s Rockpile in the Hub.`
-- `),Id=JSON.parse(`
-- `Vd~zA&lt;+g|P%u01;,6?[^9.$e',dd[Pd[0]]=`
-- `+(dd[Pd[1]]||`
-- `):Vd(dd[Pd[1]])}function Xp(){Xp=function(){}}function Cp(dd,pd,Xd){return[{entityName:pd,ranks:dd,style:{colour:Xd?od.t`
-- `,'C]n=X(tT2`
-- `,&quot;LrAc$Oo5|YZ&lt;&gt;&lt;H/&lt;dJ29[z#8o}=m&quot;,&quot;5!Y3=^[p&amp;y8qHj8&quot;,`
-- `M[L;;/c]!?a',`
-- `,']pmZ7?}Shq`
-- `i^~)&gt;;sl2u;x:T{uS1(mCU8'+p','fyU&gt;brr7pj'&gt;[M5!QhB+Iu`
-- `,&quot;x&amp;/c3nvB&lt;qAwR!5!k3R&lt;}SnbPtAm?:g/g2J#+75RBW&lt;Vv(,X4A$&amp;E;E|H&quot;,&quot;GgAH%~@h_n,z}6oQ~qo&gt;(@miayBbP6rlSqSow)l:LWW0&amp;,&gt;*&quot;,`
-- `R26zE2P2rc[[zdH','Xx}&lt;D~{@yY[Wr,M:52&lt;8?Jp;cj[S(,`
-- `ga@L(m&lt;uieQpx7&amp;[sz=BWc1Uz'!1=q%*(IyaW',`
-- `,'#sa8U,!#(tdi`
-- `,&quot;%sTl[AW#Y8AIm?|R2hM3Xu&amp;l;y%;W_LR[+VI&amp;%bbk&quot;,&quot;GxIf7?::,jq&lt;Xis!H3?2FgvWz@xPIA?ZBp&lt;3kXP#:{LqiH_C&quot;,&quot;Jd,I}^,hJ4J+m&quot;,`
-- `&lt;[[jjboiF$G]*|%#|/MH',`
-- `,&quot;F7r#^u&gt;Mbng1'HWUX{[#&amp;r!1V8RL?jlpp&amp;0=T;(Q}&quot;,&quot;0=x25za&quot;,`
-- `Suc3Xl{rcz0?XE',`
-- `,&quot;&gt;!w2sdiEJ(mYi'#Z6YQ&amp;V'8Q8o8=ziD&quot;,&quot;qhd){Xdyiq$Ce~&lt;RD*_oYUx5GJiL&lt;(BG&amp;2[)&gt;/1hE&quot;,`
-- `+l_WhP*AH'|a',`
-- `,'DdMca&lt;Mf^@_c1}rCMY^#0/fT+q`
-- `,&quot;P&amp;qlTbC@U@BW(/y/lY&amp;%i6&amp;*bjX')cZp:{jf{b,^H&quot;,&quot;3qkD0~a&quot;,`
-- `dj#I:d^H3|I!_ZQ|sJHKClRBj[jB}=','qr2H{z`
-- `y#PaZ}Mjm',`
-- `,'RWO|:h*l|(x+j,eFTNu&gt;vxp:W7@`
-- `,&quot;B3~o:hVLvSm5:TdW8W/2&lt;X*lxBMD+{EWx7%P1/8EX8CX:@l*&quot;,`
-- `K235E+@uc$Htqp8hcBXu#Mp~W8'(:J+3EWuLEgpoP2,8UE]pZ&gt;','.(;=h:mRG4h0c_4!}7$I;;8QG(sE!c!&gt;2*gK7rd^f`
-- `,&quot;G&amp;iZ/,Jd=BjJ${Tp7*#%R&quot;,&quot;#Xa38Ja&quot;,&quot;Nd~)vrw#C7BIXxrG~&gt;}%oza&quot;,&quot;r80HP~eMpy&lt;V(tthG7*P{UR5|tc&quot;,&quot;Vx5HeskLUqzWqZ%Rvg6SC|r5y(XP`
-- `:/&amp;Z0s[Aa{9:Br1{m','r(6%iP.hc7K3#(&amp;ZxgU#(zoLrrX}H6xR&lt;}`
-- `,&quot;kW(II3x;vnhMn(]R;YfcK;]7GY4|=)(l}:%g;~G#Gtb(0T+/3qU+nU=fk&quot;,&quot;d&gt;P!F;w^#3o&quot;,&quot;&amp;8h+*()hE&quot;,`
-- `8bo#(&amp;Qz3r+q#o[){xD&lt;Z]!=m','I'9&gt;7z#1f`
-- `,'eTHWgyR`
-- `,&quot;0TQ)&lt;ebER{0Zkvn_D61:f:G!a!2t3k|&lt;LYAW)~%waE=9Cv&quot;,`
-- `iQtnjL5i7JUc)',`
-- `,'q@D)Dt,E1Zyp:zkioTG`
-- `,'S2m`
-- `Ao~x}x)',`
-- `,'TE+;.'Z+JtuHNjeGYN3`
-- `t?;Vf:(386cl;r!/OTE~%OTSjb._D_|F',`
-- `,'!Pk%T_;s_yL_qk}G2Tx;MPp%rNb*hHi7$@`
-- `&amp;z==Qti:{hPY4',`
-- `,''u5?rV`
-- `,&quot;qr];6=]B[o@9}=(90GK:h8t:Kzx&quot;,&quot;XEA77Pz{cuLi1&quot;,&quot;HT1u3*dS[N7b7tWji(umu5mL+uJpd=z&quot;,&quot;wE2T$k=ZCu%&amp;F8&lt;Bt8&lt;33elsFcMyJm'G&lt;3~w*H`
-- `YkSUg$kc7&gt;m!m?!&gt;?'?lb78`
-- `x}?dX$HF',`
-- `,'I263zS&gt;w4.6`
-- `,&quot;kThsST8.Ec&lt;XO4&quot;,&quot;H(N7*?7Z'6&quot;,&quot;HN};e$yM@{t}3'nMW,K;vJG.@#,od=B/TF&quot;,&quot;OzBu2Q^9sL&quot;,`
-- `+?cA!Zc'1'DM+Di3upW$Z*}Xjkv_bNgs_oyYtX','#,Ge;t%%TL2zF8nilT{3dsLO)NL:E652SUp8|u?1]EnYv=d2_`
-- `,'%Y%w5k}?wX1l`
-- `iS2]%2,Js*t(YEGx2?@AuK','B(hm@,gB3)/bk0[K^v4xKWHyi.CJM&gt;02V`
-- `,&quot;^Xo3v'QB}X?&quot;,&quot;$TpKE~uJ!!C&lt;^'WGPN(T[QuJm!^Si8uP9K+&quot;,&quot;~@Us^$$wM!}To&amp;%UCHnWMW(1pNbH&gt;CX7,7_g=u=Z=y]jvHSD|'%4&quot;,&quot;46^w$$nZRZ2`
-- `#{',`
-- `,'+mXg#YTwA!G7%ltk_%1&amp;Buf1qN`
-- `,'autpD^:%/cE:KzU7s`
-- `pt;vF8ni`
-- `,&quot;*3A7}xfw;3S;RjyB?v@gd@{M;SSmqV8_1P&gt;J.&quot;,&quot;I9Lp2t/!EN3T_4I25'.s.OKM:zCjOb|lTKBTc&quot;,`
-- `/%P{sIy+.dz{LF*e/eN4y7zT$itPLUXdWMWisHyue5HjBASJpkV*+',`
-- `,'@_875RuPR?=)ujcDW98eS?yPB9K`
-- `r,B$d.wMtH2_S@j&amp;XxT%p?'VDxG_yXK&amp;Gu{Yi.','[Et;&lt;=cB&amp;(uHCV{=!`
-- `4.(7k0PKDu|{ON;Ze9JDs&amp;FMN74)Oe`
-- `O_i','BEmuT:UO@twXjkcD*,A4g2Pk#Lx}9kgB&lt;,U`
-- `R48ORypt&gt;y.'iD[9:;'T0.fo?Zo&amp;v9k*&gt;gxH?1',`
-- `,'#@h7uo..;co}}5?Dy,ju`
-- `DP}.w)',`
-- `,'Z!r:ItzY`
-- `X*6ej',`
-- `uJ&gt;vJJPaEY4F6$ZY3s)f5HY39`
-
-## チャンク
-- 追加: 202
-- 追加: 203
-- 追加: 204
-- 追加: 205
-- 追加: 206
-- 変更: 8
-- 変更: 9
-- 変更: 10
-- 変更: 11
-- 変更: 12
-- 変更: 13
-- 変更: 14
-- 変更: 15
-- 変更: 16
-- 変更: 17
-- 変更: 18
-- 変更: 19
-- 変更: 20
-- 変更: 21
-- 変更: 22
-- 変更: 23
-- 変更: 24
-- 変更: 25
-- 変更: 26
-- 変更: 27
-- 変更: 28
-- 変更: 29
-- 変更: 30
-- 変更: 31
-- 変更: 32
-- 変更: 33
-- 変更: 34
-- 変更: 35
-- 変更: 36
-- 変更: 37
-- 変更: 38
-- 変更: 39
-- 変更: 40
-- 変更: 41
-- 変更: 42
-- 変更: 43
-- 変更: 44
-- 変更: 45
-- 変更: 46
-- 変更: 47
-- 変更: 48
-- 変更: 49
-- 変更: 50
-- 変更: 51
-- 変更: 52
-- 変更: 53
-- 変更: 54
-- 変更: 55
-- 変更: 56
-- 変更: 57
-- 変更: 58
-- 変更: 59
-- 変更: 60
-- 変更: 61
-- 変更: 62
-- 変更: 63
-- 変更: 64
-- 変更: 65
-- 変更: 66
-- 変更: 67
-- 変更: 68
-- 変更: 69
-- 変更: 70
-- 変更: 71
-- 変更: 72
-- 変更: 73
-- 変更: 74
-- 変更: 75
-- 変更: 76
-- 変更: 77
-- 変更: 78
-- 変更: 79
-- 変更: 80
-- 変更: 81
-- 変更: 82
-- 変更: 83
-- 変更: 84
-- 変更: 85
-- 変更: 86
-- 変更: 87
-- 変更: 88
-- 変更: 89
-- 変更: 90
-- 変更: 91
-- 変更: 92
-- 変更: 93
-- 変更: 94
-- 変更: 95
-- 変更: 96
-- 変更: 97
-- 変更: 98
-- 変更: 99
-- 変更: 100
-- 変更: 101
-- 変更: 102
-- 変更: 103
-- 変更: 104
-- 変更: 105
-- 変更: 106
-- 変更: 107
-- 変更: 108
-- 変更: 109
-- 変更: 110
-- 変更: 111
-- 変更: 112
-- 変更: 113
-- 変更: 114
-- 変更: 115
-- 変更: 116
-- 変更: 117
-- 変更: 118
-- 変更: 119
-- 変更: 120
-- 変更: 121
-- 変更: 122
-- 変更: 123
-- 変更: 124
-- 変更: 125
-- 変更: 126
-- 変更: 127
-- 変更: 128
-- 変更: 129
-- 変更: 130
-- 変更: 131
-- 変更: 132
-- 変更: 133
-- 変更: 134
-- 変更: 135
-- 変更: 136
-- 変更: 137
-- 変更: 138
-- 変更: 139
-- 変更: 140
-- 変更: 141
-- 変更: 142
-- 変更: 143
-- 変更: 144
-- 変更: 145
-- 変更: 146
-- 変更: 147
-- 変更: 148
-- 変更: 149
-- 変更: 150
-- 変更: 151
-- 変更: 152
-- 変更: 153
-- 変更: 154
-- 変更: 155
-- 変更: 156
-- 変更: 157
-- 変更: 158
-- 変更: 159
-- 変更: 160
-- 変更: 161
-- 変更: 162
-- 変更: 163
-- 変更: 164
-- 変更: 165
-- 変更: 166
-- 変更: 167
-- 変更: 168
-- 変更: 169
-- 変更: 170
-- 変更: 171
-- 変更: 172
-- 変更: 173
-- 変更: 174
-- 変更: 175
-- 変更: 176
-- 変更: 177
-- 変更: 178
-- 変更: 179
-- 変更: 180
-- 変更: 181
-- 変更: 182
-- 変更: 183
-- 変更: 184
-- 変更: 185
-- 変更: 186
-- 変更: 187
-- 変更: 188
-- 変更: 189
-- 変更: 190
-- 変更: 191
-- 変更: 192
-- 変更: 193
-- 変更: 194
-- 変更: 195
-- 変更: 196
-- 変更: 197
-- 変更: 198
-- 変更: 199
-- 変更: 200
-- 変更: 201
-- 変更: babylon-backend
-- 変更: errorLogging
-- 変更: fa-renderer
-- 変更: icons-brands
-- 変更: icons-duotone
-- 変更: icons-regular
-- 変更: icons-solid
-
-注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <details class="trace"><summary><span>🔍 サーバーまわりの痕跡(自動チェック)</summary>
-<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/21 09:30</p>
-<dl><dt>オリジンの Server 表示</dt><dd>取得できず(存在しないファイルの 404 ページより)</dd>
+<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/21 10:01</p>
+<dl><dt>オリジンの Server 表示</dt><dd>nginx/1.18.0 (Ubuntu)(存在しないファイルの 404 ページより)</dd>
 <dt>ソースマップ</dt><dd>配信なし(すべて 404)</dd>
 <dt>ワーカー</dt><dd>なし</dd>
 <dt>ゲーム本体のチャンク</dt><dd>見つからず 番(全 385 個)</dd></dl>
-<p class="muted">最近の変化:</p><ul><li>2026/11/21 04:31 ビルド: bbb6l5 → halsg</li><li>2026/11/21 01:01 ビルド: bcgkc → bbb6l5</li><li>2026/11/21 00:01 ビルド: qepqb8 → bcgkc</li><li>2026/11/20 23:01 ビルド: 7rj44 → qepqb8</li><li>2026/11/20 21:31 ビルド: teusab → 7rj44</li><li>2026/11/20 20:01 ビルド: fsa8nn → teusab</li><li>2026/11/20 19:01 ビルド: 6ndy1f → fsa8nn</li><li>2026/11/20 16:31 ビルド: q3ynmh → 6ndy1f</li></ul></div></details>
+<p class="muted">最近の変化:</p><ul><li>2026/11/21 10:01 ビルド: halsg → x17cru</li><li>2026/11/21 04:31 ビルド: bbb6l5 → halsg</li><li>2026/11/21 01:01 ビルド: bcgkc → bbb6l5</li><li>2026/11/21 00:01 ビルド: qepqb8 → bcgkc</li><li>2026/11/20 23:01 ビルド: 7rj44 → qepqb8</li><li>2026/11/20 21:31 ビルド: teusab → 7rj44</li><li>2026/11/20 20:01 ビルド: fsa8nn → teusab</li><li>2026/11/20 19:01 ビルド: 6ndy1f → fsa8nn</li></ul></div></details>
 <details class="trace"><summary><span>📐 ゲームの数値の変化(自動チェック)</span></summary>
 <div class="en"><p class="muted">武器・弓・防具の数値(ダメージ、射程、ノックバック、防御など)と、鉱石の出方を、ビルドが変わるたびに前回と比べた記録です。文言の変化とは別に、バランス調整を見つけます。記録は 890cfc から始まり、いま 209 個のアイテムの数値を見ています。</p>
 <p class="muted">記録を始めてから、数値が変わったことはまだありません。</p></div></details>
 <details class="trace"><summary><span>🔢 ブロック・アイテムの番号(ID)の変化</span></summary>
-<div class="en"><p class="muted">ブロックとアイテムには、ゲームの中で番号(ID)が付いています。新しい物が間に入ると、後ろの物の番号がずれます。ワールドコードや保存データで番号を直接使っている人は、ここを見てください。元データは、第三者が公開している一覧(imu31465/Bloxd-Entries-Data)で、ゲームのコードを実行して取り出したものです。いま 10091 件(相手のビルド halsg、こちらの確認と同じビルド)。</p>
-<p class="muted">2026/11/21 04:31(bbb6l5 → halsg、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/21 01:01(bcgkc → bbb6l5、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/21 00:01(qepqb8 → bcgkc、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/20 23:01(7rj44 → qepqb8、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/20 21:31(teusab → 7rj44、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/20 20:01(fsa8nn → teusab、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/20 19:01(6ndy1f → fsa8nn、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/20 17:01(q3ynmh → 6ndy1f、10091 → 10091 件)</p><ul></ul></div></details>
+<div class="en"><p class="muted">ブロックとアイテムには、ゲームの中で番号(ID)が付いています。新しい物が間に入ると、後ろの物の番号がずれます。ワールドコードや保存データで番号を直接使っている人は、ここを見てください。元データは、第三者が公開している一覧(imu31465/Bloxd-Entries-Data)で、ゲームのコードを実行して取り出したものです。いま 10091 件(相手のビルド x17cru、こちらの確認と同じビルド)。</p>
+<p class="muted">2026/11/21 10:01(halsg → x17cru、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/21 04:31(bbb6l5 → halsg、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/21 01:01(bcgkc → bbb6l5、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/21 00:01(qepqb8 → bcgkc、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/20 23:01(7rj44 → qepqb8、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/20 21:31(teusab → 7rj44、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/20 20:01(fsa8nn → teusab、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/20 19:01(6ndy1f → fsa8nn、10091 → 10091 件)</p><ul></ul></div></details>
 <h2>🕒 確認の履歴</h2>
-<div class="tablewrap"><table><tr><td>2026/11/21 09:00</td><td><span class="tag ok">変更なし</span></td><td>halsg</td></tr>
+<div class="tablewrap"><table><tr><td>2026/11/21 10:00</td><td><span class="tag chg">更新</span></td><td>文字列 +4356/-4270</td></tr>
+<tr><td>2026/11/21 09:00</td><td><span class="tag ok">変更なし</span></td><td>halsg</td></tr>
 <tr><td>2026/11/21 04:30</td><td><span class="tag chg">更新</span></td><td>文字列 +4291/-4272</td></tr>
 <tr><td>2026/11/21 01:00</td><td><span class="tag chg">更新</span></td><td>文字列 +8979/-7486</td></tr>
 <tr><td>2026/11/21 00:00</td><td><span class="tag chg">更新</span></td><td>文字列 +7417/-8017</td></tr>
