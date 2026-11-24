@@ -69,14 +69,27 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <p><a class="rbtn" href="ref/">📚 Detailed analysis documents</a><a class="rbtn" href="seedmap/map.html">🗺️ Seed map</a><a class="rbtn" href="guide/enchant.html">✨ Enchantment quick table</a> <a class="rbtn" href="guide/enchant-best.html">🏆 Best enchantment combinations</a> <a class="rbtn" href="guide/world.html">🌍 How worlds are generated</a></p></div></div>
 <main>
 <section class="status">
-<div class="stat"><b>Last checked</b><span id="lc">2026-11-24 03:00 UTC</span></div>
-<div class="stat"><b>Current build</b><span>fqwnlq</span></div>
-<div class="stat"><b>Updates detected</b><span>48</span></div>
-<div class="stat"><b>Last update</b><span>2026-11-24 03:00 UTC</span></div>
+<div class="stat"><b>Last checked</b><span id="lc">2026-11-24 04:00 UTC</span></div>
+<div class="stat"><b>Current build</b><span>31kiid</span></div>
+<div class="stat"><b>Updates detected</b><span>49</span></div>
+<div class="stat"><b>Last update</b><span>2026-11-24 04:00 UTC</span></div>
 </section>
 <h2>✨ Updates and in-game changes</h2>
 <article class="upd latest">
-<div class="meta"><span class="new">Latest</span><time>2026-11-24 03:00 UTC</time><span class="build">31kiid → fqwnlq</span></div>
+<div class="meta"><span class="new">Latest</span><time>2026-11-24 04:00 UTC</time><span class="build">fqwnlq → 31kiid</span></div>
+<h3>Build updated from fqwnlq to 31kiid</h3>
+<div class="chips"></div>
+
+
+<p class="muted">An English summary has not been written for this update yet. The Japanese version has one if it is available.</p>
+
+
+<details class="dev"><summary>🔧 Technical details (you can usually skip this)</summary><dl>
+<dt>Build</dt><dd>fqwnlq / 985c8f39 → 31kiid / 1299b0d6</dd>
+<dt>main.js strings</dt><dd>4341 added / 5904 removed. Renamed variables create many apparent differences, so this is not the same as in-game changes.</dd>
+<dt>Chunks</dt><dd>0 added / 0 removed / 392 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
+<article class="upd">
+<div class="meta"><time>2026-11-24 03:00 UTC</time><span class="build">31kiid → fqwnlq</span></div>
 <h3>Build updated from 31kiid to fqwnlq</h3>
 <div class="chips"></div>
 
@@ -730,57 +743,22 @@ Private: no one else can join</p></div></li></ul></details><details class="sec">
 <dt>Build</dt><dd>7rp1w / 57cd8edd → j3ktyq / 3c8c7aed</dd>
 <dt>main.js strings</dt><dd>5454 added / 5489 removed. Renamed variables create many apparent differences, so this is not the same as in-game changes.</dd>
 <dt>Chunks</dt><dd>6 added / 0 removed / 353 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
-<article class="upd">
-<div class="meta"><time>2026-11-11 16:30 UTC</time><span class="build">itj4su → 7rp1w</span></div>
-<h3>The game was reorganised to load through WebAssembly (wasm). World generation changed form (old file gone). New screens for crash, load failure and disconnect; block/ignore list limits; stronger account-deletion wording; a Greenville tutorial.</h3>
-<div class="chips"><span class="chip add">+ 27 new strings</span><span class="chip chg">~ 16 rewritten</span></div>
-<div class="pts"><div class="pt player"><div class="ico">⚙️</div><div class="ptb">
-<div class="ptt"><span class="who">Everyone (internals)</span><h4>Game core reorganised around WebAssembly</h4></div>
-
-<span class="cert">Confidence: File names and wording confirmed / purpose a guess</span></div></div><div class="pt player"><div class="ico">🛑</div><div class="ptb">
-<div class="ptt"><span class="who">Players</span><h4>Dedicated screens for load failure, crash and disconnect (wasm)</h4></div>
-
-<span class="cert">Confidence: Wording certain</span></div></div><div class="pt maker"><div class="ico">🌍</div><div class="ptb">
-<div class="ptt"><span class="who">Creators and researchers</span><h4>The world-generation program changed form (with a wasm encoder)</h4></div>
-
-<span class="cert">Confidence: Confirmed (old file no longer served) / details undecoded</span></div></div><div class="pt player"><div class="ico">🚫</div><div class="ptb">
-<div class="ptt"><span class="who">Players</span><h4>Block / ignore list limits; friend requests to blocked players</h4></div>
-
-<span class="cert">Confidence: Wording certain / the limit is unknown</span></div></div><div class="pt player"><div class="ico">🗑️</div><div class="ptb">
-<div class="ptt"><span class="who">Players</span><h4>Account-deletion explanation is stronger</h4></div>
-
-<span class="cert">Confidence: Wording certain</span></div></div><div class="pt maker"><div class="ico">🎨</div><div class="ptb">
-<div class="ptt"><span class="who">Players and creators</span><h4>Shader-pack status display and confirmations</h4></div>
-
-<span class="cert">Confidence: Wording certain</span></div></div><div class="pt player"><div class="ico">⛏️</div><div class="ptb">
-<div class="ptt"><span class="who">Players</span><h4>Greenville first-time tutorial; One Block skill hints</h4></div>
-
-<span class="cert">Confidence: Wording certain</span></div></div></div>
-
-
-
-<details class="en"><summary>📖 Original in-game text (added, rewritten and removed lines)</summary><details class="sec"><summary><span>wasmScreens</span><em>+13 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>unsupportedTitle</code><p>This browser can’t run Bloxd</p></div></li><li class="a"><i>+</i><div><code>unsupportedHelp</code><p>Update your browser or open Bloxd in another one to play.</p></div></li><li class="a"><i>+</i><div><code>downloadFailedTitle</code><p>The game couldn’t finish loading</p></div></li><li class="a"><i>+</i><div><code>downloadFailedHelp</code><p>Check your internet connection and try again.</p></div></li><li class="a"><i>+</i><div><code>crashTitle</code><p>The game stopped working</p></div></li><li class="a"><i>+</i><div><code>crashHelp</code><p>Reload to keep playing, and if it keeps happening, report code {{code}} on our Discord.</p></div></li><li class="a"><i>+</i><div><code>crashHelpNoDiscord</code><p>Reload to keep playing, or come back later if it keeps happening. Code: {{code}}</p></div></li><li class="a"><i>+</i><div><code>reportOnDiscord</code><p>Open Discord</p></div></li><li class="a"><i>+</i><div><code>disconnectedTitle</code><p>You have disconnected from the server</p></div></li><li class="a"><i>+</i><div><code>disconnectedHelp</code><p>{{reason}}</p></div></li><li class="a"><i>+</i><div><code>reconnectingHelp</code><p>{{reason}}
-
-Reconnecting...</p></div></li><li class="a"><i>+</i><div><code>turnstilePageTitle</code><p>Can’t join from this page</p></div></li><li class="a"><i>+</i><div><code>turnstilePageHelp</code><p>Open bloxd.io/play to join this game.</p></div></li></ul></details><details class="sec"><summary><span>shaderPack</span><em>+4 ~8 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>statusFailedRecheckListed</code><p>It stopped working after a Bloxd update, so games that use it won't start. Remove it, or wait for its author's fix.</p></div></li><li class="a"><i>+</i><div><code>statusNoCompiler</code><p>Shader packs couldn't load, so this one won't run until you reload the page.</p></div></li><li class="a"><i>+</i><div><code>compilerUnavailable</code><p>Shader packs couldn't load, so reload the page to try again.</p></div></li><li class="a"><i>+</i><div><code>loadKeepCircleShadowsNotBoolean</code><p>pack.json's &quot;keepCircleShadows&quot; must be true or false.</p></div></li><li class="c"><i>~</i><div><code>statusReady</code><p class="from">Ready to use</p><p>Ready to use.</p></div></li><li class="c"><i>~</i><div><code>statusNoWebGpu</code><p class="from">Games that use it won't start without WebGPU, so remove it to play them.</p><p>Games that use it won't start, so remove it to play them.</p></div></li><li class="c"><i>~</i><div><code>statusFailed</code><p class="from">Saved, but it won't run until you fix these errors and load it again.</p><p>It won't run until you fix these errors and load it again.</p></div></li><li class="c"><i>~</i><div><code>statusWrongApiVersion</code><p class="from">This shader pack is for API version {{packVersion}}, so it won't run. Load a version {{version}} pack to replace it.</p><p>This pack is for shader pack API version {{packVersion}}, so it won't run. Load a version {{version}} pack to replace it.</p></div></li><li class="c"><i>~</i><div><code>unexpectedError</code><p class="from">Something went wrong. Please try again.</p><p>Something went wrong. Try again.</p></div></li><li class="c"><i>~</i><div><code>failedToCompile</code><p class="from">It failed to compile in this game: fix it and load it again, or remove it.</p><p>It failed to compile in this game.</p></div></li><li class="c"><i>~</i><div><code>failedValidation</code><p class="from">It has errors with this version of Bloxd, listed in the shader pack settings.</p><p>It has errors with this version of Bloxd, listed in Shader Pack settings.</p></div></li><li class="c"><i>~</i><div><code>loadTooManyZipEntries</code><p class="from">The zip has more than {{count}} entries.</p><p>The zip has more than {{count}} files and folders.</p></div></li></ul></details><details class="sec"><summary><span>shaderPackListing</span><em>+0 ~7 -0</em></summary><ul class="diff"><li class="c"><i>~</i><div><code>searchPlaceholder</code><p class="from">Search Shader Packs</p><p>Search shader packs</p></div></li><li class="c"><i>~</i><div><code>useFailsHere</code><p class="from">This pack has errors on this device, so it can't run here.</p><p>This pack has errors on this device, so it can't run.</p></div></li><li class="c"><i>~</i><div><code>ownerBroken</code><p class="from">It stopped working after a game update, so it's hidden until you upload a fix.</p><p>It stopped working after a Bloxd update, so it's hidden until you upload a fix.</p></div></li><li class="c"><i>~</i><div><code>ownerUpdateFailed</code><p class="from">Your latest upload failed when its screenshots were generated, so players get your previous version.</p><p>Your latest upload failed when its screenshots were generated, so players get your previous version until you upload a fix.</p></div></li><li class="c"><i>~</i><div><code>ownerFirstFailed</code><p class="from">It failed when its screenshots were generated, so only you can see it.</p><p>It failed when its screenshots were generated, so only you can see it until you upload a fix.</p></div></li><li class="c"><i>~</i><div><code>ownerActionFailed</code><p class="from">Couldn't save that. Try again.</p><p>Couldn't make that change. Try again.</p></div></li><li class="c"><i>~</i><div><code>uploadIntro</code><p class="from">Players get it as soon as you upload it. New screenshots are generated at most every 30 minutes.</p><p>Players get it as soon as you upload it. New screenshots are generated at most every {{minutes}} minutes.</p></div></li></ul></details><details class="sec"><summary><span>texturePackLoad</span><em>+6 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>failedTitle</code><p>The game couldn't finish loading</p></div></li><li class="a"><i>+</i><div><code>failedHelp</code><p>Try again, and if it keeps happening, report code {{code}} on our Discord.</p></div></li><li class="a"><i>+</i><div><code>failedHelpCustomPack</code><p>Try again or switch to the Default 2 texture pack in settings. If it keeps happening, report code {{code}} on our Discord.</p></div></li><li class="a"><i>+</i><div><code>failedHelpNoDiscord</code><p>Try again, or come back later if it keeps happening. Code: {{code}}</p></div></li><li class="a"><i>+</i><div><code>failedHelpCustomPackNoDiscord</code><p>Try again or switch to the Default 2 texture pack in settings. Code: {{code}}</p></div></li><li class="a"><i>+</i><div><code>reportOnDiscord</code><p>Open Discord</p></div></li></ul></details><details class="sec"><summary><span>socialBar</span><em>+4 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>unblockToAddFriend</code><p>Unblock {{playerName}} to add them as a friend</p></div></li><li class="a"><i>+</i><div><code>cantBlockOrIgnoreYourself</code><p>You can't block or ignore yourself</p></div></li><li class="a"><i>+</i><div><code>tooManyBlockedPlayers</code><p>Your block list is full. Unblock someone to block {{playerName}}.</p></div></li><li class="a"><i>+</i><div><code>tooManyIgnoredPlayers</code><p>Your ignore list is full. Unignore someone to ignore {{playerName}}.</p></div></li></ul></details><details class="sec"><summary><span>auth</span><em>+0 ~1 -0</em></summary><ul class="diff"><li class="c"><i>~</i><div><code>deleteAccountButtonTitle</code><p class="from">Removes personally-identifiable information (such as email) from Bloxd databases, unlinks account from external-authentication services (such as Google), and resets account to anonymous state.</p><p>Removes your personal information (such as your email and friends), unlinks sign-in services such as Google, and signs you out. Anything left on this account, including purchases and progress, can't be recovered.</p></div></li></ul></details></details>
-<details class="dev"><summary>🔧 Technical details (you can usually skip this)</summary><dl>
-<dt>Build</dt><dd>itj4su / d11e9e80 → 7rp1w / 57cd8edd</dd>
-<dt>main.js strings</dt><dd>6017 added / 4159 removed. Renamed variables create many apparent differences, so this is not the same as in-game changes.</dd>
-<dt>Chunks</dt><dd>138 added / 50 removed / 215 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
 <details class="trace"><summary><span>🔍 Server traces (automatic check)</span></summary>
-<div class="en"><p class="muted">Observations of publicly served files, taken at every update. The inside of the server is not visible. Checked at 2026-11-24 03:31 UTC.</p>
+<div class="en"><p class="muted">Observations of publicly served files, taken at every update. The inside of the server is not visible. Checked at 2026-11-24 04:01 UTC.</p>
 <dl><dt>Origin "Server" header</dt><dd>nginx/1.24.0 (Ubuntu) (from the 404 page of a missing file)</dd>
 <dt>Source maps</dt><dd>none served (all 404)</dd>
 <dt>Workers</dt><dd>none</dd>
 <dt>Game chunk</dt><dd>not found (of 392 chunks)</dd></dl>
-<p class="muted">Recent changes:</p><ul><li>2026-11-24 03:01 UTC Build: 31kiid → fqwnlq</li><li>2026-11-23 22:31 UTC Build: w4ddu → 31kiid</li><li>2026-11-23 16:01 UTC Build: 3lwmg → w4ddu</li><li>2026-11-22 14:31 UTC Build: bqoxjr → 3lwmg</li><li>2026-11-21 03:31 UTC Build: x17cru → bqoxjr</li><li>2026-11-21 01:01 UTC Build: halsg → x17cru</li><li>2026-11-20 19:31 UTC Build: bbb6l5 → halsg</li><li>2026-11-20 16:01 UTC Build: bcgkc → bbb6l5</li></ul></div></details>
+<p class="muted">Recent changes:</p><ul><li>2026-11-24 04:01 UTC Build: fqwnlq → 31kiid</li><li>2026-11-24 03:01 UTC Build: 31kiid → fqwnlq</li><li>2026-11-23 22:31 UTC Build: w4ddu → 31kiid</li><li>2026-11-23 16:01 UTC Build: 3lwmg → w4ddu</li><li>2026-11-22 14:31 UTC Build: bqoxjr → 3lwmg</li><li>2026-11-21 03:31 UTC Build: x17cru → bqoxjr</li><li>2026-11-21 01:01 UTC Build: halsg → x17cru</li><li>2026-11-20 19:31 UTC Build: bbb6l5 → halsg</li></ul></div></details>
 <details class="trace"><summary><span>📐 Game number changes (automatic check)</span></summary>
 <div class="en"><p class="muted">Weapon, bow and armor numbers (damage, range, knockback, defence and so on) and ore generation are compared with the previous build every time the build changes. This catches balance changes that are not visible in the text. Recording began at 890cfc; 209 items are tracked now.</p>
 <p class="muted">No number has changed since recording began.</p></div></details>
 <details class="trace"><summary><span>🔢 Block and item ID changes</span></summary>
-<div class="en"><p class="muted">Every block and item has a numeric ID in the game. When a new one is inserted, the IDs after it shift. Check this if your world code or saved data uses raw IDs. The source is a third-party list (imu31465/Bloxd-Entries-Data) produced by running the game code. It currently has 10091 entries (their build fqwnlq, the same build as ours).</p>
-<p class="muted">2026-11-24 03:01 UTC (31kiid → fqwnlq, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-23 22:31 UTC (w4ddu → 31kiid, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-23 16:01 UTC (3lwmg → w4ddu, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-22 14:31 UTC (bqoxjr → 3lwmg, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-21 03:31 UTC (x17cru → bqoxjr, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-21 01:01 UTC (halsg → x17cru, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-20 19:31 UTC (bbb6l5 → halsg, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-20 16:01 UTC (bcgkc → bbb6l5, 10091 → 10091 entries)</p><ul></ul></div></details>
+<div class="en"><p class="muted">Every block and item has a numeric ID in the game. When a new one is inserted, the IDs after it shift. Check this if your world code or saved data uses raw IDs. The source is a third-party list (imu31465/Bloxd-Entries-Data) produced by running the game code. It currently has 10091 entries (their build 31kiid, the same build as ours).</p>
+<p class="muted">2026-11-24 04:01 UTC (fqwnlq → 31kiid, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 03:01 UTC (31kiid → fqwnlq, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-23 22:31 UTC (w4ddu → 31kiid, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-23 16:01 UTC (3lwmg → w4ddu, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-22 14:31 UTC (bqoxjr → 3lwmg, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-21 03:31 UTC (x17cru → bqoxjr, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-21 01:01 UTC (halsg → x17cru, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-20 19:31 UTC (bbb6l5 → halsg, 10091 → 10091 entries)</p><ul></ul></div></details>
 <h2>🕒 Check history</h2>
-<div class="tablewrap"><table><tr><td>2026-11-24 03:00 UTC</td><td><span class="tag chg">updated</span></td><td>strings +5904/-4341</td></tr>
+<div class="tablewrap"><table><tr><td>2026-11-24 04:00 UTC</td><td><span class="tag chg">updated</span></td><td>strings +4341/-5904</td></tr>
+<tr><td>2026-11-24 03:00 UTC</td><td><span class="tag chg">updated</span></td><td>strings +5904/-4341</td></tr>
 <tr><td>2026-11-24 00:00 UTC</td><td><span class="tag ok">no change</span></td><td>31kiid</td></tr>
 <tr><td>2026-11-23 22:30 UTC</td><td><span class="tag chg">updated</span></td><td>strings +4718/-4589</td></tr>
 <tr><td>2026-11-23 16:00 UTC</td><td><span class="tag chg">updated</span></td><td>strings +4462/-4963</td></tr>
