@@ -69,14 +69,27 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <p><a class="rbtn" href="ref/">📚 Detailed analysis documents</a><a class="rbtn" href="seedmap/map.html">🗺️ Seed map</a><a class="rbtn" href="guide/enchant.html">✨ Enchantment quick table</a> <a class="rbtn" href="guide/enchant-best.html">🏆 Best enchantment combinations</a> <a class="rbtn" href="guide/world.html">🌍 How worlds are generated</a></p></div></div>
 <main>
 <section class="status">
-<div class="stat"><b>Last checked</b><span id="lc">2026-11-24 20:30 UTC</span></div>
-<div class="stat"><b>Current build</b><span>7zvlu</span></div>
-<div class="stat"><b>Updates detected</b><span>54</span></div>
-<div class="stat"><b>Last update</b><span>2026-11-24 20:30 UTC</span></div>
+<div class="stat"><b>Last checked</b><span id="lc">2026-11-24 23:00 UTC</span></div>
+<div class="stat"><b>Current build</b><span>c6gaap</span></div>
+<div class="stat"><b>Updates detected</b><span>55</span></div>
+<div class="stat"><b>Last update</b><span>2026-11-24 23:00 UTC</span></div>
 </section>
 <h2>✨ Updates and in-game changes</h2>
 <article class="upd latest">
-<div class="meta"><span class="new">Latest</span><time>2026-11-24 20:30 UTC</time><span class="build">yma3ej → 7zvlu</span></div>
+<div class="meta"><span class="new">Latest</span><time>2026-11-24 23:00 UTC</time><span class="build">7zvlu → c6gaap</span></div>
+<h3>Build updated from 7zvlu to c6gaap</h3>
+<div class="chips"></div>
+
+
+<p class="muted">An English summary has not been written for this update yet. The Japanese version has one if it is available.</p>
+
+
+<details class="dev"><summary>🔧 Technical details (you can usually skip this)</summary><dl>
+<dt>Build</dt><dd>7zvlu / 7df130a9 → c6gaap / 4d6587ec</dd>
+<dt>main.js strings</dt><dd>4660 added / 5676 removed. Renamed variables create many apparent differences, so this is not the same as in-game changes.</dd>
+<dt>Chunks</dt><dd>0 added / 0 removed / 396 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
+<article class="upd">
+<div class="meta"><time>2026-11-24 20:30 UTC</time><span class="build">yma3ej → 7zvlu</span></div>
 <h3>Only the wording of payment history messages changed (undone to removed). Build 7zvlu.</h3>
 <div class="chips"><span class="chip chg">~ 10 rewritten</span></div>
 <div class="pts"><div class="pt player"><div class="ico">💳</div><div class="ptb">
@@ -692,49 +705,22 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <dt>Build</dt><dd>vjxd5n / 542dd0f9 → 7jvyee / 81bfc694</dd>
 <dt>main.js strings</dt><dd>5612 added / 4709 removed. Renamed variables create many apparent differences, so this is not the same as in-game changes.</dd>
 <dt>Chunks</dt><dd>1 added / 1 removed / 371 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
-<article class="upd">
-<div class="meta"><time>2026-11-16 16:00 UTC</time><span class="build">tykq5g → vjxd5n</span></div>
-<h3>The AI helper now asks to keep your questions, code and answers for 30 days to improve it. New &quot;something is in the way&quot; messages for home, warp, spawn and tribe home; a mobile Jump Lock; reconnect wording; and a dedicated Plots file.</h3>
-<div class="chips"><span class="chip add">+ 15 new strings</span><span class="chip chg">~ 1 rewritten</span></div>
-<div class="pts"><div class="pt player"><div class="ico">🤖</div><div class="ptb">
-<div class="ptt"><span class="who">AI helper users</span><h4>A consent screen for AI helper data retention</h4></div>
-<p>Bloxd asks whether it may keep your questions, code and answers for 30 days to improve the helper; Yes / No, changeable later.</p>
-<span class="cert">Confidence: Wording certain / when it shows unchecked</span></div></div><div class="pt player"><div class="ico">🧱</div><div class="ptb">
-<div class="ptt"><span class="who">Players</span><h4>Messages when something blocks your home, warp or spawn</h4></div>
-
-<span class="cert">Confidence: Wording certain</span></div></div><div class="pt player"><div class="ico">📱</div><div class="ptb">
-<div class="ptt"><span class="who">Mobile players</span><h4>Jump Lock</h4></div>
-<p>Hold jump for a second then slide to the Jump Lock spot to keep jumping.</p>
-<span class="cert">Confidence: Wording certain</span></div></div><div class="pt player"><div class="ico">🔌</div><div class="ptb">
-<div class="ptt"><span class="who">Players</span><h4>Disconnect wording, and &quot;Reconnect&quot; became &quot;Rejoin&quot;</h4></div>
-
-<span class="cert">Confidence: Wording certain</span></div></div><div class="pt player"><div class="ico">🏗️</div><div class="ptb">
-<div class="ptt"><span class="who">Players and under the hood</span><h4>A dedicated file for Plots (clientGame-plots-plotsClient)</h4></div>
-
-<span class="cert">Confidence: File name confirmed / contents unread</span></div></div></div>
-
-
-
-<details class="en"><summary>📖 Original in-game text (added, rewritten and removed lines)</summary><details class="sec"><summary><span>aiHelperDataSharing</span><em>+4 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>title</code><p>Help make the AI Helper better?</p></div></li><li class="a"><i>+</i><div><code>subtitle</code><p>Can Bloxd keep your questions, your code and the AI's answers for 30 days to improve the AI Helper? You can change this in AI settings.</p></div></li><li class="a"><i>+</i><div><code>yes</code><p>Yes</p></div></li><li class="a"><i>+</i><div><code>no</code><p>No</p></div></li></ul></details><details class="sec"><summary><span>general</span><em>+2 ~1 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>lostConnection</code><p>You lost connection to the server.</p></div></li><li class="a"><i>+</i><div><code>chatNotSentWhileReconnecting</code><p>Your message wasn't sent while reconnecting. Try again once you're back.</p></div></li><li class="c"><i>~</i><div><code>reconnect</code><p class="from">Reconnect</p><p>Rejoin</p></div></li></ul></details><details class="sec"><summary><span>teleportCommand</span><em>+3 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>warpBlocked</code><p>Something is in the way at warp &quot;{{warp}}&quot;</p></div></li><li class="a"><i>+</i><div><code>notLoaded</code><p>That place didn't load in time. Try again</p></div></li><li class="a"><i>+</i><div><code>spawnPointBlocked</code><p>Something is in the way at your spawn point, so you're back at spawn. Clear it to use it again</p></div></li></ul></details><details class="sec"><summary><span>settingsMenu</span><em>+2 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>jumpLock</code><p>Jump Lock</p></div></li><li class="a"><i>+</i><div><code>jumpLockInfo</code><p>Hold Jump for a second, then slide up onto Jump Lock and let go there to keep jumping. Tap Jump to stop.</p></div></li></ul></details><details class="sec"><summary><span>homeCommand</span><em>+2 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>homeBlocked</code><p>Something is in the way at home &quot;{{home}}&quot;. Clear it or set the home somewhere else</p></div></li><li class="a"><i>+</i><div><code>defaultHomeBlocked</code><p>Something is in the way at your home. Clear it or use /sethome somewhere else</p></div></li></ul></details><details class="sec"><summary><span>tribe</span><em>+1 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>tribeHomeBlocked</code><p>Something is in the way at your tribe home. Clear it to use it again</p></div></li></ul></details><details class="sec"><summary><span>texturePackLoad</span><em>+1 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>details</code><p>Details:</p></div></li></ul></details></details>
-<details class="dev"><summary>🔧 Technical details (you can usually skip this)</summary><dl>
-<dt>Build</dt><dd>tykq5g / 937fd517 → vjxd5n / 542dd0f9</dd>
-<dt>main.js strings</dt><dd>6595 added / 12816 removed. Renamed variables create many apparent differences, so this is not the same as in-game changes.</dd>
-<dt>Chunks</dt><dd>4 added / 1 removed / 368 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
 <details class="trace"><summary><span>🔍 Server traces (automatic check)</span></summary>
-<div class="en"><p class="muted">Observations of publicly served files, taken at every update. The inside of the server is not visible. Checked at 2026-11-24 22:30 UTC.</p>
+<div class="en"><p class="muted">Observations of publicly served files, taken at every update. The inside of the server is not visible. Checked at 2026-11-24 23:01 UTC.</p>
 <dl><dt>Origin "Server" header</dt><dd>nginx/1.24.0 (Ubuntu) (from the 404 page of a missing file)</dd>
 <dt>Source maps</dt><dd>none served (all 404)</dd>
 <dt>Workers</dt><dd>none</dd>
 <dt>Game chunk</dt><dd>not found (of 396 chunks)</dd></dl>
-<p class="muted">Recent changes:</p><ul><li>2026-11-24 20:31 UTC Build: yma3ej → 7zvlu</li><li>2026-11-24 19:31 UTC Build: sn3sfj → yma3ej</li><li>2026-11-24 16:31 UTC Build: tz47m9 → sn3sfj</li><li>2026-11-24 08:31 UTC Build: mpd96o → tz47m9</li><li>2026-11-24 05:31 UTC Build: 31kiid → mpd96o</li><li>2026-11-24 04:01 UTC Build: fqwnlq → 31kiid</li><li>2026-11-24 03:01 UTC Build: 31kiid → fqwnlq</li><li>2026-11-23 22:31 UTC Build: w4ddu → 31kiid</li></ul></div></details>
+<p class="muted">Recent changes:</p><ul><li>2026-11-24 23:01 UTC Build: 7zvlu → c6gaap</li><li>2026-11-24 20:31 UTC Build: yma3ej → 7zvlu</li><li>2026-11-24 19:31 UTC Build: sn3sfj → yma3ej</li><li>2026-11-24 16:31 UTC Build: tz47m9 → sn3sfj</li><li>2026-11-24 08:31 UTC Build: mpd96o → tz47m9</li><li>2026-11-24 05:31 UTC Build: 31kiid → mpd96o</li><li>2026-11-24 04:01 UTC Build: fqwnlq → 31kiid</li><li>2026-11-24 03:01 UTC Build: 31kiid → fqwnlq</li></ul></div></details>
 <details class="trace"><summary><span>📐 Game number changes (automatic check)</span></summary>
 <div class="en"><p class="muted">Weapon, bow and armor numbers (damage, range, knockback, defence and so on) and ore generation are compared with the previous build every time the build changes. This catches balance changes that are not visible in the text. Recording began at 890cfc; 209 items are tracked now.</p>
 <p class="muted">No number has changed since recording began.</p></div></details>
 <details class="trace"><summary><span>🔢 Block and item ID changes</span></summary>
-<div class="en"><p class="muted">Every block and item has a numeric ID in the game. When a new one is inserted, the IDs after it shift. Check this if your world code or saved data uses raw IDs. The source is a third-party list (imu31465/Bloxd-Entries-Data) produced by running the game code. It currently has 10091 entries (their build 7zvlu, the same build as ours).</p>
-<p class="muted">2026-11-24 20:31 UTC (yma3ej → 7zvlu, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 19:31 UTC (sn3sfj → yma3ej, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 16:31 UTC (tz47m9 → sn3sfj, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 08:31 UTC (mpd96o → tz47m9, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 05:31 UTC (31kiid → mpd96o, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 04:01 UTC (fqwnlq → 31kiid, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 03:01 UTC (31kiid → fqwnlq, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-23 22:31 UTC (w4ddu → 31kiid, 10091 → 10091 entries)</p><ul></ul></div></details>
+<div class="en"><p class="muted">Every block and item has a numeric ID in the game. When a new one is inserted, the IDs after it shift. Check this if your world code or saved data uses raw IDs. The source is a third-party list (imu31465/Bloxd-Entries-Data) produced by running the game code. It currently has 10091 entries (their build c6gaap, the same build as ours).</p>
+<p class="muted">2026-11-24 23:01 UTC (7zvlu → c6gaap, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 20:31 UTC (yma3ej → 7zvlu, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 19:31 UTC (sn3sfj → yma3ej, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 16:31 UTC (tz47m9 → sn3sfj, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 08:31 UTC (mpd96o → tz47m9, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 05:31 UTC (31kiid → mpd96o, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 04:01 UTC (fqwnlq → 31kiid, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 03:01 UTC (31kiid → fqwnlq, 10091 → 10091 entries)</p><ul></ul></div></details>
 <h2>🕒 Check history</h2>
-<div class="tablewrap"><table><tr><td>2026-11-24 20:30 UTC</td><td><span class="tag chg">updated</span></td><td>strings +5114/-5101</td></tr>
+<div class="tablewrap"><table><tr><td>2026-11-24 23:00 UTC</td><td><span class="tag chg">updated</span></td><td>strings +4660/-5676</td></tr>
+<tr><td>2026-11-24 20:30 UTC</td><td><span class="tag chg">updated</span></td><td>strings +5114/-5101</td></tr>
 <tr><td>2026-11-24 19:30 UTC</td><td><span class="tag chg">updated</span></td><td>strings +5735/-4738</td></tr>
 <tr><td>2026-11-24 16:30 UTC</td><td><span class="tag chg">updated</span></td><td>strings +4744/-5123</td></tr>
 <tr><td>2026-11-24 08:30 UTC</td><td><span class="tag chg">updated</span></td><td>strings +4843/-5793</td></tr>
