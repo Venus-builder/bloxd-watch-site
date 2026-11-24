@@ -69,14 +69,27 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <p><a class="rbtn" href="ref/">📚 Detailed analysis documents</a><a class="rbtn" href="seedmap/map.html">🗺️ Seed map</a><a class="rbtn" href="guide/enchant.html">✨ Enchantment quick table</a> <a class="rbtn" href="guide/enchant-best.html">🏆 Best enchantment combinations</a> <a class="rbtn" href="guide/world.html">🌍 How worlds are generated</a></p></div></div>
 <main>
 <section class="status">
-<div class="stat"><b>Last checked</b><span id="lc">2026-11-24 04:00 UTC</span></div>
-<div class="stat"><b>Current build</b><span>31kiid</span></div>
-<div class="stat"><b>Updates detected</b><span>49</span></div>
-<div class="stat"><b>Last update</b><span>2026-11-24 04:00 UTC</span></div>
+<div class="stat"><b>Last checked</b><span id="lc">2026-11-24 05:30 UTC</span></div>
+<div class="stat"><b>Current build</b><span>mpd96o</span></div>
+<div class="stat"><b>Updates detected</b><span>50</span></div>
+<div class="stat"><b>Last update</b><span>2026-11-24 05:30 UTC</span></div>
 </section>
 <h2>✨ Updates and in-game changes</h2>
 <article class="upd latest">
-<div class="meta"><span class="new">Latest</span><time>2026-11-24 04:00 UTC</time><span class="build">fqwnlq → 31kiid</span></div>
+<div class="meta"><span class="new">Latest</span><time>2026-11-24 05:30 UTC</time><span class="build">31kiid → mpd96o</span></div>
+<h3>Build updated from 31kiid to mpd96o</h3>
+<div class="chips"></div>
+
+
+<p class="muted">An English summary has not been written for this update yet. The Japanese version has one if it is available.</p>
+
+
+<details class="dev"><summary>🔧 Technical details (you can usually skip this)</summary><dl>
+<dt>Build</dt><dd>31kiid / 1299b0d6 → mpd96o / 85ad4551</dd>
+<dt>main.js strings</dt><dd>5683 added / 4339 removed. Renamed variables create many apparent differences, so this is not the same as in-game changes.</dd>
+<dt>Chunks</dt><dd>0 added / 0 removed / 392 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
+<article class="upd">
+<div class="meta"><time>2026-11-24 04:00 UTC</time><span class="build">fqwnlq → 31kiid</span></div>
 <h3>Build updated from fqwnlq to 31kiid</h3>
 <div class="chips"></div>
 
@@ -706,58 +719,22 @@ Private: no one else can join</p></div></li></ul></details><details class="sec">
 <dt>Build</dt><dd>j3ktyq / 3c8c7aed → 90jf8k / a8dbe431</dd>
 <dt>main.js strings</dt><dd>4346 added / 3872 removed. Renamed variables create many apparent differences, so this is not the same as in-game changes.</dd>
 <dt>Chunks</dt><dd>6 added / 1 removed / 358 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
-<article class="upd">
-<div class="meta"><time>2026-11-12 16:30 UTC</time><span class="build">7rp1w → j3ktyq</span></div>
-<h3>Report, block and ignore screens are in place. A URL switch for the wasm and classic clients. Distant name tags setting, an AI-hints toggle in the code editor, and a note that /play/ needs a mode name.</h3>
-<div class="chips"><span class="chip add">+ 30 new strings</span><span class="chip chg">~ 4 rewritten</span></div>
-<div class="pts"><div class="pt player"><div class="ico">🚫</div><div class="ptb">
-<div class="ptt"><span class="who">Players</span><h4>Block, ignore and report screens are now complete</h4></div>
-<p>You can Ignore (hide chat, invites and friend requests) or Block (remove from friends; they cannot contact, find or join you) another player. Blocking asks for confirmation, then offers to report. A new settings list shows who you blocked or ignored.</p><p class="note">The list limit has still not appeared in the text.</p>
-<span class="cert">Confidence: Wording and API names certain / details unchecked</span></div></div><div class="pt player"><div class="ico">🔀</div><div class="ptb">
-<div class="ptt"><span class="who">Everyone (internals)</span><h4>A switch between the wasm client and the classic client (URL or percentage)</h4></div>
-<p>Adding ?client=wasm or ?client=js to the URL picks the client. By default staging.bloxd.io always uses wasm; elsewhere a per-user number below a percentage selects wasm. Exit code 4074 (cannot join on wasm) was added.</p><p class="note">What share of players is on wasm in production is server-side and not visible here.</p>
-<span class="cert">Confidence: Read from the code / actual rollout not checked</span></div></div><div class="pt player"><div class="ico">🎮</div><div class="ptb">
-<div class="ptt"><span class="who">Players</span><h4>A notice that &quot;/play/&quot; alone does not work</h4></div>
-<p>Exit code 4075: &quot;Pick a mode first, e.g. /play/bedwars_solo&quot;.</p>
-<span class="cert">Confidence: Wording certain</span></div></div><div class="pt player"><div class="ico">👁️</div><div class="ptb">
-<div class="ptt"><span class="who">Players</span><h4>A setting for distant name tags</h4></div>
-<p>Settings gained &quot;Distant Nametags&quot;. The pixelation setting was reworded as a speed trade-off.</p>
-<span class="cert">Confidence: Wording certain</span></div></div><div class="pt maker"><div class="ico">🤖</div><div class="ptb">
-<div class="ptt"><span class="who">Creators</span><h4>Code editor: choose whether to show AI hints</h4></div>
-
-<span class="cert">Confidence: Wording certain</span></div></div><div class="pt maker"><div class="ico">🖼️</div><div class="ptb">
-<div class="ptt"><span class="who">Creators</span><h4>Shorter shader-pack screenshot-failure message</h4></div>
-<p>The meaning did not change.</p>
-<span class="cert">Confidence: Wording certain</span></div></div><div class="pt player"><div class="ico">🏭</div><div class="ptb">
-<div class="ptt"><span class="who">Players</span><h4>Build a Factory 2: new description and an &quot;updated&quot; badge</h4></div>
-<p>The phrase &quot;even while you are away&quot; was dropped; whether idle running changed cannot be told from this alone.</p>
-<span class="cert">Confidence: Wording and code certain</span></div></div><div class="pt player"><div class="ico">📊</div><div class="ptb">
-<div class="ptt"><span class="who">Under the hood</span><h4>New performance-classification labels; WebGL fallback reason &quot;gpu_class_webgl&quot;</h4></div>
-
-<span class="cert">Confidence: Read from the code / purpose a guess</span></div></div></div>
-
-
-
-<details class="en"><summary>📖 Original in-game text (added, rewritten and removed lines)</summary><details class="sec"><summary><span>socialBar</span><em>+13 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>ignorePlayer</code><p>Ignore</p></div></li><li class="a"><i>+</i><div><code>unignorePlayer</code><p>Unignore</p></div></li><li class="a"><i>+</i><div><code>blockPlayer</code><p>Block</p></div></li><li class="a"><i>+</i><div><code>unblockPlayer</code><p>Unblock</p></div></li><li class="a"><i>+</i><div><code>ignorePlayerInfo</code><p>Hide their chat, invites and friend requests.</p></div></li><li class="a"><i>+</i><div><code>blockPlayerInfo</code><p>Remove them as a friend and stop them contacting, finding or joining you.</p></div></li><li class="a"><i>+</i><div><code>blockPlayerConfirm</code><p>Block {{playerName}}?</p></div></li><li class="a"><i>+</i><div><code>playerBlocked</code><p>Blocked {{playerName}}</p></div></li><li class="a"><i>+</i><div><code>playerUnblocked</code><p>Unblocked {{playerName}}</p></div></li><li class="a"><i>+</i><div><code>playerIgnored</code><p>Ignored {{playerName}}. Their chat, invites and friend requests are hidden.</p></div></li><li class="a"><i>+</i><div><code>playerUnignored</code><p>Unignored {{playerName}}</p></div></li><li class="a"><i>+</i><div><code>blockOrIgnoreFailed</code><p>Couldn't change that for {{playerName}}. Try again in a moment.</p></div></li><li class="a"><i>+</i><div><code>playerNotInGame</code><p>{{playerName}} isn't in this game any more.</p></div></li></ul></details><details class="sec"><summary><span>settingsMenu</span><em>+5 ~1 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>blockedAndIgnoredPlayers</code><p>Blocked and ignored players</p></div></li><li class="a"><i>+</i><div><code>blockedAndIgnoredPlayersLoadFailed</code><p>Couldn't load your blocked and ignored players.</p></div></li><li class="a"><i>+</i><div><code>noBlockedOrIgnoredPlayers</code><p>You haven't blocked or ignored anyone.</p></div></li><li class="a"><i>+</i><div><code>distantNametags</code><p>Distant Nametags</p></div></li><li class="a"><i>+</i><div><code>distantNametagsInfo</code><p>Show the names of far-away players</p></div></li><li class="c"><i>~</i><div><code>pixelScaleInfo</code><p class="from">Increase the size of individual pixels for a retro appearence</p><p>Higher values make the picture blockier but faster</p></div></li></ul></details><details class="sec"><summary><span>general</span><em>+5 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>reportPlayerAfterBlock</code><p>Report {{playerName}} too?</p></div></li><li class="a"><i>+</i><div><code>playerAlreadyReported</code><p>You've already reported {{playerName}}. Thank you.</p></div></li><li class="a"><i>+</i><div><code>blockToReport</code><p>Block {{playerName}} to report them from here.</p></div></li><li class="a"><i>+</i><div><code>reportFailed</code><p>Couldn't send your report of {{playerName}}. Try again in a moment.</p></div></li><li class="a"><i>+</i><div><code>reportFromGame</code><p>Report this from a game you're both in.</p></div></li></ul></details><details class="sec"><summary><span>report</span><em>+5 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>contentReported</code><p>Thanks, we'll review your report.</p></div></li><li class="a"><i>+</i><div><code>alreadyReportedContent</code><p>You've already reported this.</p></div></li><li class="a"><i>+</i><div><code>reportFailed</code><p>Couldn't send your report. Please try again.</p></div></li><li class="a"><i>+</i><div><code>cantReport</code><p>You can't report this for that reason.</p></div></li><li class="a"><i>+</i><div><code>notFound</code><p>This is no longer available to report.</p></div></li></ul></details><details class="sec"><summary><span>shaderPackListing</span><em>+0 ~2 -0</em></summary><ul class="diff"><li class="c"><i>~</i><div><code>ownerUpdateFailed</code><p class="from">Your latest upload failed when its screenshots were generated, so players get your previous version until you upload a fix.</p><p>Screenshot generation failed, so players get your previous version until you upload a fix.</p></div></li><li class="c"><i>~</i><div><code>ownerFirstFailed</code><p class="from">It failed when its screenshots were generated, so only you can see it until you upload a fix.</p><p>Screenshot generation failed, so only you can see it until you upload a fix.</p></div></li></ul></details><details class="sec"><summary><span>codeEditorAiHints</span><em>+2 ~0 -0</em></summary><ul class="diff"><li class="a"><i>+</i><div><code>toggle</code><p>Show AI hints</p></div></li><li class="a"><i>+</i><div><code>toggleHint</code><p>Shows AI Helper buttons like Explain this when you select code.</p></div></li></ul></details><details class="sec"><summary><span>game</span><em>+0 ~1 -0</em></summary><ul class="diff"><li class="c"><i>~</i><div><code>buildAFactory2Description</code><p class="from">Build machines on your own floating island and watch them work, even while you're away! 🏭</p><p>Build machines on your own floating island and watch them work! 🏭</p></div></li></ul></details></details>
-<details class="dev"><summary>🔧 Technical details (you can usually skip this)</summary><dl>
-<dt>Build</dt><dd>7rp1w / 57cd8edd → j3ktyq / 3c8c7aed</dd>
-<dt>main.js strings</dt><dd>5454 added / 5489 removed. Renamed variables create many apparent differences, so this is not the same as in-game changes.</dd>
-<dt>Chunks</dt><dd>6 added / 0 removed / 353 changed (every file name changes when the build changes, so the "changed" count means little)</dd></dl></details></article>
 <details class="trace"><summary><span>🔍 Server traces (automatic check)</span></summary>
-<div class="en"><p class="muted">Observations of publicly served files, taken at every update. The inside of the server is not visible. Checked at 2026-11-24 05:01 UTC.</p>
+<div class="en"><p class="muted">Observations of publicly served files, taken at every update. The inside of the server is not visible. Checked at 2026-11-24 05:31 UTC.</p>
 <dl><dt>Origin "Server" header</dt><dd>nginx/1.24.0 (Ubuntu) (from the 404 page of a missing file)</dd>
 <dt>Source maps</dt><dd>none served (all 404)</dd>
 <dt>Workers</dt><dd>none</dd>
 <dt>Game chunk</dt><dd>not found (of 392 chunks)</dd></dl>
-<p class="muted">Recent changes:</p><ul><li>2026-11-24 04:01 UTC Build: fqwnlq → 31kiid</li><li>2026-11-24 03:01 UTC Build: 31kiid → fqwnlq</li><li>2026-11-23 22:31 UTC Build: w4ddu → 31kiid</li><li>2026-11-23 16:01 UTC Build: 3lwmg → w4ddu</li><li>2026-11-22 14:31 UTC Build: bqoxjr → 3lwmg</li><li>2026-11-21 03:31 UTC Build: x17cru → bqoxjr</li><li>2026-11-21 01:01 UTC Build: halsg → x17cru</li><li>2026-11-20 19:31 UTC Build: bbb6l5 → halsg</li></ul></div></details>
+<p class="muted">Recent changes:</p><ul><li>2026-11-24 05:31 UTC Build: 31kiid → mpd96o</li><li>2026-11-24 04:01 UTC Build: fqwnlq → 31kiid</li><li>2026-11-24 03:01 UTC Build: 31kiid → fqwnlq</li><li>2026-11-23 22:31 UTC Build: w4ddu → 31kiid</li><li>2026-11-23 16:01 UTC Build: 3lwmg → w4ddu</li><li>2026-11-22 14:31 UTC Build: bqoxjr → 3lwmg</li><li>2026-11-21 03:31 UTC Build: x17cru → bqoxjr</li><li>2026-11-21 01:01 UTC Build: halsg → x17cru</li></ul></div></details>
 <details class="trace"><summary><span>📐 Game number changes (automatic check)</span></summary>
 <div class="en"><p class="muted">Weapon, bow and armor numbers (damage, range, knockback, defence and so on) and ore generation are compared with the previous build every time the build changes. This catches balance changes that are not visible in the text. Recording began at 890cfc; 209 items are tracked now.</p>
 <p class="muted">No number has changed since recording began.</p></div></details>
 <details class="trace"><summary><span>🔢 Block and item ID changes</span></summary>
-<div class="en"><p class="muted">Every block and item has a numeric ID in the game. When a new one is inserted, the IDs after it shift. Check this if your world code or saved data uses raw IDs. The source is a third-party list (imu31465/Bloxd-Entries-Data) produced by running the game code. It currently has 10091 entries (their build 31kiid, the same build as ours).</p>
-<p class="muted">2026-11-24 04:01 UTC (fqwnlq → 31kiid, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 03:01 UTC (31kiid → fqwnlq, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-23 22:31 UTC (w4ddu → 31kiid, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-23 16:01 UTC (3lwmg → w4ddu, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-22 14:31 UTC (bqoxjr → 3lwmg, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-21 03:31 UTC (x17cru → bqoxjr, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-21 01:01 UTC (halsg → x17cru, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-20 19:31 UTC (bbb6l5 → halsg, 10091 → 10091 entries)</p><ul></ul></div></details>
+<div class="en"><p class="muted">Every block and item has a numeric ID in the game. When a new one is inserted, the IDs after it shift. Check this if your world code or saved data uses raw IDs. The source is a third-party list (imu31465/Bloxd-Entries-Data) produced by running the game code. It currently has 10091 entries (their build mpd96o, the same build as ours).</p>
+<p class="muted">2026-11-24 05:31 UTC (31kiid → mpd96o, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 04:01 UTC (fqwnlq → 31kiid, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-24 03:01 UTC (31kiid → fqwnlq, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-23 22:31 UTC (w4ddu → 31kiid, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-23 16:01 UTC (3lwmg → w4ddu, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-22 14:31 UTC (bqoxjr → 3lwmg, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-21 03:31 UTC (x17cru → bqoxjr, 10091 → 10091 entries)</p><ul></ul><p class="muted">2026-11-21 01:01 UTC (halsg → x17cru, 10091 → 10091 entries)</p><ul></ul></div></details>
 <h2>🕒 Check history</h2>
-<div class="tablewrap"><table><tr><td>2026-11-24 04:00 UTC</td><td><span class="tag chg">updated</span></td><td>strings +4341/-5904</td></tr>
+<div class="tablewrap"><table><tr><td>2026-11-24 05:30 UTC</td><td><span class="tag chg">updated</span></td><td>strings +5683/-4339</td></tr>
+<tr><td>2026-11-24 04:00 UTC</td><td><span class="tag chg">updated</span></td><td>strings +4341/-5904</td></tr>
 <tr><td>2026-11-24 03:00 UTC</td><td><span class="tag chg">updated</span></td><td>strings +5904/-4341</td></tr>
 <tr><td>2026-11-24 00:00 UTC</td><td><span class="tag ok">no change</span></td><td>31kiid</td></tr>
 <tr><td>2026-11-23 22:30 UTC</td><td><span class="tag chg">updated</span></td><td>strings +4718/-4589</td></tr>
