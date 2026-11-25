@@ -68,14 +68,602 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <p>bloxd.io の更新を自動で見張って、「ゲームの中で何が変わったか」を日本語でまとめます。非公式の個人用ページで、運営とは無関係です。</p><p><a class="rbtn" href="skin-viewer.html">🧍 スキンビューアー(3Dで見る)</a><a class="rbtn" href="ref/">📚 詳しい分析ドキュメント</a><a class="rbtn" href="seedmap/map.html">🗺️ シードマップ(好きな番号)</a><a class="rbtn" href="guide/enchant.html">✨ エンチャント早見表</a> <a class="rbtn" href="guide/enchant-best.html">🏆 エンチャントの最適な組み合わせ</a> <a class="rbtn" href="guide/world.html">🌍 世界の作られ方(鉱石・チェスト)</a></p></div></div>
 <main>
 <section class="status">
-<div class="stat"><b>最後に確認した時刻</b><span id="lc">2026/11/25 10:00</span></div>
-<div class="stat"><b>現在のビルド</b><span>igzsf</span></div>
-<div class="stat"><b>検知した更新</b><span>58 回</span></div>
-<div class="stat"><b>最後の更新</b><span>2026/11/25 10:00</span></div>
+<div class="stat"><b>最後に確認した時刻</b><span id="lc">2026/11/25 13:30</span></div>
+<div class="stat"><b>現在のビルド</b><span>dz8ef</span></div>
+<div class="stat"><b>検知した更新</b><span>59 回</span></div>
+<div class="stat"><b>最後の更新</b><span>2026/11/25 13:30</span></div>
 </section>
 <h2>✨ 更新と、ゲーム内の変化</h2>
 <article class="upd latest">
-<div class="meta"><span class="new">最新</span><time>2026年11月25日 10:00</time><span class="build">c6gaap → igzsf</span></div>
+<div class="meta"><span class="new">最新</span><time>2026年11月25日 13:30</time><span class="build">igzsf → dz8ef</span></div>
+<h3>ビルドが igzsf から dz8ef に更新</h3>
+<div class="chips"></div>
+
+
+
+
+<details class="dev"><summary>🔧 開発者向けの詳細(ふつうは見なくて大丈夫)</summary><dl>
+<dt>ビルド</dt><dd>igzsf / a0b73a5f → dz8ef / 98c5e741</dd>
+<dt>main.js の文字列</dt><dd>追加 4542 / 削除 5984(大型更新(±4000超))。変数名の付け替えで見かけ上の差も大量に出るので、ゲーム内の変化とは別物です。</dd>
+<dt>チャンク(ファイル)</dt><dd>追加 0 / 削除 0 / 変更 396(ビルドが変わると全ファイルの名前が変わるので、「変更」の数に意味はありません)</dd></dl>
+<details><summary>元のレポート</summary><pre># bloxd.io 更新検知 2026-11-25T04:30:43.834Z
+
+- ビルドID: igzsf → dz8ef
+- main hash: a0b73a5f → 98c5e741
+- main.js サイズ: 2734142 → 2703484
+- CSS: static/css/igzsf.main.60e4f373.css → static/css/dz8ef.main.d961b9ce.css
+- main.js 文字列: 追加 4542 / 削除 5984(大型更新(±4000超))
+- チャンク: 追加 0 / 削除 0 / ハッシュ変更 396
+## ゲーム内の変化
+
+- ゲーム内テキスト: 追加 0 / 変更 0 / 削除 0
+
+
+## 追加された文字列(先頭80件)
+- `t JSON:&quot;,Zu),null}if(&quot;object&quot;!==typeof Eu||null===Eu||!Object.prototype.hasOwnProperty.call(Eu,Uu.c))return null;const j`
+- `${Uu}`
+- `${Eu.options.indexOf(ju)}`
+- `${Eu.options.indexOf(su)}`
+- `${String(Eu)}`
+- `${uu}`
+- `${Eu}`
+- `);Wu.g.discord().then((uu=&gt;{null!==uu&amp;&amp;uu.signOut()}))},[qu.e.CRAZY_GAMES]:()=&gt;{},[qu.e.APPLE]:()=&gt;{IE(qu.e.APPLE)},[qu.`
+- `,[qu.e.APPLE]:`
+- `,[qu.e.MICROSOFT]:`
+- `,[qu.e.GAME_CENTER]:`
+- `,[qu.e.PLAY_GAMES]:`
+- `};let LE=null;const tE=new class{constructor(){this.currentUserContextIsSetPromise=void 0,this.onCurrentUserContextIsSet`
+- `,(()=&gt;{if(0===this.pQueue.sizeBy({priority:iE.SET})&amp;&amp;this.shouldPublishUpdate){var uu;const Eu=null!==(uu=this.userConte`
+- `,uu.getRecentlyPlayedGames()),this.updateCurrentUserContext(uu.type)},switchTo:uu=&gt;{this.updateCurrentUserContext(uu)}},`
+- `,uu.message),xu.e.reloadIfScheduled(),this.updateCurrentUserContext(null),uu})).then((uu=&gt;(this.updateCurrentUserContext`
+- `===typeof uu)throw new Error(`
+- `);return uu}));if(uu)return uu;console.warn(`
+- `,su,`
+- `);const su=await async function(uu,Eu,ju,su,Uu){const Zu=uu.canSignIn(Eu);if(!ju||!Zu){const ju=await uu.getCurrentUser(`
+- `===typeof(null===ju||void 0===ju?void 0:ju.code)&amp;&amp;(null===ju||void 0===ju?void 0:ju.code.startsWith(`
+- `));let Uu,Zu=Eu||!(0,Ku.isMobileApp)(),Xu=`
+- `;return su?`
+- `===ju.code||`
+- `===ju.code?(Zu=!1,Uu=ju.code,Xu=`
+- `):(Uu=(0,cE.s)(ju.code.replace(`
+- `===ju.code&amp;&amp;(Xu=`
+- `)):Uu=`
+- `,new uj(uu,Uu,{forceSignOut:!0,showPopup:Zu,failure:Xu})}),(()=&gt;new uj(uu,`
+- `,{showPopup:Eu})));if(null===su)throw new uj(uu,`
+- `,confirmText:(0,Bu.m)(Uu),confirmTooltip:`
+- `})}return{accessToken:Uu}}(uu);ju=Eu.accessToken}const Zu=await uu;return await async function(uu,Eu,ju,su){if(!uu)throw`
+- `);let Uu=null;if((0,Hu.isDiscordClient)()){Uu=(await Wu.g.discordActivity()).getInstanceId()}const Zu=Eu.getMetricsCooki`
+- `:Ou,whamm:Yu,error:hu,superRankInfo:Du,ranksMayChange:gu,ownedCosmeticPacks:Mu,dailyDrop:eu,personalWorldLobbyName:Gu,re`
+- `,uu),{error:(0,DE.y)(uu,`
+- `)})));if(hu)throw new uj(qu.e.DISCORD,hu,{forceSignOut:su===oE.LINK,showPopup:!0,failure:`
+- `});if((0,Hu.isDiscordClient)()){const Eu=await Wu.g.discordActivity();for(const uu of cu)Eu.registerGuild(uu.id,uu.name)`
+- `);const su=await Eu.getUserLocale();null!==su&amp;&amp;tu.h.get().setCurrentLanguage(su)}console.log(`
+- `),(0,Hu.isDiscordClient)()&amp;&amp;zu.d.holdWebGpuForAccountLoss(wu);return Zu[`
+- `]=Ou,new rE(qu.e.DISCORD,{authProvider:qu.i.DISCORD,accountInfo:Xu},lu,fu,Cu,Zu,Yu,bu,!(0,Hu.isDiscordClient)(),Du,null!`
+- `);const[ju,Uu]=await Promise.all([Uj(),su()]),Zu=await async function(uu,Eu){if(!uu)throw new uj(qu.e.CRAZY_GAMES,`
+- `);return await Xj(qu.e.CRAZY_GAMES,`
+- `,{crazyGamesToken:uu},Eu)}(ju,Uu),Xu=Zu.includes(qu.e.ANONYMOUS),lu=Uu.availableUserContextTypes.includes(qu.e.CRAZY_GAM`
+- `),fu=!0):Xu||lu?(console.log(`
+- `),fu=!0):(console.log(`
+- `),fu=await uu.doesUserWantToTieExistingAccount()),!fu)throw new uj(qu.e.CRAZY_GAMES,`
+- `});const Cu=nu.f&amp;&amp;!Xu;return await async function(uu,Eu,ju,su){if(!uu)throw new uj(qu.e.CRAZY_GAMES,`
+- `);return await lj(qu.e.CRAZY_GAMES,`
+- `,{crazyGamesToken:uu,preferCrazyGamesName:ju,onlyLink:su===oE.LINK},Eu,su)}(ju,Uu,Cu,Eu)}case qu.e.MSN:{const[uu,Uu]=awa`
+- `,Zu,Uu)).includes(qu.e.ANONYMOUS);return await lj(qu.e.MSN,`
+- `,{...Zu,preferMsnName:nu.f&amp;&amp;!Xu,onlyLink:Eu===oE.LINK},Uu,Eu)}default:throw new Error('Unknown user context type: ${uu}'`
+- `,Eu.getRecentlyPlayedGames()),Eu))).catch((Eu=&gt;{throw this.userContexts.delete(uu),new Error('Failed to create ${uu} use`
+- `,uu),null)))))&amp;&amp;void 0!==su?su:null)&amp;&amp;Zu.push(qu.e.CRAZY_GAMES);const fu=await Wu.g.discordActivity();if(null!==fu)Zu.pu`
+- `,uu)})).catch((uu=&gt;{console.error(`
+- `,uu.message),fu.exit(`
+- `)}));else{(await Wu.g.discord()).hasCurrentUser()&amp;&amp;Zu.push(qu.e.DISCORD)}const Cu=await Wu.g.msn();null!==(null!==(Uu=aw`
+- `,uu)}))}catch(bu){console.error('Failed to set initial user context to ${qu}:',bu)}if(0===Zu.length&amp;&amp;await xE().attemptA`
+- `,(()=&gt;{TE=!0}));function AE(){return TE}const nE=new Promise((uu=&gt;{eu.h.qD(`
+- `,(()=&gt;{uu()}))}));async function yE(){var uu;const Eu=QE.getMetricsCookies(),ju=uu=&gt;{const ju=mu.e.getItem(uu);return(0,`
+- `)]},Uu={`
+- `:ju(`
+- `:null!==(uu=(0,nu.e)())&amp;&amp;void 0!==uu?uu:(0,su.h)((0,Xu.e)(),(0,Xu.e)(),(0,Xu.e)()),`
+- `)};Uu[`
+- `]===Eu[`
+- `]&amp;&amp;(Uu[`
+- `]=(0,su.g)((0,Su.g)(lu.b))),(0,nu.j)(Uu[`
+- `]),OE.e.markHomepageLoadEnd(),TE&amp;&amp;(await nE,TE=!1),eu.h.unsubscribe(HE);const Zu=await cj('${Fu.clientSideServerUrls.ind`
+- `,uu),new Error(`
+- `)})),{name:fu,cosmetics:Cu,ranks:bu,availableUserContextTypes:cu,`
+- `:Ou,superRankInfo:Yu,ownedCosmeticPacks:hu,dailyDrop:Du,personalWorldLobbyName:gu,recentlyPlayedGames:Mu,countryCode:Gu,`
+- `]=Ou,new rE(qu.e.ANONYMOUS,null,fu,Cu,bu,Uu,null,cu,!0,Yu,null!==hu&amp;&amp;void 0!==hu?hu:[],null!==Du&amp;&amp;void 0!==Du?Du:null,nu`
+- `;class uj extends gE.c{constructor(uu,Eu){var ju;let su=arguments.length&gt;2&amp;&amp;void 0!==arguments[2]?arguments[2]:{};su.for`
+- `)}}function Ej(uu,Eu){const ju=qu.i[uu];Iu.NotificationProvider.showAlertPopup({title:`
+- `,subtitle:Eu,confirmText:`
+- `});return lu}async function sj(uu,Eu,ju,su){let Uu=arguments.length&gt;4&amp;&amp;void 0!==arguments[4]?arguments[4]:{};const{anony`
+- `:Cu,whamm:bu,ranks:cu,superRankInfo:Ou,ranksMayChange:Yu,ownedCosmeticPacks:hu,dailyDrop:Du,personalWorldLobbyName:gu,re`
+- `]=Cu,new rE(uu,{authProvider:qu.i[uu],accountInfo:Zu},Xu,lu,cu,pu,bu,fu,!0,Ou,null!==hu&amp;&amp;void 0!==hu?hu:[],null!==Du&amp;&amp;vo`
+- `);if(null===await uu.getCurrentUser())try{await uu.signInWithPopup()}catch(Eu){const uu=(0,gE.g)(Eu);throw new uj(qu.e.C`
+- `,{forceSignOut:!0,showPopup:null===uu,failure:null!==uu&amp;&amp;void 0!==uu?uu:`
+- `})}return await uu.getCurrentUserToken()}async function Zj(uu){const Eu=await Wu.g.msn();if(null===Eu)throw Error(`
+
+## 削除された文字列(先頭80件)
+- `t JSON:&quot;,Dt),null}if(&quot;object&quot;!==typeof et||null===et||!Object.prototype.hasOwnProperty.call(et,qt.b))return null;const V`
+- `${qt}`
+- `${et.options.indexOf(Vt)}`
+- `${et.options.indexOf(Ot)}`
+- `${String(et)}`
+- `${tt}`
+- `${et}`
+- `);zt.l.discord().then((tt=&gt;{null!==tt&amp;&amp;tt.signOut()}))},[jt.c.CRAZY_GAMES]:()=&gt;{},[jt.c.APPLE]:()=&gt;{re(jt.c.APPLE)},[jt.`
+- `,[jt.c.APPLE]:`
+- `,[jt.c.MICROSOFT]:`
+- `,[jt.c.GAME_CENTER]:`
+- `,[jt.c.PLAY_GAMES]:`
+- `};let ie=null;const Ye=new class{constructor(){this.currentUserContextIsSetPromise=void 0,this.onCurrentUserContextIsSet`
+- `,(()=&gt;{if(0===this.pQueue.sizeBy({priority:Ge.SET})&amp;&amp;this.shouldPublishUpdate){var tt;const et=null!==(tt=this.userConte`
+- `,tt.getRecentlyPlayedGames()),this.updateCurrentUserContext(tt.type)},switchTo:tt=&gt;{this.updateCurrentUserContext(tt)}},`
+- `,tt.message),Bt.i.reloadIfScheduled(),this.updateCurrentUserContext(null),tt})).then((tt=&gt;(this.updateCurrentUserContext`
+- `===typeof tt)throw new Error(`
+- `);return tt}));if(tt)return tt;console.warn(`
+- `,Ot,`
+- `);const Ot=await async function(tt,et,Vt,Ot,qt){const Dt=tt.canSignIn(et);if(!Vt||!Dt){const Vt=await tt.getCurrentUser(`
+- `===typeof(null===Vt||void 0===Vt?void 0:Vt.code)&amp;&amp;(null===Vt||void 0===Vt?void 0:Vt.code.startsWith(`
+- `));let qt,Dt=et||!(0,Zt.isMobileApp)(),mt=`
+- `;return Ot?`
+- `===Vt.code||`
+- `===Vt.code?(Dt=!1,qt=Vt.code,mt=`
+- `):(qt=(0,Ee.B)(Vt.code.replace(`
+- `===Vt.code&amp;&amp;(mt=`
+- `)):qt=`
+- `,new eV(tt,qt,{forceSignOut:!0,showPopup:Dt,failure:mt})}),(()=&gt;new eV(tt,`
+- `,{showPopup:et})));if(null===Ot)throw new eV(tt,`
+- `,confirmText:(0,At.n)(qt),confirmTooltip:`
+- `})}return{accessToken:qt}}(tt);Vt=et.accessToken}const Dt=await tt;return await async function(tt,et,Vt,Ot){if(!tt)throw`
+- `);let qt=null;if((0,xt.isDiscordClient)()){qt=(await zt.l.discordActivity()).getInstanceId()}const Dt=et.getMetricsCooki`
+- `:ft,whamm:wt,error:yt,superRankInfo:Nt,ranksMayChange:Mt,ownedCosmeticPacks:bt,dailyDrop:Jt,personalWorldLobbyName:Ct,re`
+- `,tt),{error:(0,ae.w)(tt,`
+- `)})));if(yt)throw new eV(jt.c.DISCORD,yt,{forceSignOut:Ot===ce.LINK,showPopup:!0,failure:`
+- `});if((0,xt.isDiscordClient)()){const et=await zt.l.discordActivity();for(const tt of lt)et.registerGuild(tt.id,tt.name)`
+- `);const Ot=await et.getUserLocale();null!==Ot&amp;&amp;Yt.e.get().setCurrentLanguage(Ot)}console.log(`
+- `),(0,xt.isDiscordClient)()&amp;&amp;nt.b.holdWebGpuForAccountLoss(Kt);return Dt[`
+- `]=ft,new Fe(jt.c.DISCORD,{authProvider:jt.e.DISCORD,accountInfo:mt},dt,Ht,Xt,Dt,wt,Qt,!(0,xt.isDiscordClient)(),Nt,null!`
+- `);const[Vt,qt]=await Promise.all([DV(),Ot()]),Dt=await async function(tt,et){if(!tt)throw new eV(jt.c.CRAZY_GAMES,`
+- `);return await dV(jt.c.CRAZY_GAMES,`
+- `,{crazyGamesToken:tt},et)}(Vt,qt),mt=Dt.includes(jt.c.ANONYMOUS),dt=qt.availableUserContextTypes.includes(jt.c.CRAZY_GAM`
+- `),Ht=!0):mt||dt?(console.log(`
+- `),Ht=!0):(console.log(`
+- `),Ht=await tt.doesUserWantToTieExistingAccount()),!Ht)throw new eV(jt.c.CRAZY_GAMES,`
+- `});const Xt=gt.i&amp;&amp;!mt;return await async function(tt,et,Vt,Ot){if(!tt)throw new eV(jt.c.CRAZY_GAMES,`
+- `);return await jV(jt.c.CRAZY_GAMES,`
+- `,{crazyGamesToken:tt,preferCrazyGamesName:Vt,onlyLink:Ot===ce.LINK},et,Ot)}(Vt,qt,Xt,et)}case jt.c.MSN:{const[tt,qt]=awa`
+- `,Dt,qt)).includes(jt.c.ANONYMOUS);return await jV(jt.c.MSN,`
+- `,{...Dt,preferMsnName:gt.i&amp;&amp;!mt,onlyLink:et===ce.LINK},qt,et)}default:throw new Error('Unknown user context type: ${tt}'`
+- `,et.getRecentlyPlayedGames()),et))).catch((et=&gt;{throw this.userContexts.delete(tt),new Error('Failed to create ${tt} use`
+- `,tt),null)))))&amp;&amp;void 0!==Ot?Ot:null)&amp;&amp;Dt.push(jt.c.CRAZY_GAMES);const Ht=await zt.l.discordActivity();if(null!==Ht)Dt.pu`
+- `,tt)})).catch((tt=&gt;{console.error(`
+- `,tt.message),Ht.exit(`
+- `)}));else{(await zt.l.discord()).hasCurrentUser()&amp;&amp;Dt.push(jt.c.DISCORD)}const Xt=await zt.l.msn();null!==(null!==(qt=aw`
+- `,tt)}))}catch(Qt){console.error('Failed to set initial user context to ${jt}:',Qt)}if(0===Dt.length&amp;&amp;await Be().attemptA`
+- `,(()=&gt;{pe=!0}));function Te(){return pe}const ge=new Promise((tt=&gt;{Jt.j.yN(`
+- `,(()=&gt;{tt()}))}));async function se(){var tt;const et=ke.getMetricsCookies(),Vt=tt=&gt;{const Vt=It.b.getItem(tt);return(0,`
+- `)]},qt={`
+- `:Vt(`
+- `:null!==(tt=(0,gt.e)())&amp;&amp;void 0!==tt?tt:(0,Ot.i)((0,mt.b)(),(0,mt.b)(),(0,mt.b)()),`
+- `)};qt[`
+- `]===et[`
+- `]&amp;&amp;(qt[`
+- `]=(0,Ot.f)((0,ot.h)(dt.d))),(0,gt.n)(qt[`
+- `]),we.c.markHomepageLoadEnd(),pe&amp;&amp;(await ge,pe=!1),Jt.j.unsubscribe(xe);const Dt=await EV('${Ut.clientSideServerUrls.ind`
+- `,tt),new Error(`
+- `)})),{name:Ht,cosmetics:Xt,ranks:Qt,availableUserContextTypes:lt,`
+- `:ft,superRankInfo:wt,ownedCosmeticPacks:yt,dailyDrop:Nt,personalWorldLobbyName:Mt,recentlyPlayedGames:bt,countryCode:Ct,`
+- `]=ft,new Fe(jt.c.ANONYMOUS,null,Ht,Xt,Qt,qt,null,lt,!0,wt,null!==yt&amp;&amp;void 0!==yt?yt:[],null!==Nt&amp;&amp;void 0!==Nt?Nt:null,nu`
+- `;class eV extends Me.c{constructor(tt,et){var Vt;let Ot=arguments.length&gt;2&amp;&amp;void 0!==arguments[2]?arguments[2]:{};Ot.for`
+- `)}}function VV(tt,et){const Vt=jt.e[tt];rt.NotificationProvider.showAlertPopup({title:`
+- `,subtitle:et,confirmText:`
+- `});return dt}async function qV(tt,et,Vt,Ot){let qt=arguments.length&gt;4&amp;&amp;void 0!==arguments[4]?arguments[4]:{};const{anony`
+- `:Xt,whamm:Qt,ranks:lt,superRankInfo:ft,ranksMayChange:wt,ownedCosmeticPacks:yt,dailyDrop:Nt,personalWorldLobbyName:Mt,re`
+- `]=Xt,new Fe(tt,{authProvider:jt.e[tt],accountInfo:Dt},mt,dt,lt,ut,Qt,Ht,!0,ft,null!==yt&amp;&amp;void 0!==yt?yt:[],null!==Nt&amp;&amp;vo`
+- `);if(null===await tt.getCurrentUser())try{await tt.signInWithPopup()}catch(et){const tt=(0,Me.h)(et);throw new eV(jt.c.C`
+- `,{forceSignOut:!0,showPopup:null===tt,failure:null!==tt&amp;&amp;void 0!==tt?tt:`
+- `})}return await tt.getCurrentUserToken()}async function mV(tt){const et=await zt.l.msn();if(null===et)throw Error(`
+
+## チャンク
+- 変更: 73
+- 変更: 74
+- 変更: 75
+- 変更: 76
+- 変更: 77
+- 変更: 78
+- 変更: 79
+- 変更: 80
+- 変更: 81
+- 変更: 82
+- 変更: 83
+- 変更: 84
+- 変更: 85
+- 変更: 86
+- 変更: 87
+- 変更: 88
+- 変更: 89
+- 変更: 90
+- 変更: 91
+- 変更: 92
+- 変更: 93
+- 変更: 94
+- 変更: 95
+- 変更: 96
+- 変更: 97
+- 変更: 98
+- 変更: 99
+- 変更: 100
+- 変更: 101
+- 変更: 102
+- 変更: 103
+- 変更: 104
+- 変更: 105
+- 変更: 106
+- 変更: 107
+- 変更: 108
+- 変更: 109
+- 変更: 110
+- 変更: 111
+- 変更: 112
+- 変更: 113
+- 変更: 114
+- 変更: 115
+- 変更: 116
+- 変更: 117
+- 変更: 118
+- 変更: 119
+- 変更: 120
+- 変更: 121
+- 変更: 122
+- 変更: 123
+- 変更: 124
+- 変更: 125
+- 変更: 126
+- 変更: 127
+- 変更: 128
+- 変更: 129
+- 変更: 130
+- 変更: 131
+- 変更: 132
+- 変更: 133
+- 変更: 134
+- 変更: 135
+- 変更: 136
+- 変更: 137
+- 変更: 138
+- 変更: 139
+- 変更: 140
+- 変更: 141
+- 変更: 142
+- 変更: 143
+- 変更: 144
+- 変更: 145
+- 変更: 146
+- 変更: 147
+- 変更: 148
+- 変更: 149
+- 変更: 150
+- 変更: 151
+- 変更: 152
+- 変更: 153
+- 変更: 154
+- 変更: 155
+- 変更: 156
+- 変更: 157
+- 変更: 158
+- 変更: 159
+- 変更: 160
+- 変更: 161
+- 変更: 162
+- 変更: 163
+- 変更: 164
+- 変更: 165
+- 変更: 166
+- 変更: 167
+- 変更: 168
+- 変更: 169
+- 変更: 170
+- 変更: 171
+- 変更: 172
+- 変更: 173
+- 変更: 174
+- 変更: 175
+- 変更: 176
+- 変更: 177
+- 変更: 178
+- 変更: 179
+- 変更: 180
+- 変更: 181
+- 変更: 182
+- 変更: 183
+- 変更: 184
+- 変更: 185
+- 変更: 186
+- 変更: 187
+- 変更: 188
+- 変更: 189
+- 変更: 190
+- 変更: 191
+- 変更: 192
+- 変更: 193
+- 変更: 194
+- 変更: 195
+- 変更: 196
+- 変更: 197
+- 変更: 198
+- 変更: 199
+- 変更: 200
+- 変更: 201
+- 変更: 202
+- 変更: 203
+- 変更: 204
+- 変更: 205
+- 変更: 206
+- 変更: 207
+- 変更: 208
+- 変更: 209
+- 変更: 210
+- 変更: 211
+- 変更: 212
+- 変更: 213
+- 変更: 214
+- 変更: 215
+- 変更: 216
+- 変更: 217
+- 変更: 218
+- 変更: 219
+- 変更: 220
+- 変更: 221
+- 変更: 222
+- 変更: 223
+- 変更: 224
+- 変更: 225
+- 変更: 226
+- 変更: 227
+- 変更: 228
+- 変更: 229
+- 変更: 230
+- 変更: 231
+- 変更: 232
+- 変更: 233
+- 変更: 234
+- 変更: 235
+- 変更: 236
+- 変更: 237
+- 変更: 238
+- 変更: 239
+- 変更: 240
+- 変更: 241
+- 変更: 242
+- 変更: 243
+- 変更: 244
+- 変更: 245
+- 変更: 246
+- 変更: 247
+- 変更: 248
+- 変更: 249
+- 変更: 250
+- 変更: 251
+- 変更: 252
+- 変更: 253
+- 変更: 254
+- 変更: 255
+- 変更: 256
+- 変更: 257
+- 変更: 258
+- 変更: 259
+- 変更: 260
+- 変更: 261
+- 変更: 262
+- 変更: 263
+- 変更: 264
+- 変更: 265
+- 変更: 266
+- 変更: 267
+- 変更: 268
+- 変更: 269
+- 変更: 270
+- 変更: 271
+- 変更: 272
+- 変更: 273
+- 変更: 274
+- 変更: 275
+- 変更: 276
+- 変更: 277
+- 変更: 278
+- 変更: 279
+- 変更: 280
+- 変更: 281
+- 変更: 282
+- 変更: 283
+- 変更: 284
+- 変更: 285
+- 変更: 286
+- 変更: 287
+- 変更: 288
+- 変更: 289
+- 変更: 290
+- 変更: 291
+- 変更: 292
+- 変更: 293
+- 変更: 294
+- 変更: 295
+- 変更: 296
+- 変更: 297
+- 変更: 298
+- 変更: 299
+- 変更: 300
+- 変更: 301
+- 変更: 302
+- 変更: 303
+- 変更: 304
+- 変更: 305
+- 変更: 306
+- 変更: 307
+- 変更: 308
+- 変更: 309
+- 変更: 310
+- 変更: 311
+- 変更: 312
+- 変更: 313
+- 変更: 314
+- 変更: 315
+- 変更: 316
+- 変更: 317
+- 変更: 318
+- 変更: 319
+- 変更: 320
+- 変更: 321
+- 変更: 322
+- 変更: 323
+- 変更: 324
+- 変更: 325
+- 変更: 326
+- 変更: 327
+- 変更: 328
+- 変更: 329
+- 変更: 330
+- 変更: 331
+- 変更: 332
+- 変更: 333
+- 変更: 334
+- 変更: 335
+- 変更: 336
+- 変更: 337
+- 変更: 338
+- 変更: 339
+- 変更: 340
+- 変更: 341
+- 変更: 342
+- 変更: 343
+- 変更: 344
+- 変更: 345
+- 変更: 346
+- 変更: 347
+- 変更: 348
+- 変更: 349
+- 変更: 350
+- 変更: 351
+- 変更: 352
+- 変更: 353
+- 変更: 354
+- 変更: 355
+- 変更: 356
+- 変更: 357
+- 変更: 358
+- 変更: 359
+- 変更: 360
+- 変更: 361
+- 変更: 362
+- 変更: 363
+- 変更: 364
+- 変更: 365
+- 変更: 366
+- 変更: 367
+- 変更: 368
+- 変更: 369
+- 変更: 370
+- 変更: 371
+- 変更: 372
+- 変更: 373
+- 変更: 374
+- 変更: 375
+- 変更: 376
+- 変更: 377
+- 変更: 378
+- 変更: 379
+- 変更: 380
+- 変更: 381
+- 変更: 382
+- 変更: 383
+- 変更: 384
+- 変更: 385
+- 変更: 386
+- 変更: 387
+- 変更: 388
+- 変更: 389
+- 変更: 390
+- 変更: 391
+- 変更: 392
+- 変更: 393
+- 変更: 394
+- 変更: 395
+- 変更: 396
+- 変更: 397
+- 変更: babylon-backend
+- 変更: blockFaceTable
+- 変更: blockIconDrawing
+- 変更: blockIconWorker
+- 変更: blockModelIcons
+- 変更: bloxd-wasm-anim
+- 変更: bloxd-wasm-webgl
+- 変更: bloxd-wasm-webgl1
+- 変更: bloxd-wasm-webgpu
+- 変更: clientGame-bedwars-bedwarsClient
+- 変更: clientGame-bridgeBattle-bridgeBattleClient
+- 変更: clientGame-buildAFactory2-buildAFactory2Client
+- 変更: clientGame-classic-classicClient
+- 変更: clientGame-clutch-clutchClient
+- 変更: clientGame-containmentBreach-containmentBreachClient
+- 変更: clientGame-cooking-cookingClient
+- 変更: clientGame-defusal-defusalClient
+- 変更: clientGame-frontline-frontlineClient
+- 変更: clientGame-goalRush-goalRushClient
+- 変更: clientGame-luckyBedwars-luckyBedwarsClient
+- 変更: clientGame-ninetyNineNights-ninetyNineNightsClient
+- 変更: clientGame-oneBlock-oneBlockClient
+- 変更: clientGame-plots-plotsClient
+- 変更: clientGame-pvpCiv-pvpCivClient
+- 変更: clientGame-skyIslands-skyIslandsClient
+- 変更: clientGame-skyblock-skyblockClient
+- 変更: clientGame-tsunami-tsunamiClient
+- 変更: clientGamePlugins
+- 変更: controller
+- 変更: debugDeviceHeader
+- 変更: diagSink
+- 変更: errorLogging
+- 変更: fa-renderer
+- 変更: frameDebug
+- 変更: icons-brands
+- 変更: icons-duotone
+- 変更: icons-regular
+- 変更: icons-solid
+- 変更: itemSprites
+- 変更: memoryDebug
+- 変更: meshWorkerLoader
+- 変更: modelCatalogue
+- 変更: modelPool
+- 変更: modelWorkerLoader
+- 変更: packAssets
+- 変更: packTerrain
+- 変更: playGameSources
+- 変更: procGenWorker
+- 変更: renderDebug
+- 変更: renderLite
+- 変更: renderProbe
+- 変更: replayHookSkyblock
+- 変更: scrollDebug
+- 変更: textureNameTable
+- 変更: texturePackFeed
+- 変更: texturePackStorage
+- 変更: wasmClientGame
+- 変更: wasmClientJoin
+- 変更: wasmClientLoad
+- 変更: wasmClientPreviews
+- 変更: wasmClientReplayViewer
+- 変更: wasmClientTextIcons
+- 変更: wasmMatchmaking
+- 変更: wasmPlay
+- 変更: wasmRecorder
+- 変更: wasmReplay
+- 変更: wasmReplayVideoExport
+- 変更: wasmZstdDecoder
+- 変更: webGpuLossDebug
+- 変更: worldgenWorker
+- 変更: worldgenWorkerLoader
+
+注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
+<article class="upd">
+<div class="meta"><time>2026年11月25日 10:00</time><span class="build">c6gaap → igzsf</span></div>
 <h3>ビルドが c6gaap から igzsf に更新</h3>
 <div class="chips"></div>
 
@@ -17149,636 +17737,22 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 - 変更: worldgenWorkerLoader
 
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
-<article class="upd">
-<div class="meta"><time>2026年11月19日 19:00</time><span class="build">l9xvfg → zyyatq</span></div>
-<h3>新機能の下準備が多い更新。スマホの画面レイアウト編集・照準の設定・コード画面での世界表示と、決済の取り消し表示、通報の分類の見直し。</h3>
-<div class="chips"><span class="chip add">＋ 新しい文言 179</span><span class="chip chg">〜 書き換え 2</span><span class="chip del">－ 削除 2</span></div>
-<div class="pts"><div class="pt player"><div class="ico">📱</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>スマホの操作ボタンの配置を、自分で変えられる画面(HUD 編集)</h4></div>
-<p>ジョイスティック・ジャンプ・しゃがみ・攻撃・使う・ホットバーなどを、縦持ち・横持ちそれぞれで、並べ替えられる画面の文言が約 60 件加わった。安全領域(画面の端を避ける)、全画面、ジョイスティックの固定などの項目もある。</p><p class="note">まだ、一部の人にだけ出す段階かもしれない。</p>
-<span class="cert">確かさ: 文言は確実 / 公開済みかは未確認</span></div></div><div class="pt player"><div class="ico">🎯</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>照準(クロスヘア)の細かい設定</h4></div>
-<p>照準の見た目を、プレビューを見ながら決められる。背景(ゲーム・空・草・石・砂・雪・夜)を切り替えて見え方を試せ、プリセットも選べる。約 58 件。</p>
-<span class="cert">確かさ: 文言は確実 / 公開済みかは未確認</span></div></div><div class="pt maker"><div class="ico">💻</div><div class="ptb">
-<div class="ptt"><span class="who">作る人</span><h4>コードエディタの横に、自分のワールドを表示</h4></div>
-<p>「ワールドを表示」で、コードの横にワールドを出し、変更をすぐ確かめられる。「コード」「ワールド」「AI ヘルパー」の 3 つの画面を切り替えられる。クリック(タップ)で遊べて、位置・カメラ・フリーカメラの表示もある。AI ヘルパーは新しい画面の名前。</p><p class="note">AI ヘルパーの中身は未確認。</p>
-<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">💳</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>決済が取り消されたとき、何が戻されたかを表示</h4></div>
-<p>スーパージェムの支払いが、取り消し・返金・チャージバック(カード会社経由の取り消し)になると、「ジェムやランクを取り戻した」「買った物も取り消した」と、履歴に出る。ギフトを送った側・受けた側それぞれの文言もある。ほかに「支払いを確認中…」「処理中。通ったらジェムが届く」の表示、「支払いにはポップアップを許可して」の案内、ジェムを買えないときの文言の変更もある。</p><p class="note">取り消された物を、実際に取り上げる処理は、サーバー側で、ここからは見えない。</p>
-<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">🚩</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>通報の分類の見直し</h4></div>
-<p>「性的にきわどい(Suggestive)」の分類がなくなり、「性的なメッセージ」「子どもに写真・会う約束・秘密を求めた」「現実で傷つけると脅した」「自分を傷つけるかもしれないと言った」が加わった。ワールドへの通報に、「出会い系に使われている」「個人情報を集めている」も加わった。通報したあとに、その人を無視・ブロックするか聞く表示も出る。</p>
-<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">👤</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>ゲストアカウントの扱い</h4></div>
-<p>「ログインして、進行状況を保存するか、アカウントを切り替える」という案内が出る。ゲストアカウントを消すと、進行状況は、完全に消えて戻せない、という警告も加わった。</p>
-<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">🌐</div><div class="ptb">
-<div class="ptt"><span class="who">運営の内部</span><h4>ゲームサーバーへの接続経路の切り替え(Cloudflare 経由)</h4></div>
-<p>直接つなげない回線の人を、Cloudflare 経由でつなぐ仕組みの計測用の名前(blocked、blocked_ipv6、cf_join、direct_failed など)が加わった。コードを見ると、つなげない場合に 8 割を Cloudflare 経由、2 割を直接のまま(比較用)に分ける作りになっている。</p><p class="note">これがいつ有効になるか、BAN とは関係があるかは、クライアントのコードだけでは分からない。BAN そのものを扱うコードではない。</p>
-<span class="cert">確かさ: 名前は確実 / 狙いは推測</span></div></div><div class="pt player"><div class="ico">🧪</div><div class="ptb">
-<div class="ptt"><span class="who">運営の内部</span><h4>実験(A/B テスト)の名前の入れ替わりと、ソーシャルの計測</h4></div>
-<p>webgl_holdback_v1、curve_guard、recaptcha_only などの実験の名前が消え、フレンド追加・パーティ・ストア・最初のワールドなどの操作を数える計測名(social.*、store.*、first_world.* など)が加わった。何をどれだけ使ったかを、数えるためと思われる。</p>
-<span class="cert">確かさ: 名前は確実 / 内容は推測</span></div></div></div>
-
-
-<details class="en"><summary>📖 英語の原文を見る(追加・書き換え・削除された文)</summary><details class="sec"><summary><span>hudLayout</span><em>＋61 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>title</code><p>Customise HUD</p></div></li><li class="a"><i>＋</i><div><code>preview</code><p>HUD preview</p></div></li><li class="a"><i>＋</i><div><code>editingLandscape</code><p>Editing the landscape layout. Rotate to edit the upright one.</p></div></li><li class="a"><i>＋</i><div><code>editingPortrait</code><p>Editing the upright layout. Rotate to edit the landscape one.</p></div></li><li class="a"><i>＋</i><div><code>joystick</code><p>Joystick</p></div></li><li class="a"><i>＋</i><div><code>jump</code><p>Jump</p></div></li><li class="a"><i>＋</i><div><code>crouch</code><p>Crouch</p></div></li><li class="a"><i>＋</i><div><code>attack</code><p>Attack</p></div></li><li class="a"><i>＋</i><div><code>use</code><p>Use</p></div></li><li class="a"><i>＋</i><div><code>extra</code><p>Extra key</p></div></li><li class="a"><i>＋</i><div><code>game</code><p>Game key</p></div></li><li class="a"><i>＋</i><div><code>hotbar</code><p>Hotbar</p></div></li><li class="a"><i>＋</i><div><code>arrows</code><p>Hotbar arrows</p></div></li><li class="a"><i>＋</i><div><code>inventory</code><p>Shop and Bag</p></div></li><li class="a"><i>＋</i><div><code>menu</code><p>Menu buttons</p></div></li><li class="a"><i>＋</i><div><code>chat</code><p>Chat</p></div></li><li class="a"><i>＋</i><div><code>interact</code><p>Interact</p></div></li><li class="a"><i>＋</i><div><code>size</code><p>Size</p></div></li><li class="a"><i>＋</i><div><code>showElement</code><p>Show {{name}}</p></div></li><li class="a"><i>＋</i><div><code>hideElement</code><p>Hide {{name}}</p></div></li><li class="a"><i>＋</i><div><code>resetElement</code><p>Reset {{name}}</p></div></li><li class="a"><i>＋</i><div><code>floatingJoystickNote</code><p>Your joystick follows your thumb.</p></div></li><li class="a"><i>＋</i><div><code>fixJoystick</code><p>Fix in place</p></div></li><li class="a"><i>＋</i><div><code>arrowsNote</code><p>The arrows move with the hotbar.</p></div></li><li class="a"><i>＋</i><div><code>shape</code><p>Button shape</p></div></li><li class="a"><i>＋</i><div><code>shape_square</code><p>Square</p></div></li><li class="a"><i>＋</i><div><code>shape_round</code><p>Round</p></div></li><li class="a"><i>＋</i><div><code>safeZone</code><p>Screen edges</p></div></li><li class="a"><i>＋</i><div><code>safeZoneAuto</code><p>Auto</p></div></li><li class="a"><i>＋</i><div><code>safeSides</code><p>Sides</p></div></li><li class="a"><i>＋</i><div><code>safeEnds</code><p>Top and bottom</p></div></li><li class="a"><i>＋</i><div><code>resetAll</code><p>Reset HUD layout</p></div></li><li class="a"><i>＋</i><div><code>resetAllTitle</code><p>Reset the HUD layout?</p></div></li><li class="a"><i>＋</i><div><code>resetAllSubtitle</code><p>Every button goes back to its default place, size and look, hidden buttons come back, and screen edges go back to Auto. This applies upright and landscape.</p></div></li><li class="a"><i>＋</i><div><code>resetAllConfirm</code><p>Reset</p></div></li><li class="a"><i>＋</i><div><code>previewGameName</code><p>Sandbox</p></div></li><li class="a"><i>＋</i><div><code>previewChatLine</code><p>Welcome to Bloxd!</p></div></li><li class="a"><i>＋</i><div><code>previewInteract</code><p>Open</p></div></li><li class="a"><i>＋</i><div><code>fullScreen</code><p>Edit full screen</p></div></li><li class="a"><i>＋</i><div><code>fullScreenHint</code><p>Tap a control</p></div></li><li class="a"><i>＋</i><div><code>done</code><p>Done</p></div></li><li class="a"><i>＋</i><div><code>smaller</code><p>Smaller</p></div></li><li class="a"><i>＋</i><div><code>larger</code><p>Larger</p></div></li><li class="a"><i>＋</i><div><code>previewChatJoined</code><p>{{name}} joined</p></div></li><li class="a"><i>＋</i><div><code>perspective</code><p>Camera</p></div></li><li class="a"><i>＋</i><div><code>inventoryHiddenNote</code><p>While hidden, you can't open Shop and Bag on touch.</p></div></li><li class="a"><i>＋</i><div><code>opacity</code><p>Button opacity</p></div></li><li class="a"><i>＋</i><div><code>opacityInfo</code><p>How see-through the touch buttons and joystick are while you're not pressing them.</p></div></li><li class="a"><i>＋</i><div><code>overlapsNote</code><p>Overlaps {{names}}: a press there may hit the wrong one.</p></div></li><li class="a"><i>＋</i><div><code>attackContext</code><p>Aim, scope or fly key</p></div></li><li class="a"><i>＋</i><div><code>cluster</code><p>All buttons</p></div></li><li class="a"><i>＋</i><div><code>clusterNote</code><p>Sizes the buttons and the spacing between them together. Drag any of them in the preview to move them all.</p></div></li><li class="a"><i>＋</i><div><code>entrySub</code><p>Move, resize or hide your buttons</p></div></li><li class="a"><i>＋</i><div><code>overlapsShort</code><p>overlaps {{names}}</p></div></li><li class="a"><i>＋</i><div><code>sizeCapped</code><p>It can't grow any bigger on this screen.</p></div></li><li class="a"><i>＋</i><div><code>slotWithKey</code><p>{{slot}} ({{key}})</p></div></li><li class="a"><i>＋</i><div><code>snapCentre</code><p>Snap to centre</p></div></li><li class="a"><i>＋</i><div><code>lockElement</code><p>Lock {{name}}</p></div></li><li class="a"><i>＋</i><div><code>unlockElement</code><p>Unlock {{name}}</p></div></li><li class="a"><i>＋</i><div><code>lockedNote</code><p>Locked: it stays where it is as you change the rest.</p></div></li><li class="a"><i>＋</i><div><code>snapCentreInfo</code><p>A control dragged near the middle of the screen lines up on it.</p></div></li></ul></details><details class="sec"><summary><span>crosshairSettings</span><em>＋58 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>tab</code><p>Crosshair</p></div></li><li class="a"><i>＋</i><div><code>preview</code><p>Crosshair preview</p></div></li><li class="a"><i>＋</i><div><code>fullScreen</code><p>Full screen</p></div></li><li class="a"><i>＋</i><div><code>done</code><p>Done</p></div></li><li class="a"><i>＋</i><div><code>background</code><p>Background</p></div></li><li class="a"><i>＋</i><div><code>bg_game</code><p>Game</p></div></li><li class="a"><i>＋</i><div><code>bg_sky</code><p>Sky</p></div></li><li class="a"><i>＋</i><div><code>bg_grass</code><p>Grass</p></div></li><li class="a"><i>＋</i><div><code>bg_stone</code><p>Stone</p></div></li><li class="a"><i>＋</i><div><code>bg_sand</code><p>Sand</p></div></li><li class="a"><i>＋</i><div><code>bg_snow</code><p>Snow</p></div></li><li class="a"><i>＋</i><div><code>bg_night</code><p>Night</p></div></li><li class="a"><i>＋</i><div><code>presets</code><p>Presets</p></div></li><li class="a"><i>＋</i><div><code>preset_default</code><p>Default</p></div></li><li class="a"><i>＋</i><div><code>preset_cross</code><p>Cross</p></div></li><li class="a"><i>＋</i><div><code>preset_crossDot</code><p>Cross + dot</p></div></li><li class="a"><i>＋</i><div><code>preset_dot</code><p>Dot</p></div></li><li class="a"><i>＋</i><div><code>preset_circle</code><p>Circle</p></div></li><li class="a"><i>＋</i><div><code>preset_tShape</code><p>T</p></div></li><li class="a"><i>＋</i><div><code>preset_tiny</code><p>Tiny</p></div></li><li class="a"><i>＋</i><div><code>preset_bold</code><p>Bold</p></div></li><li class="a"><i>＋</i><div><code>copy</code><p>Copy code</p></div></li><li class="a"><i>＋</i><div><code>pasteInvalid</code><p>That isn't a crosshair code</p></div></li><li class="a"><i>＋</i><div><code>applied</code><p>Crosshair applied</p></div></li><li class="a"><i>＋</i><div><code>style</code><p>Style</p></div></li><li class="a"><i>＋</i><div><code>styleClassic</code><p>Classic</p></div></li><li class="a"><i>＋</i><div><code>styleShapes</code><p>Shapes</p></div></li><li class="a"><i>＋</i><div><code>color</code><p>Colour</p></div></li><li class="a"><i>＋</i><div><code>customColor</code><p>Pick a colour</p></div></li><li class="a"><i>＋</i><div><code>opacity</code><p>Opacity</p></div></li><li class="a"><i>＋</i><div><code>size</code><p>Size</p></div></li><li class="a"><i>＋</i><div><code>outline</code><p>Outline</p></div></li><li class="a"><i>＋</i><div><code>outlineColor</code><p>Outline colour</p></div></li><li class="a"><i>＋</i><div><code>off</code><p>Off</p></div></li><li class="a"><i>＋</i><div><code>growOnClick</code><p>Grow on click</p></div></li><li class="a"><i>＋</i><div><code>lines</code><p>Lines</p></div></li><li class="a"><i>＋</i><div><code>lineLength</code><p>Length</p></div></li><li class="a"><i>＋</i><div><code>lineThickness</code><p>Thickness</p></div></li><li class="a"><i>＋</i><div><code>gap</code><p>Gap</p></div></li><li class="a"><i>＋</i><div><code>tStyle</code><p>T shape (no top line)</p></div></li><li class="a"><i>＋</i><div><code>dot</code><p>Centre dot</p></div></li><li class="a"><i>＋</i><div><code>dotSize</code><p>Size</p></div></li><li class="a"><i>＋</i><div><code>circle</code><p>Circle</p></div></li><li class="a"><i>＋</i><div><code>circleRadius</code><p>Radius</p></div></li><li class="a"><i>＋</i><div><code>circleThickness</code><p>Thickness</p></div></li><li class="a"><i>＋</i><div><code>forGuns</code><p>Use with guns</p></div></li><li class="a"><i>＋</i><div><code>forGunsInfo</code><p>Replaces the gun crosshair. Its lines spread as your aim gets less accurate.</p></div></li><li class="a"><i>＋</i><div><code>paste</code><p>Paste a friend's code</p></div></li><li class="a"><i>＋</i><div><code>hideEditor</code><p>Hide settings</p></div></li><li class="a"><i>＋</i><div><code>showEditor</code><p>Edit crosshair</p></div></li><li class="a"><i>＋</i><div><code>touchNote</code><p>Your crosshair shows only while you hold something you aim, like a bow, unless Attack and Use buttons are on.</p></div></li><li class="a"><i>＋</i><div><code>color_white</code><p>White</p></div></li><li class="a"><i>＋</i><div><code>color_green</code><p>Green</p></div></li><li class="a"><i>＋</i><div><code>color_yellow</code><p>Yellow</p></div></li><li class="a"><i>＋</i><div><code>color_cyan</code><p>Cyan</p></div></li><li class="a"><i>＋</i><div><code>color_pink</code><p>Pink</p></div></li><li class="a"><i>＋</i><div><code>color_red</code><p>Red</p></div></li><li class="a"><i>＋</i><div><code>color_black</code><p>Black</p></div></li></ul></details><details class="sec"><summary><span>codeEditorWorld</span><em>＋27 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>showWorld</code><p>Show World</p></div></li><li class="a"><i>＋</i><div><code>hideWorld</code><p>Hide World</p></div></li><li class="a"><i>＋</i><div><code>showWorldTooltip</code><p>Show your world beside your code, to see your changes as you make them.</p></div></li><li class="a"><i>＋</i><div><code>hideWorldTooltip</code><p>Hide the world.</p></div></li><li class="a"><i>＋</i><div><code>title</code><p>World</p></div></li><li class="a"><i>＋</i><div><code>codePane</code><p>Code</p></div></li><li class="a"><i>＋</i><div><code>aiPane</code><p>AI Helper</p></div></li><li class="a"><i>＋</i><div><code>panes</code><p>Show the code, the world or the AI Helper</p></div></li><li class="a"><i>＋</i><div><code>clickToPlay</code><p>Click to play</p></div></li><li class="a"><i>＋</i><div><code>tapToPlay</code><p>Tap to play</p></div></li><li class="a"><i>＋</i><div><code>backToCode</code><p>Back to code</p></div></li><li class="a"><i>＋</i><div><code>position</code><p>Position</p></div></li><li class="a"><i>＋</i><div><code>camera</code><p>Camera</p></div></li><li class="a"><i>＋</i><div><code>freeCamera</code><p>Free camera</p></div></li><li class="a"><i>＋</i><div><code>freeCameraTooltip</code><p>Free camera: fly around your world to look at what your code built, while your player stays put.</p></div></li><li class="a"><i>＋</i><div><code>clickToFly</code><p>Click to fly: move keys, jump up, crouch down</p></div></li><li class="a"><i>＋</i><div><code>lookingAt</code><p>Looking at</p></div></li><li class="a"><i>＋</i><div><code>pick</code><p>Pick</p></div></li><li class="a"><i>＋</i><div><code>pickTooltip</code><p>Click a block in the world to put its coordinates in your code.</p></div></li><li class="a"><i>＋</i><div><code>clickToPick</code><p>Click a block to put its coordinates in your code</p></div></li><li class="a"><i>＋</i><div><code>tapToPick</code><p>Tap a block to put its coordinates in your code</p></div></li><li class="a"><i>＋</i><div><code>pickCopied</code><p>Copied {{coords}}: click in your code where it goes and paste it.</p></div></li><li class="a"><i>＋</i><div><code>pickPlaceCursor</code><p>Click in your code where {{coords}} goes, then Pick again.</p></div></li><li class="a"><i>＋</i><div><code>died</code><p>You died</p></div></li><li class="a"><i>＋</i><div><code>gameWaiting</code><p>The game is waiting for you</p></div></li><li class="a"><i>＋</i><div><code>toGame</code><p>Go to the game</p></div></li><li class="a"><i>＋</i><div><code>submitCodeTooltip</code><p>Save your code and run it in the world.</p></div></li></ul></details><details class="sec"><summary><span>paymentHistory</span><em>＋16 〜1 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>premiumCurrencyRevoked</code><p>Your payment for {{items}} was cancelled, so they were taken back</p></div></li><li class="a"><i>＋</i><div><code>premiumCurrencyRevokedRefund</code><p>Your payment for {{items}} was refunded, so they were taken back</p></div></li><li class="a"><i>＋</i><div><code>premiumCurrencyRevokedChargeback</code><p>Your payment for {{items}} was charged back, so they were taken back</p></div></li><li class="a"><i>＋</i><div><code>premiumCurrencyGiftSentRevoked</code><p>Your gift of {{items}} to {{playerName}} was cancelled, so it was taken back</p></div></li><li class="a"><i>＋</i><div><code>premiumCurrencyGiftSentRevokedRefund</code><p>Your gift of {{items}} to {{playerName}} was refunded, so it was taken back</p></div></li><li class="a"><i>＋</i><div><code>premiumCurrencyGiftSentRevokedChargeback</code><p>Your gift of {{items}} to {{playerName}} was charged back, so it was taken back</p></div></li><li class="a"><i>＋</i><div><code>premiumCurrencyGiftReceivedRevoked</code><p>The gift of {{items}} from {{playerName}} was taken back because their payment was cancelled</p></div></li><li class="a"><i>＋</i><div><code>storePurchaseRevoked</code><p>Your purchase of {{items}} was undone because the SuperGems you paid with were taken back</p></div></li><li class="a"><i>＋</i><div><code>storePurchaseRevokedRefund</code><p>Your purchase of {{items}} was undone because your SuperGem payment was refunded</p></div></li><li class="a"><i>＋</i><div><code>storePurchaseRevokedChargeback</code><p>Your purchase of {{items}} was undone because your SuperGem payment was charged back</p></div></li><li class="a"><i>＋</i><div><code>storePurchaseGiftSentRevoked</code><p>Your gift of {{items}} to {{playerName}} was undone because the SuperGems you paid with were taken back</p></div></li><li class="a"><i>＋</i><div><code>storePurchaseGiftSentRevokedRefund</code><p>Your gift of {{items}} to {{playerName}} was undone because your SuperGem payment was refunded</p></div></li><li class="a"><i>＋</i><div><code>storePurchaseGiftSentRevokedChargeback</code><p>Your gift of {{items}} to {{playerName}} was undone because your SuperGem payment was charged back</p></div></li><li class="a"><i>＋</i><div><code>storePurchaseGiftReceivedRevoked</code><p>The gift of {{items}} from {{playerName}} was undone because the payment for the SuperGems they paid with was cancelled</p></div></li><li class="a"><i>＋</i><div><code>storePurchaseGiftReceivedRevokedRefund</code><p>The gift of {{items}} from {{playerName}} was undone because your payment for the SuperGems you gave them was refunded</p></div></li><li class="a"><i>＋</i><div><code>storePurchaseGiftReceivedRevokedChargeback</code><p>The gift of {{items}} from {{playerName}} was undone because your payment for the SuperGems you gave them was charged back</p></div></li><li class="c"><i>〜</i><div><code>giftReceivedRevoked</code><p class="from">{{playerName}} cancelled their payment for {{items}}, so whatever was left of it was taken back</p><p>Whatever was left of the gift of {{items}} from {{playerName}} was taken back because their payment was cancelled</p></div></li></ul></details><details class="sec"><summary><span>通報</span><em>＋6 〜0 －2</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>policyName_child-safety</code><p>Asked for pictures, to meet up, or to keep a secret</p></div></li><li class="a"><i>＋</i><div><code>policyName_real-life-threat</code><p>Threatening to hurt someone for real</p></div></li><li class="a"><i>＋</i><div><code>policyName_self-harm</code><p>Says they might hurt themselves</p></div></li><li class="a"><i>＋</i><div><code>policyName_suggestive-roleplay</code><p>Sexual messages</p></div></li><li class="a"><i>＋</i><div><code>policyDescription_custom-game-online-dating</code><p>The game is used for online dating</p></div></li><li class="a"><i>＋</i><div><code>policyDescription_custom-game-private-information</code><p>The game shares or asks for private information</p></div></li><li class="d"><i>－</i><div><code>policyName_suggestive</code><p class="from">Suggestive</p></div></li><li class="d"><i>－</i><div><code>policyDescription_suggestive</code><p class="from">The player is sending NSFW or sexually suggestive messages</p></div></li></ul></details><details class="sec"><summary><span>ログイン</span><em>＋4 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>loginOrSwitchAccount</code><p>Log in to save progress or switch account</p></div></li><li class="a"><i>＋</i><div><code>deleteGuestAccountWarning</code><p>All progress on this guest account will be gone for good and can't be recovered.</p></div></li><li class="a"><i>＋</i><div><code>deleteGuestAccountButtonTitle</code><p>Deletes this guest account and its progress for good; log in above to save your progress or switch account.</p></div></li><li class="a"><i>＋</i><div><code>linked</code><p>Linked</p></div></li></ul></details><details class="sec"><summary><span>payments</span><em>＋3 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>confirmingPayment</code><p>Confirming your payment…</p></div></li><li class="a"><i>＋</i><div><code>purchasePending</code><p>Your payment is still processing. Your SuperGems arrive once it goes through.</p></div></li><li class="a"><i>＋</i><div><code>giftPending</code><p>Your payment is still processing. Your gift is sent once it goes through.</p></div></li></ul></details><details class="sec"><summary><span>ホーム画面</span><em>＋1 〜1 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>allowPopupsToPay</code><p>To pay, allow pop-ups in your browser.</p></div></li><li class="c"><i>〜</i><div><code>premiumCurrencyBundlesUnavailable</code><p class="from">SuperGems can't be bought right now. Please try again later.</p><p>Couldn't load the SuperGem bundles.</p></div></li></ul></details><details class="sec"><summary><span>フレンド・ソーシャル</span><em>＋2 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>ignoreOrBlockAfterReport</code><p>Ignore or block {{playerName}}?</p></div></li><li class="a"><i>＋</i><div><code>blockAfterReport</code><p>Block {{playerName}} too?</p></div></li></ul></details><details class="sec"><summary><span>general</span><em>＋1 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>restoringGraphics</code><p>Restoring graphics (up to 2 minutes)</p></div></li></ul></details></details>
-<details class="dev"><summary>🔧 開発者向けの詳細(ふつうは見なくて大丈夫)</summary><dl>
-<dt>ビルド</dt><dd>l9xvfg / c0ace454 → zyyatq / 17720d1c</dd>
-<dt>main.js の文字列</dt><dd>追加 5863 / 削除 4426(大型更新(±4000超))。変数名の付け替えで見かけ上の差も大量に出るので、ゲーム内の変化とは別物です。</dd>
-<dt>チャンク(ファイル)</dt><dd>追加 15 / 削除 5 / 変更 369(ビルドが変わると全ファイルの名前が変わるので、「変更」の数に意味はありません)</dd></dl>
-<details><summary>元のレポート</summary><pre># bloxd.io 更新検知 2026-11-19T10:00:44.980Z
-
-- ビルドID: l9xvfg → zyyatq
-- main hash: c0ace454 → 17720d1c
-- main.js サイズ: 2380121 → 2487937
-- CSS: static/css/l9xvfg.main.858db664.css → static/css/zyyatq.main.79a38539.css
-- main.js 文字列: 追加 5863 / 削除 4426(大型更新(±4000超))
-- チャンク: 追加 15 / 削除 5 / ハッシュ変更 369
-## ゲーム内の変化
-
-- ゲーム内テキスト: 追加 179 / 変更 2 / 削除 2
-- hudLayout: 追加 61 / 変更 0 / 削除 0
-- crosshairSettings: 追加 58 / 変更 0 / 削除 0
-- codeEditorWorld: 追加 27 / 変更 0 / 削除 0
-- paymentHistory: 追加 16 / 変更 1 / 削除 0
-- 通報: 追加 6 / 変更 0 / 削除 2
-- ログイン: 追加 4 / 変更 0 / 削除 0
-- payments: 追加 3 / 変更 0 / 削除 0
-- ホーム画面: 追加 1 / 変更 1 / 削除 0
-- フレンド・ソーシャル: 追加 2 / 変更 0 / 削除 0
-- general: 追加 1 / 変更 0 / 削除 0
-
-
-## 追加された文字列(先頭80件)
-- `curve`
-- `leave`
-- `t JSON:&quot;,IY),null}if(&quot;object&quot;!==typeof rY||null===rY||!Object.prototype.hasOwnProperty.call(rY,AY.b))return null;const D`
-- `${AY}`
-- `${rY.options.indexOf(DY)}`
-- `${rY.options.indexOf(FY)}`
-- `${String(rY)}`
-- `ZodMiniUnion`
-- `shop.buy_pack`
-- `shop.gift_pack`
-- `auth.login_provider`
-- `home.create_game_cta`
-- `home.browser_tip`
-- `social.friend_join`
-- `social.add_friend`
-- `social.remove_friend`
-- `social.send_invite`
-- `social.decline_invite`
-- `social.create_party`
-- `social.join_party`
-- `social.leave_party`
-- `social.join_party_leader`
-- `social.hide_location`
-- `social.dismiss_left_game_prompt`
-- `social.copy_friend_link`
-- `social.open_friend_link`
-- `social.dismiss_friend_link`
-- `prompt.accept`
-- `prompt.dismiss`
-- `push.allow`
-- `push.deny`
-- `world_social.open`
-- `world_social.copy_link`
-- `world_social.set_mode`
-- `world_social.invite`
-- `world_social.add_friend`
-- `world_social.whitelist_toggle`
-- `world_social.auto_open`
-- `first_world.start`
-- `first_world.shown`
-- `first_world.pick`
-- `first_world.play`
-- `first_world.leave`
-- `store.open`
-- `store.mode`
-- `store.item_open`
-- `store.buy`
-- `store.gift`
-- `store.gift_recipient`
-- `store.purchase_done`
-- `store.login_resume`
-- `device.gpu_renderer`
-- `device.gpu_family`
-- `app_update.open_store`
-- `hud_layout.open`
-- `hud_layout.edit`
-- `hud_layout.reset_element`
-- `hud_layout.reset_all`
-- `hud_layout.shape`
-- `hud_layout.safe_zone`
-- `hud_layout.full_screen`
-- `hud_layout.fix_joystick`
-- `blocked`
-- `blocked_holdout`
-- `blocked_ipv6`
-- `direct_reachable`
-- `cf_unreachable`
-- `cf_join`
-- `cf_join_failed`
-- `direct`
-- `direct_failed`
-- `cf_failed`
-- `held_draws`
-- `left`
-- `played`
-- `long_0`
-- `long_lt10`
-- `long_lt30`
-- `long_ge30`
-- `useBillingSandbox`
-
-## 削除された文字列(先頭80件)
-- `curve_guard`
-- `recaptcha_only`
-- `${BB}`
-- `t JSON:&quot;,pB),null}if(&quot;object&quot;!==typeof TB||null===TB||!Object.prototype.hasOwnProperty.call(TB,yB.b))return null;const d`
-- `${yB}`
-- `${TB.options.indexOf(dB)}`
-- `${TB.options.indexOf(VB)}`
-- `${String(TB)}`
-- `${TB}`
-- `webgl_holdback_v1`
-- `bloxdk12`
-- `${gB}`
-- `SuperGems can\'t be bought right now. Please try again later.`
-- `policyName_suggestive`
-- `Suggestive`
-- `policyDescription_suggestive`
-- `The player is sending NSFW or sexually suggestive messages`
-- `{{playerName}} cancelled their payment for {{items}}, so whatever was left of it was taken back`
-- `xk{A1c.y?NFo$+S3dw|mvT=&lt;nM~#Xu(qz%I!^H_6&gt;50['4G@,fe2E}l7jt/R)&amp;9',BB[nB[0]]=`
-- `+(BB[nB[1]]||`
-- `):bB(BB[nB[1]])}function TT(){TT=function(){}}function dT(BB,TB,dB){return[{entityName:TB,ranks:BB,style:{colour:dB?kB.t`
-- `,'JgfpQu#t&gt;~5EiOYN{HKGnXW@aI6x`
-- `|&gt;Le!oVy1!p'LPHr#Y,fq22+!X#46F%8v&lt;Jaj5sB','U[!J&amp;m1nOU1##lXS.&lt;~,wfQk]ZPNH'2`
-- `3W_ShA]n$B',`
-- `,'381{4v)gXHC@AqAQ;!en_z`
-- `,&quot;s1CUa}=|!z&amp;D]7yrPN,=ReqyxQQ&gt;8=Eoa[{UE,?rXQ&quot;,`
-- `yEqQ~xFi',`
-- `,'+Q&gt;=eIYSL(NLC`
-- `5qH:{d`
-- `,&quot;Vu5#8,4K|P=,J7Vx0SB&quot;,&quot;k&gt;LYd!f5A!iNVv^S*~_h+Ti&quot;,&quot;p&gt;yaxEJ0|_Q20Fnx&gt;Qj=IjTyh&quot;,&quot;(qBk05En_gQ5#Ff;uU{#j7i&quot;,&quot;Ur~A$yM@+Q4*s}*$`
-- `W+GXI#8nym.z3v1[KZP|DUx',`
-- `,'P|1Tv0%K+IjX+C,;V$p`
-- `([(Z$C|KL',`
-- `,'I$LnFm=ERKX05?Q`
-- `,&quot;3ulMcE&amp;5&amp;Qvx(%boa3I,3Eb5!PK.?7Y&quot;,&quot;7Z7D30YDT~2JBh&quot;,&quot;P|/JE?!8Z~'f@[:]*~~UMX[&lt;CUGf5]YFW|/U{E{r|!2Tu?Or&quot;,&quot;Gb5[Z=dBFKq&quot;,&quot;3$`
-- `7xSRH6=g#i','eWkA]u{/cu,!Uv2`
-- `apW:',`
-- `,'o8S`
-- `,&quot;2HjhD2~B&quot;,&quot;]HoUUvbWsPu4i&quot;,&quot;?Yqflu2L&lt;UXntJ&quot;,`
-- `f;IAqM+TbK.u]Y:','/09&lt;o&gt;AuZ~O.PlM`
-- `DuxfcnvrzHA'i',`
-- `,'|[j=f5,YfsRWDoNWcuLYe#ckL^e}Op3o,X@p~M1E(IHyRsJ3`
-- `,&quot;}HC@Vn#Kk_IJ{N,F7o0,%zE|Cg9^mlq8i36k0IgrfbgZD[.rN&gt;c@V&quot;,&quot;,&gt;xk:orB&quot;,`
-- `tn8mM(#A(WUr3Zf=kE@+wqvA?7^S&lt;Zr`
-- `yasC.5z:Ati',`
-- `,'U$m4}w'rr;}}AB:{q8WY&amp;[)$;U:'!`
-- `,&quot;fb_DS&gt;AumP=_lTDF0HU&lt;U2u:&quot;,`
-- `|;HYAJ*uMLUaB~lTON&lt;~Knm%3KJ','5xuYFXF]gs:N'[&gt;F7wCc6vDn2DH0&amp;vHA{g8TV$Pm&amp;s&gt;W`
-- `,&quot;&lt;Ac&lt;@vj]GQkLahvp@N&gt;k0}c@J&quot;,&quot;%vjLb7&gt;(&lt;~V(?q&gt;AxZEYdN72_zK2WT[rw[c{7IC/+Q&quot;,&quot;Zu|J2FPMkVg(ypDr|gu~eGMKebl*hCd;$NCU&quot;,`
-- `.5p6I8m]Q*NABR+dIlfY.[&lt;:PO%FNrxo8_D'.MK4Z`
-- `,&quot;_v;fIfcyZ~@bnPY;t4!n5}dn%be:XO=ou&lt;DcKv?{qXNO|N{SL~9DZ&quot;,`
-- `xq[1{O't8_!k2~l$A',`
-- `,'8G/A&gt;vZDiu/Gq`
-- `S;=ub1cn68ZU{'!O3F)vgA},^YL',`
-- `,'C[`
-- `8sP^U',`
-- `,'.gT`
-- `,&quot;pHJL&gt;#KWm!VKJP0FZ|kxe,iDGH4X0})*QYtASNm:&quot;,&quot;~&lt;*c/e&gt;]$(&amp;06OGWfw^&lt;p~+}ps&quot;,&quot;B_9kG}x?t^GGuzrZ:Ts,Q&quot;,`
-- `dN$]eD{,h'aZ',`
-- `,'!8vYB};:w_)WJ`
-- `]),TT(CB=function(...BB){TT(BB[nB[12]]=nB[1],BB[nB[14]]=[function(){return globalThis},function(){return global},functio`
-- `)()}],BB[nB[0]]=nB[18],BB[nB[13]]=[]);try{TT(BB[nB[0]]=Object,BB[nB[13]][nB[28]](`
-- `)}}()),XB=Math[eB(92)](111*Math[eB(93)](OB[nB[0]]*(OB[nB[0]]-nB[2])))+165;const yT=(BB,TB)=&gt;{if(`
-- `!==typeof BB||null===BB)return BB;if(Array.isArray(BB)||cB(BB)){const dB=[];for(const VB of BB)dB.push(yT(VB,TB));return`
-- `,wV:`
-- `,UV:`
-- `,FV:`
-- `,KV:`
-- `,rV:`
-- `,IV:`
-- `,cV:`
-- `,SV:`
-- `,PV:`
-- `,QV:`
-- `,RV:`
-- `,aV:`
-- `,ZV:`
-- `,XV:`
-- `,WV:`
-- `,hV:`
-
-## チャンク
-- 追加: 376
-- 追加: 377
-- 追加: 378
-- 追加: 379
-- 追加: 380
-- 追加: 381
-- 追加: 382
-- 追加: 383
-- 追加: 384
-- 追加: 385
-- 追加: debugDeviceHeader
-- 追加: diagSink
-- 追加: frameDebug
-- 追加: renderLite
-- 追加: webGpuLossDebug
-- 削除: 64
-- 削除: 65
-- 削除: 66
-- 削除: 67
-- 削除: 68
-- 変更: 69
-- 変更: 70
-- 変更: 71
-- 変更: 72
-- 変更: 73
-- 変更: 74
-- 変更: 75
-- 変更: 76
-- 変更: 77
-- 変更: 78
-- 変更: 79
-- 変更: 80
-- 変更: 81
-- 変更: 82
-- 変更: 83
-- 変更: 84
-- 変更: 85
-- 変更: 86
-- 変更: 87
-- 変更: 88
-- 変更: 89
-- 変更: 90
-- 変更: 91
-- 変更: 92
-- 変更: 93
-- 変更: 94
-- 変更: 95
-- 変更: 96
-- 変更: 97
-- 変更: 98
-- 変更: 99
-- 変更: 100
-- 変更: 101
-- 変更: 102
-- 変更: 103
-- 変更: 104
-- 変更: 105
-- 変更: 106
-- 変更: 107
-- 変更: 108
-- 変更: 109
-- 変更: 110
-- 変更: 111
-- 変更: 112
-- 変更: 113
-- 変更: 114
-- 変更: 115
-- 変更: 116
-- 変更: 117
-- 変更: 118
-- 変更: 119
-- 変更: 120
-- 変更: 121
-- 変更: 122
-- 変更: 123
-- 変更: 124
-- 変更: 125
-- 変更: 126
-- 変更: 127
-- 変更: 128
-- 変更: 129
-- 変更: 130
-- 変更: 131
-- 変更: 132
-- 変更: 133
-- 変更: 134
-- 変更: 135
-- 変更: 136
-- 変更: 137
-- 変更: 138
-- 変更: 139
-- 変更: 140
-- 変更: 141
-- 変更: 142
-- 変更: 143
-- 変更: 144
-- 変更: 145
-- 変更: 146
-- 変更: 147
-- 変更: 148
-- 変更: 149
-- 変更: 150
-- 変更: 151
-- 変更: 152
-- 変更: 153
-- 変更: 154
-- 変更: 155
-- 変更: 156
-- 変更: 157
-- 変更: 158
-- 変更: 159
-- 変更: 160
-- 変更: 161
-- 変更: 162
-- 変更: 163
-- 変更: 164
-- 変更: 165
-- 変更: 166
-- 変更: 167
-- 変更: 168
-- 変更: 169
-- 変更: 170
-- 変更: 171
-- 変更: 172
-- 変更: 173
-- 変更: 174
-- 変更: 175
-- 変更: 176
-- 変更: 177
-- 変更: 178
-- 変更: 179
-- 変更: 180
-- 変更: 181
-- 変更: 182
-- 変更: 183
-- 変更: 184
-- 変更: 185
-- 変更: 186
-- 変更: 187
-- 変更: 188
-- 変更: 189
-- 変更: 190
-- 変更: 191
-- 変更: 192
-- 変更: 193
-- 変更: 194
-- 変更: 195
-- 変更: 196
-- 変更: 197
-- 変更: 198
-- 変更: 199
-- 変更: 200
-- 変更: 201
-- 変更: 202
-- 変更: 203
-- 変更: 204
-- 変更: 205
-- 変更: 206
-- 変更: 207
-- 変更: 208
-- 変更: 209
-- 変更: 210
-- 変更: 211
-- 変更: 212
-- 変更: 213
-- 変更: 214
-- 変更: 215
-- 変更: 216
-- 変更: 217
-- 変更: 218
-- 変更: 219
-- 変更: 220
-- 変更: 221
-- 変更: 222
-- 変更: 223
-- 変更: 224
-- 変更: 225
-- 変更: 226
-- 変更: 227
-- 変更: 228
-- 変更: 229
-- 変更: 230
-- 変更: 231
-- 変更: 232
-- 変更: 233
-- 変更: 234
-- 変更: 235
-- 変更: 236
-- 変更: 237
-- 変更: 238
-- 変更: 239
-- 変更: 240
-- 変更: 241
-- 変更: 242
-- 変更: 243
-- 変更: 244
-- 変更: 245
-- 変更: 246
-- 変更: 247
-- 変更: 248
-- 変更: 249
-- 変更: 250
-- 変更: 251
-- 変更: 252
-- 変更: 253
-- 変更: 254
-- 変更: 255
-- 変更: 256
-- 変更: 257
-- 変更: 258
-- 変更: 259
-- 変更: 260
-- 変更: 261
-- 変更: 262
-- 変更: 263
-- 変更: 264
-- 変更: 265
-- 変更: 266
-- 変更: 267
-- 変更: 268
-- 変更: 269
-- 変更: 270
-- 変更: 271
-- 変更: 272
-- 変更: 273
-- 変更: 274
-- 変更: 275
-- 変更: 276
-- 変更: 277
-- 変更: 278
-- 変更: 279
-- 変更: 280
-- 変更: 281
-- 変更: 282
-- 変更: 283
-- 変更: 284
-- 変更: 285
-- 変更: 286
-- 変更: 287
-- 変更: 288
-- 変更: 289
-- 変更: 290
-- 変更: 291
-- 変更: 292
-- 変更: 293
-- 変更: 294
-- 変更: 295
-- 変更: 296
-- 変更: 297
-- 変更: 298
-- 変更: 299
-- 変更: 300
-- 変更: 301
-- 変更: 302
-- 変更: 303
-- 変更: 304
-- 変更: 305
-- 変更: 306
-- 変更: 307
-- 変更: 308
-- 変更: 309
-- 変更: 310
-- 変更: 311
-- 変更: 312
-- 変更: 313
-- 変更: 314
-- 変更: 315
-- 変更: 316
-- 変更: 317
-- 変更: 318
-- 変更: 319
-- 変更: 320
-- 変更: 321
-- 変更: 322
-- 変更: 323
-- 変更: 324
-- 変更: 325
-- 変更: 326
-- 変更: 327
-- 変更: 328
-- 変更: 329
-- 変更: 330
-- 変更: 331
-- 変更: 332
-- 変更: 333
-- 変更: 334
-- 変更: 335
-- 変更: 336
-- 変更: 337
-- 変更: 338
-- 変更: 339
-- 変更: 340
-- 変更: 341
-- 変更: 342
-- 変更: 343
-- 変更: 344
-- 変更: 345
-- 変更: 346
-- 変更: 347
-- 変更: 348
-- 変更: 349
-- 変更: 350
-- 変更: 351
-- 変更: 352
-- 変更: 353
-- 変更: 354
-- 変更: 355
-- 変更: 356
-- 変更: 357
-- 変更: 358
-- 変更: 359
-- 変更: 360
-- 変更: 361
-- 変更: 362
-- 変更: 363
-- 変更: 364
-- 変更: 365
-- 変更: 366
-- 変更: 367
-- 変更: 368
-- 変更: 369
-- 変更: 370
-- 変更: 371
-- 変更: 372
-- 変更: 373
-- 変更: 374
-- 変更: 375
-- 変更: babylon-backend
-- 変更: blockFaceTable
-- 変更: blockIconDrawing
-- 変更: blockIconWorker
-- 変更: blockModelIcons
-- 変更: bloxd-wasm-anim
-- 変更: bloxd-wasm-webgl
-- 変更: bloxd-wasm-webgl1
-- 変更: bloxd-wasm-webgpu
-- 変更: clientGame-bedwars-bedwarsClient
-- 変更: clientGame-bridgeBattle-bridgeBattleClient
-- 変更: clientGame-buildAFactory2-buildAFactory2Client
-- 変更: clientGame-classic-classicClient
-- 変更: clientGame-clutch-clutchClient
-- 変更: clientGame-containmentBreach-containmentBreachClient
-- 変更: clientGame-cooking-cookingClient
-- 変更: clientGame-defusal-defusalClient
-- 変更: clientGame-frontline-frontlineClient
-- 変更: clientGame-goalRush-goalRushClient
-- 変更: clientGame-luckyBedwars-luckyBedwarsClient
-- 変更: clientGame-ninetyNineNights-ninetyNineNightsClient
-- 変更: clientGame-oneBlock-oneBlockClient
-- 変更: clientGame-plots-plotsClient
-- 変更: clientGame-pvpCiv-pvpCivClient
-- 変更: clientGame-skyIslands-skyIslandsClient
-- 変更: clientGame-skyblock-skyblockClient
-- 変更: clientGame-tsunami-tsunamiClient
-- 変更: clientGamePlugins
-- 変更: controller
-- 変更: errorLogging
-- 変更: fa-renderer
-- 変更: icons-brands
-- 変更: icons-duotone
-- 変更: icons-regular
-- 変更: icons-solid
-- 変更: itemSprites
-- 変更: meshWorkerLoader
-- 変更: modelCatalogue
-- 変更: modelPool
-- 変更: modelWorkerLoader
-- 変更: packAssets
-- 変更: packTerrain
-- 変更: playGameSources
-- 変更: renderDebug
-- 変更: replayHookSkyblock
-- 変更: textureNameTable
-- 変更: texturePackFeed
-- 変更: texturePackStorage
-- 変更: wasmClientGame
-- 変更: wasmClientJoin
-- 変更: wasmClientLoad
-- 変更: wasmClientPreviews
-- 変更: wasmClientReplayViewer
-- 変更: wasmClientTextIcons
-- 変更: wasmMatchmaking
-- 変更: wasmPlay
-- 変更: wasmRecorder
-- 変更: wasmReplay
-- 変更: wasmReplayVideoExport
-- 変更: wasmZstdDecoder
-- 変更: worldgenWorker
-- 変更: worldgenWorkerLoader
-
-注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <details class="trace"><summary><span>🔍 サーバーまわりの痕跡(自動チェック)</summary>
-<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/25 13:00</p>
+<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/25 13:31</p>
 <dl><dt>オリジンの Server 表示</dt><dd>nginx/1.24.0 (Ubuntu)(存在しないファイルの 404 ページより)</dd>
 <dt>ソースマップ</dt><dd>配信なし(すべて 404)</dd>
 <dt>ワーカー</dt><dd>なし</dd>
 <dt>ゲーム本体のチャンク</dt><dd>見つからず 番(全 396 個)</dd></dl>
-<p class="muted">最近の変化:</p><ul><li>2026/11/25 10:01 ビルド: c6gaap → igzsf</li><li>2026/11/25 09:31 ビルド: igzsf → c6gaap</li><li>2026/11/25 09:01 ビルド: c6gaap → igzsf</li><li>2026/11/25 08:01 ビルド: 7zvlu → c6gaap</li><li>2026/11/25 05:31 ビルド: yma3ej → 7zvlu</li><li>2026/11/25 04:31 ビルド: sn3sfj → yma3ej</li><li>2026/11/25 01:31 ビルド: tz47m9 → sn3sfj</li><li>2026/11/24 17:31 ビルド: mpd96o → tz47m9</li></ul></div></details>
+<p class="muted">最近の変化:</p><ul><li>2026/11/25 13:31 ビルド: igzsf → dz8ef</li><li>2026/11/25 10:01 ビルド: c6gaap → igzsf</li><li>2026/11/25 09:31 ビルド: igzsf → c6gaap</li><li>2026/11/25 09:01 ビルド: c6gaap → igzsf</li><li>2026/11/25 08:01 ビルド: 7zvlu → c6gaap</li><li>2026/11/25 05:31 ビルド: yma3ej → 7zvlu</li><li>2026/11/25 04:31 ビルド: sn3sfj → yma3ej</li><li>2026/11/25 01:31 ビルド: tz47m9 → sn3sfj</li></ul></div></details>
 <details class="trace"><summary><span>📐 ゲームの数値の変化(自動チェック)</span></summary>
 <div class="en"><p class="muted">武器・弓・防具の数値(ダメージ、射程、ノックバック、防御など)と、鉱石の出方を、ビルドが変わるたびに前回と比べた記録です。文言の変化とは別に、バランス調整を見つけます。記録は 890cfc から始まり、いま 209 個のアイテムの数値を見ています。</p>
 <p class="muted">記録を始めてから、数値が変わったことはまだありません。</p></div></details>
 <details class="trace"><summary><span>🔢 ブロック・アイテムの番号(ID)の変化</span></summary>
-<div class="en"><p class="muted">ブロックとアイテムには、ゲームの中で番号(ID)が付いています。新しい物が間に入ると、後ろの物の番号がずれます。ワールドコードや保存データで番号を直接使っている人は、ここを見てください。元データは、第三者が公開している一覧(imu31465/Bloxd-Entries-Data)で、ゲームのコードを実行して取り出したものです。いま 10091 件(相手のビルド igzsf、こちらの確認と同じビルド)。</p>
-<p class="muted">2026/11/25 10:01(c6gaap → igzsf、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 09:31(igzsf → c6gaap、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 09:01(c6gaap → igzsf、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 08:01(7zvlu → c6gaap、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 05:31(yma3ej → 7zvlu、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 04:31(sn3sfj → yma3ej、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 01:31(tz47m9 → sn3sfj、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/24 17:31(mpd96o → tz47m9、10091 → 10091 件)</p><ul></ul></div></details>
+<div class="en"><p class="muted">ブロックとアイテムには、ゲームの中で番号(ID)が付いています。新しい物が間に入ると、後ろの物の番号がずれます。ワールドコードや保存データで番号を直接使っている人は、ここを見てください。元データは、第三者が公開している一覧(imu31465/Bloxd-Entries-Data)で、ゲームのコードを実行して取り出したものです。いま 10091 件(相手のビルド dz8ef、こちらの確認と同じビルド)。</p>
+<p class="muted">2026/11/25 13:31(igzsf → dz8ef、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 10:01(c6gaap → igzsf、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 09:31(igzsf → c6gaap、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 09:01(c6gaap → igzsf、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 08:01(7zvlu → c6gaap、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 05:31(yma3ej → 7zvlu、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 04:31(sn3sfj → yma3ej、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 01:31(tz47m9 → sn3sfj、10091 → 10091 件)</p><ul></ul></div></details>
 <h2>🕒 確認の履歴</h2>
-<div class="tablewrap"><table><tr><td>2026/11/25 10:00</td><td><span class="tag chg">更新</span></td><td>文字列 +5527/-4374</td></tr>
+<div class="tablewrap"><table><tr><td>2026/11/25 13:30</td><td><span class="tag chg">更新</span></td><td>文字列 +4542/-5984</td></tr>
+<tr><td>2026/11/25 10:00</td><td><span class="tag chg">更新</span></td><td>文字列 +5527/-4374</td></tr>
 <tr><td>2026/11/25 09:30</td><td><span class="tag chg">更新</span></td><td>文字列 +4374/-5527</td></tr>
 <tr><td>2026/11/25 09:00</td><td><span class="tag chg">更新</span></td><td>文字列 +5527/-4374</td></tr>
 <tr><td>2026/11/25 08:00</td><td><span class="tag chg">更新</span></td><td>文字列 +4660/-5676</td></tr>
