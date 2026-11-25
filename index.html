@@ -68,14 +68,602 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <p>bloxd.io の更新を自動で見張って、「ゲームの中で何が変わったか」を日本語でまとめます。非公式の個人用ページで、運営とは無関係です。</p><p><a class="rbtn" href="skin-viewer.html">🧍 スキンビューアー(3Dで見る)</a><a class="rbtn" href="ref/">📚 詳しい分析ドキュメント</a><a class="rbtn" href="seedmap/map.html">🗺️ シードマップ(好きな番号)</a><a class="rbtn" href="guide/enchant.html">✨ エンチャント早見表</a> <a class="rbtn" href="guide/enchant-best.html">🏆 エンチャントの最適な組み合わせ</a> <a class="rbtn" href="guide/world.html">🌍 世界の作られ方(鉱石・チェスト)</a></p></div></div>
 <main>
 <section class="status">
-<div class="stat"><b>最後に確認した時刻</b><span id="lc">2026/11/25 09:30</span></div>
-<div class="stat"><b>現在のビルド</b><span>c6gaap</span></div>
-<div class="stat"><b>検知した更新</b><span>57 回</span></div>
-<div class="stat"><b>最後の更新</b><span>2026/11/25 09:30</span></div>
+<div class="stat"><b>最後に確認した時刻</b><span id="lc">2026/11/25 10:00</span></div>
+<div class="stat"><b>現在のビルド</b><span>igzsf</span></div>
+<div class="stat"><b>検知した更新</b><span>58 回</span></div>
+<div class="stat"><b>最後の更新</b><span>2026/11/25 10:00</span></div>
 </section>
 <h2>✨ 更新と、ゲーム内の変化</h2>
 <article class="upd latest">
-<div class="meta"><span class="new">最新</span><time>2026年11月25日 09:30</time><span class="build">igzsf → c6gaap</span></div>
+<div class="meta"><span class="new">最新</span><time>2026年11月25日 10:00</time><span class="build">c6gaap → igzsf</span></div>
+<h3>ビルドが c6gaap から igzsf に更新</h3>
+<div class="chips"></div>
+
+
+
+
+<details class="dev"><summary>🔧 開発者向けの詳細(ふつうは見なくて大丈夫)</summary><dl>
+<dt>ビルド</dt><dd>c6gaap / 4d6587ec → igzsf / a0b73a5f</dd>
+<dt>main.js の文字列</dt><dd>追加 5527 / 削除 4374(大型更新(±4000超))。変数名の付け替えで見かけ上の差も大量に出るので、ゲーム内の変化とは別物です。</dd>
+<dt>チャンク(ファイル)</dt><dd>追加 0 / 削除 0 / 変更 396(ビルドが変わると全ファイルの名前が変わるので、「変更」の数に意味はありません)</dd></dl>
+<details><summary>元のレポート</summary><pre># bloxd.io 更新検知 2026-11-25T01:00:44.946Z
+
+- ビルドID: c6gaap → igzsf
+- main hash: 4d6587ec → a0b73a5f
+- main.js サイズ: 2726672 → 2734142
+- CSS: static/css/c6gaap.main.60e4f373.css → static/css/igzsf.main.60e4f373.css
+- main.js 文字列: 追加 5527 / 削除 4374(大型更新(±4000超))
+- チャンク: 追加 0 / 削除 0 / ハッシュ変更 396
+## ゲーム内の変化
+
+- ゲーム内テキスト: 追加 0 / 変更 0 / 削除 0
+
+
+## 追加された文字列(先頭80件)
+- `t JSON:&quot;,Dt),null}if(&quot;object&quot;!==typeof et||null===et||!Object.prototype.hasOwnProperty.call(et,qt.b))return null;const V`
+- `${qt}`
+- `${et.options.indexOf(Vt)}`
+- `${et.options.indexOf(Ot)}`
+- `${String(et)}`
+- `${tt}`
+- `${et}`
+- `);zt.l.discord().then((tt=&gt;{null!==tt&amp;&amp;tt.signOut()}))},[jt.c.CRAZY_GAMES]:()=&gt;{},[jt.c.APPLE]:()=&gt;{re(jt.c.APPLE)},[jt.`
+- `,[jt.c.APPLE]:`
+- `,[jt.c.MICROSOFT]:`
+- `,[jt.c.GAME_CENTER]:`
+- `,[jt.c.PLAY_GAMES]:`
+- `};let ie=null;const Ye=new class{constructor(){this.currentUserContextIsSetPromise=void 0,this.onCurrentUserContextIsSet`
+- `,(()=&gt;{if(0===this.pQueue.sizeBy({priority:Ge.SET})&amp;&amp;this.shouldPublishUpdate){var tt;const et=null!==(tt=this.userConte`
+- `,tt.getRecentlyPlayedGames()),this.updateCurrentUserContext(tt.type)},switchTo:tt=&gt;{this.updateCurrentUserContext(tt)}},`
+- `,tt.message),Bt.i.reloadIfScheduled(),this.updateCurrentUserContext(null),tt})).then((tt=&gt;(this.updateCurrentUserContext`
+- `===typeof tt)throw new Error(`
+- `);return tt}));if(tt)return tt;console.warn(`
+- `,Ot,`
+- `);const Ot=await async function(tt,et,Vt,Ot,qt){const Dt=tt.canSignIn(et);if(!Vt||!Dt){const Vt=await tt.getCurrentUser(`
+- `===typeof(null===Vt||void 0===Vt?void 0:Vt.code)&amp;&amp;(null===Vt||void 0===Vt?void 0:Vt.code.startsWith(`
+- `));let qt,Dt=et||!(0,Zt.isMobileApp)(),mt=`
+- `;return Ot?`
+- `===Vt.code||`
+- `===Vt.code?(Dt=!1,qt=Vt.code,mt=`
+- `):(qt=(0,Ee.B)(Vt.code.replace(`
+- `===Vt.code&amp;&amp;(mt=`
+- `)):qt=`
+- `,new eV(tt,qt,{forceSignOut:!0,showPopup:Dt,failure:mt})}),(()=&gt;new eV(tt,`
+- `,{showPopup:et})));if(null===Ot)throw new eV(tt,`
+- `,confirmText:(0,At.n)(qt),confirmTooltip:`
+- `})}return{accessToken:qt}}(tt);Vt=et.accessToken}const Dt=await tt;return await async function(tt,et,Vt,Ot){if(!tt)throw`
+- `);let qt=null;if((0,xt.isDiscordClient)()){qt=(await zt.l.discordActivity()).getInstanceId()}const Dt=et.getMetricsCooki`
+- `:ft,whamm:wt,error:yt,superRankInfo:Nt,ranksMayChange:Mt,ownedCosmeticPacks:bt,dailyDrop:Jt,personalWorldLobbyName:Ct,re`
+- `,tt),{error:(0,ae.w)(tt,`
+- `)})));if(yt)throw new eV(jt.c.DISCORD,yt,{forceSignOut:Ot===ce.LINK,showPopup:!0,failure:`
+- `});if((0,xt.isDiscordClient)()){const et=await zt.l.discordActivity();for(const tt of lt)et.registerGuild(tt.id,tt.name)`
+- `);const Ot=await et.getUserLocale();null!==Ot&amp;&amp;Yt.e.get().setCurrentLanguage(Ot)}console.log(`
+- `),(0,xt.isDiscordClient)()&amp;&amp;nt.b.holdWebGpuForAccountLoss(Kt);return Dt[`
+- `]=ft,new Fe(jt.c.DISCORD,{authProvider:jt.e.DISCORD,accountInfo:mt},dt,Ht,Xt,Dt,wt,Qt,!(0,xt.isDiscordClient)(),Nt,null!`
+- `);const[Vt,qt]=await Promise.all([DV(),Ot()]),Dt=await async function(tt,et){if(!tt)throw new eV(jt.c.CRAZY_GAMES,`
+- `);return await dV(jt.c.CRAZY_GAMES,`
+- `,{crazyGamesToken:tt},et)}(Vt,qt),mt=Dt.includes(jt.c.ANONYMOUS),dt=qt.availableUserContextTypes.includes(jt.c.CRAZY_GAM`
+- `),Ht=!0):mt||dt?(console.log(`
+- `),Ht=!0):(console.log(`
+- `),Ht=await tt.doesUserWantToTieExistingAccount()),!Ht)throw new eV(jt.c.CRAZY_GAMES,`
+- `});const Xt=gt.i&amp;&amp;!mt;return await async function(tt,et,Vt,Ot){if(!tt)throw new eV(jt.c.CRAZY_GAMES,`
+- `);return await jV(jt.c.CRAZY_GAMES,`
+- `,{crazyGamesToken:tt,preferCrazyGamesName:Vt,onlyLink:Ot===ce.LINK},et,Ot)}(Vt,qt,Xt,et)}case jt.c.MSN:{const[tt,qt]=awa`
+- `,Dt,qt)).includes(jt.c.ANONYMOUS);return await jV(jt.c.MSN,`
+- `,{...Dt,preferMsnName:gt.i&amp;&amp;!mt,onlyLink:et===ce.LINK},qt,et)}default:throw new Error('Unknown user context type: ${tt}'`
+- `,et.getRecentlyPlayedGames()),et))).catch((et=&gt;{throw this.userContexts.delete(tt),new Error('Failed to create ${tt} use`
+- `,tt),null)))))&amp;&amp;void 0!==Ot?Ot:null)&amp;&amp;Dt.push(jt.c.CRAZY_GAMES);const Ht=await zt.l.discordActivity();if(null!==Ht)Dt.pu`
+- `,tt)})).catch((tt=&gt;{console.error(`
+- `,tt.message),Ht.exit(`
+- `)}));else{(await zt.l.discord()).hasCurrentUser()&amp;&amp;Dt.push(jt.c.DISCORD)}const Xt=await zt.l.msn();null!==(null!==(qt=aw`
+- `,tt)}))}catch(Qt){console.error('Failed to set initial user context to ${jt}:',Qt)}if(0===Dt.length&amp;&amp;await Be().attemptA`
+- `,(()=&gt;{pe=!0}));function Te(){return pe}const ge=new Promise((tt=&gt;{Jt.j.yN(`
+- `,(()=&gt;{tt()}))}));async function se(){var tt;const et=ke.getMetricsCookies(),Vt=tt=&gt;{const Vt=It.b.getItem(tt);return(0,`
+- `)]},qt={`
+- `:Vt(`
+- `:null!==(tt=(0,gt.e)())&amp;&amp;void 0!==tt?tt:(0,Ot.i)((0,mt.b)(),(0,mt.b)(),(0,mt.b)()),`
+- `)};qt[`
+- `]===et[`
+- `]&amp;&amp;(qt[`
+- `]=(0,Ot.f)((0,ot.h)(dt.d))),(0,gt.n)(qt[`
+- `]),we.c.markHomepageLoadEnd(),pe&amp;&amp;(await ge,pe=!1),Jt.j.unsubscribe(xe);const Dt=await EV('${Ut.clientSideServerUrls.ind`
+- `,tt),new Error(`
+- `)})),{name:Ht,cosmetics:Xt,ranks:Qt,availableUserContextTypes:lt,`
+- `:ft,superRankInfo:wt,ownedCosmeticPacks:yt,dailyDrop:Nt,personalWorldLobbyName:Mt,recentlyPlayedGames:bt,countryCode:Ct,`
+- `]=ft,new Fe(jt.c.ANONYMOUS,null,Ht,Xt,Qt,qt,null,lt,!0,wt,null!==yt&amp;&amp;void 0!==yt?yt:[],null!==Nt&amp;&amp;void 0!==Nt?Nt:null,nu`
+- `;class eV extends Me.c{constructor(tt,et){var Vt;let Ot=arguments.length&gt;2&amp;&amp;void 0!==arguments[2]?arguments[2]:{};Ot.for`
+- `)}}function VV(tt,et){const Vt=jt.e[tt];rt.NotificationProvider.showAlertPopup({title:`
+- `,subtitle:et,confirmText:`
+- `});return dt}async function qV(tt,et,Vt,Ot){let qt=arguments.length&gt;4&amp;&amp;void 0!==arguments[4]?arguments[4]:{};const{anony`
+- `:Xt,whamm:Qt,ranks:lt,superRankInfo:ft,ranksMayChange:wt,ownedCosmeticPacks:yt,dailyDrop:Nt,personalWorldLobbyName:Mt,re`
+- `]=Xt,new Fe(tt,{authProvider:jt.e[tt],accountInfo:Dt},mt,dt,lt,ut,Qt,Ht,!0,ft,null!==yt&amp;&amp;void 0!==yt?yt:[],null!==Nt&amp;&amp;vo`
+- `);if(null===await tt.getCurrentUser())try{await tt.signInWithPopup()}catch(et){const tt=(0,Me.h)(et);throw new eV(jt.c.C`
+- `,{forceSignOut:!0,showPopup:null===tt,failure:null!==tt&amp;&amp;void 0!==tt?tt:`
+- `})}return await tt.getCurrentUserToken()}async function mV(tt){const et=await zt.l.msn();if(null===et)throw Error(`
+
+## 削除された文字列(先頭80件)
+- `t JSON:&quot;,oB),null}if(&quot;object&quot;!==typeof IB||null===IB||!Object.prototype.hasOwnProperty.call(IB,JB.d))return null;const Z`
+- `${JB}`
+- `${IB.options.indexOf(ZB)}`
+- `${IB.options.indexOf(TB)}`
+- `${String(IB)}`
+- `${BB}`
+- `${IB}`
+- `);XB.h.discord().then((BB=&gt;{null!==BB&amp;&amp;BB.signOut()}))},[kB.c.CRAZY_GAMES]:()=&gt;{},[kB.c.APPLE]:()=&gt;{eI(kB.c.APPLE)},[kB.`
+- `,[kB.c.APPLE]:`
+- `,[kB.c.MICROSOFT]:`
+- `,[kB.c.GAME_CENTER]:`
+- `,[kB.c.PLAY_GAMES]:`
+- `};let lI=null;const AI=new class{constructor(){this.currentUserContextIsSetPromise=void 0,this.onCurrentUserContextIsSet`
+- `,(()=&gt;{if(0===this.pQueue.sizeBy({priority:mI.SET})&amp;&amp;this.shouldPublishUpdate){var BB;const IB=null!==(BB=this.userConte`
+- `,BB.getRecentlyPlayedGames()),this.updateCurrentUserContext(BB.type)},switchTo:BB=&gt;{this.updateCurrentUserContext(BB)}},`
+- `,BB.message),tB.e.reloadIfScheduled(),this.updateCurrentUserContext(null),BB})).then((BB=&gt;(this.updateCurrentUserContext`
+- `===typeof BB)throw new Error(`
+- `);return BB}));if(BB)return BB;console.warn(`
+- `,TB,`
+- `);const TB=await async function(BB,IB,ZB,TB,JB){const oB=BB.canSignIn(IB);if(!ZB||!oB){const ZB=await BB.getCurrentUser(`
+- `===typeof(null===ZB||void 0===ZB?void 0:ZB.code)&amp;&amp;(null===ZB||void 0===ZB?void 0:ZB.code.startsWith(`
+- `));let JB,oB=IB||!(0,jB.isMobileApp)(),GB=`
+- `;return TB?`
+- `===ZB.code||`
+- `===ZB.code?(oB=!1,JB=ZB.code,GB=`
+- `):(JB=(0,zI.D)(ZB.code.replace(`
+- `===ZB.code&amp;&amp;(GB=`
+- `)):JB=`
+- `,new BZ(BB,JB,{forceSignOut:!0,showPopup:oB,failure:GB})}),(()=&gt;new BZ(BB,`
+- `,{showPopup:IB})));if(null===TB)throw new BZ(BB,`
+- `,confirmText:(0,fB.t)(JB),confirmTooltip:`
+- `})}return{accessToken:JB}}(BB);ZB=IB.accessToken}const oB=await BB;return await async function(BB,IB,ZB,TB){if(!BB)throw`
+- `);let JB=null;if((0,xB.isDiscordClient)()){JB=(await XB.h.discordActivity()).getInstanceId()}const oB=IB.getMetricsCooki`
+- `:NB,whamm:gB,error:qB,superRankInfo:yB,ranksMayChange:UB,ownedCosmeticPacks:WB,dailyDrop:dB,personalWorldLobbyName:CB,re`
+- `,BB),{error:(0,yI.u)(BB,`
+- `)})));if(qB)throw new BZ(kB.c.DISCORD,qB,{forceSignOut:TB===pI.LINK,showPopup:!0,failure:`
+- `});if((0,xB.isDiscordClient)()){const IB=await XB.h.discordActivity();for(const BB of zB)IB.registerGuild(BB.id,BB.name)`
+- `);const TB=await IB.getUserLocale();null!==TB&amp;&amp;AB.h.get().setCurrentLanguage(TB)}console.log(`
+- `),(0,xB.isDiscordClient)()&amp;&amp;VB.d.holdWebGpuForAccountLoss(sB);return oB[`
+- `]=NB,new RI(kB.c.DISCORD,{authProvider:kB.f.DISCORD,accountInfo:GB},vB,cB,nB,oB,gB,hB,!(0,xB.isDiscordClient)(),yB,null!`
+- `);const[ZB,JB]=await Promise.all([JZ(),TB()]),oB=await async function(BB,IB){if(!BB)throw new BZ(kB.c.CRAZY_GAMES,`
+- `);return await GZ(kB.c.CRAZY_GAMES,`
+- `,{crazyGamesToken:BB},IB)}(ZB,JB),GB=oB.includes(kB.c.ANONYMOUS),vB=JB.availableUserContextTypes.includes(kB.c.CRAZY_GAM`
+- `),cB=!0):GB||vB?(console.log(`
+- `),cB=!0):(console.log(`
+- `),cB=await BB.doesUserWantToTieExistingAccount()),!cB)throw new BZ(kB.c.CRAZY_GAMES,`
+- `});const nB=DB.e&amp;&amp;!GB;return await async function(BB,IB,ZB,TB){if(!BB)throw new BZ(kB.c.CRAZY_GAMES,`
+- `);return await vZ(kB.c.CRAZY_GAMES,`
+- `,{crazyGamesToken:BB,preferCrazyGamesName:ZB,onlyLink:TB===pI.LINK},IB,TB)}(ZB,JB,nB,IB)}case kB.c.MSN:{const[BB,JB]=awa`
+- `,oB,JB)).includes(kB.c.ANONYMOUS);return await vZ(kB.c.MSN,`
+- `,{...oB,preferMsnName:DB.e&amp;&amp;!GB,onlyLink:IB===pI.LINK},JB,IB)}default:throw new Error('Unknown user context type: ${BB}'`
+- `,IB.getRecentlyPlayedGames()),IB))).catch((IB=&gt;{throw this.userContexts.delete(BB),new Error('Failed to create ${BB} use`
+- `,BB),null)))))&amp;&amp;void 0!==TB?TB:null)&amp;&amp;oB.push(kB.c.CRAZY_GAMES);const cB=await XB.h.discordActivity();if(null!==cB)oB.pu`
+- `,BB)})).catch((BB=&gt;{console.error(`
+- `,BB.message),cB.exit(`
+- `)}));else{(await XB.h.discord()).hasCurrentUser()&amp;&amp;oB.push(kB.c.DISCORD)}const nB=await XB.h.msn();null!==(null!==(JB=aw`
+- `,BB)}))}catch(hB){console.error('Failed to set initial user context to ${kB}:',hB)}if(0===oB.length&amp;&amp;await tI().attemptA`
+- `,(()=&gt;{bI=!0}));function EI(){return bI}const DI=new Promise((BB=&gt;{dB.l.Uy(`
+- `,(()=&gt;{BB()}))}));async function KI(){var BB;const IB=rI.getMetricsCookies(),ZB=BB=&gt;{const ZB=HB.e.getItem(BB);return(0,`
+- `)]},JB={`
+- `:ZB(`
+- `:null!==(BB=(0,DB.b)())&amp;&amp;void 0!==BB?BB:(0,TB.g)((0,GB.d)(),(0,GB.d)(),(0,GB.d)()),`
+- `)};JB[`
+- `]===IB[`
+- `]&amp;&amp;(JB[`
+- `]=(0,TB.f)((0,LB.j)(vB.b))),(0,DB.k)(JB[`
+- `]),NI.d.markHomepageLoadEnd(),bI&amp;&amp;(await DI,bI=!1),dB.l.unsubscribe(xI);const oB=await zZ('${uB.clientSideServerUrls.ind`
+- `,BB),new Error(`
+- `)})),{name:cB,cosmetics:nB,ranks:hB,availableUserContextTypes:zB,`
+- `:NB,superRankInfo:gB,ownedCosmeticPacks:qB,dailyDrop:yB,personalWorldLobbyName:UB,recentlyPlayedGames:WB,countryCode:CB,`
+- `]=NB,new RI(kB.c.ANONYMOUS,null,cB,nB,hB,JB,null,zB,!0,gB,null!==qB&amp;&amp;void 0!==qB?qB:[],null!==yB&amp;&amp;void 0!==yB?yB:null,nu`
+- `;class BZ extends UI.d{constructor(BB,IB){var ZB;let TB=arguments.length&gt;2&amp;&amp;void 0!==arguments[2]?arguments[2]:{};TB.for`
+- `)}}function IZ(BB,IB){const ZB=kB.f[BB];eB.NotificationProvider.showAlertPopup({title:`
+- `,subtitle:IB,confirmText:`
+- `});return vB}async function TZ(BB,IB,ZB,TB){let JB=arguments.length&gt;4&amp;&amp;void 0!==arguments[4]?arguments[4]:{};const{anony`
+- `:nB,whamm:hB,ranks:zB,superRankInfo:NB,ranksMayChange:gB,ownedCosmeticPacks:qB,dailyDrop:yB,personalWorldLobbyName:UB,re`
+- `]=nB,new RI(BB,{authProvider:kB.f[BB],accountInfo:oB},GB,vB,zB,QB,hB,cB,!0,NB,null!==qB&amp;&amp;void 0!==qB?qB:[],null!==yB&amp;&amp;vo`
+- `);if(null===await BB.getCurrentUser())try{await BB.signInWithPopup()}catch(IB){const BB=(0,UI.f)(IB);throw new BZ(kB.c.C`
+- `,{forceSignOut:!0,showPopup:null===BB,failure:null!==BB&amp;&amp;void 0!==BB?BB:`
+- `})}return await BB.getCurrentUserToken()}async function oZ(BB){const IB=await XB.h.msn();if(null===IB)throw Error(`
+
+## チャンク
+- 変更: 73
+- 変更: 74
+- 変更: 75
+- 変更: 76
+- 変更: 77
+- 変更: 78
+- 変更: 79
+- 変更: 80
+- 変更: 81
+- 変更: 82
+- 変更: 83
+- 変更: 84
+- 変更: 85
+- 変更: 86
+- 変更: 87
+- 変更: 88
+- 変更: 89
+- 変更: 90
+- 変更: 91
+- 変更: 92
+- 変更: 93
+- 変更: 94
+- 変更: 95
+- 変更: 96
+- 変更: 97
+- 変更: 98
+- 変更: 99
+- 変更: 100
+- 変更: 101
+- 変更: 102
+- 変更: 103
+- 変更: 104
+- 変更: 105
+- 変更: 106
+- 変更: 107
+- 変更: 108
+- 変更: 109
+- 変更: 110
+- 変更: 111
+- 変更: 112
+- 変更: 113
+- 変更: 114
+- 変更: 115
+- 変更: 116
+- 変更: 117
+- 変更: 118
+- 変更: 119
+- 変更: 120
+- 変更: 121
+- 変更: 122
+- 変更: 123
+- 変更: 124
+- 変更: 125
+- 変更: 126
+- 変更: 127
+- 変更: 128
+- 変更: 129
+- 変更: 130
+- 変更: 131
+- 変更: 132
+- 変更: 133
+- 変更: 134
+- 変更: 135
+- 変更: 136
+- 変更: 137
+- 変更: 138
+- 変更: 139
+- 変更: 140
+- 変更: 141
+- 変更: 142
+- 変更: 143
+- 変更: 144
+- 変更: 145
+- 変更: 146
+- 変更: 147
+- 変更: 148
+- 変更: 149
+- 変更: 150
+- 変更: 151
+- 変更: 152
+- 変更: 153
+- 変更: 154
+- 変更: 155
+- 変更: 156
+- 変更: 157
+- 変更: 158
+- 変更: 159
+- 変更: 160
+- 変更: 161
+- 変更: 162
+- 変更: 163
+- 変更: 164
+- 変更: 165
+- 変更: 166
+- 変更: 167
+- 変更: 168
+- 変更: 169
+- 変更: 170
+- 変更: 171
+- 変更: 172
+- 変更: 173
+- 変更: 174
+- 変更: 175
+- 変更: 176
+- 変更: 177
+- 変更: 178
+- 変更: 179
+- 変更: 180
+- 変更: 181
+- 変更: 182
+- 変更: 183
+- 変更: 184
+- 変更: 185
+- 変更: 186
+- 変更: 187
+- 変更: 188
+- 変更: 189
+- 変更: 190
+- 変更: 191
+- 変更: 192
+- 変更: 193
+- 変更: 194
+- 変更: 195
+- 変更: 196
+- 変更: 197
+- 変更: 198
+- 変更: 199
+- 変更: 200
+- 変更: 201
+- 変更: 202
+- 変更: 203
+- 変更: 204
+- 変更: 205
+- 変更: 206
+- 変更: 207
+- 変更: 208
+- 変更: 209
+- 変更: 210
+- 変更: 211
+- 変更: 212
+- 変更: 213
+- 変更: 214
+- 変更: 215
+- 変更: 216
+- 変更: 217
+- 変更: 218
+- 変更: 219
+- 変更: 220
+- 変更: 221
+- 変更: 222
+- 変更: 223
+- 変更: 224
+- 変更: 225
+- 変更: 226
+- 変更: 227
+- 変更: 228
+- 変更: 229
+- 変更: 230
+- 変更: 231
+- 変更: 232
+- 変更: 233
+- 変更: 234
+- 変更: 235
+- 変更: 236
+- 変更: 237
+- 変更: 238
+- 変更: 239
+- 変更: 240
+- 変更: 241
+- 変更: 242
+- 変更: 243
+- 変更: 244
+- 変更: 245
+- 変更: 246
+- 変更: 247
+- 変更: 248
+- 変更: 249
+- 変更: 250
+- 変更: 251
+- 変更: 252
+- 変更: 253
+- 変更: 254
+- 変更: 255
+- 変更: 256
+- 変更: 257
+- 変更: 258
+- 変更: 259
+- 変更: 260
+- 変更: 261
+- 変更: 262
+- 変更: 263
+- 変更: 264
+- 変更: 265
+- 変更: 266
+- 変更: 267
+- 変更: 268
+- 変更: 269
+- 変更: 270
+- 変更: 271
+- 変更: 272
+- 変更: 273
+- 変更: 274
+- 変更: 275
+- 変更: 276
+- 変更: 277
+- 変更: 278
+- 変更: 279
+- 変更: 280
+- 変更: 281
+- 変更: 282
+- 変更: 283
+- 変更: 284
+- 変更: 285
+- 変更: 286
+- 変更: 287
+- 変更: 288
+- 変更: 289
+- 変更: 290
+- 変更: 291
+- 変更: 292
+- 変更: 293
+- 変更: 294
+- 変更: 295
+- 変更: 296
+- 変更: 297
+- 変更: 298
+- 変更: 299
+- 変更: 300
+- 変更: 301
+- 変更: 302
+- 変更: 303
+- 変更: 304
+- 変更: 305
+- 変更: 306
+- 変更: 307
+- 変更: 308
+- 変更: 309
+- 変更: 310
+- 変更: 311
+- 変更: 312
+- 変更: 313
+- 変更: 314
+- 変更: 315
+- 変更: 316
+- 変更: 317
+- 変更: 318
+- 変更: 319
+- 変更: 320
+- 変更: 321
+- 変更: 322
+- 変更: 323
+- 変更: 324
+- 変更: 325
+- 変更: 326
+- 変更: 327
+- 変更: 328
+- 変更: 329
+- 変更: 330
+- 変更: 331
+- 変更: 332
+- 変更: 333
+- 変更: 334
+- 変更: 335
+- 変更: 336
+- 変更: 337
+- 変更: 338
+- 変更: 339
+- 変更: 340
+- 変更: 341
+- 変更: 342
+- 変更: 343
+- 変更: 344
+- 変更: 345
+- 変更: 346
+- 変更: 347
+- 変更: 348
+- 変更: 349
+- 変更: 350
+- 変更: 351
+- 変更: 352
+- 変更: 353
+- 変更: 354
+- 変更: 355
+- 変更: 356
+- 変更: 357
+- 変更: 358
+- 変更: 359
+- 変更: 360
+- 変更: 361
+- 変更: 362
+- 変更: 363
+- 変更: 364
+- 変更: 365
+- 変更: 366
+- 変更: 367
+- 変更: 368
+- 変更: 369
+- 変更: 370
+- 変更: 371
+- 変更: 372
+- 変更: 373
+- 変更: 374
+- 変更: 375
+- 変更: 376
+- 変更: 377
+- 変更: 378
+- 変更: 379
+- 変更: 380
+- 変更: 381
+- 変更: 382
+- 変更: 383
+- 変更: 384
+- 変更: 385
+- 変更: 386
+- 変更: 387
+- 変更: 388
+- 変更: 389
+- 変更: 390
+- 変更: 391
+- 変更: 392
+- 変更: 393
+- 変更: 394
+- 変更: 395
+- 変更: 396
+- 変更: 397
+- 変更: babylon-backend
+- 変更: blockFaceTable
+- 変更: blockIconDrawing
+- 変更: blockIconWorker
+- 変更: blockModelIcons
+- 変更: bloxd-wasm-anim
+- 変更: bloxd-wasm-webgl
+- 変更: bloxd-wasm-webgl1
+- 変更: bloxd-wasm-webgpu
+- 変更: clientGame-bedwars-bedwarsClient
+- 変更: clientGame-bridgeBattle-bridgeBattleClient
+- 変更: clientGame-buildAFactory2-buildAFactory2Client
+- 変更: clientGame-classic-classicClient
+- 変更: clientGame-clutch-clutchClient
+- 変更: clientGame-containmentBreach-containmentBreachClient
+- 変更: clientGame-cooking-cookingClient
+- 変更: clientGame-defusal-defusalClient
+- 変更: clientGame-frontline-frontlineClient
+- 変更: clientGame-goalRush-goalRushClient
+- 変更: clientGame-luckyBedwars-luckyBedwarsClient
+- 変更: clientGame-ninetyNineNights-ninetyNineNightsClient
+- 変更: clientGame-oneBlock-oneBlockClient
+- 変更: clientGame-plots-plotsClient
+- 変更: clientGame-pvpCiv-pvpCivClient
+- 変更: clientGame-skyIslands-skyIslandsClient
+- 変更: clientGame-skyblock-skyblockClient
+- 変更: clientGame-tsunami-tsunamiClient
+- 変更: clientGamePlugins
+- 変更: controller
+- 変更: debugDeviceHeader
+- 変更: diagSink
+- 変更: errorLogging
+- 変更: fa-renderer
+- 変更: frameDebug
+- 変更: icons-brands
+- 変更: icons-duotone
+- 変更: icons-regular
+- 変更: icons-solid
+- 変更: itemSprites
+- 変更: memoryDebug
+- 変更: meshWorkerLoader
+- 変更: modelCatalogue
+- 変更: modelPool
+- 変更: modelWorkerLoader
+- 変更: packAssets
+- 変更: packTerrain
+- 変更: playGameSources
+- 変更: procGenWorker
+- 変更: renderDebug
+- 変更: renderLite
+- 変更: renderProbe
+- 変更: replayHookSkyblock
+- 変更: scrollDebug
+- 変更: textureNameTable
+- 変更: texturePackFeed
+- 変更: texturePackStorage
+- 変更: wasmClientGame
+- 変更: wasmClientJoin
+- 変更: wasmClientLoad
+- 変更: wasmClientPreviews
+- 変更: wasmClientReplayViewer
+- 変更: wasmClientTextIcons
+- 変更: wasmMatchmaking
+- 変更: wasmPlay
+- 変更: wasmRecorder
+- 変更: wasmReplay
+- 変更: wasmReplayVideoExport
+- 変更: wasmZstdDecoder
+- 変更: webGpuLossDebug
+- 変更: worldgenWorker
+- 変更: worldgenWorkerLoader
+
+注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
+<article class="upd">
+<div class="meta"><time>2026年11月25日 09:30</time><span class="build">igzsf → c6gaap</span></div>
 <h3>ビルドが igzsf から c6gaap に更新</h3>
 <div class="chips"></div>
 
@@ -17176,593 +17764,22 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 - 変更: worldgenWorkerLoader
 
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
-<article class="upd">
-<div class="meta"><time>2026年11月18日 15:30</time><span class="build">symm5 → l9xvfg</span></div>
-<h3>ゲーム内の文言の変化はなし。コードの組み直し(名前の付け替え)が主で、アプリの種類を見分ける名前が加わった。</h3>
-<div class="chips"></div>
-<div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
-<div class="ptt"><span class="who">運営の内部</span><h4>本体のコードを作り直しただけの更新</h4></div>
-<p>追加・削除の文字列は、ほとんどが「名前の付け替え」と、難読化(読みにくくする処理)された文字の入れ替わり。ゲーム内に出る文言は、1 つも変わっていない。前の更新の、すぐあとの手直しと思われる。</p><p class="note">見た目や動きが変わるかは未確認。</p>
-<span class="cert">確かさ: 文言の変化なしは確実 / 中身は推測</span></div></div><div class="pt player"><div class="ico">📱</div><div class="ptb">
-<div class="ptt"><span class="who">運営の内部</span><h4>iosWeb / iosApp / androidApp の区別</h4></div>
-<p>「iOS のブラウザ」「iOS のアプリ」「Android のアプリ」を見分ける名前が加わった。前の更新の「アプリ更新を求める画面」や、端末ごとの設定の切り分けに使うと思われる。</p>
-<span class="cert">確かさ: 名前は確実 / 使い道は推測</span></div></div></div>
-
-
-
-<details class="dev"><summary>🔧 開発者向けの詳細(ふつうは見なくて大丈夫)</summary><dl>
-<dt>ビルド</dt><dd>symm5 / 2e035caa → l9xvfg / c0ace454</dd>
-<dt>main.js の文字列</dt><dd>追加 3863 / 削除 4759(大型更新(±4000超))。変数名の付け替えで見かけ上の差も大量に出るので、ゲーム内の変化とは別物です。</dd>
-<dt>チャンク(ファイル)</dt><dd>追加 0 / 削除 0 / 変更 374(ビルドが変わると全ファイルの名前が変わるので、「変更」の数に意味はありません)</dd></dl>
-<details><summary>元のレポート</summary><pre># bloxd.io 更新検知 2026-11-18T06:30:46.868Z
-
-- ビルドID: symm5 → l9xvfg
-- main hash: 2e035caa → c0ace454
-- main.js サイズ: 2370827 → 2380121
-- CSS: static/css/symm5.main.858db664.css → static/css/l9xvfg.main.858db664.css
-- main.js 文字列: 追加 3863 / 削除 4759(大型更新(±4000超))
-- チャンク: 追加 0 / 削除 0 / ハッシュ変更 374
-## ゲーム内の変化
-
-- ゲーム内テキスト: 追加 0 / 変更 0 / 削除 0
-
-
-## 追加された文字列(先頭80件)
-- `${BB}`
-- `t JSON:&quot;,pB),null}if(&quot;object&quot;!==typeof TB||null===TB||!Object.prototype.hasOwnProperty.call(TB,yB.b))return null;const d`
-- `${yB}`
-- `${TB.options.indexOf(dB)}`
-- `${TB.options.indexOf(VB)}`
-- `${String(TB)}`
-- `${TB}`
-- `iosWeb`
-- `iosApp`
-- `androidApp`
-- `${gB}`
-- `xk{A1c.y?NFo$+S3dw|mvT=&lt;nM~#Xu(qz%I!^H_6&gt;50['4G@,fe2E}l7jt/R)&amp;9',BB[nB[0]]=`
-- `+(BB[nB[1]]||`
-- `):bB(BB[nB[1]])}function TT(){TT=function(){}}function dT(BB,TB,dB){return[{entityName:TB,ranks:BB,style:{colour:dB?kB.t`
-- `,'JgfpQu#t&gt;~5EiOYN{HKGnXW@aI6x`
-- `|&gt;Le!oVy1!p'LPHr#Y,fq22+!X#46F%8v&lt;Jaj5sB','U[!J&amp;m1nOU1##lXS.&lt;~,wfQk]ZPNH'2`
-- `3W_ShA]n$B',`
-- `,'381{4v)gXHC@AqAQ;!en_z`
-- `,&quot;s1CUa}=|!z&amp;D]7yrPN,=ReqyxQQ&gt;8=Eoa[{UE,?rXQ&quot;,`
-- `yEqQ~xFi',`
-- `,'+Q&gt;=eIYSL(NLC`
-- `5qH:{d`
-- `,&quot;Vu5#8,4K|P=,J7Vx0SB&quot;,&quot;k&gt;LYd!f5A!iNVv^S*~_h+Ti&quot;,&quot;p&gt;yaxEJ0|_Q20Fnx&gt;Qj=IjTyh&quot;,&quot;(qBk05En_gQ5#Ff;uU{#j7i&quot;,&quot;Ur~A$yM@+Q4*s}*$`
-- `W+GXI#8nym.z3v1[KZP|DUx',`
-- `,'P|1Tv0%K+IjX+C,;V$p`
-- `([(Z$C|KL',`
-- `,'I$LnFm=ERKX05?Q`
-- `,&quot;3ulMcE&amp;5&amp;Qvx(%boa3I,3Eb5!PK.?7Y&quot;,&quot;7Z7D30YDT~2JBh&quot;,&quot;P|/JE?!8Z~'f@[:]*~~UMX[&lt;CUGf5]YFW|/U{E{r|!2Tu?Or&quot;,&quot;Gb5[Z=dBFKq&quot;,&quot;3$`
-- `7xSRH6=g#i','eWkA]u{/cu,!Uv2`
-- `apW:',`
-- `,'o8S`
-- `,&quot;2HjhD2~B&quot;,&quot;]HoUUvbWsPu4i&quot;,&quot;?Yqflu2L&lt;UXntJ&quot;,`
-- `f;IAqM+TbK.u]Y:','/09&lt;o&gt;AuZ~O.PlM`
-- `DuxfcnvrzHA'i',`
-- `,'|[j=f5,YfsRWDoNWcuLYe#ckL^e}Op3o,X@p~M1E(IHyRsJ3`
-- `,&quot;}HC@Vn#Kk_IJ{N,F7o0,%zE|Cg9^mlq8i36k0IgrfbgZD[.rN&gt;c@V&quot;,&quot;,&gt;xk:orB&quot;,`
-- `tn8mM(#A(WUr3Zf=kE@+wqvA?7^S&lt;Zr`
-- `yasC.5z:Ati',`
-- `,'U$m4}w'rr;}}AB:{q8WY&amp;[)$;U:'!`
-- `,&quot;fb_DS&gt;AumP=_lTDF0HU&lt;U2u:&quot;,`
-- `|;HYAJ*uMLUaB~lTON&lt;~Knm%3KJ','5xuYFXF]gs:N'[&gt;F7wCc6vDn2DH0&amp;vHA{g8TV$Pm&amp;s&gt;W`
-- `,&quot;&lt;Ac&lt;@vj]GQkLahvp@N&gt;k0}c@J&quot;,&quot;%vjLb7&gt;(&lt;~V(?q&gt;AxZEYdN72_zK2WT[rw[c{7IC/+Q&quot;,&quot;Zu|J2FPMkVg(ypDr|gu~eGMKebl*hCd;$NCU&quot;,`
-- `.5p6I8m]Q*NABR+dIlfY.[&lt;:PO%FNrxo8_D'.MK4Z`
-- `,&quot;_v;fIfcyZ~@bnPY;t4!n5}dn%be:XO=ou&lt;DcKv?{qXNO|N{SL~9DZ&quot;,`
-- `xq[1{O't8_!k2~l$A',`
-- `,'8G/A&gt;vZDiu/Gq`
-- `S;=ub1cn68ZU{'!O3F)vgA},^YL',`
-- `,'C[`
-- `8sP^U',`
-- `,'.gT`
-- `,&quot;pHJL&gt;#KWm!VKJP0FZ|kxe,iDGH4X0})*QYtASNm:&quot;,&quot;~&lt;*c/e&gt;]$(&amp;06OGWfw^&lt;p~+}ps&quot;,&quot;B_9kG}x?t^GGuzrZ:Ts,Q&quot;,`
-- `dN$]eD{,h'aZ',`
-- `,'!8vYB};:w_)WJ`
-- `]),TT(CB=function(...BB){TT(BB[nB[12]]=nB[1],BB[nB[14]]=[function(){return globalThis},function(){return global},functio`
-- `)()}],BB[nB[0]]=nB[18],BB[nB[13]]=[]);try{TT(BB[nB[0]]=Object,BB[nB[13]][nB[28]](`
-- `)}}()),XB=Math[eB(92)](111*Math[eB(93)](OB[nB[0]]*(OB[nB[0]]-nB[2])))+165;const yT=(BB,TB)=&gt;{if(`
-- `!==typeof BB||null===BB)return BB;if(Array.isArray(BB)||cB(BB)){const dB=[];for(const VB of BB)dB.push(yT(VB,TB));return`
-- `,wV:`
-- `,UV:`
-- `,FV:`
-- `,KV:`
-- `,rV:`
-- `,IV:`
-- `,cV:`
-- `,SV:`
-- `,PV:`
-- `,QV:`
-- `,RV:`
-- `,aV:`
-- `,ZV:`
-- `,XV:`
-- `,WV:`
-- `,hV:`
-- `,CV:`
-- `,GV:`
-- `,qV:`
-- `,xV:`
-- `,jV:`
-- `,AV:`
-- `};function lT(BB){return yT(BB,(BB=&gt;pT[BB]?pT[BB]:(console.error('Unknown particle system option key: ${BB}.'),BB)))}fun`
-
-## 削除された文字列(先頭80件)
-- `${JJ}`
-- `t JSON:&quot;,eJ),null}if(&quot;object&quot;!==typeof cJ||null===cJ||!Object.prototype.hasOwnProperty.call(cJ,UJ.b))return null;const Z`
-- `${UJ}`
-- `${cJ.options.indexOf(ZJ)}`
-- `${cJ.options.indexOf(FJ)}`
-- `${String(cJ)}`
-- `${cJ}`
-- `${jJ}`
-- `lq!&amp;.bQYE@WG(POyf94_J]8Mir{xS7DIo%$:Czh&gt;K}m;k^F',JJ[oJ[0]]=`
-- `+(JJ[oJ[1]]||`
-- `):tJ(JJ[oJ[1]])}function cc(){}function Zc(){Zc=function(){}}function Fc(JJ,cJ,ZJ){return[{entityName:cJ,ranks:JJ,style:`
-- `,'k.`
-- `,&quot;ej}6#@GTNJx%nd5N@.Hv&amp;I|,{+#i$A(VC]f0*!_rcNAam?'&quot;,&quot;&lt;WW){SG}$(FBp&gt;$pIyXaBo9,HWHhZ94UHf_*'Ph/MP~)pxSNTixV[zu&quot;,`
-- `7Ym$G0+8k?&gt;A{/I]9'',`
-- `,'KydW5U`
-- `',''`
-- `,&quot;D2v*i:*Ul@GEp[G,Y)PW$4M_!3l&quot;,&quot;[fG)q%:+*+Qv:Zde&lt;b06&quot;,&quot;~jP5CDEp8WP(,dRXZe()f:REFtW7k[pR8W[0/P@}YN&quot;,&quot;6b?asx&lt;1@+z(M{#?$(t5`
-- `e73f[','#`
-- `A@74O`
-- `,&quot;&amp;PnW=_4XjXmB2&lt;&quot;,`
-- `D&lt;','w`
-- `,&quot;k.@'@KSX1_8@)fF0ns6)#:;~(]6d2hwUtfrxa$R1ke&quot;,`
-- `S)',`
-- `,'Aj/n)mV&lt;g|6:(/xNpP+G9:*UnLpG=h7?Bj#G3o`
-- `,&quot;?srx/R%Ps_U6tf}V*PV'&quot;,&quot;0fBEp(LUkeECvZbaJy}Z?p5/HOG7L[&quot;,&quot;3jYjCxvPf4T'^U_cM4_)&quot;,`
-- `%UCCpLAc'v&lt;',`
-- `,'&lt;H]Wa&gt;}~6Ox!TQR/ccpbHPP&amp;'At:yA;d^4HGGhZJ/e&amp;t*a#N.`
-- `,&quot;7[t$QOH0wNo@yO{RGw8YrSX!ptD%yR5&quot;,`
-- `O?Tb]A6XRy~PeJE2QLR?0.7)POmEW'2,*',`
-- `,',P|S`
-- `,&quot;Rxo%m}QEi):3ox4g(yvETWOXbfsYaA91k[}xCU*/*Jje/agRN_f'&quot;,&quot;eYh#:RH,CLyX[Q_2Se06bbCOzPw'8b1g$Vwat&quot;,`
-- `7[,(+Q',`
-- `,'7q`
-- `ZYu',`
-- `,'Tc6)ZWLXzf&lt;S]*SR#T1*`
-- `,&quot;$w;bHrFLI()a~&quot;,&quot;,ZoZ,9[,ss&gt;|is6?5je0Q%^PzP%|XcwUwYI%E(6;&amp;_5)~d=c4wt$n$u&quot;,&quot;Ierv*@pU?tQANAPTO]6)$rJLCs7j].#N&lt;bY';Pw&lt;&quot;,&quot;7`
-- `]y',`
-- `,'zL&lt;q`
-- `,&quot;;Xn?4&amp;CC&quot;,`
-- `Cu',`
-- `]),Zc(uJ=function(...JJ){Zc(JJ[oJ[13]]=oJ[1],JJ[-oJ[16]]=[function(){return globalThis},function(){return global},functi`
-- `)()}],JJ[-oJ[14]]=oJ[18],JJ[oJ[4]]=[]);try{Zc(JJ[-oJ[14]]=Object,JJ[oJ[4]][oJ[24]](`
-- `)}}()),lJ(89)+`
-- `!==typeof JJ||null===JJ)return JJ;if(Array.isArray(JJ)||HJ(JJ)){const ZJ=[];for(const FJ of JJ)ZJ.push(ec(FJ,cJ));return`
-- `,lZ:`
-- `,JF:`
-- `,cF:`
-- `,ZF:`
-- `,FF:`
-- `,UF:`
-- `,eF:`
-- `,XF:`
-- `,AF:`
-- `,qF:`
-- `,jF:`
-- `,YF:`
-- `,hF:`
-- `,DF:`
-- `,sF:`
-- `,nF:`
-- `,GF:`
-- `,fF:`
-- `,rF:`
-- `,vF:`
-- `,mF:`
-- `,QF:`
-- `};function Ac(JJ){return ec(JJ,(JJ=&gt;Xc[JJ]?Xc[JJ]:(console.error('Unknown particle system option key: ${JJ}.'),JJ)))}fun`
-- `)===JJ.join(`
-- `)&amp;&amp;(cJ.splice(ZJ,1),ZJ--)}}const jc=1,Yc=20,hc=10},,,,(JJ,cJ,ZJ)=&gt;{ZJ.d(cJ,{d:()=&gt;UJ,f:()=&gt;eJ,i:()=&gt;XJ,m:()=&gt;AJ,n:()=&gt;qJ`
-- `,JJ.GUILD=`
-- `,JJ}({});class eJ{constructor(JJ){this.type=JJ}static isSnowflake(JJ){return JJ.length&gt;=this.MIN_SNOWFLAKE_LENGTH&amp;&amp;/\d+/`
-- `),FJ=ZJ.slice(0,-1).join(`
-- `),UJ=ZJ[ZJ.length-1];return JJ===FJ&amp;&amp;this.isSnowflake(UJ)}static getLobbyName(JJ,cJ){return'${JJ}-${cJ=cJ.padStart(this.`
-- `;const qJ={[FJ.d.LOCAL]:`
-- `,[FJ.d.PREPROD]:`
-- `,[FJ.d.PRODUCTION]:`
-- `}},,,,,,,(JJ,cJ,ZJ)=&gt;{ZJ.d(cJ,{e:()=&gt;XJ,f:()=&gt;sJ,h:()=&gt;YJ,j:()=&gt;AJ,k:()=&gt;qJ,l:()=&gt;jJ,o:()=&gt;UJ,q:()=&gt;eJ});const FJ=/^[1-9`
-- `).split(/[\s_-]+/u).map((JJ=&gt;JJ.replace(/[^\p{L}\p{M}\p{N}]/gu,`
-- `))).filter((JJ=&gt;JJ.length&gt;0)).join(`
-- `)}function AJ(JJ){const cJ=XJ(JJ);return cJ.length&gt;=eJ?cJ:null}function qJ(JJ,cJ,ZJ){return ZJ?'/${JJ}/${cJ}/${encodeURI`
-
-## チャンク
-- 変更: 64
-- 変更: 65
-- 変更: 66
-- 変更: 67
-- 変更: 68
-- 変更: 69
-- 変更: 70
-- 変更: 71
-- 変更: 72
-- 変更: 73
-- 変更: 74
-- 変更: 75
-- 変更: 76
-- 変更: 77
-- 変更: 78
-- 変更: 79
-- 変更: 80
-- 変更: 81
-- 変更: 82
-- 変更: 83
-- 変更: 84
-- 変更: 85
-- 変更: 86
-- 変更: 87
-- 変更: 88
-- 変更: 89
-- 変更: 90
-- 変更: 91
-- 変更: 92
-- 変更: 93
-- 変更: 94
-- 変更: 95
-- 変更: 96
-- 変更: 97
-- 変更: 98
-- 変更: 99
-- 変更: 100
-- 変更: 101
-- 変更: 102
-- 変更: 103
-- 変更: 104
-- 変更: 105
-- 変更: 106
-- 変更: 107
-- 変更: 108
-- 変更: 109
-- 変更: 110
-- 変更: 111
-- 変更: 112
-- 変更: 113
-- 変更: 114
-- 変更: 115
-- 変更: 116
-- 変更: 117
-- 変更: 118
-- 変更: 119
-- 変更: 120
-- 変更: 121
-- 変更: 122
-- 変更: 123
-- 変更: 124
-- 変更: 125
-- 変更: 126
-- 変更: 127
-- 変更: 128
-- 変更: 129
-- 変更: 130
-- 変更: 131
-- 変更: 132
-- 変更: 133
-- 変更: 134
-- 変更: 135
-- 変更: 136
-- 変更: 137
-- 変更: 138
-- 変更: 139
-- 変更: 140
-- 変更: 141
-- 変更: 142
-- 変更: 143
-- 変更: 144
-- 変更: 145
-- 変更: 146
-- 変更: 147
-- 変更: 148
-- 変更: 149
-- 変更: 150
-- 変更: 151
-- 変更: 152
-- 変更: 153
-- 変更: 154
-- 変更: 155
-- 変更: 156
-- 変更: 157
-- 変更: 158
-- 変更: 159
-- 変更: 160
-- 変更: 161
-- 変更: 162
-- 変更: 163
-- 変更: 164
-- 変更: 165
-- 変更: 166
-- 変更: 167
-- 変更: 168
-- 変更: 169
-- 変更: 170
-- 変更: 171
-- 変更: 172
-- 変更: 173
-- 変更: 174
-- 変更: 175
-- 変更: 176
-- 変更: 177
-- 変更: 178
-- 変更: 179
-- 変更: 180
-- 変更: 181
-- 変更: 182
-- 変更: 183
-- 変更: 184
-- 変更: 185
-- 変更: 186
-- 変更: 187
-- 変更: 188
-- 変更: 189
-- 変更: 190
-- 変更: 191
-- 変更: 192
-- 変更: 193
-- 変更: 194
-- 変更: 195
-- 変更: 196
-- 変更: 197
-- 変更: 198
-- 変更: 199
-- 変更: 200
-- 変更: 201
-- 変更: 202
-- 変更: 203
-- 変更: 204
-- 変更: 205
-- 変更: 206
-- 変更: 207
-- 変更: 208
-- 変更: 209
-- 変更: 210
-- 変更: 211
-- 変更: 212
-- 変更: 213
-- 変更: 214
-- 変更: 215
-- 変更: 216
-- 変更: 217
-- 変更: 218
-- 変更: 219
-- 変更: 220
-- 変更: 221
-- 変更: 222
-- 変更: 223
-- 変更: 224
-- 変更: 225
-- 変更: 226
-- 変更: 227
-- 変更: 228
-- 変更: 229
-- 変更: 230
-- 変更: 231
-- 変更: 232
-- 変更: 233
-- 変更: 234
-- 変更: 235
-- 変更: 236
-- 変更: 237
-- 変更: 238
-- 変更: 239
-- 変更: 240
-- 変更: 241
-- 変更: 242
-- 変更: 243
-- 変更: 244
-- 変更: 245
-- 変更: 246
-- 変更: 247
-- 変更: 248
-- 変更: 249
-- 変更: 250
-- 変更: 251
-- 変更: 252
-- 変更: 253
-- 変更: 254
-- 変更: 255
-- 変更: 256
-- 変更: 257
-- 変更: 258
-- 変更: 259
-- 変更: 260
-- 変更: 261
-- 変更: 262
-- 変更: 263
-- 変更: 264
-- 変更: 265
-- 変更: 266
-- 変更: 267
-- 変更: 268
-- 変更: 269
-- 変更: 270
-- 変更: 271
-- 変更: 272
-- 変更: 273
-- 変更: 274
-- 変更: 275
-- 変更: 276
-- 変更: 277
-- 変更: 278
-- 変更: 279
-- 変更: 280
-- 変更: 281
-- 変更: 282
-- 変更: 283
-- 変更: 284
-- 変更: 285
-- 変更: 286
-- 変更: 287
-- 変更: 288
-- 変更: 289
-- 変更: 290
-- 変更: 291
-- 変更: 292
-- 変更: 293
-- 変更: 294
-- 変更: 295
-- 変更: 296
-- 変更: 297
-- 変更: 298
-- 変更: 299
-- 変更: 300
-- 変更: 301
-- 変更: 302
-- 変更: 303
-- 変更: 304
-- 変更: 305
-- 変更: 306
-- 変更: 307
-- 変更: 308
-- 変更: 309
-- 変更: 310
-- 変更: 311
-- 変更: 312
-- 変更: 313
-- 変更: 314
-- 変更: 315
-- 変更: 316
-- 変更: 317
-- 変更: 318
-- 変更: 319
-- 変更: 320
-- 変更: 321
-- 変更: 322
-- 変更: 323
-- 変更: 324
-- 変更: 325
-- 変更: 326
-- 変更: 327
-- 変更: 328
-- 変更: 329
-- 変更: 330
-- 変更: 331
-- 変更: 332
-- 変更: 333
-- 変更: 334
-- 変更: 335
-- 変更: 336
-- 変更: 337
-- 変更: 338
-- 変更: 339
-- 変更: 340
-- 変更: 341
-- 変更: 342
-- 変更: 343
-- 変更: 344
-- 変更: 345
-- 変更: 346
-- 変更: 347
-- 変更: 348
-- 変更: 349
-- 変更: 350
-- 変更: 351
-- 変更: 352
-- 変更: 353
-- 変更: 354
-- 変更: 355
-- 変更: 356
-- 変更: 357
-- 変更: 358
-- 変更: 359
-- 変更: 360
-- 変更: 361
-- 変更: 362
-- 変更: 363
-- 変更: 364
-- 変更: 365
-- 変更: 366
-- 変更: 367
-- 変更: 368
-- 変更: 369
-- 変更: 370
-- 変更: 371
-- 変更: 372
-- 変更: 373
-- 変更: 374
-- 変更: 375
-- 変更: babylon-backend
-- 変更: blockFaceTable
-- 変更: blockIconDrawing
-- 変更: blockIconWorker
-- 変更: blockModelIcons
-- 変更: bloxd-wasm-anim
-- 変更: bloxd-wasm-webgl
-- 変更: bloxd-wasm-webgl1
-- 変更: bloxd-wasm-webgpu
-- 変更: clientGame-bedwars-bedwarsClient
-- 変更: clientGame-bridgeBattle-bridgeBattleClient
-- 変更: clientGame-buildAFactory2-buildAFactory2Client
-- 変更: clientGame-classic-classicClient
-- 変更: clientGame-clutch-clutchClient
-- 変更: clientGame-containmentBreach-containmentBreachClient
-- 変更: clientGame-cooking-cookingClient
-- 変更: clientGame-defusal-defusalClient
-- 変更: clientGame-frontline-frontlineClient
-- 変更: clientGame-goalRush-goalRushClient
-- 変更: clientGame-luckyBedwars-luckyBedwarsClient
-- 変更: clientGame-ninetyNineNights-ninetyNineNightsClient
-- 変更: clientGame-oneBlock-oneBlockClient
-- 変更: clientGame-plots-plotsClient
-- 変更: clientGame-pvpCiv-pvpCivClient
-- 変更: clientGame-skyIslands-skyIslandsClient
-- 変更: clientGame-skyblock-skyblockClient
-- 変更: clientGame-tsunami-tsunamiClient
-- 変更: clientGamePlugins
-- 変更: controller
-- 変更: errorLogging
-- 変更: fa-renderer
-- 変更: icons-brands
-- 変更: icons-duotone
-- 変更: icons-regular
-- 変更: icons-solid
-- 変更: itemSprites
-- 変更: meshWorkerLoader
-- 変更: modelCatalogue
-- 変更: modelPool
-- 変更: modelWorkerLoader
-- 変更: packAssets
-- 変更: packTerrain
-- 変更: playGameSources
-- 変更: renderDebug
-- 変更: replayHookSkyblock
-- 変更: textureNameTable
-- 変更: texturePackFeed
-- 変更: texturePackStorage
-- 変更: wasmClientGame
-- 変更: wasmClientJoin
-- 変更: wasmClientLoad
-- 変更: wasmClientPreviews
-- 変更: wasmClientReplayViewer
-- 変更: wasmClientTextIcons
-- 変更: wasmMatchmaking
-- 変更: wasmPlay
-- 変更: wasmRecorder
-- 変更: wasmReplay
-- 変更: wasmReplayVideoExport
-- 変更: wasmZstdDecoder
-- 変更: worldgenWorker
-- 変更: worldgenWorkerLoader
-
-注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <details class="trace"><summary><span>🔍 サーバーまわりの痕跡(自動チェック)</summary>
-<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/25 09:31</p>
+<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/25 10:01</p>
 <dl><dt>オリジンの Server 表示</dt><dd>nginx/1.24.0 (Ubuntu)(存在しないファイルの 404 ページより)</dd>
 <dt>ソースマップ</dt><dd>配信なし(すべて 404)</dd>
 <dt>ワーカー</dt><dd>なし</dd>
 <dt>ゲーム本体のチャンク</dt><dd>見つからず 番(全 396 個)</dd></dl>
-<p class="muted">最近の変化:</p><ul><li>2026/11/25 09:31 ビルド: igzsf → c6gaap</li><li>2026/11/25 09:01 ビルド: c6gaap → igzsf</li><li>2026/11/25 08:01 ビルド: 7zvlu → c6gaap</li><li>2026/11/25 05:31 ビルド: yma3ej → 7zvlu</li><li>2026/11/25 04:31 ビルド: sn3sfj → yma3ej</li><li>2026/11/25 01:31 ビルド: tz47m9 → sn3sfj</li><li>2026/11/24 17:31 ビルド: mpd96o → tz47m9</li><li>2026/11/24 14:31 ビルド: 31kiid → mpd96o</li></ul></div></details>
+<p class="muted">最近の変化:</p><ul><li>2026/11/25 10:01 ビルド: c6gaap → igzsf</li><li>2026/11/25 09:31 ビルド: igzsf → c6gaap</li><li>2026/11/25 09:01 ビルド: c6gaap → igzsf</li><li>2026/11/25 08:01 ビルド: 7zvlu → c6gaap</li><li>2026/11/25 05:31 ビルド: yma3ej → 7zvlu</li><li>2026/11/25 04:31 ビルド: sn3sfj → yma3ej</li><li>2026/11/25 01:31 ビルド: tz47m9 → sn3sfj</li><li>2026/11/24 17:31 ビルド: mpd96o → tz47m9</li></ul></div></details>
 <details class="trace"><summary><span>📐 ゲームの数値の変化(自動チェック)</span></summary>
 <div class="en"><p class="muted">武器・弓・防具の数値(ダメージ、射程、ノックバック、防御など)と、鉱石の出方を、ビルドが変わるたびに前回と比べた記録です。文言の変化とは別に、バランス調整を見つけます。記録は 890cfc から始まり、いま 209 個のアイテムの数値を見ています。</p>
 <p class="muted">記録を始めてから、数値が変わったことはまだありません。</p></div></details>
 <details class="trace"><summary><span>🔢 ブロック・アイテムの番号(ID)の変化</span></summary>
-<div class="en"><p class="muted">ブロックとアイテムには、ゲームの中で番号(ID)が付いています。新しい物が間に入ると、後ろの物の番号がずれます。ワールドコードや保存データで番号を直接使っている人は、ここを見てください。元データは、第三者が公開している一覧(imu31465/Bloxd-Entries-Data)で、ゲームのコードを実行して取り出したものです。いま 10091 件(相手のビルド c6gaap、こちらの確認と同じビルド)。</p>
-<p class="muted">2026/11/25 09:31(igzsf → c6gaap、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 09:01(c6gaap → igzsf、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 08:01(7zvlu → c6gaap、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 05:31(yma3ej → 7zvlu、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 04:31(sn3sfj → yma3ej、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 01:31(tz47m9 → sn3sfj、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/24 17:31(mpd96o → tz47m9、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/24 14:31(31kiid → mpd96o、10091 → 10091 件)</p><ul></ul></div></details>
+<div class="en"><p class="muted">ブロックとアイテムには、ゲームの中で番号(ID)が付いています。新しい物が間に入ると、後ろの物の番号がずれます。ワールドコードや保存データで番号を直接使っている人は、ここを見てください。元データは、第三者が公開している一覧(imu31465/Bloxd-Entries-Data)で、ゲームのコードを実行して取り出したものです。いま 10091 件(相手のビルド igzsf、こちらの確認と同じビルド)。</p>
+<p class="muted">2026/11/25 10:01(c6gaap → igzsf、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 09:31(igzsf → c6gaap、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 09:01(c6gaap → igzsf、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 08:01(7zvlu → c6gaap、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 05:31(yma3ej → 7zvlu、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 04:31(sn3sfj → yma3ej、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 01:31(tz47m9 → sn3sfj、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/24 17:31(mpd96o → tz47m9、10091 → 10091 件)</p><ul></ul></div></details>
 <h2>🕒 確認の履歴</h2>
-<div class="tablewrap"><table><tr><td>2026/11/25 09:30</td><td><span class="tag chg">更新</span></td><td>文字列 +4374/-5527</td></tr>
+<div class="tablewrap"><table><tr><td>2026/11/25 10:00</td><td><span class="tag chg">更新</span></td><td>文字列 +5527/-4374</td></tr>
+<tr><td>2026/11/25 09:30</td><td><span class="tag chg">更新</span></td><td>文字列 +4374/-5527</td></tr>
 <tr><td>2026/11/25 09:00</td><td><span class="tag chg">更新</span></td><td>文字列 +5527/-4374</td></tr>
 <tr><td>2026/11/25 08:00</td><td><span class="tag chg">更新</span></td><td>文字列 +4660/-5676</td></tr>
 <tr><td>2026/11/25 05:30</td><td><span class="tag chg">更新</span></td><td>文字列 +5114/-5101</td></tr>
