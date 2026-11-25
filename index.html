@@ -68,14 +68,602 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 <p>bloxd.io の更新を自動で見張って、「ゲームの中で何が変わったか」を日本語でまとめます。非公式の個人用ページで、運営とは無関係です。</p><p><a class="rbtn" href="skin-viewer.html">🧍 スキンビューアー(3Dで見る)</a><a class="rbtn" href="ref/">📚 詳しい分析ドキュメント</a><a class="rbtn" href="seedmap/map.html">🗺️ シードマップ(好きな番号)</a><a class="rbtn" href="guide/enchant.html">✨ エンチャント早見表</a> <a class="rbtn" href="guide/enchant-best.html">🏆 エンチャントの最適な組み合わせ</a> <a class="rbtn" href="guide/world.html">🌍 世界の作られ方(鉱石・チェスト)</a></p></div></div>
 <main>
 <section class="status">
-<div class="stat"><b>最後に確認した時刻</b><span id="lc">2026/11/25 08:00</span></div>
-<div class="stat"><b>現在のビルド</b><span>c6gaap</span></div>
-<div class="stat"><b>検知した更新</b><span>55 回</span></div>
-<div class="stat"><b>最後の更新</b><span>2026/11/25 08:00</span></div>
+<div class="stat"><b>最後に確認した時刻</b><span id="lc">2026/11/25 09:00</span></div>
+<div class="stat"><b>現在のビルド</b><span>igzsf</span></div>
+<div class="stat"><b>検知した更新</b><span>56 回</span></div>
+<div class="stat"><b>最後の更新</b><span>2026/11/25 09:00</span></div>
 </section>
 <h2>✨ 更新と、ゲーム内の変化</h2>
 <article class="upd latest">
-<div class="meta"><span class="new">最新</span><time>2026年11月25日 08:00</time><span class="build">7zvlu → c6gaap</span></div>
+<div class="meta"><span class="new">最新</span><time>2026年11月25日 09:00</time><span class="build">c6gaap → igzsf</span></div>
+<h3>ビルドが c6gaap から igzsf に更新</h3>
+<div class="chips"></div>
+
+
+
+
+<details class="dev"><summary>🔧 開発者向けの詳細(ふつうは見なくて大丈夫)</summary><dl>
+<dt>ビルド</dt><dd>c6gaap / 4d6587ec → igzsf / a0b73a5f</dd>
+<dt>main.js の文字列</dt><dd>追加 5527 / 削除 4374(大型更新(±4000超))。変数名の付け替えで見かけ上の差も大量に出るので、ゲーム内の変化とは別物です。</dd>
+<dt>チャンク(ファイル)</dt><dd>追加 0 / 削除 0 / 変更 396(ビルドが変わると全ファイルの名前が変わるので、「変更」の数に意味はありません)</dd></dl>
+<details><summary>元のレポート</summary><pre># bloxd.io 更新検知 2026-11-25T00:00:43.790Z
+
+- ビルドID: c6gaap → igzsf
+- main hash: 4d6587ec → a0b73a5f
+- main.js サイズ: 2726672 → 2734142
+- CSS: static/css/c6gaap.main.60e4f373.css → static/css/igzsf.main.60e4f373.css
+- main.js 文字列: 追加 5527 / 削除 4374(大型更新(±4000超))
+- チャンク: 追加 0 / 削除 0 / ハッシュ変更 396
+## ゲーム内の変化
+
+- ゲーム内テキスト: 追加 0 / 変更 0 / 削除 0
+
+
+## 追加された文字列(先頭80件)
+- `t JSON:&quot;,Dt),null}if(&quot;object&quot;!==typeof et||null===et||!Object.prototype.hasOwnProperty.call(et,qt.b))return null;const V`
+- `${qt}`
+- `${et.options.indexOf(Vt)}`
+- `${et.options.indexOf(Ot)}`
+- `${String(et)}`
+- `${tt}`
+- `${et}`
+- `);zt.l.discord().then((tt=&gt;{null!==tt&amp;&amp;tt.signOut()}))},[jt.c.CRAZY_GAMES]:()=&gt;{},[jt.c.APPLE]:()=&gt;{re(jt.c.APPLE)},[jt.`
+- `,[jt.c.APPLE]:`
+- `,[jt.c.MICROSOFT]:`
+- `,[jt.c.GAME_CENTER]:`
+- `,[jt.c.PLAY_GAMES]:`
+- `};let ie=null;const Ye=new class{constructor(){this.currentUserContextIsSetPromise=void 0,this.onCurrentUserContextIsSet`
+- `,(()=&gt;{if(0===this.pQueue.sizeBy({priority:Ge.SET})&amp;&amp;this.shouldPublishUpdate){var tt;const et=null!==(tt=this.userConte`
+- `,tt.getRecentlyPlayedGames()),this.updateCurrentUserContext(tt.type)},switchTo:tt=&gt;{this.updateCurrentUserContext(tt)}},`
+- `,tt.message),Bt.i.reloadIfScheduled(),this.updateCurrentUserContext(null),tt})).then((tt=&gt;(this.updateCurrentUserContext`
+- `===typeof tt)throw new Error(`
+- `);return tt}));if(tt)return tt;console.warn(`
+- `,Ot,`
+- `);const Ot=await async function(tt,et,Vt,Ot,qt){const Dt=tt.canSignIn(et);if(!Vt||!Dt){const Vt=await tt.getCurrentUser(`
+- `===typeof(null===Vt||void 0===Vt?void 0:Vt.code)&amp;&amp;(null===Vt||void 0===Vt?void 0:Vt.code.startsWith(`
+- `));let qt,Dt=et||!(0,Zt.isMobileApp)(),mt=`
+- `;return Ot?`
+- `===Vt.code||`
+- `===Vt.code?(Dt=!1,qt=Vt.code,mt=`
+- `):(qt=(0,Ee.B)(Vt.code.replace(`
+- `===Vt.code&amp;&amp;(mt=`
+- `)):qt=`
+- `,new eV(tt,qt,{forceSignOut:!0,showPopup:Dt,failure:mt})}),(()=&gt;new eV(tt,`
+- `,{showPopup:et})));if(null===Ot)throw new eV(tt,`
+- `,confirmText:(0,At.n)(qt),confirmTooltip:`
+- `})}return{accessToken:qt}}(tt);Vt=et.accessToken}const Dt=await tt;return await async function(tt,et,Vt,Ot){if(!tt)throw`
+- `);let qt=null;if((0,xt.isDiscordClient)()){qt=(await zt.l.discordActivity()).getInstanceId()}const Dt=et.getMetricsCooki`
+- `:ft,whamm:wt,error:yt,superRankInfo:Nt,ranksMayChange:Mt,ownedCosmeticPacks:bt,dailyDrop:Jt,personalWorldLobbyName:Ct,re`
+- `,tt),{error:(0,ae.w)(tt,`
+- `)})));if(yt)throw new eV(jt.c.DISCORD,yt,{forceSignOut:Ot===ce.LINK,showPopup:!0,failure:`
+- `});if((0,xt.isDiscordClient)()){const et=await zt.l.discordActivity();for(const tt of lt)et.registerGuild(tt.id,tt.name)`
+- `);const Ot=await et.getUserLocale();null!==Ot&amp;&amp;Yt.e.get().setCurrentLanguage(Ot)}console.log(`
+- `),(0,xt.isDiscordClient)()&amp;&amp;nt.b.holdWebGpuForAccountLoss(Kt);return Dt[`
+- `]=ft,new Fe(jt.c.DISCORD,{authProvider:jt.e.DISCORD,accountInfo:mt},dt,Ht,Xt,Dt,wt,Qt,!(0,xt.isDiscordClient)(),Nt,null!`
+- `);const[Vt,qt]=await Promise.all([DV(),Ot()]),Dt=await async function(tt,et){if(!tt)throw new eV(jt.c.CRAZY_GAMES,`
+- `);return await dV(jt.c.CRAZY_GAMES,`
+- `,{crazyGamesToken:tt},et)}(Vt,qt),mt=Dt.includes(jt.c.ANONYMOUS),dt=qt.availableUserContextTypes.includes(jt.c.CRAZY_GAM`
+- `),Ht=!0):mt||dt?(console.log(`
+- `),Ht=!0):(console.log(`
+- `),Ht=await tt.doesUserWantToTieExistingAccount()),!Ht)throw new eV(jt.c.CRAZY_GAMES,`
+- `});const Xt=gt.i&amp;&amp;!mt;return await async function(tt,et,Vt,Ot){if(!tt)throw new eV(jt.c.CRAZY_GAMES,`
+- `);return await jV(jt.c.CRAZY_GAMES,`
+- `,{crazyGamesToken:tt,preferCrazyGamesName:Vt,onlyLink:Ot===ce.LINK},et,Ot)}(Vt,qt,Xt,et)}case jt.c.MSN:{const[tt,qt]=awa`
+- `,Dt,qt)).includes(jt.c.ANONYMOUS);return await jV(jt.c.MSN,`
+- `,{...Dt,preferMsnName:gt.i&amp;&amp;!mt,onlyLink:et===ce.LINK},qt,et)}default:throw new Error('Unknown user context type: ${tt}'`
+- `,et.getRecentlyPlayedGames()),et))).catch((et=&gt;{throw this.userContexts.delete(tt),new Error('Failed to create ${tt} use`
+- `,tt),null)))))&amp;&amp;void 0!==Ot?Ot:null)&amp;&amp;Dt.push(jt.c.CRAZY_GAMES);const Ht=await zt.l.discordActivity();if(null!==Ht)Dt.pu`
+- `,tt)})).catch((tt=&gt;{console.error(`
+- `,tt.message),Ht.exit(`
+- `)}));else{(await zt.l.discord()).hasCurrentUser()&amp;&amp;Dt.push(jt.c.DISCORD)}const Xt=await zt.l.msn();null!==(null!==(qt=aw`
+- `,tt)}))}catch(Qt){console.error('Failed to set initial user context to ${jt}:',Qt)}if(0===Dt.length&amp;&amp;await Be().attemptA`
+- `,(()=&gt;{pe=!0}));function Te(){return pe}const ge=new Promise((tt=&gt;{Jt.j.yN(`
+- `,(()=&gt;{tt()}))}));async function se(){var tt;const et=ke.getMetricsCookies(),Vt=tt=&gt;{const Vt=It.b.getItem(tt);return(0,`
+- `)]},qt={`
+- `:Vt(`
+- `:null!==(tt=(0,gt.e)())&amp;&amp;void 0!==tt?tt:(0,Ot.i)((0,mt.b)(),(0,mt.b)(),(0,mt.b)()),`
+- `)};qt[`
+- `]===et[`
+- `]&amp;&amp;(qt[`
+- `]=(0,Ot.f)((0,ot.h)(dt.d))),(0,gt.n)(qt[`
+- `]),we.c.markHomepageLoadEnd(),pe&amp;&amp;(await ge,pe=!1),Jt.j.unsubscribe(xe);const Dt=await EV('${Ut.clientSideServerUrls.ind`
+- `,tt),new Error(`
+- `)})),{name:Ht,cosmetics:Xt,ranks:Qt,availableUserContextTypes:lt,`
+- `:ft,superRankInfo:wt,ownedCosmeticPacks:yt,dailyDrop:Nt,personalWorldLobbyName:Mt,recentlyPlayedGames:bt,countryCode:Ct,`
+- `]=ft,new Fe(jt.c.ANONYMOUS,null,Ht,Xt,Qt,qt,null,lt,!0,wt,null!==yt&amp;&amp;void 0!==yt?yt:[],null!==Nt&amp;&amp;void 0!==Nt?Nt:null,nu`
+- `;class eV extends Me.c{constructor(tt,et){var Vt;let Ot=arguments.length&gt;2&amp;&amp;void 0!==arguments[2]?arguments[2]:{};Ot.for`
+- `)}}function VV(tt,et){const Vt=jt.e[tt];rt.NotificationProvider.showAlertPopup({title:`
+- `,subtitle:et,confirmText:`
+- `});return dt}async function qV(tt,et,Vt,Ot){let qt=arguments.length&gt;4&amp;&amp;void 0!==arguments[4]?arguments[4]:{};const{anony`
+- `:Xt,whamm:Qt,ranks:lt,superRankInfo:ft,ranksMayChange:wt,ownedCosmeticPacks:yt,dailyDrop:Nt,personalWorldLobbyName:Mt,re`
+- `]=Xt,new Fe(tt,{authProvider:jt.e[tt],accountInfo:Dt},mt,dt,lt,ut,Qt,Ht,!0,ft,null!==yt&amp;&amp;void 0!==yt?yt:[],null!==Nt&amp;&amp;vo`
+- `);if(null===await tt.getCurrentUser())try{await tt.signInWithPopup()}catch(et){const tt=(0,Me.h)(et);throw new eV(jt.c.C`
+- `,{forceSignOut:!0,showPopup:null===tt,failure:null!==tt&amp;&amp;void 0!==tt?tt:`
+- `})}return await tt.getCurrentUserToken()}async function mV(tt){const et=await zt.l.msn();if(null===et)throw Error(`
+
+## 削除された文字列(先頭80件)
+- `t JSON:&quot;,oB),null}if(&quot;object&quot;!==typeof IB||null===IB||!Object.prototype.hasOwnProperty.call(IB,JB.d))return null;const Z`
+- `${JB}`
+- `${IB.options.indexOf(ZB)}`
+- `${IB.options.indexOf(TB)}`
+- `${String(IB)}`
+- `${BB}`
+- `${IB}`
+- `);XB.h.discord().then((BB=&gt;{null!==BB&amp;&amp;BB.signOut()}))},[kB.c.CRAZY_GAMES]:()=&gt;{},[kB.c.APPLE]:()=&gt;{eI(kB.c.APPLE)},[kB.`
+- `,[kB.c.APPLE]:`
+- `,[kB.c.MICROSOFT]:`
+- `,[kB.c.GAME_CENTER]:`
+- `,[kB.c.PLAY_GAMES]:`
+- `};let lI=null;const AI=new class{constructor(){this.currentUserContextIsSetPromise=void 0,this.onCurrentUserContextIsSet`
+- `,(()=&gt;{if(0===this.pQueue.sizeBy({priority:mI.SET})&amp;&amp;this.shouldPublishUpdate){var BB;const IB=null!==(BB=this.userConte`
+- `,BB.getRecentlyPlayedGames()),this.updateCurrentUserContext(BB.type)},switchTo:BB=&gt;{this.updateCurrentUserContext(BB)}},`
+- `,BB.message),tB.e.reloadIfScheduled(),this.updateCurrentUserContext(null),BB})).then((BB=&gt;(this.updateCurrentUserContext`
+- `===typeof BB)throw new Error(`
+- `);return BB}));if(BB)return BB;console.warn(`
+- `,TB,`
+- `);const TB=await async function(BB,IB,ZB,TB,JB){const oB=BB.canSignIn(IB);if(!ZB||!oB){const ZB=await BB.getCurrentUser(`
+- `===typeof(null===ZB||void 0===ZB?void 0:ZB.code)&amp;&amp;(null===ZB||void 0===ZB?void 0:ZB.code.startsWith(`
+- `));let JB,oB=IB||!(0,jB.isMobileApp)(),GB=`
+- `;return TB?`
+- `===ZB.code||`
+- `===ZB.code?(oB=!1,JB=ZB.code,GB=`
+- `):(JB=(0,zI.D)(ZB.code.replace(`
+- `===ZB.code&amp;&amp;(GB=`
+- `)):JB=`
+- `,new BZ(BB,JB,{forceSignOut:!0,showPopup:oB,failure:GB})}),(()=&gt;new BZ(BB,`
+- `,{showPopup:IB})));if(null===TB)throw new BZ(BB,`
+- `,confirmText:(0,fB.t)(JB),confirmTooltip:`
+- `})}return{accessToken:JB}}(BB);ZB=IB.accessToken}const oB=await BB;return await async function(BB,IB,ZB,TB){if(!BB)throw`
+- `);let JB=null;if((0,xB.isDiscordClient)()){JB=(await XB.h.discordActivity()).getInstanceId()}const oB=IB.getMetricsCooki`
+- `:NB,whamm:gB,error:qB,superRankInfo:yB,ranksMayChange:UB,ownedCosmeticPacks:WB,dailyDrop:dB,personalWorldLobbyName:CB,re`
+- `,BB),{error:(0,yI.u)(BB,`
+- `)})));if(qB)throw new BZ(kB.c.DISCORD,qB,{forceSignOut:TB===pI.LINK,showPopup:!0,failure:`
+- `});if((0,xB.isDiscordClient)()){const IB=await XB.h.discordActivity();for(const BB of zB)IB.registerGuild(BB.id,BB.name)`
+- `);const TB=await IB.getUserLocale();null!==TB&amp;&amp;AB.h.get().setCurrentLanguage(TB)}console.log(`
+- `),(0,xB.isDiscordClient)()&amp;&amp;VB.d.holdWebGpuForAccountLoss(sB);return oB[`
+- `]=NB,new RI(kB.c.DISCORD,{authProvider:kB.f.DISCORD,accountInfo:GB},vB,cB,nB,oB,gB,hB,!(0,xB.isDiscordClient)(),yB,null!`
+- `);const[ZB,JB]=await Promise.all([JZ(),TB()]),oB=await async function(BB,IB){if(!BB)throw new BZ(kB.c.CRAZY_GAMES,`
+- `);return await GZ(kB.c.CRAZY_GAMES,`
+- `,{crazyGamesToken:BB},IB)}(ZB,JB),GB=oB.includes(kB.c.ANONYMOUS),vB=JB.availableUserContextTypes.includes(kB.c.CRAZY_GAM`
+- `),cB=!0):GB||vB?(console.log(`
+- `),cB=!0):(console.log(`
+- `),cB=await BB.doesUserWantToTieExistingAccount()),!cB)throw new BZ(kB.c.CRAZY_GAMES,`
+- `});const nB=DB.e&amp;&amp;!GB;return await async function(BB,IB,ZB,TB){if(!BB)throw new BZ(kB.c.CRAZY_GAMES,`
+- `);return await vZ(kB.c.CRAZY_GAMES,`
+- `,{crazyGamesToken:BB,preferCrazyGamesName:ZB,onlyLink:TB===pI.LINK},IB,TB)}(ZB,JB,nB,IB)}case kB.c.MSN:{const[BB,JB]=awa`
+- `,oB,JB)).includes(kB.c.ANONYMOUS);return await vZ(kB.c.MSN,`
+- `,{...oB,preferMsnName:DB.e&amp;&amp;!GB,onlyLink:IB===pI.LINK},JB,IB)}default:throw new Error('Unknown user context type: ${BB}'`
+- `,IB.getRecentlyPlayedGames()),IB))).catch((IB=&gt;{throw this.userContexts.delete(BB),new Error('Failed to create ${BB} use`
+- `,BB),null)))))&amp;&amp;void 0!==TB?TB:null)&amp;&amp;oB.push(kB.c.CRAZY_GAMES);const cB=await XB.h.discordActivity();if(null!==cB)oB.pu`
+- `,BB)})).catch((BB=&gt;{console.error(`
+- `,BB.message),cB.exit(`
+- `)}));else{(await XB.h.discord()).hasCurrentUser()&amp;&amp;oB.push(kB.c.DISCORD)}const nB=await XB.h.msn();null!==(null!==(JB=aw`
+- `,BB)}))}catch(hB){console.error('Failed to set initial user context to ${kB}:',hB)}if(0===oB.length&amp;&amp;await tI().attemptA`
+- `,(()=&gt;{bI=!0}));function EI(){return bI}const DI=new Promise((BB=&gt;{dB.l.Uy(`
+- `,(()=&gt;{BB()}))}));async function KI(){var BB;const IB=rI.getMetricsCookies(),ZB=BB=&gt;{const ZB=HB.e.getItem(BB);return(0,`
+- `)]},JB={`
+- `:ZB(`
+- `:null!==(BB=(0,DB.b)())&amp;&amp;void 0!==BB?BB:(0,TB.g)((0,GB.d)(),(0,GB.d)(),(0,GB.d)()),`
+- `)};JB[`
+- `]===IB[`
+- `]&amp;&amp;(JB[`
+- `]=(0,TB.f)((0,LB.j)(vB.b))),(0,DB.k)(JB[`
+- `]),NI.d.markHomepageLoadEnd(),bI&amp;&amp;(await DI,bI=!1),dB.l.unsubscribe(xI);const oB=await zZ('${uB.clientSideServerUrls.ind`
+- `,BB),new Error(`
+- `)})),{name:cB,cosmetics:nB,ranks:hB,availableUserContextTypes:zB,`
+- `:NB,superRankInfo:gB,ownedCosmeticPacks:qB,dailyDrop:yB,personalWorldLobbyName:UB,recentlyPlayedGames:WB,countryCode:CB,`
+- `]=NB,new RI(kB.c.ANONYMOUS,null,cB,nB,hB,JB,null,zB,!0,gB,null!==qB&amp;&amp;void 0!==qB?qB:[],null!==yB&amp;&amp;void 0!==yB?yB:null,nu`
+- `;class BZ extends UI.d{constructor(BB,IB){var ZB;let TB=arguments.length&gt;2&amp;&amp;void 0!==arguments[2]?arguments[2]:{};TB.for`
+- `)}}function IZ(BB,IB){const ZB=kB.f[BB];eB.NotificationProvider.showAlertPopup({title:`
+- `,subtitle:IB,confirmText:`
+- `});return vB}async function TZ(BB,IB,ZB,TB){let JB=arguments.length&gt;4&amp;&amp;void 0!==arguments[4]?arguments[4]:{};const{anony`
+- `:nB,whamm:hB,ranks:zB,superRankInfo:NB,ranksMayChange:gB,ownedCosmeticPacks:qB,dailyDrop:yB,personalWorldLobbyName:UB,re`
+- `]=nB,new RI(BB,{authProvider:kB.f[BB],accountInfo:oB},GB,vB,zB,QB,hB,cB,!0,NB,null!==qB&amp;&amp;void 0!==qB?qB:[],null!==yB&amp;&amp;vo`
+- `);if(null===await BB.getCurrentUser())try{await BB.signInWithPopup()}catch(IB){const BB=(0,UI.f)(IB);throw new BZ(kB.c.C`
+- `,{forceSignOut:!0,showPopup:null===BB,failure:null!==BB&amp;&amp;void 0!==BB?BB:`
+- `})}return await BB.getCurrentUserToken()}async function oZ(BB){const IB=await XB.h.msn();if(null===IB)throw Error(`
+
+## チャンク
+- 変更: 73
+- 変更: 74
+- 変更: 75
+- 変更: 76
+- 変更: 77
+- 変更: 78
+- 変更: 79
+- 変更: 80
+- 変更: 81
+- 変更: 82
+- 変更: 83
+- 変更: 84
+- 変更: 85
+- 変更: 86
+- 変更: 87
+- 変更: 88
+- 変更: 89
+- 変更: 90
+- 変更: 91
+- 変更: 92
+- 変更: 93
+- 変更: 94
+- 変更: 95
+- 変更: 96
+- 変更: 97
+- 変更: 98
+- 変更: 99
+- 変更: 100
+- 変更: 101
+- 変更: 102
+- 変更: 103
+- 変更: 104
+- 変更: 105
+- 変更: 106
+- 変更: 107
+- 変更: 108
+- 変更: 109
+- 変更: 110
+- 変更: 111
+- 変更: 112
+- 変更: 113
+- 変更: 114
+- 変更: 115
+- 変更: 116
+- 変更: 117
+- 変更: 118
+- 変更: 119
+- 変更: 120
+- 変更: 121
+- 変更: 122
+- 変更: 123
+- 変更: 124
+- 変更: 125
+- 変更: 126
+- 変更: 127
+- 変更: 128
+- 変更: 129
+- 変更: 130
+- 変更: 131
+- 変更: 132
+- 変更: 133
+- 変更: 134
+- 変更: 135
+- 変更: 136
+- 変更: 137
+- 変更: 138
+- 変更: 139
+- 変更: 140
+- 変更: 141
+- 変更: 142
+- 変更: 143
+- 変更: 144
+- 変更: 145
+- 変更: 146
+- 変更: 147
+- 変更: 148
+- 変更: 149
+- 変更: 150
+- 変更: 151
+- 変更: 152
+- 変更: 153
+- 変更: 154
+- 変更: 155
+- 変更: 156
+- 変更: 157
+- 変更: 158
+- 変更: 159
+- 変更: 160
+- 変更: 161
+- 変更: 162
+- 変更: 163
+- 変更: 164
+- 変更: 165
+- 変更: 166
+- 変更: 167
+- 変更: 168
+- 変更: 169
+- 変更: 170
+- 変更: 171
+- 変更: 172
+- 変更: 173
+- 変更: 174
+- 変更: 175
+- 変更: 176
+- 変更: 177
+- 変更: 178
+- 変更: 179
+- 変更: 180
+- 変更: 181
+- 変更: 182
+- 変更: 183
+- 変更: 184
+- 変更: 185
+- 変更: 186
+- 変更: 187
+- 変更: 188
+- 変更: 189
+- 変更: 190
+- 変更: 191
+- 変更: 192
+- 変更: 193
+- 変更: 194
+- 変更: 195
+- 変更: 196
+- 変更: 197
+- 変更: 198
+- 変更: 199
+- 変更: 200
+- 変更: 201
+- 変更: 202
+- 変更: 203
+- 変更: 204
+- 変更: 205
+- 変更: 206
+- 変更: 207
+- 変更: 208
+- 変更: 209
+- 変更: 210
+- 変更: 211
+- 変更: 212
+- 変更: 213
+- 変更: 214
+- 変更: 215
+- 変更: 216
+- 変更: 217
+- 変更: 218
+- 変更: 219
+- 変更: 220
+- 変更: 221
+- 変更: 222
+- 変更: 223
+- 変更: 224
+- 変更: 225
+- 変更: 226
+- 変更: 227
+- 変更: 228
+- 変更: 229
+- 変更: 230
+- 変更: 231
+- 変更: 232
+- 変更: 233
+- 変更: 234
+- 変更: 235
+- 変更: 236
+- 変更: 237
+- 変更: 238
+- 変更: 239
+- 変更: 240
+- 変更: 241
+- 変更: 242
+- 変更: 243
+- 変更: 244
+- 変更: 245
+- 変更: 246
+- 変更: 247
+- 変更: 248
+- 変更: 249
+- 変更: 250
+- 変更: 251
+- 変更: 252
+- 変更: 253
+- 変更: 254
+- 変更: 255
+- 変更: 256
+- 変更: 257
+- 変更: 258
+- 変更: 259
+- 変更: 260
+- 変更: 261
+- 変更: 262
+- 変更: 263
+- 変更: 264
+- 変更: 265
+- 変更: 266
+- 変更: 267
+- 変更: 268
+- 変更: 269
+- 変更: 270
+- 変更: 271
+- 変更: 272
+- 変更: 273
+- 変更: 274
+- 変更: 275
+- 変更: 276
+- 変更: 277
+- 変更: 278
+- 変更: 279
+- 変更: 280
+- 変更: 281
+- 変更: 282
+- 変更: 283
+- 変更: 284
+- 変更: 285
+- 変更: 286
+- 変更: 287
+- 変更: 288
+- 変更: 289
+- 変更: 290
+- 変更: 291
+- 変更: 292
+- 変更: 293
+- 変更: 294
+- 変更: 295
+- 変更: 296
+- 変更: 297
+- 変更: 298
+- 変更: 299
+- 変更: 300
+- 変更: 301
+- 変更: 302
+- 変更: 303
+- 変更: 304
+- 変更: 305
+- 変更: 306
+- 変更: 307
+- 変更: 308
+- 変更: 309
+- 変更: 310
+- 変更: 311
+- 変更: 312
+- 変更: 313
+- 変更: 314
+- 変更: 315
+- 変更: 316
+- 変更: 317
+- 変更: 318
+- 変更: 319
+- 変更: 320
+- 変更: 321
+- 変更: 322
+- 変更: 323
+- 変更: 324
+- 変更: 325
+- 変更: 326
+- 変更: 327
+- 変更: 328
+- 変更: 329
+- 変更: 330
+- 変更: 331
+- 変更: 332
+- 変更: 333
+- 変更: 334
+- 変更: 335
+- 変更: 336
+- 変更: 337
+- 変更: 338
+- 変更: 339
+- 変更: 340
+- 変更: 341
+- 変更: 342
+- 変更: 343
+- 変更: 344
+- 変更: 345
+- 変更: 346
+- 変更: 347
+- 変更: 348
+- 変更: 349
+- 変更: 350
+- 変更: 351
+- 変更: 352
+- 変更: 353
+- 変更: 354
+- 変更: 355
+- 変更: 356
+- 変更: 357
+- 変更: 358
+- 変更: 359
+- 変更: 360
+- 変更: 361
+- 変更: 362
+- 変更: 363
+- 変更: 364
+- 変更: 365
+- 変更: 366
+- 変更: 367
+- 変更: 368
+- 変更: 369
+- 変更: 370
+- 変更: 371
+- 変更: 372
+- 変更: 373
+- 変更: 374
+- 変更: 375
+- 変更: 376
+- 変更: 377
+- 変更: 378
+- 変更: 379
+- 変更: 380
+- 変更: 381
+- 変更: 382
+- 変更: 383
+- 変更: 384
+- 変更: 385
+- 変更: 386
+- 変更: 387
+- 変更: 388
+- 変更: 389
+- 変更: 390
+- 変更: 391
+- 変更: 392
+- 変更: 393
+- 変更: 394
+- 変更: 395
+- 変更: 396
+- 変更: 397
+- 変更: babylon-backend
+- 変更: blockFaceTable
+- 変更: blockIconDrawing
+- 変更: blockIconWorker
+- 変更: blockModelIcons
+- 変更: bloxd-wasm-anim
+- 変更: bloxd-wasm-webgl
+- 変更: bloxd-wasm-webgl1
+- 変更: bloxd-wasm-webgpu
+- 変更: clientGame-bedwars-bedwarsClient
+- 変更: clientGame-bridgeBattle-bridgeBattleClient
+- 変更: clientGame-buildAFactory2-buildAFactory2Client
+- 変更: clientGame-classic-classicClient
+- 変更: clientGame-clutch-clutchClient
+- 変更: clientGame-containmentBreach-containmentBreachClient
+- 変更: clientGame-cooking-cookingClient
+- 変更: clientGame-defusal-defusalClient
+- 変更: clientGame-frontline-frontlineClient
+- 変更: clientGame-goalRush-goalRushClient
+- 変更: clientGame-luckyBedwars-luckyBedwarsClient
+- 変更: clientGame-ninetyNineNights-ninetyNineNightsClient
+- 変更: clientGame-oneBlock-oneBlockClient
+- 変更: clientGame-plots-plotsClient
+- 変更: clientGame-pvpCiv-pvpCivClient
+- 変更: clientGame-skyIslands-skyIslandsClient
+- 変更: clientGame-skyblock-skyblockClient
+- 変更: clientGame-tsunami-tsunamiClient
+- 変更: clientGamePlugins
+- 変更: controller
+- 変更: debugDeviceHeader
+- 変更: diagSink
+- 変更: errorLogging
+- 変更: fa-renderer
+- 変更: frameDebug
+- 変更: icons-brands
+- 変更: icons-duotone
+- 変更: icons-regular
+- 変更: icons-solid
+- 変更: itemSprites
+- 変更: memoryDebug
+- 変更: meshWorkerLoader
+- 変更: modelCatalogue
+- 変更: modelPool
+- 変更: modelWorkerLoader
+- 変更: packAssets
+- 変更: packTerrain
+- 変更: playGameSources
+- 変更: procGenWorker
+- 変更: renderDebug
+- 変更: renderLite
+- 変更: renderProbe
+- 変更: replayHookSkyblock
+- 変更: scrollDebug
+- 変更: textureNameTable
+- 変更: texturePackFeed
+- 変更: texturePackStorage
+- 変更: wasmClientGame
+- 変更: wasmClientJoin
+- 変更: wasmClientLoad
+- 変更: wasmClientPreviews
+- 変更: wasmClientReplayViewer
+- 変更: wasmClientTextIcons
+- 変更: wasmMatchmaking
+- 変更: wasmPlay
+- 変更: wasmRecorder
+- 変更: wasmReplay
+- 変更: wasmReplayVideoExport
+- 変更: wasmZstdDecoder
+- 変更: webGpuLossDebug
+- 変更: worldgenWorker
+- 変更: worldgenWorkerLoader
+
+注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
+<article class="upd">
+<div class="meta"><time>2026年11月25日 08:00</time><span class="build">7zvlu → c6gaap</span></div>
 <h3>ゲーム内の文言の変化はなし。ビルドの作り直しだけ(7zvlu → c6gaap。本体は約 27KB 減)</h3>
 <div class="chips"></div>
 <div class="pts"><div class="pt player"><div class="ico">🔧</div><div class="ptb">
@@ -17160,621 +17748,22 @@ pre{white-space:pre-wrap;word-break:break-word;font:12px/1.55 ui-monospace,Conso
 - 変更: worldgenWorkerLoader
 
 注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
-<article class="upd">
-<div class="meta"><time>2026年11月18日 01:30</time><span class="build">vjxd5n → 7jvyee</span></div>
-<h3>協力して戦うホラー・シューティング「Containment Breach(コンテインメント・ブリーチ)」の、チュートリアル・武器庫(装備)・図鑑・探知機のショップの文言が、まとめて入った(122 個)。ほかに、SuperGems の「持ち物と重なる」表示、スポーン地点が奈落より低い場合の案内、アプリでのサインインの制限</h3>
-<div class="chips"><span class="chip add">＋ 新しい文言 135</span><span class="chip del">－ 削除 8</span></div>
-<div class="pts"><div class="pt player"><div class="ico">🧪</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>Containment Breach(協力型のホラー・シューティング)の文言が、大量に入った</h4></div>
-<p>ゲームの説明(公式の文)は、「放棄された研究所の、感染した廊下に挑み、被害が広がる前に、異常な存在を封じ込めよう。SCP 財団にヒントを得た、無料の協力型 PvE サバイバル・ホラー。友達を集めて、施設を確保して、生きて帰ろう」です。ホームの上段(Plots、Greenville、Frontline などと同じ並び)に載っていて、公式のページ(bloxd.io/game/scpContainmentBreach)もあり、題は「Containment Breach: Co-op Lab Horror Shooter」です。今回、このゲームの画面用の文言が 122 個、まとめて入りました。内容は、次の 4 つの項目に分けて書きます。</p><p class="note">ホームに載っていることは、今のビルドで確認しました。ただ、いつからか(今回の更新で初めて載ったのか)は、確認していません。専用のファイル(clientGame-containmentBreach-containmentBreachClient)が、今回新しく増えています。</p>
-<span class="cert">確かさ: 文言とゲーム名は確実 / 遊べる状態かは未確認</span></div></div><div class="pt player"><div class="ico">🎖️</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>チュートリアル(司令官ソープの指示で進む)</h4></div>
-<p>初めて遊ぶ人向けの流れが入っています。「実験室が爆発して、この階の収容室がすべて壊れた」という設定で、新兵として、仲間(ヘイル、オカフォー)と進みます。順番は次のとおりです。①キッチンを制圧する(「敵だ!狙って撃て」)②群れにグレネードを投げる(「グレネードは時間がたつと戻る」)③倒れた仲間に「リジェン・スプラッシュ」を投げて起こす(「誰も床に残すな」)④出口の敵を倒して前進する⑤補給のメディキットを取る(「メディキットは、分隊全員を治して、倒れた人も起こせる」)⑥ボス「ペイシェント・ゼロ」を探して倒す(「足を踏み込んだら下がれ」「子分を呼んだら、小さいのから倒せ」)。終わると、「クイック・ステップ」(速く動けるようになるパーク)と、コインがもらえます。途中で倒れても、武器庫に戻って、本番の準備ができます。</p><p class="note">ボスの動き(足を踏み込む、子分を呼ぶ)は、文言から読み取ったもので、実際の動きは見ていません。</p>
-<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">🔫</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>武器庫(アーモリー)と、装備・強化の仕組み</h4></div>
-<p>装備の画面「Armoury(武器庫)」の文言です。枠は、プライマリ、セカンダリ、オフェンシブ(攻撃用の道具)、セルフヘルプ(回復など)、アーマー、パーク。武器の数値の項目は、ダメージ、ペレット数、連射速度、弾倉、リロード、持てる数、補給、効果の強さ(ポテンシー)です。装備は、解放(コインか部品で)→ 装備 → ティア(段階)を上げる強化、の順に進みます。パークは、数に上限があり、枠が足りないときは、1 つ外してから付けます。「Double Barrel(ショットガンの種類)」「Regen Splash(回復用の投げ物)」「Quick Step(パーク)」の名前が出ています。</p><p class="note">上限の数、ティアの数、各武器の数値は、文言に出ていません。</p>
-<span class="cert">確かさ: 文言は確実 / 数値は不明</span></div></div><div class="pt player"><div class="ico">📖</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>封じ込めの記録(図鑑)と、探知機のショップ</h4></div>
-<p>「Containment Records(封じ込めの記録)」は、敵の図鑑です。「ファイル ○○」ごとに、「Unknown(未確認)→ Sighted(目撃)→ Contained(封じ込め済み)」と進み、「○○ のうち ○○ 件を封じ込めた」と数えます。封じ込めの条件は、「どのモードでもよい」「Normal モードで」「Hard モードで」の 3 種類があります。ショップ「Strange Wares(奇妙な品)」の店主はスティンキーで、「探知機(○○ Locator)」を売っています。探知機を有効にして、出撃のパッドに持っていくと、狙った敵が現れやすくなり、使うと壊れます。Normal 専用、Hard 専用のものがあります。</p><p class="note">「現れやすくなる」は、説明文の「その獲物を、あなたのもとに引き寄せる」からの読み取りです。</p>
-<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">💎</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>ストア:「持ち物と重なる」表示、タブの追加</h4></div>
-<p>SuperGems で買うものが、すでに持っているものと中身が重なるときの案内(「すでに持っているものと、アイテムが重なります」「相手が、この一部をすでに持っています」)が増えました。ストアのタブに、「ランク」「バンドル」「キャラクター」が増えました。前回の更新の「Best value(いちばんお得)」の表示は、消えました。</p><p class="note">バンドルの中身や値段は、文言に出ていません。</p>
-<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">🛏️</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>スポーン地点・ベッドが「奈落より下」のときの案内</h4></div>
-<p>「スポーン地点が、奈落で死ぬ高さより下にあったので、ワールドのスポーンに戻りました。もっと高い所に設定し直してください」「このベッドは、奈落で死ぬ高さより下にあるので、スポーン地点にできません」が増えました。前回の更新で入った、「ホーム・ワープ・スポーン地点に何かが邪魔している」の案内のうち、ホーム・ワープ・部族ホームの 3 つの文言は、消えました(入れ替えか、仕様の変更と思われます)。</p><p class="note">消えた理由は、推測です。「スポーン地点が邪魔されている」の文言は、残っているのか確認していません。</p>
-<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">🌐</div><div class="ptb">
-<div class="ptt"><span class="who">遊ぶ人</span><h4>接続できないときの案内、アプリでのサインイン、友達申請の通知</h4></div>
-<p>ゲームのサーバーにつながらないとき、「もう一度試すか、別のネットワークで試してください」(スマホでは、「Wi-Fi とモバイル通信を切り替えて」)と出ます。サインインの方法によっては、「アプリでは、○○のサインインは使えません」と出ます。通知に、「友達になりたがっています」が増えました。シェーダーパックには、「この端末のグラフィックでは、まだ動きません」が増えました。「ワールドの持ち主だけが招待できます」の文言は、消えました。</p><p class="note">アプリで使えないサインインが、どれなのかは、文言に出ていません。</p>
-<span class="cert">確かさ: 文言は確実</span></div></div><div class="pt player"><div class="ico">⚙️</div><div class="ptb">
-<div class="ptt"><span class="who">運営の内部</span><h4>ファイルの組み替え</h4></div>
-<p>新しいファイルが「clientGame-containmentBreach-containmentBreachClient」の 1 つ増え、番号つきのチャンク「62」が 1 つ消えました。そのほかは、ビルドの作り直しで、ハッシュだけが変わっています。</p>
-<span class="cert">確かさ: 自動比較</span></div></div></div>
-
-
-<details class="en"><summary>📖 英語の原文を見る(追加・書き換え・削除された文)</summary><details class="sec"><summary><span>コンテインメント・ブリーチ</span><em>＋122 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>operatorName</code><p>Commander Soap</p></div></li><li class="a"><i>＋</i><div><code>tutorialBriefing1</code><p>Recruit, do you read me? That blast took out the lab, and every containment cell on this level just failed.</p></div></li><li class="a"><i>＋</i><div><code>tutorialBriefing2</code><p>You, Hale and Okafor are all I've got down there. Clear the kitchen and find whatever caused this.</p></div></li><li class="a"><i>＋</i><div><code>tutorialBriefing3</code><p>On your feet. Move up.</p></div></li><li class="a"><i>＋</i><div><code>tutorialObjectiveHeader</code><p>Objective</p></div></li><li class="a"><i>＋</i><div><code>tutorialObjectiveKitchen</code><p>Move up</p></div></li><li class="a"><i>＋</i><div><code>tutorialShoot</code><p>Contacts! Aim and fire. Put them down before they reach you.</p></div></li><li class="a"><i>＋</i><div><code>tutorialShootDone</code><p>Good shooting. Keep moving.</p></div></li><li class="a"><i>＋</i><div><code>tutorialGrenade</code><p>Pack up ahead, bunched up and feeding. Equip your grenade and throw it right into the middle of them.</p></div></li><li class="a"><i>＋</i><div><code>tutorialObjectivePack</code><p>Grenade the pack</p></div></li><li class="a"><i>＋</i><div><code>tutorialGrenadeDone</code><p>That's how you clear a crowd. Grenades come back over time, so use them.</p></div></li><li class="a"><i>＋</i><div><code>tutorialRevive</code><p>{{name}} is down! Equip your Regen Splash and throw it at them.</p></div></li><li class="a"><i>＋</i><div><code>tutorialObjectiveRevive</code><p>Revive your squadmate</p></div></li><li class="a"><i>＋</i><div><code>tutorialReviveDone</code><p>Good. A healing splash gets any downed squadmate back up. Never leave anyone on the floor.</p></div></li><li class="a"><i>＋</i><div><code>tutorialReviveTimeout</code><p>{{name}} is back up, no thanks to you. Next time, get that splash on them fast.</p></div></li><li class="a"><i>＋</i><div><code>tutorialPush</code><p>Movement by the exit. Push up and finish them.</p></div></li><li class="a"><i>＋</i><div><code>tutorialObjectivePush</code><p>Clear the exit</p></div></li><li class="a"><i>＋</i><div><code>tutorialPushDone</code><p>Room's clear. Good work.</p></div></li><li class="a"><i>＋</i><div><code>tutorialAid</code><p>Supply drop coming in by the exit. Grab that medkit: medkits patch up the whole squad and get anyone downed back on their feet.</p></div></li><li class="a"><i>＋</i><div><code>tutorialObjectiveAid</code><p>Grab the medkit</p></div></li><li class="a"><i>＋</i><div><code>tutorialToBoss</code><p>Whatever blew that lab is behind this door. We call it Patient Zero. Follow the arrows and stay sharp.</p></div></li><li class="a"><i>＋</i><div><code>tutorialObjectiveBoss</code><p>Find Patient Zero</p></div></li><li class="a"><i>＋</i><div><code>tutorialBoss</code><p>There it is! Keep your distance and keep shooting.</p></div></li><li class="a"><i>＋</i><div><code>tutorialSlam</code><p>It's planting its feet. Step back, now!</p></div></li><li class="a"><i>＋</i><div><code>tutorialBrood</code><p>It's calling for help! Clear the small ones, then get back on the big one.</p></div></li><li class="a"><i>＋</i><div><code>tutorialContained</code><p>Patient Zero is contained. The breach is sealed. Outstanding work, recruit.</p></div></li><li class="a"><i>＋</i><div><code>tutorialReward</code><p>You've earned Quick Step, a perk that keeps you moving faster, and some coins. Report to me at the armoury to collect them.</p></div></li><li class="a"><i>＋</i><div><code>tutorialWiped</code><p>We lost you in there. Doesn't matter. Report to me at the armoury, and I'll kit you out for the real thing.</p></div></li><li class="a"><i>＋</i><div><code>tutorialPlayerDown</code><p>You're down! Hang on, {{name}} is getting you up.</p></div></li><li class="a"><i>＋</i><div><code>tutorialPlayerUp</code><p>You're back up. Watch your health.</p></div></li><li class="a"><i>＋</i><div><code>tutorialAllyDown</code><p>{{name}} - DOWN</p></div></li><li class="a"><i>＋</i><div><code>tutorialAllyDownHint</code><p>Throw a healing splash at them</p></div></li><li class="a"><i>＋</i><div><code>tutorialDebrief1</code><p>Welcome back, recruit. This is the armoury: spend the coins you earn out there on better kit.</p></div></li><li class="a"><i>＋</i><div><code>tutorialDebrief2</code><p>Your Quick Step perk is waiting, and I've paid you enough coins for a Double Barrel. Come and talk to me to kit up.</p></div></li><li class="a"><i>＋</i><div><code>tutorialDebriefDeploy</code><p>That's you kitted out. Now step on the Normal pad to deploy with a real squad.</p></div></li><li class="a"><i>＋</i><div><code>tutorialObjectiveSoap</code><p>Talk to Commander Soap</p></div></li><li class="a"><i>＋</i><div><code>tutorialObjectiveDeploy</code><p>Step on the Normal pad</p></div></li><li class="a"><i>＋</i><div><code>loadoutWalkthroughSection</code><p>Open {{section}}.</p></div></li><li class="a"><i>＋</i><div><code>loadoutWalkthroughPick</code><p>Select {{name}}.</p></div></li><li class="a"><i>＋</i><div><code>loadoutWalkthroughEquip</code><p>Equip {{name}} to take it on every run.</p></div></li><li class="a"><i>＋</i><div><code>loadoutWalkthroughUnlock</code><p>Unlock {{name}} with the coins I gave you.</p></div></li><li class="a"><i>＋</i><div><code>loadoutWalkthroughClose</code><p>Close</p></div></li><li class="a"><i>＋</i><div><code>loadoutTitle</code><p>Armoury</p></div></li><li class="a"><i>＋</i><div><code>loadoutKit</code><p>Your kit</p></div></li><li class="a"><i>＋</i><div><code>loadoutFree</code><p>Free</p></div></li><li class="a"><i>＋</i><div><code>chipDroppedBy</code><p>Dropped by</p></div></li><li class="a"><i>＋</i><div><code>chipYouHave</code><p>You have</p></div></li><li class="a"><i>＋</i><div><code>loadoutEquippedBadge</code><p>Issued</p></div></li><li class="a"><i>＋</i><div><code>loadoutLocked</code><p>Locked</p></div></li><li class="a"><i>＋</i><div><code>loadoutTier</code><p>Tier {{tier}}</p></div></li><li class="a"><i>＋</i><div><code>loadoutUnlock</code><p>Unlock</p></div></li><li class="a"><i>＋</i><div><code>loadoutUpgrade</code><p>Upgrade to Tier {{tier}}</p></div></li><li class="a"><i>＋</i><div><code>loadoutEquip</code><p>Equip</p></div></li><li class="a"><i>＋</i><div><code>loadoutUnequip</code><p>Unequip</p></div></li><li class="a"><i>＋</i><div><code>loadoutMaxed</code><p>Fully upgraded</p></div></li><li class="a"><i>＋</i><div><code>loadoutSocketsFullHint</code><p>Unequip a perk to make room for this one.</p></div></li><li class="a"><i>＋</i><div><code>loadoutUnitPerMinute</code><p>/min</p></div></li><li class="a"><i>＋</i><div><code>loadoutUnitSeconds</code><p>s</p></div></li><li class="a"><i>＋</i><div><code>loadoutPerkCount</code><p>{{equipped}}/{{max}}</p></div></li><li class="a"><i>＋</i><div><code>loadoutPerkSocketEmpty</code><p>Add a perk</p></div></li><li class="a"><i>＋</i><div><code>loadoutRadioBadge</code><p>QM</p></div></li><li class="a"><i>＋</i><div><code>loadoutSlotPrimary</code><p>Primary</p></div></li><li class="a"><i>＋</i><div><code>loadoutSlotSecondary</code><p>Secondary</p></div></li><li class="a"><i>＋</i><div><code>loadoutSlotOffensive</code><p>Offensive</p></div></li><li class="a"><i>＋</i><div><code>loadoutSlotSelfHelp</code><p>Self-help</p></div></li><li class="a"><i>＋</i><div><code>loadoutSlotArmour</code><p>Armour</p></div></li><li class="a"><i>＋</i><div><code>loadoutSlotPerks</code><p>Perks</p></div></li><li class="a"><i>＋</i><div><code>loadoutStatDamage</code><p>Damage</p></div></li><li class="a"><i>＋</i><div><code>loadoutStatPellets</code><p>Pellets</p></div></li><li class="a"><i>＋</i><div><code>loadoutStatFireRate</code><p>Fire rate</p></div></li><li class="a"><i>＋</i><div><code>loadoutStatClip</code><p>Clip</p></div></li><li class="a"><i>＋</i><div><code>loadoutStatReload</code><p>Reload</p></div></li><li class="a"><i>＋</i><div><code>loadoutStatCarry</code><p>Carry</p></div></li><li class="a"><i>＋</i><div><code>loadoutStatResupply</code><p>Resupply</p></div></li><li class="a"><i>＋</i><div><code>loadoutStatPotency</code><p>Potency</p></div></li><li class="a"><i>＋</i><div><code>loadoutNoticeUnlocked</code><p>{{name}} signed out to you. Look after it.</p></div></li><li class="a"><i>＋</i><div><code>loadoutNoticeUnlockedNoRoom</code><p>{{name}} is yours. Free a perk socket to carry it.</p></div></li><li class="a"><i>＋</i><div><code>loadoutNoticeUpgraded</code><p>{{name}} reworked to Tier {{tier}}. Mind the kick.</p></div></li><li class="a"><i>＋</i><div><code>loadoutNoticeEquipped</code><p>{{name}} issued.</p></div></li><li class="a"><i>＋</i><div><code>loadoutNoticeUnequipped</code><p>{{name}} back in the rack.</p></div></li><li class="a"><i>＋</i><div><code>loadoutNoticeCantAfford</code><p>Not enough coins or parts for that, recruit.</p></div></li><li class="a"><i>＋</i><div><code>loadoutNoticePerksFull</code><p>You can carry {{max}} perks. Hand one back first.</p></div></li><li class="a"><i>＋</i><div><code>loadoutNoticeUnavailable</code><p>That isn't available right now.</p></div></li><li class="a"><i>＋</i><div><code>codexTitle</code><p>Containment Records</p></div></li><li class="a"><i>＋</i><div><code>codexFileNumber</code><p>File {{number}}</p></div></li><li class="a"><i>＋</i><div><code>codexProgress</code><p>{{contained}} of {{total}} files closed</p></div></li><li class="a"><i>＋</i><div><code>codexUnidentifiedName</code><p>Unidentified</p></div></li><li class="a"><i>＋</i><div><code>codexContainedBadge</code><p>Contained</p></div></li><li class="a"><i>＋</i><div><code>codexEncounteredBadge</code><p>Sighted</p></div></li><li class="a"><i>＋</i><div><code>codexUnidentifiedBadge</code><p>Unknown</p></div></li><li class="a"><i>＋</i><div><code>codexContainments</code><p>Times contained: {{count}}</p></div></li><li class="a"><i>＋</i><div><code>codexRedacted</code><p>[ DATA EXPUNGED ]</p></div></li><li class="a"><i>＋</i><div><code>codexHintLabel</code><p>Field notes</p></div></li><li class="a"><i>＋</i><div><code>codexNeedsAny</code><p>Contain it in any mode to close this file.</p></div></li><li class="a"><i>＋</i><div><code>codexNeedsNormal</code><p>Contain it in Normal mode to close this file.</p></div></li><li class="a"><i>＋</i><div><code>codexNeedsHard</code><p>Contain it in Hard mode to close this file.</p></div></li><li class="a"><i>＋</i><div><code>locatorTitle</code><p>Strange Wares</p></div></li><li class="a"><i>＋</i><div><code>locatorKeeperName</code><p>Stinky</p></div></li><li class="a"><i>＋</i><div><code>locatorMutter1</code><p>You seek them, do you not? Those imperfect violations of matter that have so rudely imposed themselves upon this plane.</p></div></li><li class="a"><i>＋</i><div><code>locatorMutter2</code><p>Ahhh... you smell it? That is how they find one another. Vulgar, intimate little things. This beacon performs the same indignity, but with better manners.</p></div></li><li class="a"><i>＋</i><div><code>locatorMutter3</code><p>Whenever you are prepared, my stock is fresh and ready... Do not ask where it is from... It was making a nuisance of itself.</p></div></li><li class="a"><i>＋</i><div><code>locatorMutter4</code><p>Every needle wants something, if you listen closely enough. Some want blood. Some want north. Some want to stitch shut what should have stayed open. These are simpler things. They wish only to seek their kin.</p></div></li><li class="a"><i>＋</i><div><code>locatorMutter5</code><p>It hums because it is pleased. Or hungry. The distinction is not clear.</p></div></li><li class="a"><i>＋</i><div><code>locatorName</code><p>{{name}} Locator</p></div></li><li class="a"><i>＋</i><div><code>locatorArmedBadge</code><p>Humming</p></div></li><li class="a"><i>＋</i><div><code>locatorOwnedBadge</code><p>Yours</p></div></li><li class="a"><i>＋</i><div><code>locatorBuy</code><p>Buy and Activate</p></div></li><li class="a"><i>＋</i><div><code>locatorArm</code><p>Activate</p></div></li><li class="a"><i>＋</i><div><code>locatorDisarm</code><p>Deactivate</p></div></li><li class="a"><i>＋</i><div><code>locatorReplacesHint</code><p>Activating this deactivates the {{name}} Locator.</p></div></li><li class="a"><i>＋</i><div><code>locatorFlavourArmed</code><p>It is resonating. The smell burns your nostrils.</p></div></li><li class="a"><i>＋</i><div><code>locatorFlavourContained</code><p>You have contained this one before. The needle remembers the shape of it. A trifling fee - he says the remembering is not free.</p></div></li><li class="a"><i>＋</i><div><code>locatorFlavourEncountered</code><p>You have seen it. It has seen you. This will close the distance between you.</p></div></li><li class="a"><i>＋</i><div><code>locatorFlavourUnseen</code><p>A name you have not met. He will not say where he got it. It is covered in a strange fluid you do not recognise.</p></div></li><li class="a"><i>＋</i><div><code>locatorAttunedNormal</code><p>Attuned to Normal clearance sites only.</p></div></li><li class="a"><i>＋</i><div><code>locatorAttunedHard</code><p>Attuned to Hard clearance sites only.</p></div></li><li class="a"><i>＋</i><div><code>locatorUsage</code><p>Carry it onto a deployment pad to draw its quarry to you. It shatters on use.</p></div></li><li class="a"><i>＋</i><div><code>locatorNoticeBought</code><p>The {{name}} Locator hums and swings to a heading. It will shatter when it finds what it is for.</p></div></li><li class="a"><i>＋</i><div><code>locatorNoticeArmed</code><p>The {{name}} Locator hums and swings to a heading.</p></div></li><li class="a"><i>＋</i><div><code>locatorNoticeDisarmed</code><p>The needle goes still. The smell lingers.</p></div></li><li class="a"><i>＋</i><div><code>locatorNoticeCantAfford</code><p>Your purse is too light for that, friend.</p></div></li><li class="a"><i>＋</i><div><code>locatorNoticeUnavailable</code><p>That isn't available right now.</p></div></li></ul></details><details class="sec"><summary><span>store</span><em>＋5 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>sharesOwned</code><p>Shares items you own</p></div></li><li class="a"><i>＋</i><div><code>recipientSharesOwned</code><p>Owns some of this</p></div></li><li class="a"><i>＋</i><div><code>rank</code><p>Rank</p></div></li><li class="a"><i>＋</i><div><code>bundles</code><p>Bundles</p></div></li><li class="a"><i>＋</i><div><code>characters</code><p>Characters</p></div></li></ul></details><details class="sec"><summary><span>general</span><em>＋2 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>gameServerUnreachable</code><p>Try again, or try another network.</p></div></li><li class="a"><i>＋</i><div><code>gameServerUnreachableMobile</code><p>Try again, or switch between Wi-Fi and mobile data.</p></div></li></ul></details><details class="sec"><summary><span>テレポートコマンド</span><em>＋2 〜0 －3</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>spawnPointBelowVoid</code><p>Your spawn point was below the void death height, so you're back at spawn. Set a new one higher up</p></div></li><li class="a"><i>＋</i><div><code>bedBelowVoid</code><p>This bed is below the void death height, so it can't be your spawn point</p></div></li><li class="d"><i>－</i><div><code>warpBlocked</code><p class="from">Something is in the way at warp &quot;{{warp}}&quot;</p></div></li><li class="d"><i>－</i><div><code>notLoaded</code><p class="from">That place didn't load in time. Try again</p></div></li><li class="d"><i>－</i><div><code>spawnPointBlocked</code><p class="from">Something is in the way at your spawn point, so you're back at spawn. Clear it to use it again</p></div></li></ul></details><details class="sec"><summary><span>ホーム画面</span><em>＋1 〜0 －1</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>premiumCurrencySharesOwned</code><p>That shares items with something already owned</p></div></li><li class="d"><i>－</i><div><code>premiumCurrencyBestValue</code><p class="from">Best value</p></div></li></ul></details><details class="sec"><summary><span>ログイン</span><em>＋1 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>signInUnavailableInApp</code><p>{{authProvider}} sign-in isn't available in the app.</p></div></li></ul></details><details class="sec"><summary><span>通知</span><em>＋1 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>friendRequestStatus</code><p>wants to be friends</p></div></li></ul></details><details class="sec"><summary><span>シェーダー</span><em>＋1 〜0 －0</em></summary><ul class="diff"><li class="a"><i>＋</i><div><code>failedDeviceGraphics</code><p>This device's graphics can't run it yet.</p></div></li></ul></details><details class="sec"><summary><span>ホームコマンド</span><em>＋0 〜0 －2</em></summary><ul class="diff"><li class="d"><i>－</i><div><code>homeBlocked</code><p class="from">Something is in the way at home &quot;{{home}}&quot;. Clear it or set the home somewhere else</p></div></li><li class="d"><i>－</i><div><code>defaultHomeBlocked</code><p class="from">Something is in the way at your home. Clear it or use /sethome somewhere else</p></div></li></ul></details><details class="sec"><summary><span>tribe</span><em>＋0 〜0 －1</em></summary><ul class="diff"><li class="d"><i>－</i><div><code>tribeHomeBlocked</code><p class="from">Something is in the way at your tribe home. Clear it to use it again</p></div></li></ul></details><details class="sec"><summary><span>worldSocial</span><em>＋0 〜0 －1</em></summary><ul class="diff"><li class="d"><i>－</i><div><code>ownerOnlyInvites</code><p class="from">Only the owner can invite here.</p></div></li></ul></details></details>
-<details class="dev"><summary>🔧 開発者向けの詳細(ふつうは見なくて大丈夫)</summary><dl>
-<dt>ビルド</dt><dd>vjxd5n / 542dd0f9 → 7jvyee / 81bfc694</dd>
-<dt>main.js の文字列</dt><dd>追加 5612 / 削除 4709(大型更新(±4000超))。変数名の付け替えで見かけ上の差も大量に出るので、ゲーム内の変化とは別物です。</dd>
-<dt>チャンク(ファイル)</dt><dd>追加 1 / 削除 1 / 変更 371(ビルドが変わると全ファイルの名前が変わるので、「変更」の数に意味はありません)</dd></dl>
-<details><summary>元のレポート</summary><pre># bloxd.io 更新検知 2026-11-17T16:30:44.371Z
-
-- ビルドID: vjxd5n → 7jvyee
-- main hash: 542dd0f9 → 81bfc694
-- main.js サイズ: 2325418 → 2419223
-- CSS: static/css/vjxd5n.main.e000198f.css → static/css/7jvyee.main.16b787a1.css
-- main.js 文字列: 追加 5612 / 削除 4709(大型更新(±4000超))
-- チャンク: 追加 1 / 削除 1 / ハッシュ変更 371
-## ゲーム内の変化
-
-- ゲーム内テキスト: 追加 135 / 変更 0 / 削除 8
-- コンテインメント・ブリーチ: 追加 122 / 変更 0 / 削除 0
-- store: 追加 5 / 変更 0 / 削除 0
-- general: 追加 2 / 変更 0 / 削除 0
-- テレポートコマンド: 追加 2 / 変更 0 / 削除 3
-- ホーム画面: 追加 1 / 変更 0 / 削除 1
-- ログイン: 追加 1 / 変更 0 / 削除 0
-- 通知: 追加 1 / 変更 0 / 削除 0
-- シェーダー: 追加 1 / 変更 0 / 削除 0
-- ホームコマンド: 追加 0 / 変更 0 / 削除 2
-- tribe: 追加 0 / 変更 0 / 削除 1
-- worldSocial: 追加 0 / 変更 0 / 削除 1
-
-
-## 追加された文字列(先頭80件)
-- `Event`
-- `${yb}`
-- `unexposed`
-- `return_day_1`
-- `visit_play_minutes`
-- `return_days_1_to_7`
-- `+yb+`
-- `,bb),{}}}function ab(){var yb,bb;const Wy=performance.memory;return{deviceMemory:null!==(yb=navigator.deviceMemory)&amp;&amp;voi`
-- `!==typeof BroadcastChannel)try{const yb=new BroadcastChannel(Ky);yb.onmessage=bb=&gt;{var Wy;(null===(Wy=bb.data)||void 0==`
-- `},bridge:{...rb.d,title:`
-- `},hideseek:Oy.b,schematicTester:{type:`
-- `},classic:{...Ry.c,description:`
-- `,listedVariations:yW,cardEyebrow:bW,showWorldsInsteadOfCustomLobbies:!0},classic_survival:{...Ry.c,description:`
-- `,listedVariations:yW,cardEyebrow:bW,showWorldsInsteadOfCustomLobbies:!0},classic_creative:{...Ry.c,description:`
-- `,listedVariations:yW,cardEyebrow:bW,showWorldsInsteadOfCustomLobbies:!0,shaderPackPolicy:`
-- `},classic_creativeFlat:{...Ry.c,description:`
-- `,listedVariations:yW,cardEyebrow:bW,showWorldsInsteadOfCustomLobbies:!0},classic_worlds:{...Ry.c,description:`
-- `,cardEyebrow:bW,showWorldsInsteadOfCustomLobbies:!0},classic_2d:{...Ry.c,title:`
-- `}]},classic_skyGrid:{...Ry.c,title:`
-- `}]},classic_anarchy:{...Ry.c,title:`
-- `},classic_smp2:{...Ry.c,title:`
-- `)}],cardEyebrow:bW,cardTitle:`
-- `},classic_survivalGuns:{...Ry.c,title:`
-- `,badges:[],thumbnailUseLongRatio:!1,cardEyebrow:bW,cardTitle:`
-- `},survivalFactory:{...Ry.c,title:`
-- `]},classic_survivalFactory:{...Ry.c,title:`
-- `]},classic_survivalFactoryPersistent:{...Ry.c,title:`
-- `]},classic_survivalDayNight:{...Ry.c,title:`
-- `},testGym_empty:{...Py.c,variationTitle:`
-- `},testGym_mobs:{...Py.c,variationTitle:`
-- `},testGym_mobs_and_worldgen:{...Py.c,variationTitle:`
-- `},testGym_imported_mobs:{...Py.c,variationTitle:`
-- `},testGym_schematic:{...Py.c,variationTitle:`
-- `},testGym_enchant_fragment_shader:{...Py.c,variationTitle:`
-- `},testGym_enchant_item_drops:{...Py.c,variationTitle:`
-- `},testGym_enchant_bot_armour:{...Py.c,variationTitle:`
-- `},testGym_void:{...Py.c,variationTitle:`
-- `},testGym_nametag_occlusion:{...Py.c,variationTitle:`
-- `},testGym_busy:{...Py.c,variationTitle:`
-- `},testGym_particles:{...Py.c,variationTitle:`
-- `},testGym_interest:{...Py.c,variationTitle:`
-- `},testGym_options:{...Py.c,variationTitle:`
-- `},infection:vb.c,bingo:{type:`
-- `,thumbnailUseLongRatio:!0,badges:[],useRejoinLastLobbyButton:!1,additionalMetaTags:[]},paintball:ib.d,naturalDisaster:My`
-- `)}]},rocketParkour_sheep:{...ny.b,variationTitle:`
-- `},rocketParkour_january:{...ny.b,variationTitle:`
-- `},arcadeMode:Zy.d,bridgeBattle:uy.d,tsunami:Hy.b,cooking:ab.b,knockout:Ly.c,skyIslands:Dy.e,skyIslands_solo:{...Dy.e,bad`
-- `},skyIslands_teams:{...Dy.e,badges:[],variationTitle:`
-- `},skyIslands_blitz:{...Dy.e,badges:[{type:`
-- `},skyIslands_pve:{...Dy.e,badges:[{type:`
-- `},pvpCiv:Iy.b,clutch:Qy.d,clutch_1v1:{...Qy.d,variationTitle:`
-- `},clutch_2v2:{...Qy.d,variationTitle:`
-- `},clutch_3v3:{...Qy.d,variationTitle:`
-- `,badges:[],thumbnailUseLongRatio:!1,useRejoinLastLobbyButton:!1,additionalMetaTags:[],disableActiveUserAnalytics:!0}};fo`
-- `);dy.e.localGameName&amp;&amp;void 0===Wb[dy.e.localGameName]&amp;&amp;(Wb[dy.e.localGameName]={...cb.d,title:dy.e.localGameName});const`
-- `}};function hb(yb){var bb;return null!==(bb=(0,Uy.c)(Wb,yb))&amp;&amp;void 0!==bb?bb:null}function fb(yb){var bb,Wy;return null!`
-- `}},,,(yb,bb,Wy)=&gt;{function Uy(yb){return`
-- `===yb||yb in Object.prototype}function hy(yb,bb){return void 0!==yb&amp;&amp;Object.hasOwn(yb,bb)?yb[bb]:void 0}function fy(){re`
-- `}},,,,,(yb,bb,Wy)=&gt;{Wy.d(bb,{b:()=&gt;Uy});const Uy={type:`
-- `}},,(yb,bb,Wy)=&gt;{Wy.d(bb,{d:()=&gt;Uy});const Uy={type:`
-- `,additionalMetaTags:[]}},,,(yb,bb,Wy)=&gt;{Wy.d(bb,{d:()=&gt;Uy});const Uy={type:`
-- `}},,,,(yb,bb,Wy)=&gt;{Wy.d(bb,{c:()=&gt;Uy});const Uy={type:`
-- `}},,,,,,,(yb,bb,Wy)=&gt;{Wy.d(bb,{b:()=&gt;Uy});const Uy={type:`
-- `}},,,,,,,,(yb,bb,Wy)=&gt;{Wy.d(bb,{e:()=&gt;Uy});const Uy={type:`
-- `}}},,(yb,bb,Wy)=&gt;{Wy.d(bb,{e:()=&gt;Uy});const Uy={type:`
-- `,dateAdded:Wy(664).d}],additionalMetaTags:[]}},,,,,,,,(yb,bb,Wy)=&gt;{Wy.d(bb,{b:()=&gt;Uy,d:()=&gt;hy});const Uy=new Date(`
-- `),hy=new Date(`
-- `)},,,,,,,,,(yb,bb,Wy)=&gt;{Wy.d(bb,{d:()=&gt;Uy});const Uy={type:`
-- `}},,(yb,bb,Wy)=&gt;{Wy.d(bb,{b:()=&gt;Uy});const Uy={type:`
-- `}},,,,(yb,bb,Wy)=&gt;{Wy.d(bb,{e:()=&gt;Uy});const Uy={type:`
-- `}},,,,,,(yb,bb,Wy)=&gt;{Wy.d(bb,{e:()=&gt;Uy});const Uy={type:`
-- `}},,,,(yb,bb,Wy)=&gt;{Wy.d(bb,{b:()=&gt;Uy});const Uy={type:`
-- `}},,(yb,bb,Wy)=&gt;{Wy.d(bb,{c:()=&gt;Uy});const Uy={type:`
-- `}},,,,,,,(yb,bb,Wy)=&gt;{Wy.d(bb,{d:()=&gt;Uy});const Uy={type:`
-- `}}},,,(yb,bb,Wy)=&gt;{Wy.d(bb,{d:()=&gt;Uy});const Uy={type:`
-- `}},,,,,,,,(yb,bb,Wy)=&gt;{Wy.d(bb,{b:()=&gt;Uy});const Uy={type:`
-- `}}},,,,,(yb,bb,Wy)=&gt;{Wy.d(bb,{b:()=&gt;Uy});const Uy={type:`
-- `}}},,,,,,,(yb,bb,Wy)=&gt;{Wy.d(bb,{c:()=&gt;Uy});const Uy={type:`
-- `}},,,,,,,,(yb,bb,Wy)=&gt;{Wy.d(bb,{d:()=&gt;Uy});const Uy={type:`
-- `)}],useRejoinLastLobbyButton:!1,additionalMetaTags:[]}},,,,,(yb,bb,Wy)=&gt;{Wy.d(bb,{d:()=&gt;Uy});const Uy={type:`
-
-## 削除された文字列(先頭80件)
-- `${OO}`
-- `+OO+`
-- `,KO),{}}}function sO(){var OO,KO;const pO=performance.memory;return{deviceMemory:null!==(OO=navigator.deviceMemory)&amp;&amp;voi`
-- `!==typeof BroadcastChannel)try{const OO=new BroadcastChannel(MO);OO.onmessage=KO=&gt;{var pO;(null===(pO=KO.data)||void 0==`
-- `},bridge:{...PO.b,title:`
-- `},hideseek:yK.c,schematicTester:{type:`
-- `},classic:{...gK.d,description:`
-- `,listedVariations:OK,cardEyebrow:KK,showWorldsInsteadOfCustomLobbies:!0},classic_survival:{...gK.d,description:`
-- `,listedVariations:OK,cardEyebrow:KK,showWorldsInsteadOfCustomLobbies:!0},classic_creative:{...gK.d,description:`
-- `,listedVariations:OK,cardEyebrow:KK,showWorldsInsteadOfCustomLobbies:!0,shaderPackPolicy:`
-- `},classic_creativeFlat:{...gK.d,description:`
-- `,listedVariations:OK,cardEyebrow:KK,showWorldsInsteadOfCustomLobbies:!0},classic_worlds:{...gK.d,description:`
-- `,cardEyebrow:KK,showWorldsInsteadOfCustomLobbies:!0},classic_2d:{...gK.d,title:`
-- `}]},classic_skyGrid:{...gK.d,title:`
-- `}]},classic_anarchy:{...gK.d,title:`
-- `},classic_smp2:{...gK.d,title:`
-- `)}],cardEyebrow:KK,cardTitle:`
-- `},classic_survivalGuns:{...gK.d,title:`
-- `,badges:[],thumbnailUseLongRatio:!1,cardEyebrow:KK,cardTitle:`
-- `},survivalFactory:{...gK.d,title:`
-- `]},classic_survivalFactory:{...gK.d,title:`
-- `]},classic_survivalFactoryPersistent:{...gK.d,title:`
-- `]},classic_survivalDayNight:{...gK.d,title:`
-- `},testGym_empty:{...CO.b,variationTitle:`
-- `},testGym_mobs:{...CO.b,variationTitle:`
-- `},testGym_mobs_and_worldgen:{...CO.b,variationTitle:`
-- `},testGym_imported_mobs:{...CO.b,variationTitle:`
-- `},testGym_schematic:{...CO.b,variationTitle:`
-- `},testGym_enchant_fragment_shader:{...CO.b,variationTitle:`
-- `},testGym_enchant_item_drops:{...CO.b,variationTitle:`
-- `},testGym_enchant_bot_armour:{...CO.b,variationTitle:`
-- `},testGym_void:{...CO.b,variationTitle:`
-- `},testGym_nametag_occlusion:{...CO.b,variationTitle:`
-- `},testGym_busy:{...CO.b,variationTitle:`
-- `},testGym_particles:{...CO.b,variationTitle:`
-- `},testGym_interest:{...CO.b,variationTitle:`
-- `},testGym_options:{...CO.b,variationTitle:`
-- `},infection:uO.c,bingo:{type:`
-- `,thumbnailUseLongRatio:!0,badges:[],useRejoinLastLobbyButton:!1,additionalMetaTags:[]},paintball:EO.c,naturalDisaster:jK`
-- `)}]},rocketParkour_sheep:{...iK.d,variationTitle:`
-- `},rocketParkour_january:{...iK.d,variationTitle:`
-- `},arcadeMode:lO.c,bridgeBattle:rK.b,tsunami:mK.d,cooking:sO.d,knockout:SO.e,skyIslands:BO.e,skyIslands_solo:{...BO.e,bad`
-- `},skyIslands_teams:{...BO.e,badges:[],variationTitle:`
-- `},skyIslands_blitz:{...BO.e,badges:[{type:`
-- `},skyIslands_pve:{...BO.e,badges:[{type:`
-- `},pvpCiv:WO.b,clutch:JO.c,clutch_1v1:{...JO.c,variationTitle:`
-- `},clutch_2v2:{...JO.c,variationTitle:`
-- `},clutch_3v3:{...JO.c,variationTitle:`
-- `,badges:[],thumbnailUseLongRatio:!1,useRejoinLastLobbyButton:!1,additionalMetaTags:[],disableActiveUserAnalytics:!0}};fo`
-- `);UO.e.localGameName&amp;&amp;void 0===pK[UO.e.localGameName]&amp;&amp;(pK[UO.e.localGameName]={...vK.c,title:UO.e.localGameName});const`
-- `}};function bp(OO){var KO;return null!==(KO=(0,XO.e)(pK,OO))&amp;&amp;void 0!==KO?KO:null}function eK(OO){var KO,pO;return null!`
-- `}},,,(OO,KO,pO)=&gt;{function XO(OO){return`
-- `===OO||OO in Object.prototype}function bK(OO,KO){return void 0!==OO&amp;&amp;Object.hasOwn(OO,KO)?OO[KO]:void 0}function eO(){re`
-- `}},,,(OO,KO,pO)=&gt;{pO.d(KO,{c:()=&gt;XO});const XO={type:`
-- `}},,,,,,(OO,KO,pO)=&gt;{pO.d(KO,{c:()=&gt;XO});const XO={type:`
-- `,additionalMetaTags:[]}},,,,,,,,(OO,KO,pO)=&gt;{pO.d(KO,{c:()=&gt;XO});const XO={type:`
-- `}},,,,,,,,,(OO,KO,pO)=&gt;{pO.d(KO,{b:()=&gt;XO});const XO={type:`
-- `}},,,,(OO,KO,pO)=&gt;{pO.d(KO,{d:()=&gt;XO});const XO={type:`
-- `}},,,,(OO,KO,pO)=&gt;{pO.d(KO,{c:()=&gt;XO});const XO={type:`
-- `}}},,,(OO,KO,pO)=&gt;{pO.d(KO,{e:()=&gt;XO});const XO={type:`
-- `,dateAdded:pO(701).g}],additionalMetaTags:[]}},,,,,,,(OO,KO,pO)=&gt;{pO.d(KO,{e:()=&gt;XO,g:()=&gt;bK});const XO=new Date(`
-- `),bK=new Date(`
-- `)},,,,,,(OO,KO,pO)=&gt;{pO.d(KO,{e:()=&gt;XO});const XO={type:`
-- `}},,,,,,,(OO,KO,pO)=&gt;{pO.d(KO,{b:()=&gt;XO});const XO={type:`
-- `}},,,,,(OO,KO,pO)=&gt;{pO.d(KO,{c:()=&gt;XO});const XO={type:`
-- `}},,,,,(OO,KO,pO)=&gt;{pO.d(KO,{b:()=&gt;XO});const XO={type:`
-- `}},,,,(OO,KO,pO)=&gt;{pO.d(KO,{e:()=&gt;XO});const XO={type:`
-- `}},,,,,,,,,(OO,KO,pO)=&gt;{pO.d(KO,{d:()=&gt;XO});const XO={type:`
-- `}},,,,,,,(OO,KO,pO)=&gt;{pO.d(KO,{c:()=&gt;XO});const XO={type:`
-- `}}},,,,(OO,KO,pO)=&gt;{pO.d(KO,{b:()=&gt;XO});const XO={type:`
-- `}},,(OO,KO,pO)=&gt;{pO.d(KO,{b:()=&gt;XO});const XO={type:`
-- `}}},,,,,,(OO,KO,pO)=&gt;{pO.d(KO,{c:()=&gt;XO});const XO={type:`
-- `}},,,(OO,KO,pO)=&gt;{pO.d(KO,{d:()=&gt;XO});const XO={type:`
-- `}}},,,,(OO,KO,pO)=&gt;{pO.d(KO,{c:()=&gt;XO});const XO={type:`
-- `}},,(OO,KO,pO)=&gt;{pO.d(KO,{c:()=&gt;XO});const XO={type:`
-- `)}],useRejoinLastLobbyButton:!1,additionalMetaTags:[]}},,,,(OO,KO,pO)=&gt;{pO.d(KO,{b:()=&gt;XO});const XO={type:`
-- `}},,(OO,KO,pO)=&gt;{pO.d(KO,{d:()=&gt;XO});const XO={type:`
-- `}},,,,,,,(OO,KO,pO)=&gt;{pO.d(KO,{d:()=&gt;XO});const XO={type:`
-- `,thumbnailUseLongRatio:!0,badges:[],useRejoinLastLobbyButton:!1,additionalMetaTags:[]}},,,,,,(OO,KO,pO)=&gt;{pO.d(KO,{e:()=`
-- `}},,,,,,,,,(OO,KO,pO)=&gt;{pO.d(KO,{e:()=&gt;XO});const XO={type:`
-
-## チャンク
-- 追加: clientGame-containmentBreach-containmentBreachClient
-- 削除: 62
-- 変更: 63
-- 変更: 64
-- 変更: 65
-- 変更: 66
-- 変更: 67
-- 変更: 68
-- 変更: 69
-- 変更: 70
-- 変更: 71
-- 変更: 72
-- 変更: 73
-- 変更: 74
-- 変更: 75
-- 変更: 76
-- 変更: 77
-- 変更: 78
-- 変更: 79
-- 変更: 80
-- 変更: 81
-- 変更: 82
-- 変更: 83
-- 変更: 84
-- 変更: 85
-- 変更: 86
-- 変更: 87
-- 変更: 88
-- 変更: 89
-- 変更: 90
-- 変更: 91
-- 変更: 92
-- 変更: 93
-- 変更: 94
-- 変更: 95
-- 変更: 96
-- 変更: 97
-- 変更: 98
-- 変更: 99
-- 変更: 100
-- 変更: 101
-- 変更: 102
-- 変更: 103
-- 変更: 104
-- 変更: 105
-- 変更: 106
-- 変更: 107
-- 変更: 108
-- 変更: 109
-- 変更: 110
-- 変更: 111
-- 変更: 112
-- 変更: 113
-- 変更: 114
-- 変更: 115
-- 変更: 116
-- 変更: 117
-- 変更: 118
-- 変更: 119
-- 変更: 120
-- 変更: 121
-- 変更: 122
-- 変更: 123
-- 変更: 124
-- 変更: 125
-- 変更: 126
-- 変更: 127
-- 変更: 128
-- 変更: 129
-- 変更: 130
-- 変更: 131
-- 変更: 132
-- 変更: 133
-- 変更: 134
-- 変更: 135
-- 変更: 136
-- 変更: 137
-- 変更: 138
-- 変更: 139
-- 変更: 140
-- 変更: 141
-- 変更: 142
-- 変更: 143
-- 変更: 144
-- 変更: 145
-- 変更: 146
-- 変更: 147
-- 変更: 148
-- 変更: 149
-- 変更: 150
-- 変更: 151
-- 変更: 152
-- 変更: 153
-- 変更: 154
-- 変更: 155
-- 変更: 156
-- 変更: 157
-- 変更: 158
-- 変更: 159
-- 変更: 160
-- 変更: 161
-- 変更: 162
-- 変更: 163
-- 変更: 164
-- 変更: 165
-- 変更: 166
-- 変更: 167
-- 変更: 168
-- 変更: 169
-- 変更: 170
-- 変更: 171
-- 変更: 172
-- 変更: 173
-- 変更: 174
-- 変更: 175
-- 変更: 176
-- 変更: 177
-- 変更: 178
-- 変更: 179
-- 変更: 180
-- 変更: 181
-- 変更: 182
-- 変更: 183
-- 変更: 184
-- 変更: 185
-- 変更: 186
-- 変更: 187
-- 変更: 188
-- 変更: 189
-- 変更: 190
-- 変更: 191
-- 変更: 192
-- 変更: 193
-- 変更: 194
-- 変更: 195
-- 変更: 196
-- 変更: 197
-- 変更: 198
-- 変更: 199
-- 変更: 200
-- 変更: 201
-- 変更: 202
-- 変更: 203
-- 変更: 204
-- 変更: 205
-- 変更: 206
-- 変更: 207
-- 変更: 208
-- 変更: 209
-- 変更: 210
-- 変更: 211
-- 変更: 212
-- 変更: 213
-- 変更: 214
-- 変更: 215
-- 変更: 216
-- 変更: 217
-- 変更: 218
-- 変更: 219
-- 変更: 220
-- 変更: 221
-- 変更: 222
-- 変更: 223
-- 変更: 224
-- 変更: 225
-- 変更: 226
-- 変更: 227
-- 変更: 228
-- 変更: 229
-- 変更: 230
-- 変更: 231
-- 変更: 232
-- 変更: 233
-- 変更: 234
-- 変更: 235
-- 変更: 236
-- 変更: 237
-- 変更: 238
-- 変更: 239
-- 変更: 240
-- 変更: 241
-- 変更: 242
-- 変更: 243
-- 変更: 244
-- 変更: 245
-- 変更: 246
-- 変更: 247
-- 変更: 248
-- 変更: 249
-- 変更: 250
-- 変更: 251
-- 変更: 252
-- 変更: 253
-- 変更: 254
-- 変更: 255
-- 変更: 256
-- 変更: 257
-- 変更: 258
-- 変更: 259
-- 変更: 260
-- 変更: 261
-- 変更: 262
-- 変更: 263
-- 変更: 264
-- 変更: 265
-- 変更: 266
-- 変更: 267
-- 変更: 268
-- 変更: 269
-- 変更: 270
-- 変更: 271
-- 変更: 272
-- 変更: 273
-- 変更: 274
-- 変更: 275
-- 変更: 276
-- 変更: 277
-- 変更: 278
-- 変更: 279
-- 変更: 280
-- 変更: 281
-- 変更: 282
-- 変更: 283
-- 変更: 284
-- 変更: 285
-- 変更: 286
-- 変更: 287
-- 変更: 288
-- 変更: 289
-- 変更: 290
-- 変更: 291
-- 変更: 292
-- 変更: 293
-- 変更: 294
-- 変更: 295
-- 変更: 296
-- 変更: 297
-- 変更: 298
-- 変更: 299
-- 変更: 300
-- 変更: 301
-- 変更: 302
-- 変更: 303
-- 変更: 304
-- 変更: 305
-- 変更: 306
-- 変更: 307
-- 変更: 308
-- 変更: 309
-- 変更: 310
-- 変更: 311
-- 変更: 312
-- 変更: 313
-- 変更: 314
-- 変更: 315
-- 変更: 316
-- 変更: 317
-- 変更: 318
-- 変更: 319
-- 変更: 320
-- 変更: 321
-- 変更: 322
-- 変更: 323
-- 変更: 324
-- 変更: 325
-- 変更: 326
-- 変更: 327
-- 変更: 328
-- 変更: 329
-- 変更: 330
-- 変更: 331
-- 変更: 332
-- 変更: 333
-- 変更: 334
-- 変更: 335
-- 変更: 336
-- 変更: 337
-- 変更: 338
-- 変更: 339
-- 変更: 340
-- 変更: 341
-- 変更: 342
-- 変更: 343
-- 変更: 344
-- 変更: 345
-- 変更: 346
-- 変更: 347
-- 変更: 348
-- 変更: 349
-- 変更: 350
-- 変更: 351
-- 変更: 352
-- 変更: 353
-- 変更: 354
-- 変更: 355
-- 変更: 356
-- 変更: 357
-- 変更: 358
-- 変更: 359
-- 変更: 360
-- 変更: 361
-- 変更: 362
-- 変更: 363
-- 変更: 364
-- 変更: 365
-- 変更: 366
-- 変更: 367
-- 変更: 368
-- 変更: 369
-- 変更: 370
-- 変更: 371
-- 変更: 372
-- 変更: 373
-- 変更: babylon-backend
-- 変更: blockFaceTable
-- 変更: blockIconDrawing
-- 変更: blockIconWorker
-- 変更: blockModelIcons
-- 変更: bloxd-wasm-anim
-- 変更: bloxd-wasm-webgl
-- 変更: bloxd-wasm-webgl1
-- 変更: bloxd-wasm-webgpu
-- 変更: clientGame-bedwars-bedwarsClient
-- 変更: clientGame-bridgeBattle-bridgeBattleClient
-- 変更: clientGame-buildAFactory2-buildAFactory2Client
-- 変更: clientGame-classic-classicClient
-- 変更: clientGame-clutch-clutchClient
-- 変更: clientGame-cooking-cookingClient
-- 変更: clientGame-defusal-defusalClient
-- 変更: clientGame-frontline-frontlineClient
-- 変更: clientGame-goalRush-goalRushClient
-- 変更: clientGame-luckyBedwars-luckyBedwarsClient
-- 変更: clientGame-ninetyNineNights-ninetyNineNightsClient
-- 変更: clientGame-oneBlock-oneBlockClient
-- 変更: clientGame-plots-plotsClient
-- 変更: clientGame-pvpCiv-pvpCivClient
-- 変更: clientGame-skyIslands-skyIslandsClient
-- 変更: clientGame-skyblock-skyblockClient
-- 変更: clientGame-tsunami-tsunamiClient
-- 変更: clientGamePlugins
-- 変更: controller
-- 変更: errorLogging
-- 変更: fa-renderer
-- 変更: icons-brands
-- 変更: icons-duotone
-- 変更: icons-regular
-- 変更: icons-solid
-- 変更: itemSprites
-- 変更: meshWorkerLoader
-- 変更: modelCatalogue
-- 変更: modelPool
-- 変更: modelWorkerLoader
-- 変更: packAssets
-- 変更: packTerrain
-- 変更: playGameSources
-- 変更: renderDebug
-- 変更: replayHookSkyblock
-- 変更: textureNameTable
-- 変更: texturePackFeed
-- 変更: texturePackStorage
-- 変更: wasmClientGame
-- 変更: wasmClientJoin
-- 変更: wasmClientLoad
-- 変更: wasmClientPreviews
-- 変更: wasmClientReplayViewer
-- 変更: wasmClientTextIcons
-- 変更: wasmMatchmaking
-- 変更: wasmPlay
-- 変更: wasmRecorder
-- 変更: wasmReplay
-- 変更: wasmReplayVideoExport
-- 変更: worldgenWorker
-- 変更: worldgenWorkerLoader
-
-注: 文字列は main.js のみ比較。チャンク内の変化は、変更されたチャンクを `run_a_fetch_chunks.js` で取り直して調べる。</pre></details></details></article>
 <details class="trace"><summary><span>🔍 サーバーまわりの痕跡(自動チェック)</summary>
-<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/25 08:30</p>
+<div class="en"><p class="muted">公開されているファイルを、更新のたびに観察した記録です。サーバーの中身は見えません。確認時刻: 2026/11/25 09:01</p>
 <dl><dt>オリジンの Server 表示</dt><dd>nginx/1.24.0 (Ubuntu)(存在しないファイルの 404 ページより)</dd>
 <dt>ソースマップ</dt><dd>配信なし(すべて 404)</dd>
 <dt>ワーカー</dt><dd>なし</dd>
 <dt>ゲーム本体のチャンク</dt><dd>見つからず 番(全 396 個)</dd></dl>
-<p class="muted">最近の変化:</p><ul><li>2026/11/25 08:01 ビルド: 7zvlu → c6gaap</li><li>2026/11/25 05:31 ビルド: yma3ej → 7zvlu</li><li>2026/11/25 04:31 ビルド: sn3sfj → yma3ej</li><li>2026/11/25 01:31 ビルド: tz47m9 → sn3sfj</li><li>2026/11/24 17:31 ビルド: mpd96o → tz47m9</li><li>2026/11/24 14:31 ビルド: 31kiid → mpd96o</li><li>2026/11/24 13:01 ビルド: fqwnlq → 31kiid</li><li>2026/11/24 12:01 ビルド: 31kiid → fqwnlq</li></ul></div></details>
+<p class="muted">最近の変化:</p><ul><li>2026/11/25 09:01 ビルド: c6gaap → igzsf</li><li>2026/11/25 08:01 ビルド: 7zvlu → c6gaap</li><li>2026/11/25 05:31 ビルド: yma3ej → 7zvlu</li><li>2026/11/25 04:31 ビルド: sn3sfj → yma3ej</li><li>2026/11/25 01:31 ビルド: tz47m9 → sn3sfj</li><li>2026/11/24 17:31 ビルド: mpd96o → tz47m9</li><li>2026/11/24 14:31 ビルド: 31kiid → mpd96o</li><li>2026/11/24 13:01 ビルド: fqwnlq → 31kiid</li></ul></div></details>
 <details class="trace"><summary><span>📐 ゲームの数値の変化(自動チェック)</span></summary>
 <div class="en"><p class="muted">武器・弓・防具の数値(ダメージ、射程、ノックバック、防御など)と、鉱石の出方を、ビルドが変わるたびに前回と比べた記録です。文言の変化とは別に、バランス調整を見つけます。記録は 890cfc から始まり、いま 209 個のアイテムの数値を見ています。</p>
 <p class="muted">記録を始めてから、数値が変わったことはまだありません。</p></div></details>
 <details class="trace"><summary><span>🔢 ブロック・アイテムの番号(ID)の変化</span></summary>
-<div class="en"><p class="muted">ブロックとアイテムには、ゲームの中で番号(ID)が付いています。新しい物が間に入ると、後ろの物の番号がずれます。ワールドコードや保存データで番号を直接使っている人は、ここを見てください。元データは、第三者が公開している一覧(imu31465/Bloxd-Entries-Data)で、ゲームのコードを実行して取り出したものです。いま 10091 件(相手のビルド c6gaap、こちらの確認と同じビルド)。</p>
-<p class="muted">2026/11/25 08:01(7zvlu → c6gaap、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 05:31(yma3ej → 7zvlu、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 04:31(sn3sfj → yma3ej、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 01:31(tz47m9 → sn3sfj、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/24 17:31(mpd96o → tz47m9、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/24 14:31(31kiid → mpd96o、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/24 13:01(fqwnlq → 31kiid、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/24 12:01(31kiid → fqwnlq、10091 → 10091 件)</p><ul></ul></div></details>
+<div class="en"><p class="muted">ブロックとアイテムには、ゲームの中で番号(ID)が付いています。新しい物が間に入ると、後ろの物の番号がずれます。ワールドコードや保存データで番号を直接使っている人は、ここを見てください。元データは、第三者が公開している一覧(imu31465/Bloxd-Entries-Data)で、ゲームのコードを実行して取り出したものです。いま 10091 件(相手のビルド igzsf、こちらの確認と同じビルド)。</p>
+<p class="muted">2026/11/25 09:01(c6gaap → igzsf、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 08:01(7zvlu → c6gaap、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 05:31(yma3ej → 7zvlu、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 04:31(sn3sfj → yma3ej、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/25 01:31(tz47m9 → sn3sfj、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/24 17:31(mpd96o → tz47m9、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/24 14:31(31kiid → mpd96o、10091 → 10091 件)</p><ul></ul><p class="muted">2026/11/24 13:01(fqwnlq → 31kiid、10091 → 10091 件)</p><ul></ul></div></details>
 <h2>🕒 確認の履歴</h2>
-<div class="tablewrap"><table><tr><td>2026/11/25 08:00</td><td><span class="tag chg">更新</span></td><td>文字列 +4660/-5676</td></tr>
+<div class="tablewrap"><table><tr><td>2026/11/25 09:00</td><td><span class="tag chg">更新</span></td><td>文字列 +5527/-4374</td></tr>
+<tr><td>2026/11/25 08:00</td><td><span class="tag chg">更新</span></td><td>文字列 +4660/-5676</td></tr>
 <tr><td>2026/11/25 05:30</td><td><span class="tag chg">更新</span></td><td>文字列 +5114/-5101</td></tr>
 <tr><td>2026/11/25 04:30</td><td><span class="tag chg">更新</span></td><td>文字列 +5735/-4738</td></tr>
 <tr><td>2026/11/25 01:30</td><td><span class="tag chg">更新</span></td><td>文字列 +4744/-5123</td></tr>
